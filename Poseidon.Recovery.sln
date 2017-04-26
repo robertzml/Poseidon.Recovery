@@ -5,6 +5,8 @@ VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Poseidon.Recovery.Core", "Poseidon.Recovery.Core\Poseidon.Recovery.Core.csproj", "{69A4B85D-41FC-4E20-B0B3-2B5E07429C3D}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Poseidon.Recovery.ClientDx", "Poseidon.Recovery.ClientDx\Poseidon.Recovery.ClientDx.csproj", "{6A48D005-FCDD-4B00-91F4-E2CFA703D32A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{69A4B85D-41FC-4E20-B0B3-2B5E07429C3D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{69A4B85D-41FC-4E20-B0B3-2B5E07429C3D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{69A4B85D-41FC-4E20-B0B3-2B5E07429C3D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6A48D005-FCDD-4B00-91F4-E2CFA703D32A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6A48D005-FCDD-4B00-91F4-E2CFA703D32A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6A48D005-FCDD-4B00-91F4-E2CFA703D32A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6A48D005-FCDD-4B00-91F4-E2CFA703D32A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
