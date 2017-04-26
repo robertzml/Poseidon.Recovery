@@ -83,6 +83,20 @@ namespace Poseidon.Recovery.ClientDx
             ChildFormManage.ShowDialogForm(typeof(FrmChargeBuildingAdd));
             LoadBuilding();
         }
+
+        /// <summary>
+        /// 编辑建筑
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btnEdit_Click(object sender, EventArgs e)
+        {
+            if (this.currentBuilding == null)
+                return;
+
+            ChildFormManage.ShowDialogForm(typeof(FrmChargeBuildingEdit), new object[] { this.currentBuilding.Id });
+            LoadBuilding();
+        }
         #endregion //Event
     }
 }

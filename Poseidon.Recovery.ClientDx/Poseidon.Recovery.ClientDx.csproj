@@ -75,11 +75,20 @@
     <Compile Include="Building\FrmChargeBuildingAdd.Designer.cs">
       <DependentUpon>FrmChargeBuildingAdd.cs</DependentUpon>
     </Compile>
+    <Compile Include="Building\FrmChargeBuildingEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Building\FrmChargeBuildingEdit.Designer.cs">
+      <DependentUpon>FrmChargeBuildingEdit.cs</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Building\FrmChargeBuildingAdd.resx">
       <DependentUpon>FrmChargeBuildingAdd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Building\FrmChargeBuildingEdit.resx">
+      <DependentUpon>FrmChargeBuildingEdit.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Building\FrmChargeBuildingManage.resx">
       <DependentUpon>FrmChargeBuildingManage.cs</DependentUpon>
