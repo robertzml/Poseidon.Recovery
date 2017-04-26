@@ -76,5 +76,19 @@ namespace Poseidon.Recovery.Core.DAL.Mongo
             return doc;
         }
         #endregion //Function
+
+        #region Method
+        /// <summary>
+        /// 添加计费建筑
+        /// </summary>
+        /// <param name="entity">实体对象</param>
+        /// <returns></returns>
+        public override ChargeBuilding Create(ChargeBuilding entity)
+        {
+            entity.ModelType = this.modelType;
+            entity.Status = 0;
+            return base.Create(entity);
+        }
+        #endregion //Method
     }
 }
