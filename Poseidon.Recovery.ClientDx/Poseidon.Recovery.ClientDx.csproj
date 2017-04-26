@@ -81,9 +81,24 @@
     <Compile Include="Building\FrmChargeBuildingEdit.Designer.cs">
       <DependentUpon>FrmChargeBuildingEdit.cs</DependentUpon>
     </Compile>
+    <Compile Include="Account\FrmAccountManage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Account\FrmAccountManage.Designer.cs">
+      <DependentUpon>FrmAccountManage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Receipt\FrmRecoveryReceipt.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Receipt\FrmRecoveryReceipt.Designer.cs">
+      <DependentUpon>FrmRecoveryReceipt.cs</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Account\FrmAccountManage.resx">
+      <DependentUpon>FrmAccountManage.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Building\FrmChargeBuildingAdd.resx">
       <DependentUpon>FrmChargeBuildingAdd.cs</DependentUpon>
     </EmbeddedResource>
@@ -92,6 +107,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Building\FrmChargeBuildingManage.resx">
       <DependentUpon>FrmChargeBuildingManage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Receipt\FrmRecoveryReceipt.resx">
+      <DependentUpon>FrmRecoveryReceipt.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\licenses.licx" />
   </ItemGroup>
@@ -104,6 +122,7 @@
   <ItemGroup>
     <None Include="Properties\DataSources\Poseidon.Recovery.Core.DL.ChargeBuilding.datasource" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

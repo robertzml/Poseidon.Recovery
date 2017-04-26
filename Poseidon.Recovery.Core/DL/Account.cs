@@ -28,17 +28,29 @@ namespace Poseidon.Recovery.Core.DL
         [Display(Name = "能源类型")]
         public List<int> EnergyType { get; set; }
 
-        ///// <summary>
-        ///// 包含电表
-        ///// </summary>
-        //[Display(Name = "包含电表")]
-        //public List<ElectricMeter> ElectricMeters { get; set; }
+        /// <summary>
+        /// 位置
+        /// </summary>
+        [Display(Name = "位置")]
+        public string Position { get; set; }
 
-        ///// <summary>
-        ///// 包含水表
-        ///// </summary>
-        //[Display(Name = "包含水表")]
-        //public List<WaterMeter> WaterMeters { get; set; }
+        /// <summary>
+        /// 启用时间
+        /// </summary>
+        [Display(Name = "启用时间")]
+        public DateTime OpenTime { get; set; }
+
+        /// <summary>
+        /// 关闭时间
+        /// </summary>
+        [Display(Name = "关闭时间")]
+        public DateTime? CloseTime { get; set; }
+
+        /// <summary>
+        /// 包含表具
+        /// </summary>
+        [Display(Name = "包含表具")]
+        public List<Meter> Meters { get; set; }
         #endregion //Property
     }
 }

@@ -10,8 +10,6 @@ using System.Windows.Forms;
 namespace Poseidon.Recovery.ClientDx
 {
     using Poseidon.Base.Framework;
-    using Poseidon.Core.BL;
-    using Poseidon.Core.DL;
     using Poseidon.Winform.Base;
     using Poseidon.Recovery.Core.BL;
     using Poseidon.Recovery.Core.DL;
