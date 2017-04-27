@@ -29,12 +29,6 @@ namespace Poseidon.Recovery.Core.DL
         public List<int> EnergyType { get; set; }
 
         /// <summary>
-        /// 位置
-        /// </summary>
-        [Display(Name = "位置")]
-        public string Position { get; set; }
-
-        /// <summary>
         /// 计费建筑
         /// </summary>
         [Display(Name = "计费建筑")]

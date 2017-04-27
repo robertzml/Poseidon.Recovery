@@ -1,6 +1,6 @@
 ﻿namespace Poseidon.Recovery.ClientDx
 {
-    partial class FrmAccountAdd
+    partial class FrmAccountEdit
     {
         /// <summary>
         /// Required designer variable.
@@ -124,7 +124,7 @@
             this.groupControl1.Location = new System.Drawing.Point(0, 0);
             this.groupControl1.Name = "groupControl1";
             this.groupControl1.Size = new System.Drawing.Size(364, 321);
-            this.groupControl1.TabIndex = 0;
+            this.groupControl1.TabIndex = 1;
             this.groupControl1.Text = "账户信息";
             // 
             // layoutControl1
@@ -447,13 +447,13 @@
             this.layoutControlItem11.Text = "计费建筑";
             this.layoutControlItem11.TextSize = new System.Drawing.Size(48, 14);
             // 
-            // FrmAccountAdd
+            // FrmAccountEdit
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(364, 381);
-            this.Name = "FrmAccountAdd";
-            this.Text = "新增账户";
+            this.Name = "FrmAccountEdit";
+            this.Text = "编辑账户";
             ((System.ComponentModel.ISupportInitialize)(this.plFill)).EndInit();
             this.plFill.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.plBottom)).EndInit();
@@ -495,34 +495,34 @@
 
         private DevExpress.XtraEditors.GroupControl groupControl1;
         private DevExpress.XtraLayout.LayoutControl layoutControl1;
-        private DevExpress.XtraLayout.LayoutControlGroup layoutControlGroup1;
-        private DevExpress.XtraEditors.TextEdit txtShortName;
-        private DevExpress.XtraEditors.TextEdit txtName;
-        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem1;
-        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem2;
+        private DevExpress.XtraEditors.TreeListLookUpEdit tluChargeBuilding;
+        private DevExpress.XtraTreeList.TreeList treeList1;
+        private DevExpress.XtraTreeList.Columns.TreeListColumn colName1;
+        private DevExpress.XtraTreeList.Columns.TreeListColumn colRemark1;
+        private DevExpress.XtraEditors.MemoEdit txtRemark;
+        private DevExpress.XtraEditors.MemoEdit txtContact;
+        private DevExpress.XtraEditors.SpinEdit spCloseYear;
+        private DevExpress.XtraEditors.SpinEdit spOpenYear;
         private DevExpress.XtraEditors.CheckEdit chkType2;
         private DevExpress.XtraEditors.CheckEdit chkType1;
         private DevExpress.XtraEditors.TreeListLookUpEdit tluParent;
         private DevExpress.XtraTreeList.TreeList treeListLookUpEdit1TreeList;
+        private DevExpress.XtraTreeList.Columns.TreeListColumn colName;
+        private DevExpress.XtraTreeList.Columns.TreeListColumn colRemark;
+        private DevExpress.XtraEditors.TextEdit txtShortName;
+        private DevExpress.XtraEditors.TextEdit txtName;
+        private DevExpress.XtraLayout.LayoutControlGroup layoutControlGroup1;
+        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem1;
+        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem2;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem3;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem4;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem5;
-        private DevExpress.XtraEditors.SpinEdit spOpenYear;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem7;
-        private DevExpress.XtraEditors.MemoEdit txtContact;
-        private DevExpress.XtraEditors.SpinEdit spCloseYear;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem8;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem9;
-        private DevExpress.XtraEditors.MemoEdit txtRemark;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem10;
-        private DevExpress.XtraEditors.TreeListLookUpEdit tluChargeBuilding;
-        private System.Windows.Forms.BindingSource bsChargeBuilding;
-        private DevExpress.XtraTreeList.TreeList treeList1;
-        private DevExpress.XtraTreeList.Columns.TreeListColumn colName1;
-        private DevExpress.XtraTreeList.Columns.TreeListColumn colRemark1;
-        private System.Windows.Forms.BindingSource bsAccount;
-        private DevExpress.XtraTreeList.Columns.TreeListColumn colName;
-        private DevExpress.XtraTreeList.Columns.TreeListColumn colRemark;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem11;
+        private System.Windows.Forms.BindingSource bsChargeBuilding;
+        private System.Windows.Forms.BindingSource bsAccount;
     }
 }

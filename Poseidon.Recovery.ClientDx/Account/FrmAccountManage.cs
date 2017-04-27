@@ -32,9 +32,13 @@ namespace Poseidon.Recovery.ClientDx
         #region Function
         protected override void InitForm()
         {
-            this.accountTree.SetGroupCode(RecoveryConstant.RecoveryAccountGroupCode, true);
-
+            LoadData();
             base.InitForm();
+        }
+
+        private void LoadData()
+        {
+            this.accountGrid.DataSource = BusinessFactory<AccountBusiness>.Instance.FindAll().ToList();
         }
         #endregion //Function
 
@@ -47,6 +51,22 @@ namespace Poseidon.Recovery.ClientDx
         private void btnAdd_Click(object sender, EventArgs e)
         {
             ChildFormManage.ShowDialogForm(typeof(FrmAccountAdd));
+            LoadData();
+        }
+
+        /// <summary>
+        /// 编辑账户
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btnEdit_Click(object sender, EventArgs e)
+        {
+            var select = this.accountGrid.GetCurrentSelect();
+            if (select == null)
+                return;
+
+            ChildFormManage.ShowDialogForm(typeof(FrmAccountEdit), new object[] { select.Id });
+            LoadData();
         }
         #endregion //Event
     }

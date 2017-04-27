@@ -47,7 +47,6 @@ namespace Poseidon.Recovery.Core.DAL.Mongo
             entity.Name = doc["name"].ToString();
             entity.ShortName = doc["shortName"].ToString();
             entity.ModelType = doc["modelType"].ToString();
-            entity.Position = doc["position"].ToString();
             entity.OpenYear = doc["openYear"].ToInt32();
             entity.Remark = doc["remark"].ToString();
             entity.Status = doc["status"].ToInt32();
@@ -86,7 +85,6 @@ namespace Poseidon.Recovery.Core.DAL.Mongo
                 { "name", entity.Name },
                 { "shortName", entity.ShortName },
                 { "modelType", entity.ModelType },
-                { "position", entity.Position },
                 { "openYear", entity.OpenYear },
                 { "remark", entity.Remark },
                 { "status", entity.Status }
@@ -115,7 +113,6 @@ namespace Poseidon.Recovery.Core.DAL.Mongo
             return doc;
         }
         #endregion //Function
-
 
         #region Method
         /// <summary>
