@@ -15,6 +15,7 @@ namespace Poseidon.Recovery.ClientDx
     using Poseidon.Winform.Base;
     using Poseidon.Recovery.Core.BL;
     using Poseidon.Recovery.Core.DL;
+    using Poseidon.Recovery.Core.Utility;
 
     /// <summary>
     /// 回收账户管理窗体
@@ -27,5 +28,26 @@ namespace Poseidon.Recovery.ClientDx
             InitializeComponent();
         }
         #endregion //Constructor
+
+        #region Function
+        protected override void InitForm()
+        {
+            this.accountTree.SetGroupCode(RecoveryConstant.RecoveryAccountGroupCode, true);
+
+            base.InitForm();
+        }
+        #endregion //Function
+
+        #region Event
+        /// <summary>
+        /// 新增账户
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btnAdd_Click(object sender, EventArgs e)
+        {
+            ChildFormManage.ShowDialogForm(typeof(FrmAccountAdd));
+        }
+        #endregion //Event
     }
 }

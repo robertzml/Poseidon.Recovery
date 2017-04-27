@@ -35,16 +35,28 @@ namespace Poseidon.Recovery.Core.DL
         public string Position { get; set; }
 
         /// <summary>
-        /// 启用时间
+        /// 计费建筑
         /// </summary>
-        [Display(Name = "启用时间")]
-        public DateTime OpenTime { get; set; }
+        [Display(Name = "计费建筑")]
+        public string ChargeBuildingId { get; set; }
 
         /// <summary>
-        /// 关闭时间
+        /// 启用年份
         /// </summary>
-        [Display(Name = "关闭时间")]
-        public DateTime? CloseTime { get; set; }
+        [Display(Name = "启用年份")]
+        public int OpenYear { get; set; }
+
+        /// <summary>
+        /// 关闭年份
+        /// </summary>
+        [Display(Name = "关闭年份")]
+        public int? CloseYear { get; set; }
+
+        /// <summary>
+        /// 联系方式
+        /// </summary>
+        [Display(Name = "联系方式")]
+        public string Contract { get; set; }
 
         /// <summary>
         /// 包含表具

@@ -24,5 +24,10 @@ namespace Poseidon.Recovery.Test
         {
             ChildFormManage.LoadMdiForm(this, typeof(FrmChargeBuildingManage));
         }
+
+        private void menuAccountMan_Click(object sender, EventArgs e)
+        {
+            ChildFormManage.LoadMdiForm(this, typeof(FrmAccountManage));
+        }
     }
 }

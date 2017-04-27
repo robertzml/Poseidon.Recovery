@@ -31,6 +31,7 @@
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.menuRecovery = new System.Windows.Forms.ToolStripMenuItem();
             this.menuChargeBuildingMan = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuAccountMan = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -47,7 +48,8 @@
             // menuRecovery
             // 
             this.menuRecovery.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.menuChargeBuildingMan});
+            this.menuChargeBuildingMan,
+            this.menuAccountMan});
             this.menuRecovery.Name = "menuRecovery";
             this.menuRecovery.Size = new System.Drawing.Size(68, 21);
             this.menuRecovery.Text = "费用回收";
@@ -58,6 +60,13 @@
             this.menuChargeBuildingMan.Size = new System.Drawing.Size(152, 22);
             this.menuChargeBuildingMan.Text = "计费建筑管理";
             this.menuChargeBuildingMan.Click += new System.EventHandler(this.menuChargeBuildingMan_Click);
+            // 
+            // menuAccountMan
+            // 
+            this.menuAccountMan.Name = "menuAccountMan";
+            this.menuAccountMan.Size = new System.Drawing.Size(152, 22);
+            this.menuAccountMan.Text = "回收账户管理";
+            this.menuAccountMan.Click += new System.EventHandler(this.menuAccountMan_Click);
             // 
             // MainForm
             // 
@@ -82,6 +91,7 @@
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem menuRecovery;
         private System.Windows.Forms.ToolStripMenuItem menuChargeBuildingMan;
+        private System.Windows.Forms.ToolStripMenuItem menuAccountMan;
     }
 }
 

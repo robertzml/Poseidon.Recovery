@@ -87,6 +87,12 @@
     <Compile Include="Account\FrmAccountManage.Designer.cs">
       <DependentUpon>FrmAccountManage.cs</DependentUpon>
     </Compile>
+    <Compile Include="Account\FrmAccountAdd.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Account\FrmAccountAdd.Designer.cs">
+      <DependentUpon>FrmAccountAdd.cs</DependentUpon>
+    </Compile>
     <Compile Include="Receipt\FrmRecoveryReceipt.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -96,6 +102,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Account\FrmAccountAdd.resx">
+      <DependentUpon>FrmAccountAdd.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Account\FrmAccountManage.resx">
       <DependentUpon>FrmAccountManage.cs</DependentUpon>
     </EmbeddedResource>
@@ -108,10 +117,11 @@
     <EmbeddedResource Include="Building\FrmChargeBuildingManage.resx">
       <DependentUpon>FrmChargeBuildingManage.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="Properties\DataSources\Poseidon.Recovery.Core.DL.Account.datasource" />
+    <None Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Receipt\FrmRecoveryReceipt.resx">
       <DependentUpon>FrmRecoveryReceipt.cs</DependentUpon>
     </EmbeddedResource>
-    <None Include="Properties\licenses.licx" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Poseidon.Recovery.Core\Poseidon.Recovery.Core.csproj">

@@ -47,11 +47,19 @@ namespace Poseidon.Recovery.Core.DAL.Mongo
             entity.Name = doc["name"].ToString();
             entity.ShortName = doc["shortName"].ToString();
             entity.ModelType = doc["modelType"].ToString();
+            entity.Position = doc["position"].ToString();
+            entity.OpenYear = doc["openYear"].ToInt32();
             entity.Remark = doc["remark"].ToString();
             entity.Status = doc["status"].ToInt32();
 
             if (doc.Contains("parentId"))
                 entity.ParentId = doc["parentId"].ToString();
+
+            if (doc.Contains("chargeBuildingId"))
+                entity.ChargeBuildingId = doc["chargeBuildingId"].ToString();
+
+            if (doc.Contains("closeYear"))
+                entity.CloseYear = doc["closeYear"].ToInt32();
 
             entity.EnergyType = new List<int>();
             if (doc.Contains("energyType"))
@@ -78,12 +86,20 @@ namespace Poseidon.Recovery.Core.DAL.Mongo
                 { "name", entity.Name },
                 { "shortName", entity.ShortName },
                 { "modelType", entity.ModelType },
+                { "position", entity.Position },
+                { "openYear", entity.OpenYear },
                 { "remark", entity.Remark },
                 { "status", entity.Status }
             };
 
-            if (entity.ParentId != null)
+            if (!string.IsNullOrEmpty(entity.ParentId))
                 doc.Add("parentId", entity.ParentId);
+
+            if (!string.IsNullOrEmpty(entity.ChargeBuildingId))
+                doc.Add("chargeBuildingId", entity.ChargeBuildingId);
+
+            if (entity.CloseYear != null)
+                doc.Add("closeYear", entity.CloseYear.Value);
 
             if (entity.EnergyType != null && entity.EnergyType.Count > 0)
             {
@@ -99,5 +115,29 @@ namespace Poseidon.Recovery.Core.DAL.Mongo
             return doc;
         }
         #endregion //Function
+
+
+        #region Method
+        /// <summary>
+        /// 查找所有对象
+        /// </summary>
+        /// <returns></returns>
+        public override IEnumerable<Account> FindAll()
+        {
+            return base.FindListByField("modelType", this.modelType);
+        }
+
+        /// <summary>
+        /// 添加回收账户
+        /// </summary>
+        /// <param name="entity">实体对象</param>
+        /// <returns></returns>
+        public override Account Create(Account entity)
+        {
+            entity.ModelType = this.modelType;
+            entity.Status = 0;
+            return base.Create(entity);
+        }
+        #endregion //Method
     }
 }
