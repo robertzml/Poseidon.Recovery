@@ -70,6 +70,26 @@ namespace Poseidon.Recovery.Core.DAL.Mongo
                 }
             }
 
+            entity.Meters = new List<Meter>();
+            if (doc.Contains("meters"))
+            {
+                BsonArray array = doc["meters"].AsBsonArray;
+                foreach (BsonDocument item in array)
+                {
+                    Meter meter = new Meter();
+                    meter.Name = item["name"].ToString();
+                    meter.Number = item["number"].ToString();
+                    meter.EnergyType = item["energyType"].ToInt32();
+                    meter.ChargeType = item["chargeType"].ToInt32();
+                    meter.Address = item["address"].ToString();
+                    meter.Multiple = item["multiple"].ToDecimal();
+                    meter.Remark = item["remark"].ToString();
+                    meter.Status = item["status"].ToInt32();
+
+                    entity.Meters.Add(meter);
+                }
+            }
+
             return entity;
         }
 
@@ -108,6 +128,28 @@ namespace Poseidon.Recovery.Core.DAL.Mongo
                 }
 
                 doc.Add("energyType", array);
+            }
+
+            if (entity.Meters != null && entity.Meters.Count > 0)
+            {
+                BsonArray array = new BsonArray();
+                foreach (var item in entity.Meters)
+                {
+                    BsonDocument sub = new BsonDocument
+                    {
+                        { "name", item.Name },
+                        { "number", item.Number },
+                        { "energyType", item.EnergyType },
+                        { "chargeType", item.ChargeType },
+                        { "address", item.Address },
+                        { "multiple", item.Multiple },
+                        { "remark", item.Remark },
+                        { "status", item.Status }
+                    };
+                    array.Add(sub);
+                }
+
+                doc.Add("meters", array);
             }
 
             return doc;

@@ -24,5 +24,19 @@ namespace Poseidon.Recovery.Core.BL
             this.baseDal = RepositoryFactory<IAccountRepository>.Instance;
         }
         #endregion //Constructor
+
+        #region Method
+        /// <summary>
+        /// 设置表具
+        /// </summary>
+        /// <param name="id">账户ID</param>
+        /// <param name="meters">表具列表</param>
+        public void SetMeters(string id, List<Meter> meters)
+        {
+            var entity = this.baseDal.FindById(id);
+            entity.Meters = meters;
+            this.baseDal.Update(entity);
+        }
+        #endregion //Method
     }
 }

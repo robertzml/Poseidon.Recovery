@@ -68,6 +68,21 @@ namespace Poseidon.Recovery.ClientDx
             ChildFormManage.ShowDialogForm(typeof(FrmAccountEdit), new object[] { select.Id });
             LoadData();
         }
+       
+        /// <summary>
+        /// 设置表具
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btnSetMeter_Click(object sender, EventArgs e)
+        {
+            var select = this.accountGrid.GetCurrentSelect();
+            if (select == null)
+                return;
+
+            ChildFormManage.ShowDialogForm(typeof(FrmMeterSet), new object[] { select.Id });
+            LoadData();
+        }
         #endregion //Event
     }
 }

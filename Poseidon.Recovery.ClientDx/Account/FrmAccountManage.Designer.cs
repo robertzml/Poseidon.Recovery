@@ -37,6 +37,8 @@
             this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem2 = new DevExpress.XtraLayout.LayoutControlItem();
             this.groupControl3 = new DevExpress.XtraEditors.GroupControl();
+            this.btnSetMeter = new DevExpress.XtraEditors.SimpleButton();
+            this.layoutControlItem3 = new DevExpress.XtraLayout.LayoutControlItem();
             this.accountGrid = new Poseidon.Recovery.ClientDx.AccountGrid();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).BeginInit();
@@ -48,6 +50,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl3)).BeginInit();
             this.groupControl3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).BeginInit();
             this.SuspendLayout();
             // 
             // tableLayoutPanel1
@@ -74,10 +77,11 @@
             this.groupControl2.Name = "groupControl2";
             this.groupControl2.Size = new System.Drawing.Size(854, 134);
             this.groupControl2.TabIndex = 1;
-            this.groupControl2.Text = "基本信息";
+            this.groupControl2.Text = "操作";
             // 
             // layoutControl1
             // 
+            this.layoutControl1.Controls.Add(this.btnSetMeter);
             this.layoutControl1.Controls.Add(this.btnEdit);
             this.layoutControl1.Controls.Add(this.btnAdd);
             this.layoutControl1.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -90,9 +94,9 @@
             // 
             // btnEdit
             // 
-            this.btnEdit.Location = new System.Drawing.Point(427, 12);
+            this.btnEdit.Location = new System.Drawing.Point(303, 12);
             this.btnEdit.Name = "btnEdit";
-            this.btnEdit.Size = new System.Drawing.Size(411, 22);
+            this.btnEdit.Size = new System.Drawing.Size(267, 22);
             this.btnEdit.StyleController = this.layoutControl1;
             this.btnEdit.TabIndex = 6;
             this.btnEdit.Text = "编辑账户";
@@ -102,7 +106,7 @@
             // 
             this.btnAdd.Location = new System.Drawing.Point(12, 12);
             this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(411, 22);
+            this.btnAdd.Size = new System.Drawing.Size(287, 22);
             this.btnAdd.StyleController = this.layoutControl1;
             this.btnAdd.TabIndex = 5;
             this.btnAdd.Text = "新增账户";
@@ -114,7 +118,8 @@
             this.layoutControlGroup1.GroupBordersVisible = false;
             this.layoutControlGroup1.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
             this.layoutControlItem1,
-            this.layoutControlItem2});
+            this.layoutControlItem2,
+            this.layoutControlItem3});
             this.layoutControlGroup1.Location = new System.Drawing.Point(0, 0);
             this.layoutControlGroup1.Name = "layoutControlGroup1";
             this.layoutControlGroup1.Size = new System.Drawing.Size(850, 111);
@@ -125,16 +130,16 @@
             this.layoutControlItem1.Control = this.btnAdd;
             this.layoutControlItem1.Location = new System.Drawing.Point(0, 0);
             this.layoutControlItem1.Name = "layoutControlItem1";
-            this.layoutControlItem1.Size = new System.Drawing.Size(415, 91);
+            this.layoutControlItem1.Size = new System.Drawing.Size(291, 91);
             this.layoutControlItem1.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem1.TextVisible = false;
             // 
             // layoutControlItem2
             // 
             this.layoutControlItem2.Control = this.btnEdit;
-            this.layoutControlItem2.Location = new System.Drawing.Point(415, 0);
+            this.layoutControlItem2.Location = new System.Drawing.Point(291, 0);
             this.layoutControlItem2.Name = "layoutControlItem2";
-            this.layoutControlItem2.Size = new System.Drawing.Size(415, 91);
+            this.layoutControlItem2.Size = new System.Drawing.Size(271, 91);
             this.layoutControlItem2.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem2.TextVisible = false;
             // 
@@ -147,6 +152,25 @@
             this.groupControl3.Size = new System.Drawing.Size(854, 383);
             this.groupControl3.TabIndex = 2;
             this.groupControl3.Text = "回收账户列表";
+            // 
+            // btnSetMeter
+            // 
+            this.btnSetMeter.Location = new System.Drawing.Point(574, 12);
+            this.btnSetMeter.Name = "btnSetMeter";
+            this.btnSetMeter.Size = new System.Drawing.Size(264, 22);
+            this.btnSetMeter.StyleController = this.layoutControl1;
+            this.btnSetMeter.TabIndex = 7;
+            this.btnSetMeter.Text = "设置表具";
+            this.btnSetMeter.Click += new System.EventHandler(this.btnSetMeter_Click);
+            // 
+            // layoutControlItem3
+            // 
+            this.layoutControlItem3.Control = this.btnSetMeter;
+            this.layoutControlItem3.Location = new System.Drawing.Point(562, 0);
+            this.layoutControlItem3.Name = "layoutControlItem3";
+            this.layoutControlItem3.Size = new System.Drawing.Size(268, 91);
+            this.layoutControlItem3.TextSize = new System.Drawing.Size(0, 0);
+            this.layoutControlItem3.TextVisible = false;
             // 
             // accountGrid
             // 
@@ -185,6 +209,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl3)).EndInit();
             this.groupControl3.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -201,5 +226,7 @@
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem1;
         private DevExpress.XtraEditors.SimpleButton btnEdit;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem2;
+        private DevExpress.XtraEditors.SimpleButton btnSetMeter;
+        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem3;
     }
 }

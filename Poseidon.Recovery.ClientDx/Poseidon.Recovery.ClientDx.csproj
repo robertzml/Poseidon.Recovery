@@ -42,6 +42,10 @@
     <Reference Include="Poseidon.Base">
       <HintPath>..\..\Assembly\Poseidon.Base.dll</HintPath>
     </Reference>
+    <Reference Include="Poseidon.Common, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Assembly\Poseidon.Common.dll</HintPath>
+    </Reference>
     <Reference Include="Poseidon.Core">
       <HintPath>..\..\Assembly\Poseidon.Core.dll</HintPath>
     </Reference>
@@ -70,6 +74,12 @@
     </Compile>
     <Compile Include="Account\FrmAccountEdit.Designer.cs">
       <DependentUpon>FrmAccountEdit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Account\FrmMeterSet.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Account\FrmMeterSet.Designer.cs">
+      <DependentUpon>FrmMeterSet.cs</DependentUpon>
     </Compile>
     <Compile Include="Grid\AccountGrid.cs">
       <SubType>UserControl</SubType>
@@ -107,6 +117,12 @@
     <Compile Include="Account\FrmAccountAdd.Designer.cs">
       <DependentUpon>FrmAccountAdd.cs</DependentUpon>
     </Compile>
+    <Compile Include="Grid\MeterGrid.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Grid\MeterGrid.Designer.cs">
+      <DependentUpon>MeterGrid.cs</DependentUpon>
+    </Compile>
     <Compile Include="Receipt\FrmRecoveryReceipt.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -118,6 +134,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Account\FrmAccountEdit.resx">
       <DependentUpon>FrmAccountEdit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Account\FrmMeterSet.resx">
+      <DependentUpon>FrmMeterSet.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Grid\AccountGrid.resx">
       <DependentUpon>AccountGrid.cs</DependentUpon>
@@ -138,7 +157,11 @@
       <DependentUpon>FrmChargeBuildingManage.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\DataSources\Poseidon.Recovery.Core.DL.Account.datasource" />
+    <None Include="Properties\DataSources\Poseidon.Recovery.Core.DL.Meter.datasource" />
     <None Include="Properties\licenses.licx" />
+    <EmbeddedResource Include="Grid\MeterGrid.resx">
+      <DependentUpon>MeterGrid.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Receipt\FrmRecoveryReceipt.resx">
       <DependentUpon>FrmRecoveryReceipt.cs</DependentUpon>
     </EmbeddedResource>
