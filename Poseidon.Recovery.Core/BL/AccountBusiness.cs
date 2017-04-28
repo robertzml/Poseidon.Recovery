@@ -33,9 +33,8 @@ namespace Poseidon.Recovery.Core.BL
         /// <param name="meters">表具列表</param>
         public void SetMeters(string id, List<Meter> meters)
         {
-            var entity = this.baseDal.FindById(id);
-            entity.Meters = meters;
-            this.baseDal.Update(entity);
+            var dal = this.baseDal as IAccountRepository;
+            dal.SetMeters(id, meters);
         }
         #endregion //Method
     }

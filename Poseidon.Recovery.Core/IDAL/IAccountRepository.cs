@@ -14,5 +14,11 @@ namespace Poseidon.Recovery.Core.IDAL
     /// </summary>
     internal interface IAccountRepository : IBaseDAL<Account>
     {
+        /// <summary>
+        /// 设置表具
+        /// </summary>
+        /// <param name="id">账户ID</param>
+        /// <param name="meters">表具列表</param>
+        void SetMeters(string id, List<Meter> meters);
     }
 }

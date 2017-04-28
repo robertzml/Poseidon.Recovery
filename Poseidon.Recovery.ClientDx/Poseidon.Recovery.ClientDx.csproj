@@ -70,6 +70,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Receipt\FrmMeasureAdd.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Receipt\FrmMeasureAdd.Designer.cs">
+      <DependentUpon>FrmMeasureAdd.cs</DependentUpon>
+    </Compile>
     <Compile Include="Mod\AccountReceiptModule.cs">
       <SubType>UserControl</SubType>
     </Compile>

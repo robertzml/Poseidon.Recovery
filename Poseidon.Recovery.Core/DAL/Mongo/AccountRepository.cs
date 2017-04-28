@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 namespace Poseidon.Recovery.Core.DAL.Mongo
 {
     using MongoDB.Bson;
+    using MongoDB.Driver;
     using Poseidon.Base.Framework;
     using Poseidon.Data;
     using Poseidon.Recovery.Core.DL;
@@ -77,6 +78,7 @@ namespace Poseidon.Recovery.Core.DAL.Mongo
                 foreach (BsonDocument item in array)
                 {
                     Meter meter = new Meter();
+                    meter.Id = item["id"].ToString();
                     meter.Name = item["name"].ToString();
                     meter.Number = item["number"].ToString();
                     meter.EnergyType = item["energyType"].ToInt32();
@@ -137,6 +139,7 @@ namespace Poseidon.Recovery.Core.DAL.Mongo
                 {
                     BsonDocument sub = new BsonDocument
                     {
+                        { "id", item.Id },
                         { "name", item.Name },
                         { "number", item.Number },
                         { "energyType", item.EnergyType },
@@ -164,6 +167,24 @@ namespace Poseidon.Recovery.Core.DAL.Mongo
         public override IEnumerable<Account> FindAll()
         {
             return base.FindListByField("modelType", this.modelType);
+        }
+
+        /// <summary>
+        /// 设置表具
+        /// </summary>
+        /// <param name="id">账户ID</param>
+        /// <param name="meters">表具列表</param>
+        public void SetMeters(string id, List<Meter> meters)
+        {
+            foreach(var item in meters)
+            {
+                if (string.IsNullOrEmpty(item.Id))
+                    item.Id = ObjectId.GenerateNewId().ToString();
+            }
+
+            var entity = base.FindById(id);
+            entity.Meters = meters;
+            base.Update(entity);
         }
 
         /// <summary>

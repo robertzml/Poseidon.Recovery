@@ -62,6 +62,10 @@
             this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlGroup3 = new DevExpress.XtraLayout.LayoutControlGroup();
             this.layoutControlItem2 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.tabBusiness = new DevExpress.XtraTab.XtraTabControl();
+            this.tabPageSettlement = new DevExpress.XtraTab.XtraTabPage();
+            this.tabPageMeasure = new DevExpress.XtraTab.XtraTabPage();
+            this.tabPageRecycle = new DevExpress.XtraTab.XtraTabPage();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
             this.groupControl1.SuspendLayout();
@@ -98,6 +102,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tabBusiness)).BeginInit();
+            this.tabBusiness.SuspendLayout();
             this.SuspendLayout();
             // 
             // tableLayoutPanel1
@@ -106,6 +112,7 @@
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 23F));
             this.tableLayoutPanel1.Controls.Add(this.groupControl1, 0, 0);
+            this.tableLayoutPanel1.Controls.Add(this.tabBusiness, 0, 1);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
@@ -467,6 +474,37 @@
             this.layoutControlItem2.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem2.TextVisible = false;
             // 
+            // tabBusiness
+            // 
+            this.tabBusiness.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tabBusiness.Location = new System.Drawing.Point(3, 295);
+            this.tabBusiness.Name = "tabBusiness";
+            this.tabBusiness.SelectedTabPage = this.tabPageSettlement;
+            this.tabBusiness.Size = new System.Drawing.Size(913, 347);
+            this.tabBusiness.TabIndex = 3;
+            this.tabBusiness.TabPages.AddRange(new DevExpress.XtraTab.XtraTabPage[] {
+            this.tabPageSettlement,
+            this.tabPageMeasure,
+            this.tabPageRecycle});
+            // 
+            // tabPageSettlement
+            // 
+            this.tabPageSettlement.Name = "tabPageSettlement";
+            this.tabPageSettlement.Size = new System.Drawing.Size(907, 318);
+            this.tabPageSettlement.Text = "费用结算";
+            // 
+            // tabPageMeasure
+            // 
+            this.tabPageMeasure.Name = "tabPageMeasure";
+            this.tabPageMeasure.Size = new System.Drawing.Size(907, 318);
+            this.tabPageMeasure.Text = "抄表记录";
+            // 
+            // tabPageRecycle
+            // 
+            this.tabPageRecycle.Name = "tabPageRecycle";
+            this.tabPageRecycle.Size = new System.Drawing.Size(0, 0);
+            this.tabPageRecycle.Text = "回收登记";
+            // 
             // AccountReceiptModule
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
@@ -510,6 +548,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tabBusiness)).EndInit();
+            this.tabBusiness.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -550,5 +590,9 @@
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem12;
         private DevExpress.XtraLayout.LayoutControlGroup layoutControlGroup3;
         private MeterGrid meterGrid;
+        private DevExpress.XtraTab.XtraTabControl tabBusiness;
+        private DevExpress.XtraTab.XtraTabPage tabPageSettlement;
+        private DevExpress.XtraTab.XtraTabPage tabPageMeasure;
+        private DevExpress.XtraTab.XtraTabPage tabPageRecycle;
     }
 }

@@ -69,13 +69,17 @@
   <ItemGroup>
     <Compile Include="BL\AccountBusiness.cs" />
     <Compile Include="BL\ChargeBuildingBusiness.cs" />
+    <Compile Include="BL\MeasureBusiness.cs" />
     <Compile Include="DAL\Mongo\AccountRepository.cs" />
     <Compile Include="DAL\Mongo\ChargeBuildingRepository.cs" />
+    <Compile Include="DAL\Mongo\MeasureRepository.cs" />
     <Compile Include="DL\Account.cs" />
     <Compile Include="DL\ChargeBuilding.cs" />
+    <Compile Include="DL\Measure.cs" />
     <Compile Include="DL\Meter.cs" />
     <Compile Include="IDAL\IAccountRepository.cs" />
     <Compile Include="IDAL\IChargeBuildingRepository.cs" />
+    <Compile Include="IDAL\IMeasureRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Utility\ModelTypeCode.cs" />
     <Compile Include="Utility\RecoveryConstant.cs" />
