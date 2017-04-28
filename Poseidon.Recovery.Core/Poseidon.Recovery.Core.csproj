@@ -75,6 +75,7 @@
     <Compile Include="DAL\Mongo\MeasureRepository.cs" />
     <Compile Include="DL\Account.cs" />
     <Compile Include="DL\ChargeBuilding.cs" />
+    <Compile Include="DL\ConstructionAccount.cs" />
     <Compile Include="DL\Measure.cs" />
     <Compile Include="DL\Meter.cs" />
     <Compile Include="IDAL\IAccountRepository.cs" />

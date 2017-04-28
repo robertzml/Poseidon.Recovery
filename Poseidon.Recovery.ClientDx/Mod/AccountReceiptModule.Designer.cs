@@ -502,7 +502,7 @@
             // tabPageRecycle
             // 
             this.tabPageRecycle.Name = "tabPageRecycle";
-            this.tabPageRecycle.Size = new System.Drawing.Size(0, 0);
+            this.tabPageRecycle.Size = new System.Drawing.Size(907, 318);
             this.tabPageRecycle.Text = "回收登记";
             // 
             // AccountReceiptModule

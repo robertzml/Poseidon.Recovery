@@ -9,8 +9,6 @@ using System.Windows.Forms;
 
 namespace Poseidon.Recovery.ClientDx
 {
-    using DevExpress.XtraEditors.Repository;
-    using DevExpress.XtraEditors.Controls;
     using Poseidon.Base.Framework;
     using Poseidon.Common;
     using Poseidon.Winform.Base;

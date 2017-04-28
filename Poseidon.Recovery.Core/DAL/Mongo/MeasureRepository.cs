@@ -48,7 +48,11 @@ namespace Poseidon.Recovery.Core.DAL.Mongo
                 foreach (BsonDocument item in array)
                 {
                     MeasureRecord record = new MeasureRecord();
-                    record.MeterId = item["meterId"].ToString();
+                    record.MeterName = item["meterName"].ToString();
+                    record.MeterNumber = item["meterNumber"].ToString();
+                    record.MeterType = item["meterType"].ToInt32();
+                    record.ChargeType = item["chargeType"].ToInt32();
+                    record.Multiple = item["multiple"].ToDecimal();
                     record.Indication = item["indication"].ToDecimal();
                     record.Remark = item["remark"].ToString();
 
@@ -110,7 +114,11 @@ namespace Poseidon.Recovery.Core.DAL.Mongo
                 {
                     BsonDocument record = new BsonDocument
                     {
-                        { "meterId", item.MeterId },
+                        { "meterName", item.MeterName },
+                        { "meterNumber", item.MeterNumber },
+                        { "meterType", item.MeterType },
+                        { "chargeType", item.ChargeType },
+                        { "multiple", item.Multiple },
                         { "indication", item.Indication },
                         { "remark", item.Remark }
                     };

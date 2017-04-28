@@ -50,10 +50,34 @@ namespace Poseidon.Recovery.Core.DL
     {
         #region Property
         /// <summary>
-        /// 表具ID
+        /// 表名
         /// </summary>
-        [Display(Name = "表具ID")]
-        public string MeterId { get; set; }
+        [Display(Name = "表名")]
+        public string MeterName { get; set; }
+
+        /// <summary>
+        /// 表号
+        /// </summary>
+        [Display(Name = "表号")]
+        public string MeterNumber { get; set; }
+
+        /// <summary>
+        /// 类型，电表、水表
+        /// </summary>
+        [Display(Name = "类型")]
+        public int MeterType { get; set; }
+
+        /// <summary>
+        /// 计费方式，预付费、后付费
+        /// </summary>
+        [Display(Name = "计费方式")]
+        public int ChargeType { get; set; }
+
+        /// <summary>
+        /// 倍率
+        /// </summary>
+        [Display(Name = "倍率")]
+        public decimal Multiple { get; set; }
 
         /// <summary>
         /// 读数

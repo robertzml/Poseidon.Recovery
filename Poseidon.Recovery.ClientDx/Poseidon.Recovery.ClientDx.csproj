@@ -70,6 +70,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Grid\MeasureRecordGrid.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Grid\MeasureRecordGrid.Designer.cs">
+      <DependentUpon>MeasureRecordGrid.cs</DependentUpon>
+    </Compile>
     <Compile Include="Receipt\FrmMeasureAdd.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -145,6 +151,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Grid\MeasureRecordGrid.resx">
+      <DependentUpon>MeasureRecordGrid.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Mod\AccountReceiptModule.resx">
       <DependentUpon>AccountReceiptModule.cs</DependentUpon>
     </EmbeddedResource>
@@ -173,10 +182,15 @@
       <DependentUpon>FrmChargeBuildingManage.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\DataSources\Poseidon.Recovery.Core.DL.Account.datasource" />
+    <None Include="Properties\DataSources\Poseidon.Recovery.Core.DL.Measure.datasource" />
+    <None Include="Properties\DataSources\Poseidon.Recovery.Core.DL.MeasureRecord.datasource" />
     <None Include="Properties\DataSources\Poseidon.Recovery.Core.DL.Meter.datasource" />
     <None Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Grid\MeterGrid.resx">
       <DependentUpon>MeterGrid.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Receipt\FrmMeasureAdd.resx">
+      <DependentUpon>FrmMeasureAdd.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Receipt\FrmRecoveryReceipt.resx">
       <DependentUpon>FrmRecoveryReceipt.cs</DependentUpon>

@@ -22,9 +22,31 @@ namespace Poseidon.Recovery.ClientDx
     /// </summary>
     public partial class FrmMeasureAdd : BaseSingleForm
     {
-        public FrmMeasureAdd()
+        #region Field
+        /// <summary>
+        /// 关联账户
+        /// </summary>
+        private Account currentAccount;
+        #endregion //Field
+
+        #region Constructor
+        public FrmMeasureAdd(string accountId)
         {
             InitializeComponent();
         }
+        #endregion //Constructor
+
+        #region Function
+        private void InitData(string accountId)
+        {
+            this.currentAccount = BusinessFactory<AccountBusiness>.Instance.FindById(accountId);
+        }
+
+        protected override void InitForm()
+        {
+            this.txtAccountName.Text = this.currentAccount.Name;
+            base.InitForm();
+        }
+        #endregion //Function
     }
 }
