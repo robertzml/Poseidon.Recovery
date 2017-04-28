@@ -485,8 +485,8 @@
             this.tabBusiness.TabIndex = 3;
             this.tabBusiness.TabPages.AddRange(new DevExpress.XtraTab.XtraTabPage[] {
             this.tabPageSettlement,
-            this.tabPageMeasure,
-            this.tabPageRecycle});
+            this.tabPageRecycle,
+            this.tabPageMeasure});
             // 
             // tabPageSettlement
             // 

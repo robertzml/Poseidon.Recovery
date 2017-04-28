@@ -22,13 +22,6 @@ namespace Poseidon.Recovery.Core.DL
         [Display(Name = "账户ID")]
         public string AccountId { get; set; }
 
-        ///// <summary>
-        ///// 费用类型
-        ///// </summary>
-        //[Dict("Energy.Recovery.FeeType")]
-        //[Display(Name = "费用类型")]
-        //public int FeeType { get; set; }
-
         /// <summary>
         /// 抄表日期
         /// </summary>
@@ -44,7 +37,7 @@ namespace Poseidon.Recovery.Core.DL
     }
 
     /// <summary>
-    /// 抄表记录
+    /// 抄表记录类
     /// </summary>
     public class MeasureRecord : BaseEntity
     {

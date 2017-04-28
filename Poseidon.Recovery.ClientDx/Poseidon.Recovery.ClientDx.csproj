@@ -155,6 +155,12 @@
       <DependentUpon>FrmRecoveryReceipt.cs</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Mod\SettleReceiptModule.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Mod\SettleReceiptModule.Designer.cs">
+      <DependentUpon>SettleReceiptModule.cs</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Grid\CommerceAccountGrid.resx">
@@ -191,12 +197,16 @@
     <None Include="Properties\DataSources\Poseidon.Recovery.Core.DL.Measure.datasource" />
     <None Include="Properties\DataSources\Poseidon.Recovery.Core.DL.MeasureRecord.datasource" />
     <None Include="Properties\DataSources\Poseidon.Recovery.Core.DL.Meter.datasource" />
+    <None Include="Properties\DataSources\Poseidon.Recovery.Core.DL.Settle.datasource" />
     <None Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Grid\MeterGrid.resx">
       <DependentUpon>MeterGrid.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Mod\MeasureReceiptModule.resx">
       <DependentUpon>MeasureReceiptModule.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Mod\SettleReceiptModule.resx">
+      <DependentUpon>SettleReceiptModule.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Receipt\FrmMeasureAdd.resx">
       <DependentUpon>FrmMeasureAdd.cs</DependentUpon>
