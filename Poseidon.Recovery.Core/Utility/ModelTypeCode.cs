@@ -13,9 +13,9 @@ namespace Poseidon.Recovery.Core.Utility
     {
         #region Field
         /// <summary>
-        /// 回收账户模型
+        /// 经营类回收账户模型
         /// </summary>
-        public static readonly string Account = "Recovery.Account";
+        public static readonly string CommerceAccount = "Recovery.CommerceAccount";
 
         /// <summary>
         /// 计费建筑模型

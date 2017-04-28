@@ -19,17 +19,17 @@ namespace Poseidon.Recovery.ClientDx
     /// <summary>
     /// 编辑账户窗体
     /// </summary>
-    public partial class FrmAccountEdit : BaseSingleForm
+    public partial class FrmCommerceAccountEdit : BaseSingleForm
     {
         #region Field
         /// <summary>
         /// 当前关联账户
         /// </summary>
-        private Account currentAccount;
+        private CommerceAccount currentAccount;
         #endregion //Field
 
         #region Constructor
-        public FrmAccountEdit(string id)
+        public FrmCommerceAccountEdit(string id)
         {
             InitializeComponent();
             InitData(id);
@@ -39,12 +39,12 @@ namespace Poseidon.Recovery.ClientDx
         #region Function
         private void InitData(string id)
         {
-            this.currentAccount = BusinessFactory<AccountBusiness>.Instance.FindById(id);
+            this.currentAccount = BusinessFactory<CommerceAccountBusiness>.Instance.FindById(id);
         }
 
         protected override void InitForm()
         {
-            this.bsAccount.DataSource = BusinessFactory<AccountBusiness>.Instance.FindAll();
+            this.bsAccount.DataSource = BusinessFactory<CommerceAccountBusiness>.Instance.FindAll();
             this.bsChargeBuilding.DataSource = BusinessFactory<ChargeBuildingBusiness>.Instance.FindAll();
 
             this.txtName.Text = this.currentAccount.Name;
@@ -87,7 +87,7 @@ namespace Poseidon.Recovery.ClientDx
         /// 设置实体
         /// </summary>
         /// <param name="entity"></param>
-        private void SetEntity(Account entity)
+        private void SetEntity(CommerceAccount entity)
         {
             entity.Name = this.txtName.Text;
             entity.ShortName = this.txtShortName.Text;
@@ -135,10 +135,10 @@ namespace Poseidon.Recovery.ClientDx
 
             try
             {
-                Account entity = BusinessFactory<AccountBusiness>.Instance.FindById(this.currentAccount.Id);
+                var entity = BusinessFactory<CommerceAccountBusiness>.Instance.FindById(this.currentAccount.Id);
                 SetEntity(entity);
 
-                BusinessFactory<AccountBusiness>.Instance.Update(entity);
+                BusinessFactory<CommerceAccountBusiness>.Instance.Update(entity);
 
                 MessageUtil.ShowInfo("保存成功");
                 this.Close();

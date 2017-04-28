@@ -15,7 +15,7 @@ namespace Poseidon.Recovery.Core.Utility
         /// <summary>
         /// 回收账户分组代码
         /// </summary>
-        public static readonly string RecoveryAccountGroupCode = "RecoveryAccount";
+        public static readonly string RecoveryAccountGroupCode = "CommerceRecoveryAccount";
 
         /// <summary>
         /// 计费建筑分组代码

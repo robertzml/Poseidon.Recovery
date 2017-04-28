@@ -15,12 +15,12 @@ namespace Poseidon.Recovery.ClientDx
     using Poseidon.Recovery.Core.DL;
 
     /// <summary>
-    /// 账户表格控件
+    /// 经营类账户表格控件
     /// </summary>
-    public partial class AccountGrid : WinEntityGrid<Account>
+    public partial class CommerceAccountGrid : WinEntityGrid<CommerceAccount>
     {
         #region Constructor
-        public AccountGrid()
+        public CommerceAccountGrid()
         {
             InitializeComponent();
         }
@@ -38,7 +38,7 @@ namespace Poseidon.Recovery.ClientDx
             if (rowIndex < 0 || rowIndex >= this.bsEntity.Count)
                 return;
 
-            var record = this.bsEntity[rowIndex] as Account;
+            var record = this.bsEntity[rowIndex] as CommerceAccount;
 
             if (e.Column.FieldName == "ParentId")
             {

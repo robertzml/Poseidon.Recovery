@@ -19,10 +19,6 @@ namespace Poseidon.Recovery.Core.DAL.Mongo
     internal class AccountRepository : AbstractDALMongo<Account>, IAccountRepository
     {
         #region Field
-        /// <summary>
-        /// 模型类型
-        /// </summary>
-        private readonly string modelType = Utility.ModelTypeCode.Account;
         #endregion //Field
 
         #region Constructor
@@ -54,9 +50,6 @@ namespace Poseidon.Recovery.Core.DAL.Mongo
 
             if (doc.Contains("parentId"))
                 entity.ParentId = doc["parentId"].ToString();
-
-            if (doc.Contains("chargeBuildingId"))
-                entity.ChargeBuildingId = doc["chargeBuildingId"].ToString();
 
             if (doc.Contains("closeYear"))
                 entity.CloseYear = doc["closeYear"].ToInt32();
@@ -102,73 +95,11 @@ namespace Poseidon.Recovery.Core.DAL.Mongo
         /// <returns></returns>
         protected override BsonDocument EntityToDoc(Account entity)
         {
-            BsonDocument doc = new BsonDocument
-            {
-                { "name", entity.Name },
-                { "shortName", entity.ShortName },
-                { "modelType", entity.ModelType },
-                { "openYear", entity.OpenYear },
-                { "remark", entity.Remark },
-                { "status", entity.Status }
-            };
-
-            if (!string.IsNullOrEmpty(entity.ParentId))
-                doc.Add("parentId", entity.ParentId);
-
-            if (!string.IsNullOrEmpty(entity.ChargeBuildingId))
-                doc.Add("chargeBuildingId", entity.ChargeBuildingId);
-
-            if (entity.CloseYear != null)
-                doc.Add("closeYear", entity.CloseYear.Value);
-
-            if (entity.EnergyType != null && entity.EnergyType.Count > 0)
-            {
-                BsonArray array = new BsonArray();
-                foreach (var item in entity.EnergyType)
-                {
-                    array.Add(item);
-                }
-
-                doc.Add("energyType", array);
-            }
-
-            if (entity.Meters != null && entity.Meters.Count > 0)
-            {
-                BsonArray array = new BsonArray();
-                foreach (var item in entity.Meters)
-                {
-                    BsonDocument sub = new BsonDocument
-                    {
-                        { "id", item.Id },
-                        { "name", item.Name },
-                        { "number", item.Number },
-                        { "energyType", item.EnergyType },
-                        { "chargeType", item.ChargeType },
-                        { "address", item.Address },
-                        { "multiple", item.Multiple },
-                        { "remark", item.Remark },
-                        { "status", item.Status }
-                    };
-                    array.Add(sub);
-                }
-
-                doc.Add("meters", array);
-            }
-
-            return doc;
+            throw new NotImplementedException();
         }
         #endregion //Function
 
         #region Method
-        /// <summary>
-        /// 查找所有对象
-        /// </summary>
-        /// <returns></returns>
-        public override IEnumerable<Account> FindAll()
-        {
-            return base.FindListByField("modelType", this.modelType);
-        }
-
         /// <summary>
         /// 设置表具
         /// </summary>
@@ -176,27 +107,31 @@ namespace Poseidon.Recovery.Core.DAL.Mongo
         /// <param name="meters">表具列表</param>
         public void SetMeters(string id, List<Meter> meters)
         {
-            foreach(var item in meters)
+            BsonArray array = new BsonArray();
+            foreach (var item in meters)
             {
                 if (string.IsNullOrEmpty(item.Id))
                     item.Id = ObjectId.GenerateNewId().ToString();
+
+                BsonDocument sub = new BsonDocument
+                {
+                    { "id", item.Id },
+                    { "name", item.Name },
+                    { "number", item.Number },
+                    { "energyType", item.EnergyType },
+                    { "chargeType", item.ChargeType },
+                    { "address", item.Address },
+                    { "multiple", item.Multiple },
+                    { "remark", item.Remark },
+                    { "status", item.Status }
+                };
+                array.Add(sub);
             }
 
-            var entity = base.FindById(id);
-            entity.Meters = meters;
-            base.Update(entity);
-        }
+            var filter = Builders<BsonDocument>.Filter.Eq("_id", new ObjectId(id));
+            var update = Builders<BsonDocument>.Update.Set("meters", array);
 
-        /// <summary>
-        /// 添加回收账户
-        /// </summary>
-        /// <param name="entity">实体对象</param>
-        /// <returns></returns>
-        public override Account Create(Account entity)
-        {
-            entity.ModelType = this.modelType;
-            entity.Status = 0;
-            return base.Create(entity);
+            base.Update(filter, update);
         }
         #endregion //Method
     }

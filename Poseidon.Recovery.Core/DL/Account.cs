@@ -29,12 +29,6 @@ namespace Poseidon.Recovery.Core.DL
         public List<int> EnergyType { get; set; }
 
         /// <summary>
-        /// 计费建筑
-        /// </summary>
-        [Display(Name = "计费建筑")]
-        public string ChargeBuildingId { get; set; }
-
-        /// <summary>
         /// 启用年份
         /// </summary>
         [Display(Name = "启用年份")]

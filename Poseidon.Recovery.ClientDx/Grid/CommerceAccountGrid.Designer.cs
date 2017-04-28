@@ -1,6 +1,6 @@
 ﻿namespace Poseidon.Recovery.ClientDx
 {
-    partial class AccountGrid
+    partial class CommerceAccountGrid
     {
         /// <summary> 
         /// 必需的设计器变量。
@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.colShortName = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colChargeBuildingId = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colShortName = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colOpenYear = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colCloseYear = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colContract = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -45,7 +45,7 @@
             // 
             // bsEntity
             // 
-            this.bsEntity.DataSource = typeof(Poseidon.Recovery.Core.DL.Account);
+            this.bsEntity.DataSource = typeof(Poseidon.Recovery.Core.DL.CommerceAccount);
             // 
             // dgcEntity
             // 
@@ -74,19 +74,20 @@
             this.dgvEntity.OptionsView.ShowGroupPanel = false;
             this.dgvEntity.CustomColumnDisplayText += new DevExpress.XtraGrid.Views.Base.CustomColumnDisplayTextEventHandler(this.dgvEntity_CustomColumnDisplayText);
             // 
+            // colChargeBuildingId
+            // 
+            this.colChargeBuildingId.Caption = "计费建筑";
+            this.colChargeBuildingId.FieldName = "ChargeBuildingId";
+            this.colChargeBuildingId.Name = "colChargeBuildingId";
+            this.colChargeBuildingId.Visible = true;
+            this.colChargeBuildingId.VisibleIndex = 3;
+            // 
             // colShortName
             // 
             this.colShortName.FieldName = "ShortName";
             this.colShortName.Name = "colShortName";
             this.colShortName.Visible = true;
             this.colShortName.VisibleIndex = 1;
-            // 
-            // colChargeBuildingId
-            // 
-            this.colChargeBuildingId.FieldName = "ChargeBuildingId";
-            this.colChargeBuildingId.Name = "colChargeBuildingId";
-            this.colChargeBuildingId.Visible = true;
-            this.colChargeBuildingId.VisibleIndex = 3;
             // 
             // colOpenYear
             // 
@@ -143,11 +144,11 @@
             this.colId.FieldName = "Id";
             this.colId.Name = "colId";
             // 
-            // AccountGrid
+            // CommerceAccountGrid
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Name = "AccountGrid";
+            this.Name = "CommerceAccountGrid";
             ((System.ComponentModel.ISupportInitialize)(this.bsEntity)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgcEntity)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEntity)).EndInit();
@@ -157,8 +158,8 @@
 
         #endregion
 
-        private DevExpress.XtraGrid.Columns.GridColumn colShortName;
         private DevExpress.XtraGrid.Columns.GridColumn colChargeBuildingId;
+        private DevExpress.XtraGrid.Columns.GridColumn colShortName;
         private DevExpress.XtraGrid.Columns.GridColumn colOpenYear;
         private DevExpress.XtraGrid.Columns.GridColumn colCloseYear;
         private DevExpress.XtraGrid.Columns.GridColumn colContract;

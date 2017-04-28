@@ -1,6 +1,6 @@
 ﻿namespace Poseidon.Recovery.ClientDx
 {
-    partial class FrmAccountAdd
+    partial class FrmCommerceAccountAdd
     {
         /// <summary>
         /// Required designer variable.
@@ -28,10 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
             this.tluChargeBuilding = new DevExpress.XtraEditors.TreeListLookUpEdit();
-            this.bsChargeBuilding = new System.Windows.Forms.BindingSource();
+            this.bsChargeBuilding = new System.Windows.Forms.BindingSource(this.components);
             this.treeList1 = new DevExpress.XtraTreeList.TreeList();
             this.colName1 = new DevExpress.XtraTreeList.Columns.TreeListColumn();
             this.colRemark1 = new DevExpress.XtraTreeList.Columns.TreeListColumn();
@@ -42,7 +43,7 @@
             this.chkType2 = new DevExpress.XtraEditors.CheckEdit();
             this.chkType1 = new DevExpress.XtraEditors.CheckEdit();
             this.tluParent = new DevExpress.XtraEditors.TreeListLookUpEdit();
-            this.bsAccount = new System.Windows.Forms.BindingSource();
+            this.bsAccount = new System.Windows.Forms.BindingSource(this.components);
             this.treeListLookUpEdit1TreeList = new DevExpress.XtraTreeList.TreeList();
             this.colName = new DevExpress.XtraTreeList.Columns.TreeListColumn();
             this.colRemark = new DevExpress.XtraTreeList.Columns.TreeListColumn();
@@ -286,7 +287,7 @@
             // 
             // bsAccount
             // 
-            this.bsAccount.DataSource = typeof(Poseidon.Recovery.Core.DL.Account);
+            this.bsAccount.DataSource = typeof(Poseidon.Recovery.Core.DL.CommerceAccount);
             // 
             // treeListLookUpEdit1TreeList
             // 
@@ -447,13 +448,13 @@
             this.layoutControlItem11.Text = "计费建筑";
             this.layoutControlItem11.TextSize = new System.Drawing.Size(48, 14);
             // 
-            // FrmAccountAdd
+            // FrmCommerceAccountAdd
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(364, 381);
-            this.Name = "FrmAccountAdd";
-            this.Text = "新增账户";
+            this.Name = "FrmCommerceAccountAdd";
+            this.Text = "新增经营类账户";
             ((System.ComponentModel.ISupportInitialize)(this.plFill)).EndInit();
             this.plFill.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.plBottom)).EndInit();

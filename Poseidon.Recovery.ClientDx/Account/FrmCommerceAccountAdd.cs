@@ -18,10 +18,10 @@ namespace Poseidon.Recovery.ClientDx
     /// <summary>
     /// 增加回收账户窗体
     /// </summary>
-    public partial class FrmAccountAdd : BaseSingleForm
+    public partial class FrmCommerceAccountAdd : BaseSingleForm
     {
         #region Constructor
-        public FrmAccountAdd()
+        public FrmCommerceAccountAdd()
         {
             InitializeComponent();
         }
@@ -30,7 +30,7 @@ namespace Poseidon.Recovery.ClientDx
         #region Function
         protected override void InitForm()
         {
-            this.bsAccount.DataSource = BusinessFactory<AccountBusiness>.Instance.FindAll();
+            this.bsAccount.DataSource = BusinessFactory<CommerceAccountBusiness>.Instance.FindAll();
             this.bsChargeBuilding.DataSource = BusinessFactory<ChargeBuildingBusiness>.Instance.FindAll();
 
             base.InitForm();
@@ -57,7 +57,7 @@ namespace Poseidon.Recovery.ClientDx
         /// 设置实体
         /// </summary>
         /// <param name="entity"></param>
-        private void SetEntity(Account entity)
+        private void SetEntity(CommerceAccount entity)
         {
             entity.Name = this.txtName.Text;
             entity.ShortName = this.txtShortName.Text;
@@ -106,10 +106,10 @@ namespace Poseidon.Recovery.ClientDx
 
             try
             {
-                Account entity = new Account();
+                CommerceAccount entity = new CommerceAccount();
                 SetEntity(entity);
 
-                BusinessFactory<AccountBusiness>.Instance.Create(entity);
+                BusinessFactory<CommerceAccountBusiness>.Instance.Create(entity);
 
                 MessageUtil.ShowInfo("保存成功");
                 this.Close();

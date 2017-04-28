@@ -52,8 +52,8 @@ namespace Poseidon.Recovery.ClientDx
             if (!string.IsNullOrEmpty(account.ParentId))
                 this.txtParent.Text = BusinessFactory<AccountBusiness>.Instance.FindById(account.ParentId).Name;
 
-            if (!string.IsNullOrEmpty(account.ChargeBuildingId))
-                this.txtChargeBuilding.Text = BusinessFactory<ChargeBuildingBusiness>.Instance.FindById(account.ChargeBuildingId).Name;
+            //if (!string.IsNullOrEmpty(account.ChargeBuildingId))
+            //    this.txtChargeBuilding.Text = BusinessFactory<ChargeBuildingBusiness>.Instance.FindById(account.ChargeBuildingId).Name;
 
             this.txtOpenYear.Text = $"{account.OpenYear}年";
             if (account.CloseYear != null && account.CloseYear != 0)
