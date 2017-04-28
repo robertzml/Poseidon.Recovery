@@ -65,6 +65,7 @@
             this.tabBusiness = new DevExpress.XtraTab.XtraTabControl();
             this.tabPageSettlement = new DevExpress.XtraTab.XtraTabPage();
             this.tabPageMeasure = new DevExpress.XtraTab.XtraTabPage();
+            this.measureMod = new Poseidon.Recovery.ClientDx.MeasureReceiptModule();
             this.tabPageRecycle = new DevExpress.XtraTab.XtraTabPage();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
@@ -104,20 +105,20 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tabBusiness)).BeginInit();
             this.tabBusiness.SuspendLayout();
+            this.tabPageMeasure.SuspendLayout();
             this.SuspendLayout();
             // 
             // tableLayoutPanel1
             // 
             this.tableLayoutPanel1.ColumnCount = 1;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 23F));
             this.tableLayoutPanel1.Controls.Add(this.groupControl1, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.tabBusiness, 0, 1);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 2;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 292F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 240F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(919, 645);
             this.tableLayoutPanel1.TabIndex = 0;
@@ -128,7 +129,7 @@
             this.groupControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupControl1.Location = new System.Drawing.Point(3, 3);
             this.groupControl1.Name = "groupControl1";
-            this.groupControl1.Size = new System.Drawing.Size(913, 286);
+            this.groupControl1.Size = new System.Drawing.Size(913, 234);
             this.groupControl1.TabIndex = 2;
             this.groupControl1.Text = "账户信息";
             // 
@@ -140,7 +141,7 @@
             this.layoutControl1.Location = new System.Drawing.Point(2, 21);
             this.layoutControl1.Name = "layoutControl1";
             this.layoutControl1.Root = this.layoutControlGroup1;
-            this.layoutControl1.Size = new System.Drawing.Size(909, 263);
+            this.layoutControl1.Size = new System.Drawing.Size(909, 211);
             this.layoutControl1.TabIndex = 0;
             this.layoutControl1.Text = "layoutControl1";
             // 
@@ -158,7 +159,7 @@
             this.tabInfo.Location = new System.Drawing.Point(12, 12);
             this.tabInfo.Name = "tabInfo";
             this.tabInfo.SelectedTabPage = this.tabPageBaseInfo;
-            this.tabInfo.Size = new System.Drawing.Size(748, 239);
+            this.tabInfo.Size = new System.Drawing.Size(748, 187);
             this.tabInfo.TabIndex = 0;
             this.tabInfo.TabPages.AddRange(new DevExpress.XtraTab.XtraTabPage[] {
             this.tabPageBaseInfo,
@@ -168,7 +169,7 @@
             // 
             this.tabPageBaseInfo.Controls.Add(this.layoutControl2);
             this.tabPageBaseInfo.Name = "tabPageBaseInfo";
-            this.tabPageBaseInfo.Size = new System.Drawing.Size(742, 210);
+            this.tabPageBaseInfo.Size = new System.Drawing.Size(742, 158);
             this.tabPageBaseInfo.Text = "基本信息";
             // 
             // layoutControl2
@@ -187,7 +188,7 @@
             this.layoutControl2.Location = new System.Drawing.Point(0, 0);
             this.layoutControl2.Name = "layoutControl2";
             this.layoutControl2.Root = this.layoutControlGroup2;
-            this.layoutControl2.Size = new System.Drawing.Size(742, 210);
+            this.layoutControl2.Size = new System.Drawing.Size(742, 158);
             this.layoutControl2.TabIndex = 0;
             this.layoutControl2.Text = "layoutControl2";
             // 
@@ -198,7 +199,7 @@
             this.txtRemark.Properties.Appearance.BackColor = System.Drawing.Color.Lavender;
             this.txtRemark.Properties.Appearance.Options.UseBackColor = true;
             this.txtRemark.Properties.ReadOnly = true;
-            this.txtRemark.Size = new System.Drawing.Size(406, 115);
+            this.txtRemark.Size = new System.Drawing.Size(406, 63);
             this.txtRemark.StyleController = this.layoutControl2;
             this.txtRemark.TabIndex = 13;
             // 
@@ -209,7 +210,7 @@
             this.txtContact.Properties.Appearance.BackColor = System.Drawing.Color.Lavender;
             this.txtContact.Properties.Appearance.Options.UseBackColor = true;
             this.txtContact.Properties.ReadOnly = true;
-            this.txtContact.Size = new System.Drawing.Size(206, 138);
+            this.txtContact.Size = new System.Drawing.Size(206, 86);
             this.txtContact.StyleController = this.layoutControl2;
             this.txtContact.TabIndex = 12;
             // 
@@ -316,7 +317,7 @@
             this.layoutControlItem12});
             this.layoutControlGroup2.Location = new System.Drawing.Point(0, 0);
             this.layoutControlGroup2.Name = "layoutControlGroup2";
-            this.layoutControlGroup2.Size = new System.Drawing.Size(742, 210);
+            this.layoutControlGroup2.Size = new System.Drawing.Size(742, 158);
             this.layoutControlGroup2.TextVisible = false;
             // 
             // layoutControlItem3
@@ -396,7 +397,7 @@
             this.layoutControlItem11.Control = this.txtContact;
             this.layoutControlItem11.Location = new System.Drawing.Point(461, 48);
             this.layoutControlItem11.Name = "layoutControlItem11";
-            this.layoutControlItem11.Size = new System.Drawing.Size(261, 142);
+            this.layoutControlItem11.Size = new System.Drawing.Size(261, 90);
             this.layoutControlItem11.Text = "联系方式";
             this.layoutControlItem11.TextSize = new System.Drawing.Size(48, 14);
             // 
@@ -405,7 +406,7 @@
             this.layoutControlItem12.Control = this.txtRemark;
             this.layoutControlItem12.Location = new System.Drawing.Point(0, 71);
             this.layoutControlItem12.Name = "layoutControlItem12";
-            this.layoutControlItem12.Size = new System.Drawing.Size(461, 119);
+            this.layoutControlItem12.Size = new System.Drawing.Size(461, 67);
             this.layoutControlItem12.Text = "备注";
             this.layoutControlItem12.TextSize = new System.Drawing.Size(48, 14);
             // 
@@ -413,7 +414,7 @@
             // 
             this.tabPageMeters.Controls.Add(this.meterGrid);
             this.tabPageMeters.Name = "tabPageMeters";
-            this.tabPageMeters.Size = new System.Drawing.Size(742, 210);
+            this.tabPageMeters.Size = new System.Drawing.Size(742, 158);
             this.tabPageMeters.Text = "包含表具";
             // 
             // meterGrid
@@ -432,7 +433,7 @@
             this.meterGrid.ShowLineNumber = true;
             this.meterGrid.ShowMenu = false;
             this.meterGrid.ShowNavigator = false;
-            this.meterGrid.Size = new System.Drawing.Size(742, 210);
+            this.meterGrid.Size = new System.Drawing.Size(742, 158);
             this.meterGrid.TabIndex = 0;
             // 
             // layoutControlGroup1
@@ -444,7 +445,7 @@
             this.layoutControlGroup3});
             this.layoutControlGroup1.Location = new System.Drawing.Point(0, 0);
             this.layoutControlGroup1.Name = "layoutControlGroup1";
-            this.layoutControlGroup1.Size = new System.Drawing.Size(909, 263);
+            this.layoutControlGroup1.Size = new System.Drawing.Size(909, 211);
             this.layoutControlGroup1.TextVisible = false;
             // 
             // layoutControlItem1
@@ -452,7 +453,7 @@
             this.layoutControlItem1.Control = this.tabInfo;
             this.layoutControlItem1.Location = new System.Drawing.Point(0, 0);
             this.layoutControlItem1.Name = "layoutControlItem1";
-            this.layoutControlItem1.Size = new System.Drawing.Size(752, 243);
+            this.layoutControlItem1.Size = new System.Drawing.Size(752, 191);
             this.layoutControlItem1.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem1.TextVisible = false;
             // 
@@ -462,7 +463,7 @@
             this.layoutControlItem2});
             this.layoutControlGroup3.Location = new System.Drawing.Point(752, 0);
             this.layoutControlGroup3.Name = "layoutControlGroup3";
-            this.layoutControlGroup3.Size = new System.Drawing.Size(137, 243);
+            this.layoutControlGroup3.Size = new System.Drawing.Size(137, 191);
             this.layoutControlGroup3.Text = "操作";
             // 
             // layoutControlItem2
@@ -470,17 +471,17 @@
             this.layoutControlItem2.Control = this.simpleButton1;
             this.layoutControlItem2.Location = new System.Drawing.Point(0, 0);
             this.layoutControlItem2.Name = "layoutControlItem2";
-            this.layoutControlItem2.Size = new System.Drawing.Size(113, 200);
+            this.layoutControlItem2.Size = new System.Drawing.Size(113, 148);
             this.layoutControlItem2.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem2.TextVisible = false;
             // 
             // tabBusiness
             // 
             this.tabBusiness.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tabBusiness.Location = new System.Drawing.Point(3, 295);
+            this.tabBusiness.Location = new System.Drawing.Point(3, 243);
             this.tabBusiness.Name = "tabBusiness";
             this.tabBusiness.SelectedTabPage = this.tabPageSettlement;
-            this.tabBusiness.Size = new System.Drawing.Size(913, 347);
+            this.tabBusiness.Size = new System.Drawing.Size(913, 399);
             this.tabBusiness.TabIndex = 3;
             this.tabBusiness.TabPages.AddRange(new DevExpress.XtraTab.XtraTabPage[] {
             this.tabPageSettlement,
@@ -490,19 +491,29 @@
             // tabPageSettlement
             // 
             this.tabPageSettlement.Name = "tabPageSettlement";
-            this.tabPageSettlement.Size = new System.Drawing.Size(907, 318);
+            this.tabPageSettlement.Size = new System.Drawing.Size(907, 370);
             this.tabPageSettlement.Text = "费用结算";
             // 
             // tabPageMeasure
             // 
+            this.tabPageMeasure.Controls.Add(this.measureMod);
             this.tabPageMeasure.Name = "tabPageMeasure";
-            this.tabPageMeasure.Size = new System.Drawing.Size(907, 318);
+            this.tabPageMeasure.Size = new System.Drawing.Size(907, 370);
             this.tabPageMeasure.Text = "抄表记录";
+            // 
+            // measureMod
+            // 
+            this.measureMod.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.measureMod.Editable = true;
+            this.measureMod.Location = new System.Drawing.Point(0, 0);
+            this.measureMod.Name = "measureMod";
+            this.measureMod.Size = new System.Drawing.Size(907, 370);
+            this.measureMod.TabIndex = 0;
             // 
             // tabPageRecycle
             // 
             this.tabPageRecycle.Name = "tabPageRecycle";
-            this.tabPageRecycle.Size = new System.Drawing.Size(907, 318);
+            this.tabPageRecycle.Size = new System.Drawing.Size(907, 370);
             this.tabPageRecycle.Text = "回收登记";
             // 
             // AccountReceiptModule
@@ -550,6 +561,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tabBusiness)).EndInit();
             this.tabBusiness.ResumeLayout(false);
+            this.tabPageMeasure.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -594,5 +606,6 @@
         private DevExpress.XtraTab.XtraTabPage tabPageSettlement;
         private DevExpress.XtraTab.XtraTabPage tabPageMeasure;
         private DevExpress.XtraTab.XtraTabPage tabPageRecycle;
+        private MeasureReceiptModule measureMod;
     }
 }

@@ -70,6 +70,11 @@ namespace Poseidon.Recovery.ClientDx
             this.meterGrid.Init();
             this.meterGrid.DataSource = account.Meters;
         }
+
+        private void DisplayMeasure(Account account)
+        {
+            this.measureMod.SetAccount(account);
+        }
         #endregion //Function
 
         #region Method
@@ -83,6 +88,7 @@ namespace Poseidon.Recovery.ClientDx
             this.nowYear = DateTime.Now.Year;
 
             DisplayInfo(currentAccount);
+            DisplayMeasure(currentAccount);
             //ClearDisplay();
             //DisplaySummary(this.currentAccount);
             //DisplayReceipt(this.currentAccount);

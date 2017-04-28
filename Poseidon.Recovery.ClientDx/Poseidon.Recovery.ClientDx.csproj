@@ -82,6 +82,12 @@
     <Compile Include="Grid\MeasureRecordGrid.Designer.cs">
       <DependentUpon>MeasureRecordGrid.cs</DependentUpon>
     </Compile>
+    <Compile Include="Mod\MeasureReceiptModule.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Mod\MeasureReceiptModule.Designer.cs">
+      <DependentUpon>MeasureReceiptModule.cs</DependentUpon>
+    </Compile>
     <Compile Include="Receipt\FrmMeasureAdd.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -188,6 +194,9 @@
     <None Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Grid\MeterGrid.resx">
       <DependentUpon>MeterGrid.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Mod\MeasureReceiptModule.resx">
+      <DependentUpon>MeasureReceiptModule.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Receipt\FrmMeasureAdd.resx">
       <DependentUpon>FrmMeasureAdd.cs</DependentUpon>

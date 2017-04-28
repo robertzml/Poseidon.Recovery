@@ -26,6 +26,11 @@ namespace Poseidon.Recovery.ClientDx
         /// 是否显示上期数
         /// </summary>
         private bool showPrevious = false;
+
+        /// <summary>
+        /// 上期用能记录
+        /// </summary>
+        private List<MeasureRecord> previousRecords;
         #endregion //Field
 
         #region Constructor
@@ -44,6 +49,21 @@ namespace Poseidon.Recovery.ClientDx
             ControlUtil.BindEnumToComboBox(this.cmbEnergyType, typeof(MeterEnergyType));
             ControlUtil.BindEnumToComboBox(this.cmbChargeType, typeof(MeterChargeType));
         }
+
+        /// <summary>
+        /// 设置参考用能数据
+        /// </summary>
+        /// <param name="records"></param>
+        public void SetPrevious(List<MeasureRecord> records)
+        {
+            this.previousRecords = records;
+
+            //re update the unbound column
+            this.dgvEntity.Columns.Remove(this.colPrevious);
+            this.dgvEntity.Columns.Add(this.colPrevious);
+            this.colPrevious.Visible = true;
+            this.colPrevious.VisibleIndex = 5;
+        }
         #endregion //Method
 
         #region Event
@@ -56,6 +76,29 @@ namespace Poseidon.Recovery.ClientDx
         {
             this.colPrevious.Visible = this.showPrevious;
             this.colQuantum.Visible = this.showPrevious;
+        }
+
+        /// <summary>
+        /// 自定义数据显示
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void dgvEntity_CustomUnboundColumnData(object sender, DevExpress.XtraGrid.Views.Base.CustomColumnDataEventArgs e)
+        {
+            int rowIndex = e.ListSourceRowIndex;
+            if (rowIndex < 0 || rowIndex >= this.bsEntity.Count || this.previousRecords == null)
+                return;
+
+            var record = this.bsEntity[rowIndex] as MeasureRecord;
+
+            if (e.Column.FieldName == "colPrevious" && e.IsGetData)
+            {
+                var previous = this.previousRecords.Find(r => r.MeterName == record.MeterName && r.MeterNumber == record.MeterNumber);
+                if (previous != null)
+                    e.Value = previous.Indication;
+                else
+                    e.Value = 0;
+            }
         }
         #endregion //Event
 
@@ -77,5 +120,6 @@ namespace Poseidon.Recovery.ClientDx
             }
         }
         #endregion //Property
+
     }
 }
