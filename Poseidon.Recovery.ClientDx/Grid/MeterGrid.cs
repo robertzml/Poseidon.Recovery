@@ -14,6 +14,7 @@ namespace Poseidon.Recovery.ClientDx
     using Poseidon.Base.Framework;
     using Poseidon.Common;
     using Poseidon.Winform.Base;
+    using Poseidon.Winform.Core.Utility;
     using Poseidon.Recovery.Core.BL;
     using Poseidon.Recovery.Core.DL;
     using Poseidon.Recovery.Core.Utility;
@@ -30,28 +31,14 @@ namespace Poseidon.Recovery.ClientDx
         }
         #endregion //Constructor
 
-        #region Function
-        private void BindEnum(RepositoryItemImageComboBox cmb, Type type)
-        {
-            foreach (Enum item in Enum.GetValues(type))
-            {
-                cmb.Items.Add(new ImageComboBoxItem
-                {
-                    Description = item.DisplayName(),
-                    Value = Convert.ToInt32(item)
-                });
-            }
-        }
-        #endregion //Function
-
         #region Method
         /// <summary>
         /// 初始化
         /// </summary>
         public void Init()
         {
-            BindEnum(this.cmbEnergyType, typeof(MeterEnergyType));
-            BindEnum(this.cmbChargeType, typeof(MeterChargeType));
+            ControlUtil.BindEnumToComboBox(this.cmbEnergyType, typeof(MeterEnergyType));
+            ControlUtil.BindEnumToComboBox(this.cmbChargeType, typeof(MeterChargeType));
         }
         #endregion //Method
     }

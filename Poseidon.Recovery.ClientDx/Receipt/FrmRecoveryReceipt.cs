@@ -15,6 +15,7 @@ namespace Poseidon.Recovery.ClientDx
     using Poseidon.Winform.Base;
     using Poseidon.Recovery.Core.BL;
     using Poseidon.Recovery.Core.DL;
+    using Poseidon.Recovery.Core.Utility;
 
     /// <summary>
     /// 费用回收单据窗体
@@ -27,5 +28,28 @@ namespace Poseidon.Recovery.ClientDx
             InitializeComponent();
         }
         #endregion //Constructor
+
+        #region Function
+        protected override void InitForm()
+        {
+            this.accountTree.SetGroupCode(RecoveryConstant.RecoveryAccountGroupCode);
+
+            base.InitForm();
+        }
+        #endregion //Function
+
+        #region Event
+        /// <summary>
+        /// 账户选择
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void accountTree_EntitySelected(object sender, EventArgs e)
+        {
+            this.navFrame.SelectedPageIndex = 1;
+            var accountId = this.accountTree.GetCurrentSelectId();
+            this.accountReceiptMod.SetAccount(accountId);
+        }
+        #endregion //Event
     }
 }
