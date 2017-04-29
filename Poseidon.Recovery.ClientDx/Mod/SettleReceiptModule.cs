@@ -40,6 +40,37 @@ namespace Poseidon.Recovery.ClientDx
         }
         #endregion //Constructor
 
+        #region Function
+        /// <summary>
+        /// 载入结算数据
+        /// </summary>
+        /// <param name="account"></param>
+        private void LoadData(Account account)
+        {
+            this.bsSettle.DataSource = BusinessFactory<SettleBusiness>.Instance.FindByAccount(account.Id);
+        }
+
+        /// <summary>
+        /// 显示结算信息
+        /// </summary>
+        /// <param name="settle"></param>
+        private void ShowSettleInfo(Settle settle)
+        {
+            this.txtPeriod.Text = settle.Period;
+            this.txtSettleDate.Text = settle.SettleDate.ToDateString();
+            this.txtPreviousDate.Text = settle.PreviousDate.ToDateString();
+            this.txtCurrentDate.Text = settle.CurrentDate.ToDateString();
+            this.txtTotalAmount.Text = settle.TotalAmount.ToString();
+            this.txtRemark.Text = settle.Remark;
+            this.txtCreateUser.Text = settle.CreateBy.Name;
+            this.txtCreateTime.Text = settle.CreateBy.Time.ToDateTimeString();
+            this.txtEditUser.Text = settle.UpdateBy.Name;
+            this.txtEditTime.Text = settle.UpdateBy.Time.ToDateTimeString();
+
+            this.settleRecordGrid.DataSource = settle.Records;
+        }
+        #endregion //Function
+
         #region Method
         /// <summary>
         /// 设置账户
@@ -49,12 +80,58 @@ namespace Poseidon.Recovery.ClientDx
         {
             this.currentAccount = account;
 
-            //this.measureRecordGrid.Init();
-            //LoadData(account);
+            this.settleRecordGrid.Init();
+            LoadData(account);
+        }
+
+        /// <summary>
+        /// 清空显示
+        /// </summary>
+        private void Clear()
+        {
+            this.txtPeriod.Text = "";
+            this.txtSettleDate.Text = "";
+            this.txtPreviousDate.Text = "";
+            this.txtCurrentDate.Text = "";
+            this.txtTotalAmount.Text = "";
+            this.txtRemark.Text = "";
+            this.txtCreateUser.Text = "";
+            this.txtCreateTime.Text = "";
+            this.txtEditUser.Text = "";
+            this.txtEditTime.Text = "";
+
+            this.settleRecordGrid.Clear();
         }
         #endregion //Method
 
         #region Event
+        /// <summary>
+        /// 控件载入
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void SettleReceiptModule_Load(object sender, EventArgs e)
+        {
+            if (!this.editable)
+                this.lcgAction.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Never;
+        }
+
+        /// <summary>
+        /// 选择费用结算
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void lbSettles_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (this.lbSettles.SelectedValue == null)
+            {
+                Clear();
+                return;
+            }
+
+            ShowSettleInfo(this.lbSettles.SelectedItem as Settle);
+        }
+
         /// <summary>
         /// 新增费用结算
         /// </summary>
@@ -63,8 +140,26 @@ namespace Poseidon.Recovery.ClientDx
         private void btnAdd_Click(object sender, EventArgs e)
         {
             ChildFormManage.ShowDialogForm(typeof(FrmSettleAdd), new object[] { this.currentAccount.Id });
-            //LoadData(this.currentAccount);
+            LoadData(this.currentAccount);
         }
         #endregion //Event
+
+        #region Property
+        /// <summary>
+        /// 是否能编辑
+        /// </summary>
+        [Description("是否能编辑"), Category("功能"), Browsable(true)]
+        public bool Editable
+        {
+            get
+            {
+                return this.editable;
+            }
+            set
+            {
+                this.editable = value;
+            }
+        }
+        #endregion //Property
     }
 }

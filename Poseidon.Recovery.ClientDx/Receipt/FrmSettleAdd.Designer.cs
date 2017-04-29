@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
@@ -52,6 +53,11 @@
             this.layoutControlItem9 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem5 = new DevExpress.XtraLayout.LayoutControlItem();
             this.groupControl2 = new DevExpress.XtraEditors.GroupControl();
+            this.luPreviousMeasure = new DevExpress.XtraEditors.LookUpEdit();
+            this.layoutControlItem10 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.luCurrentMeasure = new DevExpress.XtraEditors.LookUpEdit();
+            this.layoutControlItem11 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.bsMeasure = new System.Windows.Forms.BindingSource(this.components);
             this.settleRecordGrid = new Poseidon.Recovery.ClientDx.SettleRecordGrid();
             ((System.ComponentModel.ISupportInitialize)(this.plFill)).BeginInit();
             this.plFill.SuspendLayout();
@@ -86,6 +92,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).BeginInit();
             this.groupControl2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.luPreviousMeasure.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem10)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.luCurrentMeasure.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem11)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bsMeasure)).BeginInit();
             this.SuspendLayout();
             // 
             // btnCancel
@@ -102,14 +113,14 @@
             this.plFill.Appearance.BackColor = System.Drawing.Color.White;
             this.plFill.Appearance.Options.UseBackColor = true;
             this.plFill.Controls.Add(this.tableLayoutPanel1);
-            this.plFill.Size = new System.Drawing.Size(744, 445);
+            this.plFill.Size = new System.Drawing.Size(784, 501);
             // 
             // plBottom
             // 
             this.plBottom.Appearance.BackColor = System.Drawing.Color.White;
             this.plBottom.Appearance.Options.UseBackColor = true;
-            this.plBottom.Location = new System.Drawing.Point(0, 445);
-            this.plBottom.Size = new System.Drawing.Size(744, 60);
+            this.plBottom.Location = new System.Drawing.Point(0, 501);
+            this.plBottom.Size = new System.Drawing.Size(784, 60);
             // 
             // tableLayoutPanel1
             // 
@@ -124,7 +135,7 @@
             this.tableLayoutPanel1.RowCount = 2;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 200F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(744, 445);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(784, 501);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
             // groupControl1
@@ -133,12 +144,14 @@
             this.groupControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupControl1.Location = new System.Drawing.Point(3, 3);
             this.groupControl1.Name = "groupControl1";
-            this.groupControl1.Size = new System.Drawing.Size(738, 194);
+            this.groupControl1.Size = new System.Drawing.Size(778, 194);
             this.groupControl1.TabIndex = 0;
             this.groupControl1.Text = "结算信息";
             // 
             // layoutControl1
             // 
+            this.layoutControl1.Controls.Add(this.luCurrentMeasure);
+            this.layoutControl1.Controls.Add(this.luPreviousMeasure);
             this.layoutControl1.Controls.Add(this.txtPeriod);
             this.layoutControl1.Controls.Add(this.btnCalc);
             this.layoutControl1.Controls.Add(this.txtRemark);
@@ -152,15 +165,15 @@
             this.layoutControl1.Location = new System.Drawing.Point(2, 21);
             this.layoutControl1.Name = "layoutControl1";
             this.layoutControl1.Root = this.layoutControlGroup1;
-            this.layoutControl1.Size = new System.Drawing.Size(734, 171);
+            this.layoutControl1.Size = new System.Drawing.Size(774, 171);
             this.layoutControl1.TabIndex = 0;
             this.layoutControl1.Text = "layoutControl1";
             // 
             // txtPeriod
             // 
-            this.txtPeriod.Location = new System.Drawing.Point(333, 12);
+            this.txtPeriod.Location = new System.Drawing.Point(348, 12);
             this.txtPeriod.Name = "txtPeriod";
-            this.txtPeriod.Size = new System.Drawing.Size(170, 20);
+            this.txtPeriod.Size = new System.Drawing.Size(183, 20);
             this.txtPeriod.StyleController = this.layoutControl1;
             this.txtPeriod.TabIndex = 13;
             // 
@@ -168,7 +181,7 @@
             // 
             this.btnCalc.Location = new System.Drawing.Point(12, 137);
             this.btnCalc.Name = "btnCalc";
-            this.btnCalc.Size = new System.Drawing.Size(266, 22);
+            this.btnCalc.Size = new System.Drawing.Size(281, 22);
             this.btnCalc.StyleController = this.layoutControl1;
             this.btnCalc.TabIndex = 12;
             this.btnCalc.Text = "计算金额";
@@ -178,7 +191,7 @@
             // 
             this.txtRemark.Location = new System.Drawing.Point(63, 84);
             this.txtRemark.Name = "txtRemark";
-            this.txtRemark.Size = new System.Drawing.Size(659, 49);
+            this.txtRemark.Size = new System.Drawing.Size(699, 25);
             this.txtRemark.StyleController = this.layoutControl1;
             this.txtRemark.TabIndex = 11;
             // 
@@ -186,7 +199,7 @@
             // 
             this.textEdit1.Location = new System.Drawing.Point(63, 60);
             this.textEdit1.Name = "textEdit1";
-            this.textEdit1.Size = new System.Drawing.Size(659, 20);
+            this.textEdit1.Size = new System.Drawing.Size(699, 20);
             this.textEdit1.StyleController = this.layoutControl1;
             this.textEdit1.TabIndex = 10;
             // 
@@ -197,18 +210,18 @@
             0,
             0,
             0});
-            this.spTotalAmount.Location = new System.Drawing.Point(558, 36);
+            this.spTotalAmount.Location = new System.Drawing.Point(586, 36);
             this.spTotalAmount.Name = "spTotalAmount";
             this.spTotalAmount.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.spTotalAmount.Size = new System.Drawing.Size(164, 20);
+            this.spTotalAmount.Size = new System.Drawing.Size(176, 20);
             this.spTotalAmount.StyleController = this.layoutControl1;
             this.spTotalAmount.TabIndex = 8;
             // 
             // dpCurrentDate
             // 
             this.dpCurrentDate.EditValue = null;
-            this.dpCurrentDate.Location = new System.Drawing.Point(333, 36);
+            this.dpCurrentDate.Location = new System.Drawing.Point(348, 36);
             this.dpCurrentDate.Name = "dpCurrentDate";
             this.dpCurrentDate.Properties.AllowNullInput = DevExpress.Utils.DefaultBoolean.False;
             this.dpCurrentDate.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
@@ -216,7 +229,7 @@
             this.dpCurrentDate.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.dpCurrentDate.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
-            this.dpCurrentDate.Size = new System.Drawing.Size(170, 20);
+            this.dpCurrentDate.Size = new System.Drawing.Size(183, 20);
             this.dpCurrentDate.StyleController = this.layoutControl1;
             this.dpCurrentDate.TabIndex = 7;
             // 
@@ -231,14 +244,14 @@
             this.dpPreviousDate.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.dpPreviousDate.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
-            this.dpPreviousDate.Size = new System.Drawing.Size(215, 20);
+            this.dpPreviousDate.Size = new System.Drawing.Size(230, 20);
             this.dpPreviousDate.StyleController = this.layoutControl1;
             this.dpPreviousDate.TabIndex = 6;
             // 
             // dpSettleDate
             // 
             this.dpSettleDate.EditValue = null;
-            this.dpSettleDate.Location = new System.Drawing.Point(558, 12);
+            this.dpSettleDate.Location = new System.Drawing.Point(586, 12);
             this.dpSettleDate.Name = "dpSettleDate";
             this.dpSettleDate.Properties.AllowNullInput = DevExpress.Utils.DefaultBoolean.False;
             this.dpSettleDate.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
@@ -246,7 +259,7 @@
             this.dpSettleDate.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.dpSettleDate.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
-            this.dpSettleDate.Size = new System.Drawing.Size(164, 20);
+            this.dpSettleDate.Size = new System.Drawing.Size(176, 20);
             this.dpSettleDate.StyleController = this.layoutControl1;
             this.dpSettleDate.TabIndex = 5;
             // 
@@ -257,7 +270,7 @@
             this.txtAccountName.Properties.Appearance.BackColor = System.Drawing.Color.Lavender;
             this.txtAccountName.Properties.Appearance.Options.UseBackColor = true;
             this.txtAccountName.Properties.ReadOnly = true;
-            this.txtAccountName.Size = new System.Drawing.Size(215, 20);
+            this.txtAccountName.Size = new System.Drawing.Size(230, 20);
             this.txtAccountName.StyleController = this.layoutControl1;
             this.txtAccountName.TabIndex = 4;
             // 
@@ -275,10 +288,12 @@
             this.layoutControlItem8,
             this.emptySpaceItem1,
             this.layoutControlItem9,
-            this.layoutControlItem5});
+            this.layoutControlItem5,
+            this.layoutControlItem10,
+            this.layoutControlItem11});
             this.layoutControlGroup1.Location = new System.Drawing.Point(0, 0);
             this.layoutControlGroup1.Name = "layoutControlGroup1";
-            this.layoutControlGroup1.Size = new System.Drawing.Size(734, 171);
+            this.layoutControlGroup1.Size = new System.Drawing.Size(774, 171);
             this.layoutControlGroup1.TextVisible = false;
             // 
             // layoutControlItem1
@@ -286,16 +301,16 @@
             this.layoutControlItem1.Control = this.txtAccountName;
             this.layoutControlItem1.Location = new System.Drawing.Point(0, 0);
             this.layoutControlItem1.Name = "layoutControlItem1";
-            this.layoutControlItem1.Size = new System.Drawing.Size(270, 24);
+            this.layoutControlItem1.Size = new System.Drawing.Size(285, 24);
             this.layoutControlItem1.Text = "账户名称";
             this.layoutControlItem1.TextSize = new System.Drawing.Size(48, 14);
             // 
             // layoutControlItem2
             // 
             this.layoutControlItem2.Control = this.dpSettleDate;
-            this.layoutControlItem2.Location = new System.Drawing.Point(495, 0);
+            this.layoutControlItem2.Location = new System.Drawing.Point(523, 0);
             this.layoutControlItem2.Name = "layoutControlItem2";
-            this.layoutControlItem2.Size = new System.Drawing.Size(219, 24);
+            this.layoutControlItem2.Size = new System.Drawing.Size(231, 24);
             this.layoutControlItem2.Text = "结算日期";
             this.layoutControlItem2.TextSize = new System.Drawing.Size(48, 14);
             // 
@@ -304,16 +319,16 @@
             this.layoutControlItem3.Control = this.dpPreviousDate;
             this.layoutControlItem3.Location = new System.Drawing.Point(0, 24);
             this.layoutControlItem3.Name = "layoutControlItem3";
-            this.layoutControlItem3.Size = new System.Drawing.Size(270, 24);
+            this.layoutControlItem3.Size = new System.Drawing.Size(285, 24);
             this.layoutControlItem3.Text = "上期日期";
             this.layoutControlItem3.TextSize = new System.Drawing.Size(48, 14);
             // 
             // layoutControlItem4
             // 
             this.layoutControlItem4.Control = this.dpCurrentDate;
-            this.layoutControlItem4.Location = new System.Drawing.Point(270, 24);
+            this.layoutControlItem4.Location = new System.Drawing.Point(285, 24);
             this.layoutControlItem4.Name = "layoutControlItem4";
-            this.layoutControlItem4.Size = new System.Drawing.Size(225, 24);
+            this.layoutControlItem4.Size = new System.Drawing.Size(238, 24);
             this.layoutControlItem4.Text = "本期日期";
             this.layoutControlItem4.TextSize = new System.Drawing.Size(48, 14);
             // 
@@ -322,7 +337,7 @@
             this.layoutControlItem7.Control = this.textEdit1;
             this.layoutControlItem7.Location = new System.Drawing.Point(0, 48);
             this.layoutControlItem7.Name = "layoutControlItem7";
-            this.layoutControlItem7.Size = new System.Drawing.Size(714, 24);
+            this.layoutControlItem7.Size = new System.Drawing.Size(754, 24);
             this.layoutControlItem7.Text = "大写";
             this.layoutControlItem7.TextSize = new System.Drawing.Size(48, 14);
             // 
@@ -331,7 +346,7 @@
             this.layoutControlItem6.Control = this.txtRemark;
             this.layoutControlItem6.Location = new System.Drawing.Point(0, 72);
             this.layoutControlItem6.Name = "layoutControlItem6";
-            this.layoutControlItem6.Size = new System.Drawing.Size(714, 53);
+            this.layoutControlItem6.Size = new System.Drawing.Size(754, 29);
             this.layoutControlItem6.Text = "备注";
             this.layoutControlItem6.TextSize = new System.Drawing.Size(48, 14);
             // 
@@ -340,33 +355,33 @@
             this.layoutControlItem8.Control = this.btnCalc;
             this.layoutControlItem8.Location = new System.Drawing.Point(0, 125);
             this.layoutControlItem8.Name = "layoutControlItem8";
-            this.layoutControlItem8.Size = new System.Drawing.Size(270, 26);
+            this.layoutControlItem8.Size = new System.Drawing.Size(285, 26);
             this.layoutControlItem8.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem8.TextVisible = false;
             // 
             // emptySpaceItem1
             // 
             this.emptySpaceItem1.AllowHotTrack = false;
-            this.emptySpaceItem1.Location = new System.Drawing.Point(270, 125);
+            this.emptySpaceItem1.Location = new System.Drawing.Point(285, 125);
             this.emptySpaceItem1.Name = "emptySpaceItem1";
-            this.emptySpaceItem1.Size = new System.Drawing.Size(444, 26);
+            this.emptySpaceItem1.Size = new System.Drawing.Size(469, 26);
             this.emptySpaceItem1.TextSize = new System.Drawing.Size(0, 0);
             // 
             // layoutControlItem9
             // 
             this.layoutControlItem9.Control = this.txtPeriod;
-            this.layoutControlItem9.Location = new System.Drawing.Point(270, 0);
+            this.layoutControlItem9.Location = new System.Drawing.Point(285, 0);
             this.layoutControlItem9.Name = "layoutControlItem9";
-            this.layoutControlItem9.Size = new System.Drawing.Size(225, 24);
+            this.layoutControlItem9.Size = new System.Drawing.Size(238, 24);
             this.layoutControlItem9.Text = "用能周期";
             this.layoutControlItem9.TextSize = new System.Drawing.Size(48, 14);
             // 
             // layoutControlItem5
             // 
             this.layoutControlItem5.Control = this.spTotalAmount;
-            this.layoutControlItem5.Location = new System.Drawing.Point(495, 24);
+            this.layoutControlItem5.Location = new System.Drawing.Point(523, 24);
             this.layoutControlItem5.Name = "layoutControlItem5";
-            this.layoutControlItem5.Size = new System.Drawing.Size(219, 24);
+            this.layoutControlItem5.Size = new System.Drawing.Size(231, 24);
             this.layoutControlItem5.Text = "总金额";
             this.layoutControlItem5.TextSize = new System.Drawing.Size(48, 14);
             // 
@@ -376,9 +391,69 @@
             this.groupControl2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupControl2.Location = new System.Drawing.Point(3, 203);
             this.groupControl2.Name = "groupControl2";
-            this.groupControl2.Size = new System.Drawing.Size(738, 239);
+            this.groupControl2.Size = new System.Drawing.Size(778, 295);
             this.groupControl2.TabIndex = 1;
             this.groupControl2.Text = "结算记录";
+            // 
+            // luPreviousMeasure
+            // 
+            this.luPreviousMeasure.Location = new System.Drawing.Point(63, 113);
+            this.luPreviousMeasure.Name = "luPreviousMeasure";
+            this.luPreviousMeasure.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.luPreviousMeasure.Properties.Columns.AddRange(new DevExpress.XtraEditors.Controls.LookUpColumnInfo[] {
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("Id", "Id", 21, DevExpress.Utils.FormatType.None, "", false, DevExpress.Utils.HorzAlignment.Near),
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("MeasureDate", "抄表日期", 85, DevExpress.Utils.FormatType.DateTime, "yyyy/M/d", true, DevExpress.Utils.HorzAlignment.Near),
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("Remark", "备注", 51, DevExpress.Utils.FormatType.None, "", true, DevExpress.Utils.HorzAlignment.Near)});
+            this.luPreviousMeasure.Properties.DataSource = this.bsMeasure;
+            this.luPreviousMeasure.Properties.DisplayMember = "MeasureDate";
+            this.luPreviousMeasure.Properties.NullText = "请选择";
+            this.luPreviousMeasure.Properties.ValueMember = "Id";
+            this.luPreviousMeasure.Size = new System.Drawing.Size(322, 20);
+            this.luPreviousMeasure.StyleController = this.layoutControl1;
+            this.luPreviousMeasure.TabIndex = 14;
+            this.luPreviousMeasure.EditValueChanged += new System.EventHandler(this.luPreviousMeasure_EditValueChanged);
+            // 
+            // layoutControlItem10
+            // 
+            this.layoutControlItem10.Control = this.luPreviousMeasure;
+            this.layoutControlItem10.Location = new System.Drawing.Point(0, 101);
+            this.layoutControlItem10.Name = "layoutControlItem10";
+            this.layoutControlItem10.Size = new System.Drawing.Size(377, 24);
+            this.layoutControlItem10.Text = "上期抄表";
+            this.layoutControlItem10.TextSize = new System.Drawing.Size(48, 14);
+            // 
+            // luCurrentMeasure
+            // 
+            this.luCurrentMeasure.Location = new System.Drawing.Point(440, 113);
+            this.luCurrentMeasure.Name = "luCurrentMeasure";
+            this.luCurrentMeasure.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.luCurrentMeasure.Properties.Columns.AddRange(new DevExpress.XtraEditors.Controls.LookUpColumnInfo[] {
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("Id", "Id", 21, DevExpress.Utils.FormatType.None, "", false, DevExpress.Utils.HorzAlignment.Near),
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("MeasureDate", "抄表日期", 85, DevExpress.Utils.FormatType.DateTime, "yyyy/M/d", true, DevExpress.Utils.HorzAlignment.Near),
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("Remark", "备注", 51, DevExpress.Utils.FormatType.None, "", true, DevExpress.Utils.HorzAlignment.Near)});
+            this.luCurrentMeasure.Properties.DataSource = this.bsMeasure;
+            this.luCurrentMeasure.Properties.DisplayMember = "MeasureDate";
+            this.luCurrentMeasure.Properties.NullText = "请选择";
+            this.luCurrentMeasure.Properties.ValueMember = "Id";
+            this.luCurrentMeasure.Size = new System.Drawing.Size(322, 20);
+            this.luCurrentMeasure.StyleController = this.layoutControl1;
+            this.luCurrentMeasure.TabIndex = 15;
+            this.luCurrentMeasure.EditValueChanged += new System.EventHandler(this.luCurrentMeasure_EditValueChanged);
+            // 
+            // layoutControlItem11
+            // 
+            this.layoutControlItem11.Control = this.luCurrentMeasure;
+            this.layoutControlItem11.Location = new System.Drawing.Point(377, 101);
+            this.layoutControlItem11.Name = "layoutControlItem11";
+            this.layoutControlItem11.Size = new System.Drawing.Size(377, 24);
+            this.layoutControlItem11.Text = "本期抄表";
+            this.layoutControlItem11.TextSize = new System.Drawing.Size(48, 14);
+            // 
+            // bsMeasure
+            // 
+            this.bsMeasure.DataSource = typeof(Poseidon.Recovery.Core.DL.Measure);
             // 
             // settleRecordGrid
             // 
@@ -392,18 +467,19 @@
             this.settleRecordGrid.Location = new System.Drawing.Point(2, 21);
             this.settleRecordGrid.Name = "settleRecordGrid";
             this.settleRecordGrid.ShowAddMenu = false;
+            this.settleRecordGrid.ShowCalculate = true;
             this.settleRecordGrid.ShowFooter = true;
             this.settleRecordGrid.ShowLineNumber = true;
             this.settleRecordGrid.ShowMenu = false;
             this.settleRecordGrid.ShowNavigator = true;
-            this.settleRecordGrid.Size = new System.Drawing.Size(734, 216);
+            this.settleRecordGrid.Size = new System.Drawing.Size(774, 272);
             this.settleRecordGrid.TabIndex = 0;
             // 
             // FrmSettleAdd
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(744, 505);
+            this.ClientSize = new System.Drawing.Size(784, 561);
             this.Name = "FrmSettleAdd";
             this.Text = "费用结算";
             ((System.ComponentModel.ISupportInitialize)(this.plFill)).EndInit();
@@ -439,6 +515,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).EndInit();
             this.groupControl2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.luPreviousMeasure.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem10)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.luCurrentMeasure.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem11)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bsMeasure)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -470,5 +551,10 @@
         private DevExpress.XtraLayout.EmptySpaceItem emptySpaceItem1;
         private DevExpress.XtraEditors.TextEdit txtPeriod;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem9;
+        private DevExpress.XtraEditors.LookUpEdit luCurrentMeasure;
+        private System.Windows.Forms.BindingSource bsMeasure;
+        private DevExpress.XtraEditors.LookUpEdit luPreviousMeasure;
+        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem10;
+        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem11;
     }
 }

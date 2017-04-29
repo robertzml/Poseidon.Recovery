@@ -23,6 +23,13 @@ namespace Poseidon.Recovery.ClientDx
     /// </summary>
     public partial class SettleRecordGrid : WinEntityGrid<SettleRecord>
     {
+        #region Field
+        /// <summary>
+        /// 是否显示计算量
+        /// </summary>
+        private bool showCalculate;
+        #endregion //Field
+
         #region Constructor
         public SettleRecordGrid()
         {
@@ -36,8 +43,35 @@ namespace Poseidon.Recovery.ClientDx
         /// </summary>
         public void Init()
         {
-            ControlUtil.BindEnumToComboBox(this.cmbMeterType, typeof(MeterEnergyType));          
+            ControlUtil.BindEnumToComboBox(this.cmbMeterType, typeof(MeterEnergyType));
         }
         #endregion //Method
+
+        #region Event
+        private void SettleRecordGrid_Load(object sender, EventArgs e)
+        {
+            this.colCalQuantum.Visible = this.showCalculate;
+            this.colCalAmount.Visible = this.showCalculate;
+        }
+        #endregion //Event
+
+        #region Property
+        /// <summary>
+        /// 是否显示计算量
+        /// </summary>
+        [Description("是否显示计算量"), Category("界面"), Browsable(true)]
+        public bool ShowCalculate
+        {
+            get
+            {
+                return showCalculate;
+            }
+
+            set
+            {
+                showCalculate = value;
+            }
+        }
+        #endregion //Property
     }
 }

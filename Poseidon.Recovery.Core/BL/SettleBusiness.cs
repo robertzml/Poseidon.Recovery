@@ -28,6 +28,16 @@ namespace Poseidon.Recovery.Core.BL
 
         #region Method
         /// <summary>
+        /// 获取账户费用结算
+        /// </summary>
+        /// <param name="accountId">回收账户ID</param>
+        /// <returns></returns>
+        public IEnumerable<Settle> FindByAccount(string accountId)
+        {
+            return this.baseDal.FindListByField("accountId", accountId).OrderByDescending(r => r.CurrentDate);
+        }
+
+        /// <summary>
         /// 添加费用结算
         /// </summary>
         /// <param name="entity">实体对象</param>

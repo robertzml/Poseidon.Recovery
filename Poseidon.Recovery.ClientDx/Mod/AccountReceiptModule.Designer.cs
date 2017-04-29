@@ -64,10 +64,10 @@
             this.layoutControlItem2 = new DevExpress.XtraLayout.LayoutControlItem();
             this.tabBusiness = new DevExpress.XtraTab.XtraTabControl();
             this.tabPageSettlement = new DevExpress.XtraTab.XtraTabPage();
+            this.settleMod = new Poseidon.Recovery.ClientDx.SettleReceiptModule();
             this.tabPageRecycle = new DevExpress.XtraTab.XtraTabPage();
             this.tabPageMeasure = new DevExpress.XtraTab.XtraTabPage();
             this.measureMod = new Poseidon.Recovery.ClientDx.MeasureReceiptModule();
-            this.settleMod = new Poseidon.Recovery.ClientDx.SettleReceiptModule();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
             this.groupControl1.SuspendLayout();
@@ -497,6 +497,15 @@
             this.tabPageSettlement.Size = new System.Drawing.Size(907, 370);
             this.tabPageSettlement.Text = "费用结算";
             // 
+            // settleMod
+            // 
+            this.settleMod.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.settleMod.Editable = true;
+            this.settleMod.Location = new System.Drawing.Point(0, 0);
+            this.settleMod.Name = "settleMod";
+            this.settleMod.Size = new System.Drawing.Size(907, 370);
+            this.settleMod.TabIndex = 0;
+            // 
             // tabPageRecycle
             // 
             this.tabPageRecycle.Name = "tabPageRecycle";
@@ -518,14 +527,6 @@
             this.measureMod.Name = "measureMod";
             this.measureMod.Size = new System.Drawing.Size(907, 370);
             this.measureMod.TabIndex = 0;
-            // 
-            // settleMod
-            // 
-            this.settleMod.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.settleMod.Location = new System.Drawing.Point(0, 0);
-            this.settleMod.Name = "settleMod";
-            this.settleMod.Size = new System.Drawing.Size(907, 370);
-            this.settleMod.TabIndex = 0;
             // 
             // AccountReceiptModule
             // 

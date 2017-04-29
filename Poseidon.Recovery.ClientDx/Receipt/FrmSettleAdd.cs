@@ -47,6 +47,8 @@ namespace Poseidon.Recovery.ClientDx
             this.txtAccountName.Text = this.currentAccount.Name;
             this.dpSettleDate.DateTime = DateTime.Now.Date;
 
+            this.bsMeasure.DataSource = BusinessFactory<MeasureBusiness>.Instance.FindByAccount(this.currentAccount.Id);
+
             this.settleRecordGrid.Init();
 
             InitRecords();
@@ -76,6 +78,28 @@ namespace Poseidon.Recovery.ClientDx
         }
 
         /// <summary>
+        /// 使用抄表数
+        /// </summary>
+        /// <param name="records">抄表记录</param>
+        /// <param name="type">1:上期数 2:本期数</param>
+        private void UseMeasure(List<MeasureRecord> records, int type)
+        {
+            foreach (var item in this.settleRecordGrid.DataSource)
+            {
+                var find = records.FirstOrDefault(r => r.MeterName == item.MeterName && r.MeterNumber == item.MeterNumber);
+                if (find != null)
+                {
+                    if (type == 1)
+                        item.Previous = find.Indication;
+                    else if (type == 2)
+                        item.Current = find.Indication;
+                }
+            }
+
+            this.settleRecordGrid.UpdateBindingData();
+        }
+
+        /// <summary>
         /// 输入检查
         /// </summary>
         /// <returns></returns>
@@ -83,9 +107,24 @@ namespace Poseidon.Recovery.ClientDx
         {
             string errorMessage = "";
 
+            if (string.IsNullOrEmpty(this.txtPeriod.Text))
+            {
+                errorMessage = "用能周期不能为空";
+                return new Tuple<bool, string>(false, errorMessage);
+            }
             if (this.dpSettleDate.EditValue == null)
             {
                 errorMessage = "结算日期不能为空";
+                return new Tuple<bool, string>(false, errorMessage);
+            }
+            if (this.dpPreviousDate.EditValue == null)
+            {
+                errorMessage = "上期日期不能为空";
+                return new Tuple<bool, string>(false, errorMessage);
+            }
+            if (this.dpCurrentDate.EditValue == null)
+            {
+                errorMessage = "本期日期不能为空";
                 return new Tuple<bool, string>(false, errorMessage);
             }
 
@@ -121,8 +160,8 @@ namespace Poseidon.Recovery.ClientDx
             entity.Period = this.txtPeriod.Text;
             entity.SettleDate = this.dpSettleDate.DateTime.Date;
             entity.PreviousDate = this.dpPreviousDate.DateTime.Date;
-            entity.CurrentDate = this.dpCurrentDate.DateTime.Date;          
-            entity.TotalAmount = this.spTotalAmount.Value;            
+            entity.CurrentDate = this.dpCurrentDate.DateTime.Date;
+            entity.TotalAmount = this.spTotalAmount.Value;
             entity.Remark = this.txtRemark.Text;
 
             entity.Records = this.settleRecordGrid.DataSource;
@@ -136,6 +175,34 @@ namespace Poseidon.Recovery.ClientDx
         #endregion //Function
 
         #region Event
+        /// <summary>
+        /// 选择上期抄表记录
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void luPreviousMeasure_EditValueChanged(object sender, EventArgs e)
+        {
+            if (this.luPreviousMeasure.EditValue == null)
+                return;
+
+            var measure = this.luPreviousMeasure.GetSelectedDataRow() as Measure;
+            UseMeasure(measure.Records, 1);
+        }
+
+        /// <summary>
+        /// 选择本期抄表记录
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void luCurrentMeasure_EditValueChanged(object sender, EventArgs e)
+        {
+            if (this.luCurrentMeasure.EditValue == null)
+                return;
+
+            var measure = this.luCurrentMeasure.GetSelectedDataRow() as Measure;
+            UseMeasure(measure.Records, 2);
+        }
+
         /// <summary>
         /// 金额求和
         /// </summary>
@@ -155,7 +222,7 @@ namespace Poseidon.Recovery.ClientDx
 
             this.spTotalAmount.Value = totalAmount;
         }
-       
+
         /// <summary>
         /// 保存
         /// </summary>
