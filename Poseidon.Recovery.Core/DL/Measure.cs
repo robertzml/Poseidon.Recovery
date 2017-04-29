@@ -8,7 +8,6 @@ using System.Threading.Tasks;
 namespace Poseidon.Recovery.Core.DL
 {
     using Poseidon.Base.Framework;
-    using Poseidon.Base.Utility;
 
     /// <summary>
     /// 抄表计量类

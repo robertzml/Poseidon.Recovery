@@ -8,7 +8,6 @@ using System.Threading.Tasks;
 namespace Poseidon.Recovery.Core.DL
 {
     using Poseidon.Base.Framework;
-    using Poseidon.Base.Utility;
 
     /// <summary>
     /// 费用结算类
@@ -27,13 +26,6 @@ namespace Poseidon.Recovery.Core.DL
         /// </summary>
         [Display(Name = "结算周期")]
         public string Period { get; set; }
-
-        ///// <summary>
-        ///// 费用类型
-        ///// </summary>
-        //[Dict("Energy.Recovery.FeeType")]
-        //[Display(Name = "费用类型")]
-        //public int FeeType { get; set; }
 
         /// <summary>
         /// 结算日期
