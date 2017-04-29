@@ -16,7 +16,7 @@ namespace Poseidon.Recovery.ClientDx
     using Poseidon.Recovery.Core.Utility;
 
     /// <summary>
-    /// 账户回收模型
+    /// 账户回收模块
     /// </summary>
     public partial class AccountReceiptModule : DevExpress.XtraEditors.XtraUserControl
     {
@@ -41,39 +41,23 @@ namespace Poseidon.Recovery.ClientDx
 
         #region Function
         /// <summary>
-        /// 显示基本信息
+        /// 显示表具信息
         /// </summary>
         /// <param name="account"></param>
-        private void DisplayInfo(Account account)
+        private void DisplayMeter(Account account)
         {
-            this.txtName.Text = account.Name;
-            this.txtShortName.Text = account.ShortName;
-
-            if (!string.IsNullOrEmpty(account.ParentId))
-                this.txtParent.Text = BusinessFactory<AccountBusiness>.Instance.FindById(account.ParentId).Name;
-
-            //if (!string.IsNullOrEmpty(account.ChargeBuildingId))
-            //    this.txtChargeBuilding.Text = BusinessFactory<ChargeBuildingBusiness>.Instance.FindById(account.ChargeBuildingId).Name;
-
-            this.txtOpenYear.Text = $"{account.OpenYear}年";
-            if (account.CloseYear != null && account.CloseYear != 0)
-                this.txtCloseYear.Text = $"{account.CloseYear}年";
-
-            if (account.EnergyType.Contains(1))
-                this.chkType1.Checked = true;
-            if (account.EnergyType.Contains(2))
-                this.chkType2.Checked = true;
-
-            this.txtContact.Text = account.Contract;
-            this.txtRemark.Text = account.Remark;
-
             this.meterGrid.Init();
             this.meterGrid.DataSource = account.Meters;
         }
 
-        private void DisplayMeasure(Account account)
+        /// <summary>
+        /// 显示业务相关信息
+        /// </summary>
+        /// <param name="account"></param>
+        private void DisplayBusiness(Account account)
         {
             this.settleMod.SetAccount(account);
+            this.recycleMod.SetAccount(account);
             this.measureMod.SetAccount(account);
         }
         #endregion //Function
@@ -83,18 +67,23 @@ namespace Poseidon.Recovery.ClientDx
         /// 设置账户
         /// </summary>
         /// <param name="id">支出账户ID</param>
-        public void SetAccount(string id)
+        /// <param name="accountType">账户类型</param>
+        public void SetAccount(string id, int accountType)
         {
             this.currentAccount = BusinessFactory<AccountBusiness>.Instance.FindById(id);
             this.nowYear = DateTime.Now.Year;
 
-            DisplayInfo(currentAccount);
-            DisplayMeasure(currentAccount);
+          
+            if (accountType == 1)
+            {
+                this.navFrame.SelectedPageIndex = 0;
+                this.commerceAccountMod.SetAccount(id);
+            }
+
+            DisplayMeter(currentAccount);
+            DisplayBusiness(currentAccount);
             //ClearDisplay();
-            //DisplaySummary(this.currentAccount);
-            //DisplayReceipt(this.currentAccount);
-            //DisplayCompare(this.currentAccount);
-            //DisplayYear(this.currentAccount);
+        
         }
         #endregion //Method
     }

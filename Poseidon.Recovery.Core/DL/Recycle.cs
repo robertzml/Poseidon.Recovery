@@ -26,7 +26,7 @@ namespace Poseidon.Recovery.Core.DL
         /// 回收日期
         /// </summary>
         [Display(Name = "回收日期")]
-        public DateTime RecycleDate { get; set; }      
+        public DateTime RecycleDate { get; set; }
 
         /// <summary>
         /// 回收金额
@@ -35,10 +35,10 @@ namespace Poseidon.Recovery.Core.DL
         public decimal TotalAmount { get; set; }
 
         /// <summary>
-        /// 结算记录
+        /// 回收记录
         /// </summary>
-        [Display(Name = "结算记录")]
-        public List<SettleRecord> Records { get; set; }
+        [Display(Name = "回收记录")]
+        public List<RecycleRecord> Records { get; set; }
         #endregion //Property
     }
 
@@ -49,9 +49,15 @@ namespace Poseidon.Recovery.Core.DL
     {
         #region Property
         /// <summary>
+        /// 名称
+        /// </summary>
+        [Display(Name = "名称")]
+        public string Name { get; set; }
+
+        /// <summary>
         /// 费用类型
         /// </summary>
-        [Dict("Energy.Recovery.FeeType")]
+        [Dict("Recovery.FeeType")]
         [Display(Name = "费用类型")]
         public int FeeType { get; set; }
 
@@ -60,6 +66,12 @@ namespace Poseidon.Recovery.Core.DL
         /// </summary>
         [Display(Name = "金额")]
         public decimal Amount { get; set; }
+
+        /// <summary>
+        /// 备注
+        /// </summary>
+        [Display(Name = "备注")]
+        public string Remark { get; set; }
         #endregion //Property
     }
 }

@@ -32,7 +32,7 @@ namespace Poseidon.Recovery.ClientDx
         #region Function
         protected override void InitForm()
         {
-            this.accountTree.SetGroupCode(RecoveryConstant.RecoveryAccountGroupCode);
+            this.commerceAccountTree.SetGroupCode(RecoveryConstant.CommerceRecoveryAccountGroupCode);
 
             base.InitForm();
         }
@@ -44,11 +44,11 @@ namespace Poseidon.Recovery.ClientDx
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void accountTree_EntitySelected(object sender, EventArgs e)
+        private void commerceAccountTree_EntitySelected(object sender, EventArgs e)
         {
             this.navFrame.SelectedPageIndex = 1;
-            var accountId = this.accountTree.GetCurrentSelectId();
-            this.accountReceiptMod.SetAccount(accountId);
+            var accountId = this.commerceAccountTree.GetCurrentSelectId();
+            this.accountReceiptMod.SetAccount(accountId, 1);
         }
         #endregion //Event
     }

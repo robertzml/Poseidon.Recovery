@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
-using System.Drawing;
 using System.Data;
 using System.Linq;
 using System.Text;
@@ -11,7 +10,6 @@ using System.Windows.Forms;
 namespace Poseidon.Recovery.ClientDx
 {
     using Poseidon.Base.Framework;
-    using Poseidon.Common;
     using Poseidon.Winform.Base;
     using Poseidon.Winform.Core.Utility;
     using Poseidon.Recovery.Core.BL;
