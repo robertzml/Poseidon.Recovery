@@ -46,7 +46,6 @@ namespace Poseidon.Recovery.ClientDx
         /// <param name="e"></param>
         private void commerceAccountTree_EntitySelected(object sender, EventArgs e)
         {
-            this.navFrame.SelectedPageIndex = 1;
             var accountId = this.commerceAccountTree.GetCurrentSelectId();
             this.accountReceiptMod.SetAccount(accountId, 1);
         }

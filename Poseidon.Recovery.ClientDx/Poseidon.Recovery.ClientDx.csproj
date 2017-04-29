@@ -70,6 +70,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Mod\AccountRecoveryModule.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Mod\AccountRecoveryModule.Designer.cs">
+      <DependentUpon>AccountRecoveryModule.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Overview\FrmRecoveryOverview.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Overview\FrmRecoveryOverview.Designer.cs">
+      <DependentUpon>FrmRecoveryOverview.cs</DependentUpon>
+    </Compile>
     <Compile Include="Receipt\FrmRecycleEdit.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -253,11 +265,17 @@
     <EmbeddedResource Include="Building\FrmChargeBuildingManage.resx">
       <DependentUpon>FrmChargeBuildingManage.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Mod\AccountRecoveryModule.resx">
+      <DependentUpon>AccountRecoveryModule.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Mod\CommerceAccountInfo.resx">
       <DependentUpon>CommerceAccountInfo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Mod\RecycleReceiptModule.resx">
       <DependentUpon>RecycleReceiptModule.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Overview\FrmRecoveryOverview.resx">
+      <DependentUpon>FrmRecoveryOverview.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Receipt\FrmMeasureEdit.resx">
       <DependentUpon>FrmMeasureEdit.cs</DependentUpon>

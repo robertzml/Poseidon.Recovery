@@ -16,9 +16,9 @@ namespace Poseidon.Recovery.ClientDx
     using Poseidon.Recovery.Core.Utility;
 
     /// <summary>
-    /// 账户回收单据模块
+    /// 账户回收总览模块
     /// </summary>
-    public partial class AccountReceiptModule : DevExpress.XtraEditors.XtraUserControl
+    public partial class AccountRecoveryModule : DevExpress.XtraEditors.XtraUserControl
     {
         #region Field
         /// <summary>
@@ -28,7 +28,7 @@ namespace Poseidon.Recovery.ClientDx
         #endregion //Field
 
         #region Constructor
-        public AccountReceiptModule()
+        public AccountRecoveryModule()
         {
             InitializeComponent();
         }
@@ -43,17 +43,6 @@ namespace Poseidon.Recovery.ClientDx
         {
             this.meterGrid.Init();
             this.meterGrid.DataSource = account.Meters;
-        }
-
-        /// <summary>
-        /// 显示业务相关信息
-        /// </summary>
-        /// <param name="account"></param>
-        private void DisplayBusiness(Account account)
-        {
-            this.settleMod.SetAccount(account);
-            this.recycleMod.SetAccount(account);
-            this.measureMod.SetAccount(account);
         }
         #endregion //Function
 
@@ -74,7 +63,8 @@ namespace Poseidon.Recovery.ClientDx
             }
 
             DisplayMeter(currentAccount);
-            DisplayBusiness(currentAccount);
+            //DisplayBusiness(currentAccount);
+
         }
         #endregion //Method
     }

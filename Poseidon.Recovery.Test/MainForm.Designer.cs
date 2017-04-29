@@ -33,6 +33,7 @@
             this.menuChargeBuildingMan = new System.Windows.Forms.ToolStripMenuItem();
             this.menuAccountMan = new System.Windows.Forms.ToolStripMenuItem();
             this.menuRecoveryReceipt = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuRecoveryOv = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -51,7 +52,8 @@
             this.menuRecovery.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.menuChargeBuildingMan,
             this.menuAccountMan,
-            this.menuRecoveryReceipt});
+            this.menuRecoveryReceipt,
+            this.menuRecoveryOv});
             this.menuRecovery.Name = "menuRecovery";
             this.menuRecovery.Size = new System.Drawing.Size(68, 21);
             this.menuRecovery.Text = "费用回收";
@@ -76,6 +78,13 @@
             this.menuRecoveryReceipt.Size = new System.Drawing.Size(152, 22);
             this.menuRecoveryReceipt.Text = "回收单据";
             this.menuRecoveryReceipt.Click += new System.EventHandler(this.menuRecoveryReceipt_Click);
+            // 
+            // menuRecoveryOv
+            // 
+            this.menuRecoveryOv.Name = "menuRecoveryOv";
+            this.menuRecoveryOv.Size = new System.Drawing.Size(152, 22);
+            this.menuRecoveryOv.Text = "回收总览";
+            this.menuRecoveryOv.Click += new System.EventHandler(this.menuRecoveryOv_Click);
             // 
             // MainForm
             // 
@@ -102,6 +111,7 @@
         private System.Windows.Forms.ToolStripMenuItem menuChargeBuildingMan;
         private System.Windows.Forms.ToolStripMenuItem menuAccountMan;
         private System.Windows.Forms.ToolStripMenuItem menuRecoveryReceipt;
+        private System.Windows.Forms.ToolStripMenuItem menuRecoveryOv;
     }
 }
 
