@@ -10,6 +10,7 @@ using System.Windows.Forms;
 namespace Poseidon.Recovery.ClientDx
 {
     using Poseidon.Base.Framework;
+    using Poseidon.Base.System;
     using Poseidon.Common;
     using Poseidon.Recovery.Core.BL;
     using Poseidon.Recovery.Core.DL;
@@ -125,7 +126,7 @@ namespace Poseidon.Recovery.ClientDx
         }
 
         /// <summary>
-        /// 新增抄表登记
+        /// 新增抄表计量
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -133,6 +134,49 @@ namespace Poseidon.Recovery.ClientDx
         {
             ChildFormManage.ShowDialogForm(typeof(FrmMeasureAdd), new object[] { this.currentAccount.Id });
             LoadData(this.currentAccount);
+        }
+
+        /// <summary>
+        /// 编辑抄表计量
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btnEdit_Click(object sender, EventArgs e)
+        {
+            if (this.currentAccount == null || this.lbMeasures.SelectedValue == null)
+                return;
+
+            var measure = this.lbMeasures.SelectedItem as Measure;
+            ChildFormManage.ShowDialogForm(typeof(FrmMeasureEdit), new object[] { measure.Id, this.currentAccount.Id });
+            LoadData(this.currentAccount);
+        }
+
+        /// <summary>
+        /// 删除抄表计量
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            if (this.currentAccount == null || this.lbMeasures.SelectedValue == null)
+                return;
+
+            var expense = this.lbMeasures.SelectedItem as Measure;
+
+            if (MessageUtil.ConfirmYesNo("是否确认删除选中抄表计量") == DialogResult.Yes)
+            {
+                try
+                {
+                    BusinessFactory<MeasureBusiness>.Instance.Delete(expense);
+
+                    LoadData(this.currentAccount);
+                    MessageUtil.ShowInfo("删除成功");
+                }
+                catch (PoseidonException pe)
+                {
+                    MessageUtil.ShowError(string.Format("保存失败，错误消息:{0}", pe.Message));
+                }
+            }
         }
         #endregion //Event
 

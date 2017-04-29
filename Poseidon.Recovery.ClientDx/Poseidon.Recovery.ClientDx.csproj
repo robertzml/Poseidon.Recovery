@@ -70,6 +70,24 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Receipt\FrmRecycleEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Receipt\FrmRecycleEdit.Designer.cs">
+      <DependentUpon>FrmRecycleEdit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Receipt\FrmSettleEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Receipt\FrmSettleEdit.Designer.cs">
+      <DependentUpon>FrmSettleEdit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Receipt\FrmMeasureEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Receipt\FrmMeasureEdit.Designer.cs">
+      <DependentUpon>FrmMeasureEdit.cs</DependentUpon>
+    </Compile>
     <Compile Include="Receipt\FrmRecycleAdd.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -241,11 +259,20 @@
     <EmbeddedResource Include="Mod\RecycleReceiptModule.resx">
       <DependentUpon>RecycleReceiptModule.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Receipt\FrmMeasureEdit.resx">
+      <DependentUpon>FrmMeasureEdit.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Receipt\FrmRecycleAdd.resx">
       <DependentUpon>FrmRecycleAdd.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Receipt\FrmRecycleEdit.resx">
+      <DependentUpon>FrmRecycleEdit.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Receipt\FrmSettleAdd.resx">
       <DependentUpon>FrmSettleAdd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Receipt\FrmSettleEdit.resx">
+      <DependentUpon>FrmSettleEdit.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\DataSources\Poseidon.Recovery.Core.DL.CommerceAccount.datasource" />
     <None Include="Properties\DataSources\Poseidon.Recovery.Core.DL.Measure.datasource" />

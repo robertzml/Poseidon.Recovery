@@ -17,38 +17,48 @@ namespace Poseidon.Recovery.ClientDx
     using Poseidon.Recovery.Core.Utility;
 
     /// <summary>
-    /// 新增费用回收
+    /// 编辑费用回收窗体
     /// </summary>
-    public partial class FrmRecycleAdd : BaseSingleForm
+    public partial class FrmRecycleEdit : BaseSingleForm
     {
         #region Field
         /// <summary>
         /// 关联账户
         /// </summary>
         private Account currentAccount;
+
+        /// <summary>
+        /// 当前关联费用回收
+        /// </summary>
+        private Recycle currentRecycle;
         #endregion //Field
 
         #region Constructor
-        public FrmRecycleAdd(string accountId)
+        public FrmRecycleEdit(string id, string accountId)
         {
             InitializeComponent();
-            InitData(accountId);
+            InitData(id, accountId);
         }
         #endregion //Constructor
 
         #region Function
-        private void InitData(string accountId)
+        private void InitData(string id, string accountId)
         {
             this.currentAccount = BusinessFactory<AccountBusiness>.Instance.FindById(accountId);
+            this.currentRecycle = BusinessFactory<RecycleBusiness>.Instance.FindById(id);
         }
 
         protected override void InitForm()
         {
-            this.txtAccountName.Text = this.currentAccount.Name;
-            this.dpRecycleDate.DateTime = DateTime.Now.Date;
-
             this.recycleRecordGrid.Init();
-            this.recycleRecordGrid.DataSource = new List<RecycleRecord>();
+
+            this.txtAccountName.Text = this.currentAccount.Name;
+
+            this.dpRecycleDate.DateTime = this.currentRecycle.RecycleDate;
+            this.spTotalAmount.Value = this.currentRecycle.TotalAmount;
+            this.txtRemark.Text = this.currentRecycle.Remark;
+
+            this.recycleRecordGrid.DataSource = this.currentRecycle.Records;
 
             base.InitForm();
         }
@@ -142,10 +152,10 @@ namespace Poseidon.Recovery.ClientDx
 
             try
             {
-                Recycle entity = new Recycle();
+                Recycle entity = BusinessFactory<RecycleBusiness>.Instance.FindById(this.currentRecycle.Id);
                 SetEntity(entity);
 
-                BusinessFactory<RecycleBusiness>.Instance.Create(entity, this.currentUser);
+                BusinessFactory<RecycleBusiness>.Instance.Update(entity, this.currentUser);
 
                 MessageUtil.ShowInfo("保存成功");
                 this.Close();

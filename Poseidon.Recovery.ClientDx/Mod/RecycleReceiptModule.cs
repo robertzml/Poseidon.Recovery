@@ -138,6 +138,21 @@ namespace Poseidon.Recovery.ClientDx
             ChildFormManage.ShowDialogForm(typeof(FrmRecycleAdd), new object[] { this.currentAccount.Id });
             LoadData(this.currentAccount);
         }
+
+        /// <summary>
+        /// 编辑费用回收
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btnEdit_Click(object sender, EventArgs e)
+        {
+            if (this.currentAccount == null || this.lbRecycles.SelectedValue == null)
+                return;
+
+            var recycle = this.lbRecycles.SelectedItem as Recycle;
+            ChildFormManage.ShowDialogForm(typeof(FrmRecycleEdit), new object[] { recycle.Id, this.currentAccount.Id });
+            LoadData(this.currentAccount);
+        }
         #endregion //Event
 
         #region Property

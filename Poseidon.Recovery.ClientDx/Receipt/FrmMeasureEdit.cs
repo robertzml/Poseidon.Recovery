@@ -17,38 +17,47 @@ namespace Poseidon.Recovery.ClientDx
     using Poseidon.Recovery.Core.Utility;
 
     /// <summary>
-    /// 新增费用回收
+    /// 编辑抄表计量
     /// </summary>
-    public partial class FrmRecycleAdd : BaseSingleForm
+    public partial class FrmMeasureEdit : BaseSingleForm
     {
         #region Field
         /// <summary>
         /// 关联账户
         /// </summary>
         private Account currentAccount;
+
+        /// <summary>
+        /// 当前关联抄表计量
+        /// </summary>
+        private Measure currentMeasure;
         #endregion //Field
 
         #region Constructor
-        public FrmRecycleAdd(string accountId)
+        public FrmMeasureEdit(string id, string accountId)
         {
             InitializeComponent();
-            InitData(accountId);
+            InitData(id, accountId);
         }
         #endregion //Constructor
 
         #region Function
-        private void InitData(string accountId)
+        private void InitData(string id, string accountId)
         {
             this.currentAccount = BusinessFactory<AccountBusiness>.Instance.FindById(accountId);
+            this.currentMeasure = BusinessFactory<MeasureBusiness>.Instance.FindById(id);
         }
 
         protected override void InitForm()
         {
-            this.txtAccountName.Text = this.currentAccount.Name;
-            this.dpRecycleDate.DateTime = DateTime.Now.Date;
+            this.measureRecordGrid.Init();
 
-            this.recycleRecordGrid.Init();
-            this.recycleRecordGrid.DataSource = new List<RecycleRecord>();
+            this.txtAccountName.Text = this.currentAccount.Name;
+            this.bsMeasure.DataSource = BusinessFactory<MeasureBusiness>.Instance.FindAll();
+
+            this.dpMeasureDate.DateTime = this.currentMeasure.MeasureDate;
+            this.txtRemark.Text = this.currentMeasure.Remark;
+            this.measureRecordGrid.DataSource = this.currentMeasure.Records;
 
             base.InitForm();
         }
@@ -61,22 +70,32 @@ namespace Poseidon.Recovery.ClientDx
         {
             string errorMessage = "";
 
-            if (this.dpRecycleDate.EditValue == null)
+            if (this.dpMeasureDate.EditValue == null)
             {
-                errorMessage = "回收日期不能为空";
+                errorMessage = "抄表日期不能为空";
                 return new Tuple<bool, string>(false, errorMessage);
             }
 
-            foreach (var item in this.recycleRecordGrid.DataSource)
+            foreach (var item in this.measureRecordGrid.DataSource)
             {
-                if (string.IsNullOrEmpty(item.Name))
+                if (string.IsNullOrEmpty(item.MeterName))
                 {
-                    errorMessage = "名称不能为空";
+                    errorMessage = "表名称不能为空";
                     return new Tuple<bool, string>(false, errorMessage);
                 }
-                if (item.FeeType == 0)
+                if (string.IsNullOrEmpty(item.MeterNumber))
                 {
-                    errorMessage = "请选择费用类型";
+                    errorMessage = "表号不能为空";
+                    return new Tuple<bool, string>(false, errorMessage);
+                }
+                if (item.MeterType == 0)
+                {
+                    errorMessage = "请选择表类型";
+                    return new Tuple<bool, string>(false, errorMessage);
+                }
+                if (item.ChargeType == 0)
+                {
+                    errorMessage = "请选择计费方式";
                     return new Tuple<bool, string>(false, errorMessage);
                 }
             }
@@ -88,17 +107,17 @@ namespace Poseidon.Recovery.ClientDx
         /// 设置实体
         /// </summary>
         /// <param name="entity"></param>
-        private void SetEntity(Recycle entity)
+        private void SetEntity(Measure entity)
         {
             entity.AccountId = this.currentAccount.Id;
-            entity.RecycleDate = this.dpRecycleDate.DateTime.Date;
-            entity.TotalAmount = this.spTotalAmount.Value;
+            entity.MeasureDate = this.dpMeasureDate.DateTime.Date;
             entity.Remark = this.txtRemark.Text;
 
-            entity.Records = this.recycleRecordGrid.DataSource;
+            entity.Records = this.measureRecordGrid.DataSource;
             foreach (var item in entity.Records)
             {
-                item.Name = item.Name ?? "";
+                item.MeterNumber = item.MeterNumber ?? "";
+                item.MeterName = item.MeterName ?? "";
                 item.Remark = item.Remark ?? "";
             }
         }
@@ -106,22 +125,17 @@ namespace Poseidon.Recovery.ClientDx
 
         #region Event
         /// <summary>
-        /// 计算金额
+        /// 上期选择
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void btnCalc_Click(object sender, EventArgs e)
+        private void luPrevious_EditValueChanged(object sender, EventArgs e)
         {
-            this.recycleRecordGrid.CloseEditor();
+            if (this.luPrevious.EditValue == null)
+                return;
 
-            decimal totalAmount = 0;
-
-            foreach (var item in this.recycleRecordGrid.DataSource)
-            {
-                totalAmount += item.Amount;
-            }
-
-            this.spTotalAmount.Value = totalAmount;
+            var previous = this.luPrevious.GetSelectedDataRow() as Measure;
+            this.measureRecordGrid.SetPrevious(previous.Records);
         }
 
         /// <summary>
@@ -131,7 +145,7 @@ namespace Poseidon.Recovery.ClientDx
         /// <param name="e"></param>
         private void btnConfirm_Click(object sender, EventArgs e)
         {
-            this.recycleRecordGrid.CloseEditor();
+            this.measureRecordGrid.CloseEditor();
 
             var input = CheckInput();
             if (!input.Item1)
@@ -142,10 +156,10 @@ namespace Poseidon.Recovery.ClientDx
 
             try
             {
-                Recycle entity = new Recycle();
+                Measure entity = BusinessFactory<MeasureBusiness>.Instance.FindById(this.currentMeasure.Id);
                 SetEntity(entity);
 
-                BusinessFactory<RecycleBusiness>.Instance.Create(entity, this.currentUser);
+                BusinessFactory<MeasureBusiness>.Instance.Update(entity, this.currentUser);
 
                 MessageUtil.ShowInfo("保存成功");
                 this.Close();

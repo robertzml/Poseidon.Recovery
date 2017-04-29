@@ -38,7 +38,7 @@ namespace Poseidon.Recovery.Core.BL
         }
 
         /// <summary>
-        /// 添加抄表登记
+        /// 添加抄表计量
         /// </summary>
         /// <param name="entity">实体对象</param>
         /// <param name="user">操作用户</param>
@@ -58,6 +58,23 @@ namespace Poseidon.Recovery.Core.BL
             };
             entity.Status = 0;
             base.Create(entity);
+        }
+
+        /// <summary>
+        /// 编辑抄表计量
+        /// </summary>
+        /// <param name="entity">实体对象</param>
+        /// <param name="user">操作用户</param>
+        /// <returns></returns>
+        public bool Update(Measure entity, LoginUser user)
+        {
+            entity.UpdateBy = new UpdateStamp
+            {
+                UserId = user.Id,
+                Name = user.Name,
+                Time = DateTime.Now
+            };
+            return base.Update(entity);
         }
         #endregion //Method
     }

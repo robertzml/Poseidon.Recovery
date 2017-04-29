@@ -1,6 +1,6 @@
 ﻿namespace Poseidon.Recovery.ClientDx
 {
-    partial class FrmSettleAdd
+    partial class FrmSettleEdit
     {
         /// <summary>
         /// Required designer variable.
@@ -30,6 +30,8 @@
         {
             this.components = new System.ComponentModel.Container();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.groupControl2 = new DevExpress.XtraEditors.GroupControl();
+            this.settleRecordGrid = new Poseidon.Recovery.ClientDx.SettleRecordGrid();
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
             this.luCurrentMeasure = new DevExpress.XtraEditors.LookUpEdit();
@@ -55,13 +57,13 @@
             this.layoutControlItem5 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem10 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem11 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.groupControl2 = new DevExpress.XtraEditors.GroupControl();
-            this.settleRecordGrid = new Poseidon.Recovery.ClientDx.SettleRecordGrid();
             ((System.ComponentModel.ISupportInitialize)(this.plFill)).BeginInit();
             this.plFill.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.plBottom)).BeginInit();
             this.plBottom.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).BeginInit();
+            this.groupControl2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
             this.groupControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
@@ -91,8 +93,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem10)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem11)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).BeginInit();
-            this.groupControl2.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnCancel
@@ -123,8 +123,8 @@
             this.tableLayoutPanel1.ColumnCount = 1;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel1.Controls.Add(this.groupControl1, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.groupControl2, 0, 1);
+            this.tableLayoutPanel1.Controls.Add(this.groupControl1, 0, 0);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
@@ -134,6 +134,36 @@
             this.tableLayoutPanel1.Size = new System.Drawing.Size(824, 501);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
+            // groupControl2
+            // 
+            this.groupControl2.Controls.Add(this.settleRecordGrid);
+            this.groupControl2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.groupControl2.Location = new System.Drawing.Point(3, 203);
+            this.groupControl2.Name = "groupControl2";
+            this.groupControl2.Size = new System.Drawing.Size(818, 295);
+            this.groupControl2.TabIndex = 2;
+            this.groupControl2.Text = "结算记录";
+            // 
+            // settleRecordGrid
+            // 
+            this.settleRecordGrid.AllowFilter = false;
+            this.settleRecordGrid.AllowGroup = false;
+            this.settleRecordGrid.AllowSort = false;
+            this.settleRecordGrid.DataSource = null;
+            this.settleRecordGrid.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.settleRecordGrid.Editable = true;
+            this.settleRecordGrid.EnableMasterView = false;
+            this.settleRecordGrid.Location = new System.Drawing.Point(2, 21);
+            this.settleRecordGrid.Name = "settleRecordGrid";
+            this.settleRecordGrid.ShowAddMenu = false;
+            this.settleRecordGrid.ShowCalculate = true;
+            this.settleRecordGrid.ShowFooter = true;
+            this.settleRecordGrid.ShowLineNumber = true;
+            this.settleRecordGrid.ShowMenu = false;
+            this.settleRecordGrid.ShowNavigator = true;
+            this.settleRecordGrid.Size = new System.Drawing.Size(814, 272);
+            this.settleRecordGrid.TabIndex = 0;
+            // 
             // groupControl1
             // 
             this.groupControl1.Controls.Add(this.layoutControl1);
@@ -141,7 +171,7 @@
             this.groupControl1.Location = new System.Drawing.Point(3, 3);
             this.groupControl1.Name = "groupControl1";
             this.groupControl1.Size = new System.Drawing.Size(818, 194);
-            this.groupControl1.TabIndex = 0;
+            this.groupControl1.TabIndex = 1;
             this.groupControl1.Text = "结算信息";
             // 
             // layoutControl1
@@ -426,48 +456,20 @@
             this.layoutControlItem11.Text = "本期抄表";
             this.layoutControlItem11.TextSize = new System.Drawing.Size(48, 14);
             // 
-            // groupControl2
-            // 
-            this.groupControl2.Controls.Add(this.settleRecordGrid);
-            this.groupControl2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupControl2.Location = new System.Drawing.Point(3, 203);
-            this.groupControl2.Name = "groupControl2";
-            this.groupControl2.Size = new System.Drawing.Size(818, 295);
-            this.groupControl2.TabIndex = 1;
-            this.groupControl2.Text = "结算记录";
-            // 
-            // settleRecordGrid
-            // 
-            this.settleRecordGrid.AllowFilter = false;
-            this.settleRecordGrid.AllowGroup = false;
-            this.settleRecordGrid.AllowSort = false;
-            this.settleRecordGrid.DataSource = null;
-            this.settleRecordGrid.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.settleRecordGrid.Editable = true;
-            this.settleRecordGrid.EnableMasterView = false;
-            this.settleRecordGrid.Location = new System.Drawing.Point(2, 21);
-            this.settleRecordGrid.Name = "settleRecordGrid";
-            this.settleRecordGrid.ShowAddMenu = false;
-            this.settleRecordGrid.ShowCalculate = true;
-            this.settleRecordGrid.ShowFooter = true;
-            this.settleRecordGrid.ShowLineNumber = true;
-            this.settleRecordGrid.ShowMenu = false;
-            this.settleRecordGrid.ShowNavigator = true;
-            this.settleRecordGrid.Size = new System.Drawing.Size(814, 272);
-            this.settleRecordGrid.TabIndex = 0;
-            // 
-            // FrmSettleAdd
+            // FrmSettleEdit
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(824, 561);
-            this.Name = "FrmSettleAdd";
-            this.Text = "登记费用结算";
+            this.Name = "FrmSettleEdit";
+            this.Text = "编辑费用结算";
             ((System.ComponentModel.ISupportInitialize)(this.plFill)).EndInit();
             this.plFill.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.plBottom)).EndInit();
             this.plBottom.ResumeLayout(false);
             this.tableLayoutPanel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).EndInit();
+            this.groupControl2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).EndInit();
             this.groupControl1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).EndInit();
@@ -497,8 +499,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem10)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem11)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).EndInit();
-            this.groupControl2.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -508,30 +508,30 @@
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private DevExpress.XtraEditors.GroupControl groupControl1;
         private DevExpress.XtraLayout.LayoutControl layoutControl1;
+        private DevExpress.XtraEditors.LookUpEdit luCurrentMeasure;
+        private DevExpress.XtraEditors.LookUpEdit luPreviousMeasure;
+        private DevExpress.XtraEditors.TextEdit txtPeriod;
+        private DevExpress.XtraEditors.SimpleButton btnCalc;
+        private DevExpress.XtraEditors.MemoEdit txtRemark;
+        private DevExpress.XtraEditors.SpinEdit spTotalAmount;
+        private DevExpress.XtraEditors.DateEdit dpCurrentDate;
+        private DevExpress.XtraEditors.DateEdit dpPreviousDate;
+        private DevExpress.XtraEditors.DateEdit dpSettleDate;
         private DevExpress.XtraEditors.TextEdit txtAccountName;
         private DevExpress.XtraLayout.LayoutControlGroup layoutControlGroup1;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem1;
-        private DevExpress.XtraEditors.GroupControl groupControl2;
-        private DevExpress.XtraEditors.DateEdit dpSettleDate;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem2;
-        private DevExpress.XtraEditors.DateEdit dpCurrentDate;
-        private DevExpress.XtraEditors.DateEdit dpPreviousDate;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem3;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem4;
-        private DevExpress.XtraEditors.SpinEdit spTotalAmount;
-        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem5;
-        private SettleRecordGrid settleRecordGrid;
-        private DevExpress.XtraEditors.SimpleButton btnCalc;
-        private DevExpress.XtraEditors.MemoEdit txtRemark;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem6;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem8;
         private DevExpress.XtraLayout.EmptySpaceItem emptySpaceItem1;
-        private DevExpress.XtraEditors.TextEdit txtPeriod;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem9;
-        private DevExpress.XtraEditors.LookUpEdit luCurrentMeasure;
-        private System.Windows.Forms.BindingSource bsMeasure;
-        private DevExpress.XtraEditors.LookUpEdit luPreviousMeasure;
+        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem5;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem10;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem11;
+        private DevExpress.XtraEditors.GroupControl groupControl2;
+        private SettleRecordGrid settleRecordGrid;
+        private System.Windows.Forms.BindingSource bsMeasure;
     }
 }

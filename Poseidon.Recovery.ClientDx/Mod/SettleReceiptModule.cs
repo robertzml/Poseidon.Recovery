@@ -142,6 +142,21 @@ namespace Poseidon.Recovery.ClientDx
             ChildFormManage.ShowDialogForm(typeof(FrmSettleAdd), new object[] { this.currentAccount.Id });
             LoadData(this.currentAccount);
         }
+
+        /// <summary>
+        /// 编辑费用结算
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btnEdit_Click(object sender, EventArgs e)
+        {
+            if (this.currentAccount == null || this.lbSettles.SelectedValue == null)
+                return;
+
+            var settle = this.lbSettles.SelectedItem as Settle;
+            ChildFormManage.ShowDialogForm(typeof(FrmSettleEdit), new object[] { settle.Id, this.currentAccount.Id });
+            LoadData(this.currentAccount);
+        }
         #endregion //Event
 
         #region Property

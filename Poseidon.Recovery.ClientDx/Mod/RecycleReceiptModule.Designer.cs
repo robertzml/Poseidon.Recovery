@@ -55,6 +55,8 @@
             this.layoutControlItem8 = new DevExpress.XtraLayout.LayoutControlItem();
             this.groupControl3 = new DevExpress.XtraEditors.GroupControl();
             this.recycleRecordGrid = new Poseidon.Recovery.ClientDx.RecycleRecordGrid();
+            this.btnEdit = new DevExpress.XtraEditors.SimpleButton();
+            this.layoutControlItem9 = new DevExpress.XtraLayout.LayoutControlItem();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
             this.groupControl1.SuspendLayout();
@@ -83,6 +85,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem8)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl3)).BeginInit();
             this.groupControl3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem9)).BeginInit();
             this.SuspendLayout();
             // 
             // tableLayoutPanel1
@@ -141,6 +144,7 @@
             // 
             // layoutControl1
             // 
+            this.layoutControl1.Controls.Add(this.btnEdit);
             this.layoutControl1.Controls.Add(this.btnAdd);
             this.layoutControl1.Controls.Add(this.txtRemark);
             this.layoutControl1.Controls.Add(this.txtEditTime);
@@ -161,7 +165,7 @@
             // 
             this.btnAdd.Location = new System.Drawing.Point(24, 165);
             this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(504, 22);
+            this.btnAdd.Size = new System.Drawing.Size(250, 22);
             this.btnAdd.StyleController = this.layoutControl1;
             this.btnAdd.TabIndex = 11;
             this.btnAdd.Text = "回收登记";
@@ -328,7 +332,8 @@
             // lcgAction
             // 
             this.lcgAction.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
-            this.layoutControlItem8});
+            this.layoutControlItem8,
+            this.layoutControlItem9});
             this.lcgAction.Location = new System.Drawing.Point(0, 122);
             this.lcgAction.Name = "lcgAction";
             this.lcgAction.Size = new System.Drawing.Size(532, 69);
@@ -339,7 +344,7 @@
             this.layoutControlItem8.Control = this.btnAdd;
             this.layoutControlItem8.Location = new System.Drawing.Point(0, 0);
             this.layoutControlItem8.Name = "layoutControlItem8";
-            this.layoutControlItem8.Size = new System.Drawing.Size(508, 26);
+            this.layoutControlItem8.Size = new System.Drawing.Size(254, 26);
             this.layoutControlItem8.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem8.TextVisible = false;
             // 
@@ -371,6 +376,25 @@
             this.recycleRecordGrid.ShowNavigator = false;
             this.recycleRecordGrid.Size = new System.Drawing.Size(552, 199);
             this.recycleRecordGrid.TabIndex = 0;
+            // 
+            // btnEdit
+            // 
+            this.btnEdit.Location = new System.Drawing.Point(278, 165);
+            this.btnEdit.Name = "btnEdit";
+            this.btnEdit.Size = new System.Drawing.Size(250, 22);
+            this.btnEdit.StyleController = this.layoutControl1;
+            this.btnEdit.TabIndex = 12;
+            this.btnEdit.Text = "编辑回收";
+            this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
+            // 
+            // layoutControlItem9
+            // 
+            this.layoutControlItem9.Control = this.btnEdit;
+            this.layoutControlItem9.Location = new System.Drawing.Point(254, 0);
+            this.layoutControlItem9.Name = "layoutControlItem9";
+            this.layoutControlItem9.Size = new System.Drawing.Size(254, 26);
+            this.layoutControlItem9.TextSize = new System.Drawing.Size(0, 0);
+            this.layoutControlItem9.TextVisible = false;
             // 
             // RecycleReceiptModule
             // 
@@ -408,6 +432,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem8)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl3)).EndInit();
             this.groupControl3.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem9)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -440,5 +465,7 @@
         private DevExpress.XtraLayout.LayoutControlGroup lcgAction;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem8;
         private RecycleRecordGrid recycleRecordGrid;
+        private DevExpress.XtraEditors.SimpleButton btnEdit;
+        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem9;
     }
 }

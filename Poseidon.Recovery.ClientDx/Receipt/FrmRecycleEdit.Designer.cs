@@ -1,6 +1,6 @@
 ﻿namespace Poseidon.Recovery.ClientDx
 {
-    partial class FrmRecycleAdd
+    partial class FrmRecycleEdit
     {
         /// <summary>
         /// Required designer variable.
@@ -97,8 +97,9 @@
             // 
             this.tableLayoutPanel1.ColumnCount = 1;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.Controls.Add(this.groupControl1, 0, 0);
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel1.Controls.Add(this.groupControl2, 0, 1);
+            this.tableLayoutPanel1.Controls.Add(this.groupControl1, 0, 0);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
@@ -115,7 +116,7 @@
             this.groupControl1.Location = new System.Drawing.Point(3, 3);
             this.groupControl1.Name = "groupControl1";
             this.groupControl1.Size = new System.Drawing.Size(678, 194);
-            this.groupControl1.TabIndex = 0;
+            this.groupControl1.TabIndex = 1;
             this.groupControl1.Text = "回收信息";
             // 
             // layoutControl1
@@ -268,7 +269,7 @@
             this.groupControl2.Location = new System.Drawing.Point(3, 203);
             this.groupControl2.Name = "groupControl2";
             this.groupControl2.Size = new System.Drawing.Size(678, 245);
-            this.groupControl2.TabIndex = 1;
+            this.groupControl2.TabIndex = 2;
             this.groupControl2.Text = "回收记录";
             // 
             // recycleRecordGrid
@@ -290,13 +291,13 @@
             this.recycleRecordGrid.Size = new System.Drawing.Size(674, 222);
             this.recycleRecordGrid.TabIndex = 0;
             // 
-            // FrmRecycleAdd
+            // FrmRecycleEdit
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(684, 511);
-            this.Name = "FrmRecycleAdd";
-            this.Text = "登记费用回收";
+            this.Name = "FrmRecycleEdit";
+            this.Text = "编辑费用回收";
             ((System.ComponentModel.ISupportInitialize)(this.plFill)).EndInit();
             this.plFill.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.plBottom)).EndInit();
@@ -328,20 +329,20 @@
 
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private DevExpress.XtraEditors.GroupControl groupControl1;
-        private DevExpress.XtraEditors.GroupControl groupControl2;
         private DevExpress.XtraLayout.LayoutControl layoutControl1;
+        private DevExpress.XtraEditors.SimpleButton btnCalc;
+        private DevExpress.XtraEditors.MemoEdit txtRemark;
+        private DevExpress.XtraEditors.SpinEdit spTotalAmount;
+        private DevExpress.XtraEditors.DateEdit dpRecycleDate;
         private DevExpress.XtraEditors.TextEdit txtAccountName;
         private DevExpress.XtraLayout.LayoutControlGroup layoutControlGroup1;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem1;
-        private DevExpress.XtraEditors.SpinEdit spTotalAmount;
-        private DevExpress.XtraEditors.DateEdit dpRecycleDate;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem2;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem3;
-        private DevExpress.XtraEditors.SimpleButton btnCalc;
-        private DevExpress.XtraEditors.MemoEdit txtRemark;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem4;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem5;
         private DevExpress.XtraLayout.EmptySpaceItem emptySpaceItem1;
+        private DevExpress.XtraEditors.GroupControl groupControl2;
         private RecycleRecordGrid recycleRecordGrid;
     }
 }
