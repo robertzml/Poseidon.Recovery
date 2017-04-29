@@ -43,6 +43,7 @@ namespace Poseidon.Recovery.Core.DAL.Mongo
             entity.Id = doc["_id"].ToString();
             entity.Name = doc["name"].ToString();
             entity.ShortName = doc["shortName"].ToString();
+            entity.TicketName = doc["ticketName"].ToString();
             entity.ModelType = doc["modelType"].ToString();
             entity.OpenYear = doc["openYear"].ToInt32();
             entity.Remark = doc["remark"].ToString();

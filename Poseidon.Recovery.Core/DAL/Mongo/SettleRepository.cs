@@ -39,6 +39,7 @@ namespace Poseidon.Recovery.Core.DAL.Mongo
             Settle entity = new Settle();
             entity.Id = doc["_id"].ToString();
             entity.AccountId = doc["accountId"].ToString();
+            entity.Period = doc["period"].ToString();
             entity.SettleDate = doc["settleDate"].ToLocalTime();
             entity.PreviousDate = doc["previousDate"].ToLocalTime();
             entity.CurrentDate = doc["currentDate"].ToLocalTime();
@@ -98,6 +99,7 @@ namespace Poseidon.Recovery.Core.DAL.Mongo
             BsonDocument doc = new BsonDocument
             {
                 { "accountId", entity.AccountId },
+                { "period", entity.Period },
                 { "settleDate", entity.SettleDate },
                 { "previousDate", entity.PreviousDate },
                 { "currentDate", entity.CurrentDate },

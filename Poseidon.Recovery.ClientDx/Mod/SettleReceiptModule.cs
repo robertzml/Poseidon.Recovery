@@ -21,11 +21,50 @@ namespace Poseidon.Recovery.ClientDx
     /// </summary>
     public partial class SettleReceiptModule : DevExpress.XtraEditors.XtraUserControl
     {
+        #region Field
+        /// <summary>
+        /// 当前关联账户
+        /// </summary>
+        private Account currentAccount;
+
+        /// <summary>
+        /// 是否能编辑
+        /// </summary>
+        private bool editable;
+        #endregion //Field
+
         #region Constructor
         public SettleReceiptModule()
         {
             InitializeComponent();
         }
         #endregion //Constructor
+
+        #region Method
+        /// <summary>
+        /// 设置账户
+        /// </summary>
+        /// <param name="account"></param>
+        public void SetAccount(Account account)
+        {
+            this.currentAccount = account;
+
+            //this.measureRecordGrid.Init();
+            //LoadData(account);
+        }
+        #endregion //Method
+
+        #region Event
+        /// <summary>
+        /// 新增费用结算
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btnAdd_Click(object sender, EventArgs e)
+        {
+            ChildFormManage.ShowDialogForm(typeof(FrmSettleAdd), new object[] { this.currentAccount.Id });
+            //LoadData(this.currentAccount);
+        }
+        #endregion //Event
     }
 }

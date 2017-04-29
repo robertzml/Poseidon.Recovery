@@ -23,6 +23,12 @@ namespace Poseidon.Recovery.Core.DL
         public string ShortName { get; set; }
 
         /// <summary>
+        /// 开票名称
+        /// </summary>
+        [Display(Name = "开票名称")]
+        public string TicketName { get; set; }
+
+        /// <summary>
         /// 能源类型
         /// </summary>
         [Display(Name = "能源类型")]

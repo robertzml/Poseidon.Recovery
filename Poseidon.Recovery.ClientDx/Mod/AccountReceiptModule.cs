@@ -73,6 +73,7 @@ namespace Poseidon.Recovery.ClientDx
 
         private void DisplayMeasure(Account account)
         {
+            this.settleMod.SetAccount(account);
             this.measureMod.SetAccount(account);
         }
         #endregion //Function

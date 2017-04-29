@@ -64,9 +64,10 @@
             this.layoutControlItem2 = new DevExpress.XtraLayout.LayoutControlItem();
             this.tabBusiness = new DevExpress.XtraTab.XtraTabControl();
             this.tabPageSettlement = new DevExpress.XtraTab.XtraTabPage();
+            this.tabPageRecycle = new DevExpress.XtraTab.XtraTabPage();
             this.tabPageMeasure = new DevExpress.XtraTab.XtraTabPage();
             this.measureMod = new Poseidon.Recovery.ClientDx.MeasureReceiptModule();
-            this.tabPageRecycle = new DevExpress.XtraTab.XtraTabPage();
+            this.settleMod = new Poseidon.Recovery.ClientDx.SettleReceiptModule();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
             this.groupControl1.SuspendLayout();
@@ -105,6 +106,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tabBusiness)).BeginInit();
             this.tabBusiness.SuspendLayout();
+            this.tabPageSettlement.SuspendLayout();
             this.tabPageMeasure.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -490,9 +492,16 @@
             // 
             // tabPageSettlement
             // 
+            this.tabPageSettlement.Controls.Add(this.settleMod);
             this.tabPageSettlement.Name = "tabPageSettlement";
             this.tabPageSettlement.Size = new System.Drawing.Size(907, 370);
             this.tabPageSettlement.Text = "费用结算";
+            // 
+            // tabPageRecycle
+            // 
+            this.tabPageRecycle.Name = "tabPageRecycle";
+            this.tabPageRecycle.Size = new System.Drawing.Size(907, 370);
+            this.tabPageRecycle.Text = "回收登记";
             // 
             // tabPageMeasure
             // 
@@ -510,11 +519,13 @@
             this.measureMod.Size = new System.Drawing.Size(907, 370);
             this.measureMod.TabIndex = 0;
             // 
-            // tabPageRecycle
+            // settleMod
             // 
-            this.tabPageRecycle.Name = "tabPageRecycle";
-            this.tabPageRecycle.Size = new System.Drawing.Size(907, 370);
-            this.tabPageRecycle.Text = "回收登记";
+            this.settleMod.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.settleMod.Location = new System.Drawing.Point(0, 0);
+            this.settleMod.Name = "settleMod";
+            this.settleMod.Size = new System.Drawing.Size(907, 370);
+            this.settleMod.TabIndex = 0;
             // 
             // AccountReceiptModule
             // 
@@ -561,6 +572,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tabBusiness)).EndInit();
             this.tabBusiness.ResumeLayout(false);
+            this.tabPageSettlement.ResumeLayout(false);
             this.tabPageMeasure.ResumeLayout(false);
             this.ResumeLayout(false);
 
@@ -607,5 +619,6 @@
         private DevExpress.XtraTab.XtraTabPage tabPageMeasure;
         private DevExpress.XtraTab.XtraTabPage tabPageRecycle;
         private MeasureReceiptModule measureMod;
+        private SettleReceiptModule settleMod;
     }
 }

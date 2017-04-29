@@ -22,6 +22,12 @@ namespace Poseidon.Recovery.Core.DL
         [Display(Name = "账户ID")]
         public string AccountId { get; set; }
 
+        /// <summary>
+        /// 结算周期
+        /// </summary>
+        [Display(Name = "结算周期")]
+        public string Period { get; set; }
+
         ///// <summary>
         ///// 费用类型
         ///// </summary>

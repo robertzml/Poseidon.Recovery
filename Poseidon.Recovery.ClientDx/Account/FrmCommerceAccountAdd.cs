@@ -61,6 +61,7 @@ namespace Poseidon.Recovery.ClientDx
         {
             entity.Name = this.txtName.Text;
             entity.ShortName = this.txtShortName.Text;
+            entity.TicketName = this.txtTicketName.Text;
             entity.Contract = this.txtContact.Text;
             entity.Remark = this.txtRemark.Text;
 

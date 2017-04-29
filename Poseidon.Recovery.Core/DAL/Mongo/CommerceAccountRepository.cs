@@ -44,6 +44,7 @@ namespace Poseidon.Recovery.Core.DAL.Mongo
             entity.Id = doc["_id"].ToString();
             entity.Name = doc["name"].ToString();
             entity.ShortName = doc["shortName"].ToString();
+            entity.TicketName = doc["ticketName"].ToString();
             entity.ModelType = doc["modelType"].ToString();
             entity.OpenYear = doc["openYear"].ToInt32();
             entity.Remark = doc["remark"].ToString();
@@ -103,6 +104,7 @@ namespace Poseidon.Recovery.Core.DAL.Mongo
             {
                 { "name", entity.Name },
                 { "shortName", entity.ShortName },
+                { "ticketName", entity.TicketName },
                 { "modelType", entity.ModelType },
                 { "openYear", entity.OpenYear },
                 { "remark", entity.Remark },
