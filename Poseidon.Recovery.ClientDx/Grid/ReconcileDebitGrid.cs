@@ -117,7 +117,7 @@ namespace Poseidon.Recovery.ClientDx
                 }
                 else
                 {
-                    settle = BusinessFactory<SettleBusiness>.Instance.FindById(e.Value.ToString());
+                    settle = BusinessFactory<SettleBusiness>.Instance.FindById(record.SettleId);
                     e.Value = settle.TotalAmount;
                 }
             }

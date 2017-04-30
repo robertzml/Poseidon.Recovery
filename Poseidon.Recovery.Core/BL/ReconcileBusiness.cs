@@ -28,6 +28,16 @@ namespace Poseidon.Recovery.Core.BL
 
         #region Method
         /// <summary>
+        /// 获取账户财务对账
+        /// </summary>
+        /// <param name="accountId">回收账户ID</param>
+        /// <returns></returns>
+        public IEnumerable<Reconcile> FindByAccount(string accountId)
+        {
+            return this.baseDal.FindListByField("accountId", accountId).OrderByDescending(r => r.ReconcileDate);
+        }
+
+        /// <summary>
         /// 查找借方信息
         /// </summary>
         /// <param name="settleId">结算ID</param>

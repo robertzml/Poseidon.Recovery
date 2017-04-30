@@ -41,6 +41,14 @@ namespace Poseidon.Recovery.ClientDx
         }
         #endregion //Constructor
 
+        #region Function
+        private void LoadData(Account account)
+        {
+            var data = BusinessFactory<ReconcileBusiness>.Instance.FindAll().ToList();
+            this.reconcileGrid.DataSource = data;
+        }
+        #endregion //Function
+
         #region Method
         /// <summary>
         /// 设置账户
@@ -50,12 +58,34 @@ namespace Poseidon.Recovery.ClientDx
         {
             this.currentAccount = account;
 
-            //this.recycleRecordGrid.Init();
-            //LoadData(account);
+            this.debitGrid.Init(account.Id);
+            this.debitOtherGrid.Init(account.Id);
+            this.creditGrid.Init(account.Id);
+            this.recycleRecordGrid.Init();
+
+            LoadData(account);
         }
         #endregion //Method
 
         #region Event
+        /// <summary>
+        /// 选择对账记录
+        /// </summary>
+        /// <param name="arg1"></param>
+        /// <param name="arg2"></param>
+        private void reconcileGrid_RowSelected(object arg1, EventArgs arg2)
+        {
+            var reconcile = this.reconcileGrid.GetCurrentSelect();
+
+            this.debitGrid.DataSource = reconcile.Debits.Where(r => !string.IsNullOrEmpty(r.SettleId)).ToList();
+            this.debitOtherGrid.DataSource = reconcile.Debits.Where(r => string.IsNullOrEmpty(r.SettleId)).ToList();
+
+            this.creditGrid.DataSource = reconcile.Credits.ToList();
+
+            var recycle = BusinessFactory<RecycleBusiness>.Instance.FindById(reconcile.Credits.First().RecycleId);
+            this.recycleRecordGrid.DataSource = recycle.Records;
+        }
+
         /// <summary>
         /// 新增对账
         /// </summary>
@@ -67,7 +97,7 @@ namespace Poseidon.Recovery.ClientDx
                 return;
 
             ChildFormManage.ShowDialogForm(typeof(FrmReconcileAdd), new object[] { this.currentAccount.Id });
-            //LoadData(this.currentAccount);
+            LoadData(this.currentAccount);
         }
         #endregion //Event
     }

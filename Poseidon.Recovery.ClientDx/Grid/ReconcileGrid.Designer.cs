@@ -29,13 +29,12 @@
         private void InitializeComponent()
         {
             this.colAccountId = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colRecycleId = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colReconcileDate = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colCertificateId = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colCertificateNumber = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colSummary = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colAmount = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colRemark = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colStatus = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colId = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.bsEntity)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgcEntity)).BeginInit();
@@ -55,13 +54,12 @@
             this.dgvEntity.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
             this.colId,
             this.colAccountId,
-            this.colRecycleId,
             this.colReconcileDate,
             this.colCertificateId,
             this.colCertificateNumber,
             this.colSummary,
-            this.colRemark,
-            this.colStatus});
+            this.colAmount,
+            this.colRemark});
             this.dgvEntity.IndicatorWidth = 40;
             this.dgvEntity.OptionsBehavior.AllowAddRows = DevExpress.Utils.DefaultBoolean.False;
             this.dgvEntity.OptionsBehavior.AllowDeleteRows = DevExpress.Utils.DefaultBoolean.False;
@@ -75,57 +73,46 @@
             // 
             this.colAccountId.FieldName = "AccountId";
             this.colAccountId.Name = "colAccountId";
-            this.colAccountId.Visible = true;
-            this.colAccountId.VisibleIndex = 0;
-            // 
-            // colRecycleId
-            // 
-            this.colRecycleId.FieldName = "RecycleId";
-            this.colRecycleId.Name = "colRecycleId";
-            this.colRecycleId.Visible = true;
-            this.colRecycleId.VisibleIndex = 1;
             // 
             // colReconcileDate
             // 
             this.colReconcileDate.FieldName = "ReconcileDate";
             this.colReconcileDate.Name = "colReconcileDate";
             this.colReconcileDate.Visible = true;
-            this.colReconcileDate.VisibleIndex = 2;
+            this.colReconcileDate.VisibleIndex = 0;
             // 
             // colCertificateId
             // 
             this.colCertificateId.FieldName = "CertificateId";
             this.colCertificateId.Name = "colCertificateId";
-            this.colCertificateId.Visible = true;
-            this.colCertificateId.VisibleIndex = 3;
             // 
             // colCertificateNumber
             // 
             this.colCertificateNumber.FieldName = "CertificateNumber";
             this.colCertificateNumber.Name = "colCertificateNumber";
             this.colCertificateNumber.Visible = true;
-            this.colCertificateNumber.VisibleIndex = 4;
+            this.colCertificateNumber.VisibleIndex = 1;
             // 
             // colSummary
             // 
             this.colSummary.FieldName = "Summary";
             this.colSummary.Name = "colSummary";
             this.colSummary.Visible = true;
-            this.colSummary.VisibleIndex = 5;
+            this.colSummary.VisibleIndex = 2;
+            // 
+            // colAmount
+            // 
+            this.colAmount.FieldName = "Amount";
+            this.colAmount.Name = "colAmount";
+            this.colAmount.Visible = true;
+            this.colAmount.VisibleIndex = 3;
             // 
             // colRemark
             // 
             this.colRemark.FieldName = "Remark";
             this.colRemark.Name = "colRemark";
             this.colRemark.Visible = true;
-            this.colRemark.VisibleIndex = 8;
-            // 
-            // colStatus
-            // 
-            this.colStatus.FieldName = "Status";
-            this.colStatus.Name = "colStatus";
-            this.colStatus.Visible = true;
-            this.colStatus.VisibleIndex = 9;
+            this.colRemark.VisibleIndex = 4;
             // 
             // colId
             // 
@@ -146,14 +133,13 @@
 
         #endregion
 
+        private DevExpress.XtraGrid.Columns.GridColumn colId;
         private DevExpress.XtraGrid.Columns.GridColumn colAccountId;
-        private DevExpress.XtraGrid.Columns.GridColumn colRecycleId;
         private DevExpress.XtraGrid.Columns.GridColumn colReconcileDate;
         private DevExpress.XtraGrid.Columns.GridColumn colCertificateId;
         private DevExpress.XtraGrid.Columns.GridColumn colCertificateNumber;
         private DevExpress.XtraGrid.Columns.GridColumn colSummary;
+        private DevExpress.XtraGrid.Columns.GridColumn colAmount;
         private DevExpress.XtraGrid.Columns.GridColumn colRemark;
-        private DevExpress.XtraGrid.Columns.GridColumn colStatus;
-        private DevExpress.XtraGrid.Columns.GridColumn colId;
     }
 }

@@ -99,7 +99,7 @@ namespace Poseidon.Recovery.ClientDx
                 }
                 else
                 {
-                    recycle = BusinessFactory<RecycleBusiness>.Instance.FindById(e.Value.ToString());
+                    recycle = BusinessFactory<RecycleBusiness>.Instance.FindById(record.RecycleId);
                     e.Value = recycle.TotalAmount;
                 }
             }

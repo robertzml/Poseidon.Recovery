@@ -16,11 +16,16 @@ namespace Poseidon.Recovery.ClientDx
     using Poseidon.Recovery.Core.DL;
     using Poseidon.Recovery.Core.Utility;
 
+    /// <summary>
+    /// 对账表格控件
+    /// </summary>
     public partial class ReconcileGrid : WinEntityGrid<Reconcile>
     {
+        #region Constructor
         public ReconcileGrid()
         {
             InitializeComponent();
         }
+        #endregion //Constructor
     }
 }
