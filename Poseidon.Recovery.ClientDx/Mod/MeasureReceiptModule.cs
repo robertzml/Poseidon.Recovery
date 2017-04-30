@@ -132,6 +132,9 @@ namespace Poseidon.Recovery.ClientDx
         /// <param name="e"></param>
         private void btnAdd_Click(object sender, EventArgs e)
         {
+            if (this.currentAccount == null)
+                return;
+
             ChildFormManage.ShowDialogForm(typeof(FrmMeasureAdd), new object[] { this.currentAccount.Id });
             LoadData(this.currentAccount);
         }

@@ -26,6 +26,11 @@ namespace Poseidon.Recovery.ClientDx
         /// 缓存结算信息
         /// </summary>
         private List<Settle> settles = new List<Settle>();
+
+        /// <summary>
+        /// 借方为结算数据
+        /// </summary>
+        private bool isSettle = true;
         #endregion //Field
 
         #region Constructor
@@ -43,10 +48,22 @@ namespace Poseidon.Recovery.ClientDx
         public void Init(string accountId)
         {
             this.settles = BusinessFactory<SettleBusiness>.Instance.FindByAccount(accountId).ToList();
+            ControlUtil.BindDictToComboBox(this.cmbFeeType, typeof(ReconcileDebit), "FeeType");
         }
         #endregion //Method
 
         #region Event
+        /// <summary>
+        /// 控件载入
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void ReconcileDebitGrid_Load(object sender, EventArgs e)
+        {
+            this.colSettleId.Visible = this.isSettle;
+            this.colSettleAmount.Visible = this.isSettle;
+        }
+
         /// <summary>
         /// 格式化数据显示
         /// </summary>
@@ -91,6 +108,8 @@ namespace Poseidon.Recovery.ClientDx
             var record = this.bsEntity[rowIndex] as ReconcileDebit;
             if (e.Column.FieldName == "colSettleAmount" && e.IsGetData)
             {
+                if (string.IsNullOrEmpty(record.SettleId))
+                    return;
                 var settle = this.settles.SingleOrDefault(r => r.Id == record.SettleId);
                 if (settle != null)
                 {
@@ -104,5 +123,24 @@ namespace Poseidon.Recovery.ClientDx
             }
         }
         #endregion //Event
+
+        #region Property
+        /// <summary>
+        /// 借方为结算数据
+        /// </summary>
+        [Description("借方为结算数据"), Category("功能"), Browsable(true)]
+        public bool IsSettle
+        {
+            get
+            {
+                return isSettle;
+            }
+
+            set
+            {
+                isSettle = value;
+            }
+        }
+        #endregion //Property
     }
 }

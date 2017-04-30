@@ -54,6 +54,7 @@ namespace Poseidon.Recovery.Core.DAL.Mongo
                     ReconcileDebit record = new ReconcileDebit();
                     record.AccountId = item["accountId"].ToString();
                     record.SettleId = item["settleId"].ToString();
+                    record.FeeType = item["feeType"].ToInt32();
                     record.Amount = item["amount"].ToDecimal();
                     record.Remark = item["remark"].ToString();
 
@@ -137,6 +138,7 @@ namespace Poseidon.Recovery.Core.DAL.Mongo
                     {
                         { "accountId", item.AccountId },
                         { "settleId", item.SettleId },
+                        { "feeType", item.FeeType },
                         { "amount", item.Amount },
                         { "remark", item.Remark }
                     };

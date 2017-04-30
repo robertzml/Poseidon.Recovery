@@ -38,7 +38,7 @@ namespace Poseidon.Recovery.Core.BL
             var reconciles = dal.FindBySettle(settleId);
 
             List<ReconcileDebit> data = new List<ReconcileDebit>();
-            foreach(var item in reconciles)
+            foreach (var item in reconciles)
             {
                 var debits = item.Debits.Where(r => r.SettleId == settleId);
 
@@ -46,6 +46,23 @@ namespace Poseidon.Recovery.Core.BL
             }
 
             return data;
+        }
+
+        /// <summary>
+        /// 检查结算是否付清
+        /// </summary>
+        /// <param name="settleId">结算ID</param>
+        /// <returns></returns>
+        public bool CheckSettle(string settleId)
+        {
+            SettleBusiness settleBusiness = new SettleBusiness();
+            var settle = settleBusiness.FindById(settleId);
+
+            var debits = GetDebits(settleId);
+            if (debits.Sum(r => r.Amount) >= settle.TotalAmount)
+                return true;
+            else
+                return false;
         }
 
         /// <summary>
@@ -71,13 +88,20 @@ namespace Poseidon.Recovery.Core.BL
             base.Create(entity);
 
             // recycle post
-            //RecycleBusiness recycleBusiness = new RecycleBusiness();
-            //var credit = entity.Credits.First();
-            //recycleBusiness.Post(credit.RecycleId, true);
+            RecycleBusiness recycleBusiness = new RecycleBusiness();
+            var credit = entity.Credits.First();
+            recycleBusiness.Post(credit.RecycleId, true);
 
             // settle write-off
-            //SettleBusiness settleBusiness = new SettleBusiness();
+            SettleBusiness settleBusiness = new SettleBusiness();
+            foreach (var item in entity.Debits)
+            {
+                if (string.IsNullOrEmpty(item.SettleId))
+                    continue;
 
+                bool isOff = CheckSettle(item.SettleId);
+                settleBusiness.WriteOff(item.SettleId, isOff);
+            }
         }
 
         /// <summary>

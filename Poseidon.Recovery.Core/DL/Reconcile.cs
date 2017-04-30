@@ -88,6 +88,13 @@ namespace Poseidon.Recovery.Core.DL
         public string SettleId { get; set; }
 
         /// <summary>
+        /// 费用类型
+        /// </summary>
+        [Dict("Recovery.FeeType")]
+        [Display(Name = "费用类型")]
+        public int FeeType { get; set; }
+
+        /// <summary>
         /// 借方金额
         /// </summary>
         [Display(Name = "借方金额")]

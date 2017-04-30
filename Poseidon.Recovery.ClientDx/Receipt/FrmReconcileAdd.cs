@@ -50,7 +50,12 @@ namespace Poseidon.Recovery.ClientDx
             this.bsRecycle.DataSource = BusinessFactory<RecycleBusiness>.Instance.FindByAccount(this.currentAccount.Id, false);
 
             this.debitGrid.Init(this.currentAccount.Id);
+            this.debitOtherGrid.Init(this.currentAccount.Id);
             this.creditGrid.Init(this.currentAccount.Id);
+            this.recycleRecordGrid.Init();
+
+            this.debitGrid.DataSource = new List<ReconcileDebit>();
+            this.debitOtherGrid.DataSource = new List<ReconcileDebit>();
 
             base.InitForm();
         }
@@ -115,18 +120,44 @@ namespace Poseidon.Recovery.ClientDx
                 return new Tuple<bool, string>(false, errorMessage);
             }
 
-            if (this.debitGrid.DataSource == null || this.debitGrid.DataSource.Count == 0)
-            {
-                errorMessage = "无借方数据";
-                return new Tuple<bool, string>(false, errorMessage);
-            }
+            //if (this.debitGrid.DataSource == null || this.debitGrid.DataSource.Count == 0)
+            //{
+            //    errorMessage = "无借方数据";
+            //    return new Tuple<bool, string>(false, errorMessage);
+            //}
             if (this.creditGrid.DataSource == null || this.creditGrid.DataSource.Count == 0)
             {
                 errorMessage = "无贷方数据";
                 return new Tuple<bool, string>(false, errorMessage);
             }
 
+            foreach (var item in this.debitGrid.DataSource)
+            {
+                if (item.FeeType == 0)
+                {
+                    errorMessage = "请选择费用类型";
+                    return new Tuple<bool, string>(false, errorMessage);
+                }
+            }
+            foreach (var item in this.debitOtherGrid.DataSource)
+            {
+                if (item.FeeType == 0)
+                {
+                    errorMessage = "请选择费用类型";
+                    return new Tuple<bool, string>(false, errorMessage);
+                }
+            }
+
+            var debitAmount = this.debitGrid.DataSource.Sum(r => r.Amount);
+            var debitOtherAmount = this.debitOtherGrid.DataSource.Sum(r => r.Amount);
             var creditAmount = this.creditGrid.DataSource.Sum(r => r.Amount);
+
+            if (debitAmount + debitOtherAmount != creditAmount)
+            {
+                errorMessage = "借贷方金额不等";
+                return new Tuple<bool, string>(false, errorMessage);
+            }
+
             if (this.spAmount.Value != creditAmount)
             {
                 errorMessage = "入账金额和贷方金额不等";
@@ -136,6 +167,10 @@ namespace Poseidon.Recovery.ClientDx
             return new Tuple<bool, string>(true, "");
         }
 
+        /// <summary>
+        /// 显示警告信息
+        /// </summary>
+        /// <returns></returns>
         private bool ShowWarnings()
         {
             string warningMessage = "";
@@ -143,14 +178,6 @@ namespace Poseidon.Recovery.ClientDx
             if (this.spAmount.Value == 0)
             {
                 warningMessage = "入账金额为0";
-            }
-
-            var debitAmount = this.debitGrid.DataSource.Sum(r => r.Amount);
-            var creditAmount = this.creditGrid.DataSource.Sum(r => r.Amount);
-
-            if (debitAmount != creditAmount)
-            {
-                warningMessage = "借贷方金额不等";
             }
 
             if (string.IsNullOrEmpty(warningMessage))
@@ -178,9 +205,14 @@ namespace Poseidon.Recovery.ClientDx
             entity.Summary = this.txtSummary.Text;
             entity.Remark = this.txtRemark.Text;
 
-            entity.Debits = this.debitGrid.DataSource;
+            entity.Debits = new List<ReconcileDebit>();
+            entity.Debits.AddRange(this.debitGrid.DataSource);
+            entity.Debits.AddRange(this.debitOtherGrid.DataSource);
+
             foreach (var item in entity.Debits)
             {
+                item.AccountId = this.currentAccount.Id;
+                item.SettleId = item.SettleId ?? "";
                 item.Remark = item.Remark ?? "";
             }
 
@@ -223,10 +255,14 @@ namespace Poseidon.Recovery.ClientDx
             if (this.luRecycles.EditValue == null)
             {
                 this.creditGrid.Clear();
+                this.recycleRecordGrid.Clear();
                 return;
             }
 
-            SetCredits(this.luRecycles.EditValue.ToString());
+            var recycle = this.luRecycles.GetSelectedDataRow() as Recycle;
+            SetCredits(recycle.Id);
+
+            this.recycleRecordGrid.DataSource = recycle.Records;
         }
 
         /// <summary>
@@ -237,6 +273,7 @@ namespace Poseidon.Recovery.ClientDx
         private void btnConfirm_Click(object sender, EventArgs e)
         {
             this.debitGrid.CloseEditor();
+            this.debitOtherGrid.CloseEditor();
             this.creditGrid.CloseEditor();
 
             var input = CheckInput();

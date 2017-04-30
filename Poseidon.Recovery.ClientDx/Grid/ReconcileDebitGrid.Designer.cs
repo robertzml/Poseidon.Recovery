@@ -33,9 +33,12 @@
             this.colRemark = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colAccountId = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colSettleAmount = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colFeeType = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.cmbFeeType = new DevExpress.XtraEditors.Repository.RepositoryItemImageComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.bsEntity)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgcEntity)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEntity)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cmbFeeType)).BeginInit();
             this.SuspendLayout();
             // 
             // bsEntity
@@ -44,6 +47,8 @@
             // 
             // dgcEntity
             // 
+            this.dgcEntity.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
+            this.cmbFeeType});
             this.dgcEntity.Size = new System.Drawing.Size(568, 378);
             // 
             // dgvEntity
@@ -52,6 +57,7 @@
             this.colAccountId,
             this.colSettleId,
             this.colSettleAmount,
+            this.colFeeType,
             this.colAmount,
             this.colRemark});
             this.dgvEntity.IndicatorWidth = 40;
@@ -82,14 +88,14 @@
             this.colAmount.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
             new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "Amount", "合计={0:0.##}")});
             this.colAmount.Visible = true;
-            this.colAmount.VisibleIndex = 2;
+            this.colAmount.VisibleIndex = 3;
             // 
             // colRemark
             // 
             this.colRemark.FieldName = "Remark";
             this.colRemark.Name = "colRemark";
             this.colRemark.Visible = true;
-            this.colRemark.VisibleIndex = 3;
+            this.colRemark.VisibleIndex = 4;
             // 
             // colAccountId
             // 
@@ -110,14 +116,32 @@
             this.colSettleAmount.Visible = true;
             this.colSettleAmount.VisibleIndex = 1;
             // 
+            // colFeeType
+            // 
+            this.colFeeType.Caption = "费用类型";
+            this.colFeeType.ColumnEdit = this.cmbFeeType;
+            this.colFeeType.FieldName = "FeeType";
+            this.colFeeType.Name = "colFeeType";
+            this.colFeeType.Visible = true;
+            this.colFeeType.VisibleIndex = 2;
+            // 
+            // cmbFeeType
+            // 
+            this.cmbFeeType.AutoHeight = false;
+            this.cmbFeeType.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.cmbFeeType.Name = "cmbFeeType";
+            // 
             // ReconcileDebitGrid
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Name = "ReconcileDebitGrid";
+            this.Load += new System.EventHandler(this.ReconcileDebitGrid_Load);
             ((System.ComponentModel.ISupportInitialize)(this.bsEntity)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgcEntity)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEntity)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cmbFeeType)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -129,5 +153,7 @@
         private DevExpress.XtraGrid.Columns.GridColumn colRemark;
         private DevExpress.XtraGrid.Columns.GridColumn colAccountId;
         private DevExpress.XtraGrid.Columns.GridColumn colSettleAmount;
+        private DevExpress.XtraGrid.Columns.GridColumn colFeeType;
+        private DevExpress.XtraEditors.Repository.RepositoryItemImageComboBox cmbFeeType;
     }
 }
