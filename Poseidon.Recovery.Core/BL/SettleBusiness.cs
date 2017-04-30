@@ -56,6 +56,7 @@ namespace Poseidon.Recovery.Core.BL
                 Name = user.Name,
                 Time = DateTime.Now
             };
+            entity.IsWriteOff = false;
             entity.Status = 0;
             base.Create(entity);
         }

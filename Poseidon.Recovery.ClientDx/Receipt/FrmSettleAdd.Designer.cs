@@ -57,6 +57,8 @@
             this.layoutControlItem11 = new DevExpress.XtraLayout.LayoutControlItem();
             this.groupControl2 = new DevExpress.XtraEditors.GroupControl();
             this.settleRecordGrid = new Poseidon.Recovery.ClientDx.SettleRecordGrid();
+            this.chkIsDebt = new DevExpress.XtraEditors.CheckEdit();
+            this.layoutControlItem7 = new DevExpress.XtraLayout.LayoutControlItem();
             ((System.ComponentModel.ISupportInitialize)(this.plFill)).BeginInit();
             this.plFill.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.plBottom)).BeginInit();
@@ -93,6 +95,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem11)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).BeginInit();
             this.groupControl2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.chkIsDebt.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem7)).BeginInit();
             this.SuspendLayout();
             // 
             // btnCancel
@@ -146,6 +150,7 @@
             // 
             // layoutControl1
             // 
+            this.layoutControl1.Controls.Add(this.chkIsDebt);
             this.layoutControl1.Controls.Add(this.luCurrentMeasure);
             this.layoutControl1.Controls.Add(this.luPreviousMeasure);
             this.layoutControl1.Controls.Add(this.txtPeriod);
@@ -166,7 +171,7 @@
             // 
             // luCurrentMeasure
             // 
-            this.luCurrentMeasure.Location = new System.Drawing.Point(460, 113);
+            this.luCurrentMeasure.Location = new System.Drawing.Point(363, 60);
             this.luCurrentMeasure.Name = "luCurrentMeasure";
             this.luCurrentMeasure.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
@@ -180,7 +185,7 @@
             this.luCurrentMeasure.Properties.DisplayMember = "MeasureDate";
             this.luCurrentMeasure.Properties.NullText = "请选择";
             this.luCurrentMeasure.Properties.ValueMember = "Id";
-            this.luCurrentMeasure.Size = new System.Drawing.Size(342, 20);
+            this.luCurrentMeasure.Size = new System.Drawing.Size(196, 20);
             this.luCurrentMeasure.StyleController = this.layoutControl1;
             this.luCurrentMeasure.TabIndex = 15;
             this.luCurrentMeasure.EditValueChanged += new System.EventHandler(this.luCurrentMeasure_EditValueChanged);
@@ -191,7 +196,7 @@
             // 
             // luPreviousMeasure
             // 
-            this.luPreviousMeasure.Location = new System.Drawing.Point(63, 113);
+            this.luPreviousMeasure.Location = new System.Drawing.Point(63, 60);
             this.luPreviousMeasure.Name = "luPreviousMeasure";
             this.luPreviousMeasure.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
@@ -205,7 +210,7 @@
             this.luPreviousMeasure.Properties.DisplayMember = "MeasureDate";
             this.luPreviousMeasure.Properties.NullText = "请选择";
             this.luPreviousMeasure.Properties.ValueMember = "Id";
-            this.luPreviousMeasure.Size = new System.Drawing.Size(342, 20);
+            this.luPreviousMeasure.Size = new System.Drawing.Size(245, 20);
             this.luPreviousMeasure.StyleController = this.layoutControl1;
             this.luPreviousMeasure.TabIndex = 14;
             this.luPreviousMeasure.EditValueChanged += new System.EventHandler(this.luPreviousMeasure_EditValueChanged);
@@ -230,7 +235,7 @@
             // 
             // txtRemark
             // 
-            this.txtRemark.Location = new System.Drawing.Point(63, 60);
+            this.txtRemark.Location = new System.Drawing.Point(63, 84);
             this.txtRemark.Name = "txtRemark";
             this.txtRemark.Size = new System.Drawing.Size(739, 49);
             this.txtRemark.StyleController = this.layoutControl1;
@@ -322,7 +327,8 @@
             this.layoutControlItem9,
             this.layoutControlItem5,
             this.layoutControlItem10,
-            this.layoutControlItem11});
+            this.layoutControlItem11,
+            this.layoutControlItem7});
             this.layoutControlGroup1.Location = new System.Drawing.Point(0, 0);
             this.layoutControlGroup1.Name = "layoutControlGroup1";
             this.layoutControlGroup1.Size = new System.Drawing.Size(814, 171);
@@ -367,7 +373,7 @@
             // layoutControlItem6
             // 
             this.layoutControlItem6.Control = this.txtRemark;
-            this.layoutControlItem6.Location = new System.Drawing.Point(0, 48);
+            this.layoutControlItem6.Location = new System.Drawing.Point(0, 72);
             this.layoutControlItem6.Name = "layoutControlItem6";
             this.layoutControlItem6.Size = new System.Drawing.Size(794, 53);
             this.layoutControlItem6.Text = "备注";
@@ -411,18 +417,18 @@
             // layoutControlItem10
             // 
             this.layoutControlItem10.Control = this.luPreviousMeasure;
-            this.layoutControlItem10.Location = new System.Drawing.Point(0, 101);
+            this.layoutControlItem10.Location = new System.Drawing.Point(0, 48);
             this.layoutControlItem10.Name = "layoutControlItem10";
-            this.layoutControlItem10.Size = new System.Drawing.Size(397, 24);
+            this.layoutControlItem10.Size = new System.Drawing.Size(300, 24);
             this.layoutControlItem10.Text = "上期抄表";
             this.layoutControlItem10.TextSize = new System.Drawing.Size(48, 14);
             // 
             // layoutControlItem11
             // 
             this.layoutControlItem11.Control = this.luCurrentMeasure;
-            this.layoutControlItem11.Location = new System.Drawing.Point(397, 101);
+            this.layoutControlItem11.Location = new System.Drawing.Point(300, 48);
             this.layoutControlItem11.Name = "layoutControlItem11";
-            this.layoutControlItem11.Size = new System.Drawing.Size(397, 24);
+            this.layoutControlItem11.Size = new System.Drawing.Size(251, 24);
             this.layoutControlItem11.Text = "本期抄表";
             this.layoutControlItem11.TextSize = new System.Drawing.Size(48, 14);
             // 
@@ -455,6 +461,25 @@
             this.settleRecordGrid.ShowNavigator = true;
             this.settleRecordGrid.Size = new System.Drawing.Size(814, 272);
             this.settleRecordGrid.TabIndex = 0;
+            // 
+            // chkIsDebt
+            // 
+            this.chkIsDebt.EditValue = true;
+            this.chkIsDebt.Location = new System.Drawing.Point(563, 60);
+            this.chkIsDebt.Name = "chkIsDebt";
+            this.chkIsDebt.Properties.Caption = "应收款";
+            this.chkIsDebt.Size = new System.Drawing.Size(239, 19);
+            this.chkIsDebt.StyleController = this.layoutControl1;
+            this.chkIsDebt.TabIndex = 16;
+            // 
+            // layoutControlItem7
+            // 
+            this.layoutControlItem7.Control = this.chkIsDebt;
+            this.layoutControlItem7.Location = new System.Drawing.Point(551, 48);
+            this.layoutControlItem7.Name = "layoutControlItem7";
+            this.layoutControlItem7.Size = new System.Drawing.Size(243, 24);
+            this.layoutControlItem7.TextSize = new System.Drawing.Size(0, 0);
+            this.layoutControlItem7.TextVisible = false;
             // 
             // FrmSettleAdd
             // 
@@ -499,6 +524,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem11)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).EndInit();
             this.groupControl2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.chkIsDebt.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem7)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -533,5 +560,7 @@
         private DevExpress.XtraEditors.LookUpEdit luPreviousMeasure;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem10;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem11;
+        private DevExpress.XtraEditors.CheckEdit chkIsDebt;
+        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem7;
     }
 }

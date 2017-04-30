@@ -44,6 +44,8 @@ namespace Poseidon.Recovery.Core.DAL.Mongo
             entity.PreviousDate = doc["previousDate"].ToLocalTime();
             entity.CurrentDate = doc["currentDate"].ToLocalTime();
             entity.TotalAmount = doc["totalAmount"].ToDecimal();
+            entity.IsDebt = doc["isDebt"].ToBoolean();
+            entity.IsWriteOff = doc["isWriteOff"].ToBoolean();
 
             entity.Records = new List<SettleRecord>();
             if (doc.Contains("records"))
@@ -104,6 +106,8 @@ namespace Poseidon.Recovery.Core.DAL.Mongo
                 { "previousDate", entity.PreviousDate },
                 { "currentDate", entity.CurrentDate },
                 { "totalAmount", entity.TotalAmount },
+                { "isDebt", entity.IsDebt },
+                { "isWriteOff", entity.IsWriteOff },
                 { "createBy", new BsonDocument {
                     { "userId", entity.CreateBy.UserId },
                     { "name", entity.CreateBy.Name },

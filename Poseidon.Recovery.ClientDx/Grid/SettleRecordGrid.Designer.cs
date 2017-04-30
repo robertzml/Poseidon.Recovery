@@ -180,7 +180,7 @@
             this.colCalQuantum.FieldName = "colCalQuantum";
             this.colCalQuantum.Name = "colCalQuantum";
             this.colCalQuantum.OptionsColumn.AllowEdit = false;
-            this.colCalQuantum.UnboundExpression = "[Current] - [Previous]";
+            this.colCalQuantum.UnboundExpression = "([Current] - [Previous]) * [Multiple]";
             this.colCalQuantum.UnboundType = DevExpress.Data.UnboundColumnType.Decimal;
             this.colCalQuantum.Visible = true;
             this.colCalQuantum.VisibleIndex = 6;

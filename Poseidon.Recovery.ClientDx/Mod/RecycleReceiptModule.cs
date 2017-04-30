@@ -60,6 +60,7 @@ namespace Poseidon.Recovery.ClientDx
         {
             this.txtRecycleDate.Text = recycle.RecycleDate.ToDateString();
             this.txtTotalAmount.Text = recycle.TotalAmount.ToString();
+            this.chkIsPost.Checked = recycle.IsPost;
             this.txtRemark.Text = recycle.Remark;
             this.txtCreateUser.Text = recycle.CreateBy.Name;
             this.txtCreateTime.Text = recycle.CreateBy.Time.ToDateTimeString();

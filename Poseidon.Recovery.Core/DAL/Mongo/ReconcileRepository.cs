@@ -14,17 +14,17 @@ namespace Poseidon.Recovery.Core.DAL.Mongo
     using Poseidon.Recovery.Core.IDAL;
 
     /// <summary>
-    /// 费用回收数据访问类
+    /// 财务对账数据访问类
     /// </summary>
-    internal class RecycleRepository : AbstractDALMongo<Recycle>, IRecycleRepository
+    internal class ReconcileRepository : AbstractDALMongo<Reconcile>, IReconcileRepository
     {
         #region Constructor
         /// <summary>
-        /// 费用回收数据访问类
+        /// 财务对账数据访问类
         /// </summary>
-        public RecycleRepository()
+        public ReconcileRepository()
         {
-            base.Init("recovery_recycle");
+            base.Init("recovery_reconcile");
         }
         #endregion //Constructor
 
@@ -34,28 +34,23 @@ namespace Poseidon.Recovery.Core.DAL.Mongo
         /// </summary>
         /// <param name="doc">Bson文档</param>
         /// <returns></returns>
-        protected override Recycle DocToEntity(BsonDocument doc)
+        protected override Reconcile DocToEntity(BsonDocument doc)
         {
-            Recycle entity = new Recycle();
+            Reconcile entity = new Reconcile();
             entity.Id = doc["_id"].ToString();
             entity.AccountId = doc["accountId"].ToString();
-            entity.RecycleDate = doc["recycleDate"].ToLocalTime();
-            entity.TotalAmount = doc["totalAmount"].ToDecimal();
-            entity.IsPost = doc["isPost"].ToBoolean();
+            entity.ReconcileDate = doc["reconcileDate"].ToLocalTime();
+            entity.Certificate = doc["certificate"].ToString();
+            entity.Summary = doc["summary"].ToString();
 
-            entity.Records = new List<RecycleRecord>();
-            if (doc.Contains("records"))
+            entity.RecycleId = doc["recycleId"].ToString();
+            entity.SettleIds = new List<string>();
+            if (doc.Contains("settleIds"))
             {
-                BsonArray array = doc["records"].AsBsonArray;
-                foreach (BsonDocument item in array)
+                BsonArray array = doc["settleIds"].AsBsonArray;
+                foreach (var item in array)
                 {
-                    RecycleRecord record = new RecycleRecord();
-                    record.Name = item["name"].ToString();
-                    record.FeeType = item["feeType"].ToInt32();
-                    record.Amount = item["amount"].ToDecimal();
-                    record.Remark = item["remark"].ToString();
-
-                    entity.Records.Add(record);
+                    entity.SettleIds.Add(item.ToString());
                 }
             }
 
@@ -86,14 +81,15 @@ namespace Poseidon.Recovery.Core.DAL.Mongo
         /// </summary>
         /// <param name="entity">实体对象</param>
         /// <returns></returns>
-        protected override BsonDocument EntityToDoc(Recycle entity)
+        protected override BsonDocument EntityToDoc(Reconcile entity)
         {
             BsonDocument doc = new BsonDocument
             {
                 { "accountId", entity.AccountId },
-                { "recycleDate", entity.RecycleDate },
-                { "totalAmount", entity.TotalAmount },
-                { "isPost", entity.IsPost },
+                { "reconcileDate", entity.ReconcileDate },
+                { "certificate", entity.Certificate },
+                { "summary", entity.Summary },
+                { "recycleId", entity.RecycleId },
                 { "createBy", new BsonDocument {
                     { "userId", entity.CreateBy.UserId },
                     { "name", entity.CreateBy.Name },
@@ -108,23 +104,15 @@ namespace Poseidon.Recovery.Core.DAL.Mongo
                 { "status", entity.Status }
             };
 
-            if (entity.Records != null && entity.Records.Count > 0)
+            if (entity.SettleIds != null && entity.SettleIds.Count > 0)
             {
                 BsonArray array = new BsonArray();
-                foreach (var item in entity.Records)
+                foreach (var item in entity.SettleIds)
                 {
-                    BsonDocument record = new BsonDocument
-                    {
-                        { "name", item.Name },
-                        { "feeType", item.FeeType },
-                        { "amount", item.Amount },
-                        { "remark", item.Remark }
-                    };
-
-                    array.Add(record);
+                    array.Add(item);
                 }
 
-                doc.Add("records", array);
+                doc.Add("settleIds", array);
             }
 
             return doc;

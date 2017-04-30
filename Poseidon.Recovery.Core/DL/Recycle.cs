@@ -35,6 +35,12 @@ namespace Poseidon.Recovery.Core.DL
         public decimal TotalAmount { get; set; }
 
         /// <summary>
+        /// 是否入账
+        /// </summary>
+        [Display(Name = "是否入账")]
+        public bool IsPost { get; set; }
+
+        /// <summary>
         /// 回收记录
         /// </summary>
         [Display(Name = "回收记录")]

@@ -61,6 +61,8 @@ namespace Poseidon.Recovery.ClientDx
             this.txtPreviousDate.Text = settle.PreviousDate.ToDateString();
             this.txtCurrentDate.Text = settle.CurrentDate.ToDateString();
             this.txtTotalAmount.Text = settle.TotalAmount.ToString();
+            this.chkIsDebt.Checked = settle.IsDebt;
+            this.chkIsWriteOff.Checked = settle.IsWriteOff;
             this.txtRemark.Text = settle.Remark;
             this.txtCreateUser.Text = settle.CreateBy.Name;
             this.txtCreateTime.Text = settle.CreateBy.Time.ToDateTimeString();

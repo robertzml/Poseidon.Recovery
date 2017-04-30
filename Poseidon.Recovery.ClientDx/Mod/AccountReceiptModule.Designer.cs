@@ -44,6 +44,7 @@
             this.recycleMod = new Poseidon.Recovery.ClientDx.RecycleReceiptModule();
             this.tabPageMeasure = new DevExpress.XtraTab.XtraTabPage();
             this.measureMod = new Poseidon.Recovery.ClientDx.MeasureReceiptModule();
+            this.tabPageReconcile = new DevExpress.XtraTab.XtraTabPage();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tabInfo)).BeginInit();
             this.tabInfo.SuspendLayout();
@@ -134,7 +135,7 @@
             // 
             this.tabPageMeters.Controls.Add(this.meterGrid);
             this.tabPageMeters.Name = "tabPageMeters";
-            this.tabPageMeters.Size = new System.Drawing.Size(907, 185);
+            this.tabPageMeters.Size = new System.Drawing.Size(907, 165);
             this.tabPageMeters.Text = "包含表具";
             // 
             // meterGrid
@@ -153,7 +154,7 @@
             this.meterGrid.ShowLineNumber = true;
             this.meterGrid.ShowMenu = false;
             this.meterGrid.ShowNavigator = false;
-            this.meterGrid.Size = new System.Drawing.Size(907, 185);
+            this.meterGrid.Size = new System.Drawing.Size(907, 165);
             this.meterGrid.TabIndex = 0;
             // 
             // tabBusiness
@@ -167,7 +168,8 @@
             this.tabBusiness.TabPages.AddRange(new DevExpress.XtraTab.XtraTabPage[] {
             this.tabPageSettlement,
             this.tabPageRecycle,
-            this.tabPageMeasure});
+            this.tabPageMeasure,
+            this.tabPageReconcile});
             // 
             // tabPageSettlement
             // 
@@ -189,8 +191,8 @@
             // 
             this.tabPageRecycle.Controls.Add(this.recycleMod);
             this.tabPageRecycle.Name = "tabPageRecycle";
-            this.tabPageRecycle.Size = new System.Drawing.Size(907, 390);
-            this.tabPageRecycle.Text = "回收登记";
+            this.tabPageRecycle.Size = new System.Drawing.Size(907, 410);
+            this.tabPageRecycle.Text = "费用回收";
             // 
             // recycleMod
             // 
@@ -198,14 +200,14 @@
             this.recycleMod.Editable = true;
             this.recycleMod.Location = new System.Drawing.Point(0, 0);
             this.recycleMod.Name = "recycleMod";
-            this.recycleMod.Size = new System.Drawing.Size(907, 390);
+            this.recycleMod.Size = new System.Drawing.Size(907, 410);
             this.recycleMod.TabIndex = 0;
             // 
             // tabPageMeasure
             // 
             this.tabPageMeasure.Controls.Add(this.measureMod);
             this.tabPageMeasure.Name = "tabPageMeasure";
-            this.tabPageMeasure.Size = new System.Drawing.Size(907, 390);
+            this.tabPageMeasure.Size = new System.Drawing.Size(907, 410);
             this.tabPageMeasure.Text = "抄表记录";
             // 
             // measureMod
@@ -214,8 +216,14 @@
             this.measureMod.Editable = true;
             this.measureMod.Location = new System.Drawing.Point(0, 0);
             this.measureMod.Name = "measureMod";
-            this.measureMod.Size = new System.Drawing.Size(907, 390);
+            this.measureMod.Size = new System.Drawing.Size(907, 410);
             this.measureMod.TabIndex = 0;
+            // 
+            // tabPageReconcile
+            // 
+            this.tabPageReconcile.Name = "tabPageReconcile";
+            this.tabPageReconcile.Size = new System.Drawing.Size(907, 410);
+            this.tabPageReconcile.Text = "财务对账";
             // 
             // AccountReceiptModule
             // 
@@ -258,5 +266,6 @@
         private MeterGrid meterGrid;
         private CommerceAccountInfo commerceAccountMod;
         private RecycleReceiptModule recycleMod;
+        private DevExpress.XtraTab.XtraTabPage tabPageReconcile;
     }
 }
