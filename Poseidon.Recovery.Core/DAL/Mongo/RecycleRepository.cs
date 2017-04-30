@@ -130,5 +130,21 @@ namespace Poseidon.Recovery.Core.DAL.Mongo
             return doc;
         }
         #endregion //Function
+
+        #region Method
+        /// <summary>
+        /// 获取账户费用回收
+        /// </summary>
+        /// <param name="accountId">回收账户ID</param>
+        /// <param name="isPost">是否入账</param>
+        /// <returns></returns>
+        public IEnumerable<Recycle> FindByAccount(string accountId, bool isPost)
+        {
+            var builder = Builders<BsonDocument>.Filter;
+            var filter = builder.Eq("accountId", accountId) & builder.Eq("isPost", isPost);
+
+            return base.FindList(filter);
+        }
+        #endregion //Method
     }
 }

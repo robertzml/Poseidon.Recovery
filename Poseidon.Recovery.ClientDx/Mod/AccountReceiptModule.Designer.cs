@@ -45,6 +45,7 @@
             this.tabPageMeasure = new DevExpress.XtraTab.XtraTabPage();
             this.measureMod = new Poseidon.Recovery.ClientDx.MeasureReceiptModule();
             this.tabPageReconcile = new DevExpress.XtraTab.XtraTabPage();
+            this.reconcileMod = new Poseidon.Recovery.ClientDx.ReconcileReceiptModule();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tabInfo)).BeginInit();
             this.tabInfo.SuspendLayout();
@@ -57,6 +58,7 @@
             this.tabPageSettlement.SuspendLayout();
             this.tabPageRecycle.SuspendLayout();
             this.tabPageMeasure.SuspendLayout();
+            this.tabPageReconcile.SuspendLayout();
             this.SuspendLayout();
             // 
             // tableLayoutPanel1
@@ -221,9 +223,18 @@
             // 
             // tabPageReconcile
             // 
+            this.tabPageReconcile.Controls.Add(this.reconcileMod);
             this.tabPageReconcile.Name = "tabPageReconcile";
             this.tabPageReconcile.Size = new System.Drawing.Size(907, 410);
             this.tabPageReconcile.Text = "财务对账";
+            // 
+            // reconcileMod
+            // 
+            this.reconcileMod.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.reconcileMod.Location = new System.Drawing.Point(0, 0);
+            this.reconcileMod.Name = "reconcileMod";
+            this.reconcileMod.Size = new System.Drawing.Size(907, 410);
+            this.reconcileMod.TabIndex = 0;
             // 
             // AccountReceiptModule
             // 
@@ -244,6 +255,7 @@
             this.tabPageSettlement.ResumeLayout(false);
             this.tabPageRecycle.ResumeLayout(false);
             this.tabPageMeasure.ResumeLayout(false);
+            this.tabPageReconcile.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -267,5 +279,6 @@
         private CommerceAccountInfo commerceAccountMod;
         private RecycleReceiptModule recycleMod;
         private DevExpress.XtraTab.XtraTabPage tabPageReconcile;
+        private ReconcileReceiptModule reconcileMod;
     }
 }

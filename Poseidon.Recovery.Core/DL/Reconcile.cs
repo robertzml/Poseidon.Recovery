@@ -41,10 +41,16 @@ namespace Poseidon.Recovery.Core.DL
         public DateTime ReconcileDate { get; set; }
 
         /// <summary>
+        /// 凭证ID
+        /// </summary>
+        [Display(Name = "凭证ID")]
+        public string CertificateId { get; set; }
+
+        /// <summary>
         /// 凭证号
         /// </summary>
         [Display(Name = "凭证号")]
-        public string Certificate { get; set; }
+        public string CertificateNumber { get; set; }
 
         /// <summary>
         /// 摘要

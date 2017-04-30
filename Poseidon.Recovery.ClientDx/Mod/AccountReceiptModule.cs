@@ -54,6 +54,7 @@ namespace Poseidon.Recovery.ClientDx
             this.settleMod.SetAccount(account);
             this.recycleMod.SetAccount(account);
             this.measureMod.SetAccount(account);
+            this.reconcileMod.SetAccount(account);
         }
         #endregion //Function
 

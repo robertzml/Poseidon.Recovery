@@ -38,6 +38,18 @@ namespace Poseidon.Recovery.Core.BL
         }
 
         /// <summary>
+        /// 获取账户费用回收
+        /// </summary>
+        /// <param name="accountId">回收账户ID</param>
+        /// <param name="isPost">是否入账</param>
+        /// <returns></returns>
+        public IEnumerable<Recycle> FindByAccount(string accountId, bool isPost)
+        {
+            var dal = this.baseDal as IRecycleRepository;
+            return dal.FindByAccount(accountId, isPost);
+        }
+
+        /// <summary>
         /// 添加费用回收
         /// </summary>
         /// <param name="entity">实体对象</param>

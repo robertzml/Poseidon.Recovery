@@ -40,7 +40,8 @@ namespace Poseidon.Recovery.Core.DAL.Mongo
             entity.Id = doc["_id"].ToString();
             entity.AccountId = doc["accountId"].ToString();
             entity.ReconcileDate = doc["reconcileDate"].ToLocalTime();
-            entity.Certificate = doc["certificate"].ToString();
+            entity.CertificateId = doc["certificateId"].ToString();
+            entity.CertificateNumber = doc["certificateNumber"].ToString();
             entity.Summary = doc["summary"].ToString();
 
             entity.RecycleId = doc["recycleId"].ToString();
@@ -87,7 +88,8 @@ namespace Poseidon.Recovery.Core.DAL.Mongo
             {
                 { "accountId", entity.AccountId },
                 { "reconcileDate", entity.ReconcileDate },
-                { "certificate", entity.Certificate },
+                { "certificateId", entity.CertificateId },
+                { "certificateNumber", entity.CertificateNumber },
                 { "summary", entity.Summary },
                 { "recycleId", entity.RecycleId },
                 { "createBy", new BsonDocument {

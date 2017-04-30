@@ -14,5 +14,12 @@ namespace Poseidon.Recovery.Core.IDAL
     /// </summary>
     internal interface IRecycleRepository : IBaseDAL<Recycle>
     {
+        /// <summary>
+        /// 获取账户费用回收
+        /// </summary>
+        /// <param name="accountId">回收账户ID</param>
+        /// <param name="isPost">是否入账</param>
+        /// <returns></returns>
+        IEnumerable<Recycle> FindByAccount(string accountId, bool isPost);
     }
 }

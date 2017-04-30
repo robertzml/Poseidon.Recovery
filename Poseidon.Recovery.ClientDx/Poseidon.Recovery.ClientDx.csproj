@@ -70,6 +70,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Receipt\FrmReconcileAdd.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Receipt\FrmReconcileAdd.Designer.cs">
+      <DependentUpon>FrmReconcileAdd.cs</DependentUpon>
+    </Compile>
     <Compile Include="Mod\AccountRecoveryModule.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -227,6 +233,24 @@
     <Compile Include="Grid\RecycleRecordGrid.Designer.cs">
       <DependentUpon>RecycleRecordGrid.cs</DependentUpon>
     </Compile>
+    <Compile Include="Mod\ReconcileReceiptModule.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Mod\ReconcileReceiptModule.Designer.cs">
+      <DependentUpon>ReconcileReceiptModule.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Grid\ReconcileGrid.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Grid\ReconcileGrid.Designer.cs">
+      <DependentUpon>ReconcileGrid.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Grid\SettleOffGrid.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Grid\SettleOffGrid.Designer.cs">
+      <DependentUpon>SettleOffGrid.cs</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Grid\CommerceAccountGrid.resx">
@@ -235,8 +259,14 @@
     <EmbeddedResource Include="Grid\MeasureRecordGrid.resx">
       <DependentUpon>MeasureRecordGrid.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Grid\ReconcileGrid.resx">
+      <DependentUpon>ReconcileGrid.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Grid\RecycleRecordGrid.resx">
       <DependentUpon>RecycleRecordGrid.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Grid\SettleOffGrid.resx">
+      <DependentUpon>SettleOffGrid.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Grid\SettleRecordGrid.resx">
       <DependentUpon>SettleRecordGrid.cs</DependentUpon>
@@ -271,6 +301,9 @@
     <EmbeddedResource Include="Mod\CommerceAccountInfo.resx">
       <DependentUpon>CommerceAccountInfo.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Mod\ReconcileReceiptModule.resx">
+      <DependentUpon>ReconcileReceiptModule.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Mod\RecycleReceiptModule.resx">
       <DependentUpon>RecycleReceiptModule.cs</DependentUpon>
     </EmbeddedResource>
@@ -279,6 +312,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Receipt\FrmMeasureEdit.resx">
       <DependentUpon>FrmMeasureEdit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Receipt\FrmReconcileAdd.resx">
+      <DependentUpon>FrmReconcileAdd.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Receipt\FrmRecycleAdd.resx">
       <DependentUpon>FrmRecycleAdd.cs</DependentUpon>
@@ -296,6 +332,7 @@
     <None Include="Properties\DataSources\Poseidon.Recovery.Core.DL.Measure.datasource" />
     <None Include="Properties\DataSources\Poseidon.Recovery.Core.DL.MeasureRecord.datasource" />
     <None Include="Properties\DataSources\Poseidon.Recovery.Core.DL.Meter.datasource" />
+    <None Include="Properties\DataSources\Poseidon.Recovery.Core.DL.Reconcile.datasource" />
     <None Include="Properties\DataSources\Poseidon.Recovery.Core.DL.Recycle.datasource" />
     <None Include="Properties\DataSources\Poseidon.Recovery.Core.DL.RecycleRecord.datasource" />
     <None Include="Properties\DataSources\Poseidon.Recovery.Core.DL.Settle.datasource" />
