@@ -231,6 +231,7 @@
             // reconcileMod
             // 
             this.reconcileMod.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.reconcileMod.Editable = true;
             this.reconcileMod.Location = new System.Drawing.Point(0, 0);
             this.reconcileMod.Name = "reconcileMod";
             this.reconcileMod.Size = new System.Drawing.Size(907, 410);

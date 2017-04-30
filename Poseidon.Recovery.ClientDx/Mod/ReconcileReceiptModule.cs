@@ -69,6 +69,17 @@ namespace Poseidon.Recovery.ClientDx
 
         #region Event
         /// <summary>
+        /// 控件载入
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void ReconcileReceiptModule_Load(object sender, EventArgs e)
+        {
+            if (!this.editable)
+                this.lcgAction.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Never;
+        }
+
+        /// <summary>
         /// 选择对账记录
         /// </summary>
         /// <param name="arg1"></param>
@@ -100,5 +111,23 @@ namespace Poseidon.Recovery.ClientDx
             LoadData(this.currentAccount);
         }
         #endregion //Event
+
+        #region Property
+        /// <summary>
+        /// 是否能编辑
+        /// </summary>
+        [Description("是否能编辑"), Category("功能"), Browsable(true)]
+        public bool Editable
+        {
+            get
+            {
+                return this.editable;
+            }
+            set
+            {
+                this.editable = value;
+            }
+        }
+        #endregion //Property
     }
 }

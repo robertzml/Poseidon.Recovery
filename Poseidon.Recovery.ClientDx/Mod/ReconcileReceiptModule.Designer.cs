@@ -396,6 +396,7 @@
             this.Controls.Add(this.tableLayoutPanel1);
             this.Name = "ReconcileReceiptModule";
             this.Size = new System.Drawing.Size(812, 632);
+            this.Load += new System.EventHandler(this.ReconcileReceiptModule_Load);
             this.tableLayoutPanel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).EndInit();
             this.groupControl2.ResumeLayout(false);

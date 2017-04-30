@@ -20,7 +20,7 @@ namespace Poseidon.Recovery.Core.Utility
         /// <summary>
         /// 计费建筑分组代码
         /// </summary>
-        public static readonly string ChargeBuiliding = "ChargeBuilding";
+        public static readonly string ChargeBuilidingGroupCode = "ChargeBuilding";
         #endregion //Field
     }
 }

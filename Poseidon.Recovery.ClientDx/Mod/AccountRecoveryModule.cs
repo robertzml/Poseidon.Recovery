@@ -44,6 +44,29 @@ namespace Poseidon.Recovery.ClientDx
             this.meterGrid.Init();
             this.meterGrid.DataSource = account.Meters;
         }
+
+        /// <summary>
+        /// 显示汇总信息
+        /// </summary>
+        /// <param name="account"></param>
+        private void DisplaySummary(Account account)
+        {
+            this.settleGrid.DataSource = BusinessFactory<SettleBusiness>.Instance.FindByAccount(account.Id).ToList();
+            this.recycleGrid.DataSource = BusinessFactory<RecycleBusiness>.Instance.FindByAccount(account.Id).ToList();
+            this.reconcileGrid.DataSource = BusinessFactory<ReconcileBusiness>.Instance.FindByAccount(account.Id).ToList();
+        }
+
+        /// <summary>
+        /// 显示单据信息
+        /// </summary>
+        /// <param name="account"></param>
+        private void DisplayReceipt(Account account)
+        {
+            this.settleReceiptMod.SetAccount(account);
+            this.recycleReceiptMod.SetAccount(account);
+            this.measureReceiptMod.SetAccount(account);
+            this.reconcileReceiptMod.SetAccount(account);
+        }
         #endregion //Function
 
         #region Method
@@ -51,7 +74,7 @@ namespace Poseidon.Recovery.ClientDx
         /// 设置账户
         /// </summary>
         /// <param name="id">支出账户ID</param>
-        /// <param name="accountType">账户类型</param>
+        /// <param name="accountType">账户类型 1:经营类账户 2:工程类账户</param>
         public void SetAccount(string id, int accountType)
         {
             this.currentAccount = BusinessFactory<AccountBusiness>.Instance.FindById(id);
@@ -63,8 +86,8 @@ namespace Poseidon.Recovery.ClientDx
             }
 
             DisplayMeter(currentAccount);
-            //DisplayBusiness(currentAccount);
-
+            DisplaySummary(currentAccount);
+            DisplayReceipt(currentAccount);
         }
         #endregion //Method
     }

@@ -28,5 +28,28 @@ namespace Poseidon.Recovery.ClientDx
             InitializeComponent();
         }
         #endregion //Constructor
+
+        #region Function
+        protected override void InitForm()
+        {
+            this.commerceAccountTree.SetGroupCode(RecoveryConstant.CommerceRecoveryAccountGroupCode, true);
+            base.InitForm();
+        }
+        #endregion //Function
+
+        #region Event
+        /// <summary>
+        /// 经营类账户选择
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void commerceAccountTree_EntitySelected(object sender, EventArgs e)
+        {
+            this.navFrame.SelectedPageIndex = 1;
+
+            var id = this.commerceAccountTree.GetCurrentSelectId();
+            this.accountMod.SetAccount(id, 1);
+        }
+        #endregion //Event
     }
 }

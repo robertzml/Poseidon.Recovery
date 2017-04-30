@@ -1,6 +1,6 @@
 ﻿namespace Poseidon.Recovery.ClientDx
 {
-    partial class ReconcileGrid
+    partial class RecycleGrid
     {
         /// <summary> 
         /// 必需的设计器变量。
@@ -29,11 +29,9 @@
         private void InitializeComponent()
         {
             this.colAccountId = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colReconcileDate = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colCertificateId = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colCertificateNumber = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colSummary = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colAmount = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colRecycleDate = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colTotalAmount = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colIsPost = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colRemark = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colId = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.bsEntity)).BeginInit();
@@ -43,7 +41,7 @@
             // 
             // bsEntity
             // 
-            this.bsEntity.DataSource = typeof(Poseidon.Recovery.Core.DL.Reconcile);
+            this.bsEntity.DataSource = typeof(Poseidon.Recovery.Core.DL.Recycle);
             // 
             // dgcEntity
             // 
@@ -54,11 +52,9 @@
             this.dgvEntity.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
             this.colId,
             this.colAccountId,
-            this.colReconcileDate,
-            this.colCertificateId,
-            this.colCertificateNumber,
-            this.colSummary,
-            this.colAmount,
+            this.colRecycleDate,
+            this.colTotalAmount,
+            this.colIsPost,
             this.colRemark});
             this.dgvEntity.IndicatorWidth = 40;
             this.dgvEntity.OptionsBehavior.AllowAddRows = DevExpress.Utils.DefaultBoolean.False;
@@ -74,58 +70,46 @@
             this.colAccountId.FieldName = "AccountId";
             this.colAccountId.Name = "colAccountId";
             // 
-            // colReconcileDate
+            // colRecycleDate
             // 
-            this.colReconcileDate.FieldName = "ReconcileDate";
-            this.colReconcileDate.Name = "colReconcileDate";
-            this.colReconcileDate.Visible = true;
-            this.colReconcileDate.VisibleIndex = 0;
+            this.colRecycleDate.FieldName = "RecycleDate";
+            this.colRecycleDate.Name = "colRecycleDate";
+            this.colRecycleDate.Visible = true;
+            this.colRecycleDate.VisibleIndex = 0;
             // 
-            // colCertificateId
+            // colTotalAmount
             // 
-            this.colCertificateId.FieldName = "CertificateId";
-            this.colCertificateId.Name = "colCertificateId";
+            this.colTotalAmount.FieldName = "TotalAmount";
+            this.colTotalAmount.Name = "colTotalAmount";
+            this.colTotalAmount.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
+            new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "TotalAmount", "合计={0:0.##}")});
+            this.colTotalAmount.Visible = true;
+            this.colTotalAmount.VisibleIndex = 1;
             // 
-            // colCertificateNumber
+            // colIsPost
             // 
-            this.colCertificateNumber.FieldName = "CertificateNumber";
-            this.colCertificateNumber.Name = "colCertificateNumber";
-            this.colCertificateNumber.Visible = true;
-            this.colCertificateNumber.VisibleIndex = 1;
-            // 
-            // colSummary
-            // 
-            this.colSummary.FieldName = "Summary";
-            this.colSummary.Name = "colSummary";
-            this.colSummary.Visible = true;
-            this.colSummary.VisibleIndex = 2;
-            // 
-            // colAmount
-            // 
-            this.colAmount.FieldName = "Amount";
-            this.colAmount.Name = "colAmount";
-            this.colAmount.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
-            new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "Amount", "合计={0:0.##}")});
-            this.colAmount.Visible = true;
-            this.colAmount.VisibleIndex = 3;
+            this.colIsPost.FieldName = "IsPost";
+            this.colIsPost.Name = "colIsPost";
+            this.colIsPost.Visible = true;
+            this.colIsPost.VisibleIndex = 2;
             // 
             // colRemark
             // 
             this.colRemark.FieldName = "Remark";
             this.colRemark.Name = "colRemark";
             this.colRemark.Visible = true;
-            this.colRemark.VisibleIndex = 4;
+            this.colRemark.VisibleIndex = 3;
             // 
             // colId
             // 
             this.colId.FieldName = "Id";
             this.colId.Name = "colId";
             // 
-            // ReconcileGrid
+            // RecycleGrid
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Name = "ReconcileGrid";
+            this.Name = "RecycleGrid";
             ((System.ComponentModel.ISupportInitialize)(this.bsEntity)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgcEntity)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEntity)).EndInit();
@@ -135,13 +119,11 @@
 
         #endregion
 
-        private DevExpress.XtraGrid.Columns.GridColumn colId;
         private DevExpress.XtraGrid.Columns.GridColumn colAccountId;
-        private DevExpress.XtraGrid.Columns.GridColumn colReconcileDate;
-        private DevExpress.XtraGrid.Columns.GridColumn colCertificateId;
-        private DevExpress.XtraGrid.Columns.GridColumn colCertificateNumber;
-        private DevExpress.XtraGrid.Columns.GridColumn colSummary;
-        private DevExpress.XtraGrid.Columns.GridColumn colAmount;
+        private DevExpress.XtraGrid.Columns.GridColumn colRecycleDate;
+        private DevExpress.XtraGrid.Columns.GridColumn colTotalAmount;
+        private DevExpress.XtraGrid.Columns.GridColumn colIsPost;
         private DevExpress.XtraGrid.Columns.GridColumn colRemark;
+        private DevExpress.XtraGrid.Columns.GridColumn colId;
     }
 }

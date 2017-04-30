@@ -36,12 +36,14 @@
             this.navFrame = new DevExpress.XtraBars.Navigation.NavigationFrame();
             this.navigationPage1 = new DevExpress.XtraBars.Navigation.NavigationPage();
             this.navigationPage2 = new DevExpress.XtraBars.Navigation.NavigationPage();
+            this.accountMod = new Poseidon.Recovery.ClientDx.AccountRecoveryModule();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainerControl1)).BeginInit();
             this.splitContainerControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tabAccount)).BeginInit();
             this.tabAccount.SuspendLayout();
             this.tabPageCommerce.SuspendLayout();
             this.navFrame.SuspendLayout();
+            this.navigationPage2.SuspendLayout();
             this.SuspendLayout();
             // 
             // splitContainerControl1
@@ -86,6 +88,7 @@
             this.commerceAccountTree.ShowFindPanel = false;
             this.commerceAccountTree.Size = new System.Drawing.Size(184, 499);
             this.commerceAccountTree.TabIndex = 0;
+            this.commerceAccountTree.EntitySelected += new System.EventHandler(this.commerceAccountTree_EntitySelected);
             // 
             // tabPageConstruction
             // 
@@ -118,8 +121,17 @@
             // navigationPage2
             // 
             this.navigationPage2.Caption = "navigationPage2";
+            this.navigationPage2.Controls.Add(this.accountMod);
             this.navigationPage2.Name = "navigationPage2";
             this.navigationPage2.Size = new System.Drawing.Size(645, 528);
+            // 
+            // accountMod
+            // 
+            this.accountMod.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.accountMod.Location = new System.Drawing.Point(0, 0);
+            this.accountMod.Name = "accountMod";
+            this.accountMod.Size = new System.Drawing.Size(645, 528);
+            this.accountMod.TabIndex = 0;
             // 
             // FrmRecoveryOverview
             // 
@@ -135,6 +147,7 @@
             this.tabAccount.ResumeLayout(false);
             this.tabPageCommerce.ResumeLayout(false);
             this.navFrame.ResumeLayout(false);
+            this.navigationPage2.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -149,5 +162,6 @@
         private DevExpress.XtraBars.Navigation.NavigationFrame navFrame;
         private DevExpress.XtraBars.Navigation.NavigationPage navigationPage1;
         private DevExpress.XtraBars.Navigation.NavigationPage navigationPage2;
+        private AccountRecoveryModule accountMod;
     }
 }
