@@ -85,6 +85,7 @@ namespace Poseidon.Recovery.ClientDx
                 this.commerceAccountMod.SetAccount(id);
             }
 
+            this.accountSummaryMod.SetAccount(currentAccount);
             DisplayMeter(currentAccount);
             DisplaySummary(currentAccount);
             DisplayReceipt(currentAccount);
