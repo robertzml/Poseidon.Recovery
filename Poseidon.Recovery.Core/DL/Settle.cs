@@ -52,10 +52,10 @@ namespace Poseidon.Recovery.Core.DL
         public decimal TotalAmount { get; set; }
 
         /// <summary>
-        /// 应收款
+        /// 是否免费
         /// </summary>
-        [Display(Name = "应收款")]
-        public bool IsDebt { get; set; }
+        [Display(Name = "是否免费")]
+        public bool IsFree { get; set; }
 
         /// <summary>
         /// 是否核销

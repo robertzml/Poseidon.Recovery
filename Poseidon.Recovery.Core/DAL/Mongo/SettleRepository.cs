@@ -44,7 +44,7 @@ namespace Poseidon.Recovery.Core.DAL.Mongo
             entity.PreviousDate = doc["previousDate"].ToLocalTime();
             entity.CurrentDate = doc["currentDate"].ToLocalTime();
             entity.TotalAmount = doc["totalAmount"].ToDecimal();
-            entity.IsDebt = doc["isDebt"].ToBoolean();
+            entity.IsFree = doc["isFree"].ToBoolean();
             entity.IsWriteOff = doc["isWriteOff"].ToBoolean();
 
             entity.Records = new List<SettleRecord>();
@@ -106,7 +106,7 @@ namespace Poseidon.Recovery.Core.DAL.Mongo
                 { "previousDate", entity.PreviousDate },
                 { "currentDate", entity.CurrentDate },
                 { "totalAmount", entity.TotalAmount },
-                { "isDebt", entity.IsDebt },
+                { "isFree", entity.IsFree },
                 { "isWriteOff", entity.IsWriteOff },
                 { "createBy", new BsonDocument {
                     { "userId", entity.CreateBy.UserId },
@@ -150,5 +150,22 @@ namespace Poseidon.Recovery.Core.DAL.Mongo
             return doc;
         }
         #endregion //Function
+
+        #region Method
+        /// <summary>
+        /// 获取账户费用结算
+        /// </summary>
+        /// <param name="accountId">回收账户ID</param>
+        /// <param name="isFree">是否免费</param>
+        /// <param name="isWriteOff">是否核销</param>
+        /// <returns></returns>
+        public IEnumerable<Settle> FindByAccount(string accountId, bool isFree, bool isWriteOff)
+        {
+            var builder = Builders<BsonDocument>.Filter;
+            var filter = builder.Eq("accountId", accountId) & builder.Eq("isFree", isFree) & builder.Eq("isWriteOff", isWriteOff);
+
+            return base.FindList(filter);
+        }
+        #endregion //Method
     }
 }

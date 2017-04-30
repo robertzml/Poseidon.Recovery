@@ -43,15 +43,37 @@ namespace Poseidon.Recovery.Core.DAL.Mongo
             entity.CertificateId = doc["certificateId"].ToString();
             entity.CertificateNumber = doc["certificateNumber"].ToString();
             entity.Summary = doc["summary"].ToString();
+            entity.Amount = doc["amount"].ToDecimal();
 
-            entity.RecycleId = doc["recycleId"].ToString();
-            entity.SettleIds = new List<string>();
-            if (doc.Contains("settleIds"))
+            entity.Debits = new List<ReconcileDebit>();
+            if (doc.Contains("debits"))
             {
-                BsonArray array = doc["settleIds"].AsBsonArray;
-                foreach (var item in array)
+                BsonArray array = doc["debits"].AsBsonArray;
+                foreach (BsonDocument item in array)
                 {
-                    entity.SettleIds.Add(item.ToString());
+                    ReconcileDebit record = new ReconcileDebit();
+                    record.AccountId = item["accountId"].ToString();
+                    record.SettleId = item["settleId"].ToString();
+                    record.Amount = item["amount"].ToDecimal();
+                    record.Remark = item["remark"].ToString();
+
+                    entity.Debits.Add(record);
+                }
+            }
+
+            entity.Credits = new List<ReconcileCredit>();
+            if (doc.Contains("credits"))
+            {
+                BsonArray array = doc["credits"].AsBsonArray;
+                foreach (BsonDocument item in array)
+                {
+                    ReconcileCredit record = new ReconcileCredit();
+                    record.AccountId = item["accountId"].ToString();
+                    record.RecycleId = item["recycleId"].ToString();
+                    record.Amount = item["amount"].ToDecimal();
+                    record.Remark = item["remark"].ToString();
+
+                    entity.Credits.Add(record);
                 }
             }
 
@@ -91,7 +113,7 @@ namespace Poseidon.Recovery.Core.DAL.Mongo
                 { "certificateId", entity.CertificateId },
                 { "certificateNumber", entity.CertificateNumber },
                 { "summary", entity.Summary },
-                { "recycleId", entity.RecycleId },
+                { "amount", entity.Amount },
                 { "createBy", new BsonDocument {
                     { "userId", entity.CreateBy.UserId },
                     { "name", entity.CreateBy.Name },
@@ -106,19 +128,59 @@ namespace Poseidon.Recovery.Core.DAL.Mongo
                 { "status", entity.Status }
             };
 
-            if (entity.SettleIds != null && entity.SettleIds.Count > 0)
+            if (entity.Debits != null && entity.Debits.Count > 0)
             {
                 BsonArray array = new BsonArray();
-                foreach (var item in entity.SettleIds)
+                foreach (var item in entity.Debits)
                 {
-                    array.Add(item);
+                    BsonDocument record = new BsonDocument
+                    {
+                        { "accountId", item.AccountId },
+                        { "settleId", item.SettleId },
+                        { "amount", item.Amount },
+                        { "remark", item.Remark }
+                    };
+
+                    array.Add(record);
                 }
 
-                doc.Add("settleIds", array);
+                doc.Add("debits", array);
+            }
+
+            if (entity.Credits != null && entity.Credits.Count > 0)
+            {
+                BsonArray array = new BsonArray();
+                foreach (var item in entity.Credits)
+                {
+                    BsonDocument record = new BsonDocument
+                    {
+                        { "accountId", item.AccountId },
+                        { "recycleId", item.RecycleId },
+                        { "amount", item.Amount },
+                        { "remark", item.Remark }
+                    };
+
+                    array.Add(record);
+                }
+
+                doc.Add("credits", array);
             }
 
             return doc;
         }
         #endregion //Function
+
+        #region Method
+        /// <summary>
+        /// 按结算查找
+        /// </summary>
+        /// <param name="settleId">结算ID</param>
+        /// <returns></returns>
+        public IEnumerable<Reconcile> FindBySettle(string settleId)
+        {
+            var filter = Builders<BsonDocument>.Filter.Eq("debits.settleId", settleId);
+            return base.FindList(filter);
+        }
+        #endregion //Method
     }
 }

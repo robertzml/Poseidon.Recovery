@@ -14,5 +14,11 @@ namespace Poseidon.Recovery.Core.IDAL
     /// </summary>
     internal interface IReconcileRepository : IBaseDAL<Reconcile>
     {
+        /// <summary>
+        /// 按结算查找
+        /// </summary>
+        /// <param name="settleId">结算ID</param>
+        /// <returns></returns>
+        IEnumerable<Reconcile> FindBySettle(string settleId);
     }
 }

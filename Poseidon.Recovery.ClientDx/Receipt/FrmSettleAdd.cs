@@ -162,7 +162,7 @@ namespace Poseidon.Recovery.ClientDx
             entity.PreviousDate = this.dpPreviousDate.DateTime.Date;
             entity.CurrentDate = this.dpCurrentDate.DateTime.Date;
             entity.TotalAmount = this.spTotalAmount.Value;
-            entity.IsDebt = this.chkIsDebt.Checked;
+            entity.IsFree = this.chkIsFree.Checked;
             entity.Remark = this.txtRemark.Text;
 
             entity.Records = this.settleRecordGrid.DataSource;

@@ -120,6 +120,5 @@ namespace Poseidon.Recovery.ClientDx
             }
         }
         #endregion //Property
-
     }
 }

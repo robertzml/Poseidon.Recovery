@@ -50,6 +50,19 @@ namespace Poseidon.Recovery.Core.BL
         }
 
         /// <summary>
+        /// 回收入账
+        /// </summary>
+        /// <param name="id">回收ID</param>
+        /// <param name="isPost">是否入账</param>
+        public void Post(string id, bool isPost)
+        {
+            var entity = this.baseDal.FindById(id);
+            entity.IsPost = isPost;
+
+            base.Update(entity);
+        }
+
+        /// <summary>
         /// 添加费用回收
         /// </summary>
         /// <param name="entity">实体对象</param>

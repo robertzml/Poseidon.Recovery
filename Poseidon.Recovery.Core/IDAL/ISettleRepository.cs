@@ -14,5 +14,13 @@ namespace Poseidon.Recovery.Core.IDAL
     /// </summary>
     internal interface ISettleRepository : IBaseDAL<Settle>
     {
+        /// <summary>
+        /// 获取账户费用结算
+        /// </summary>
+        /// <param name="accountId">回收账户ID</param>
+        /// <param name="isFree">是否免费</param>
+        /// <param name="isWriteOff">是否核销</param>
+        /// <returns></returns>
+        IEnumerable<Settle> FindByAccount(string accountId, bool isFree, bool isWriteOff);
     }
 }

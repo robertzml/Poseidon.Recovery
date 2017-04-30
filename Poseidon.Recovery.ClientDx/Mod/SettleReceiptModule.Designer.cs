@@ -32,8 +32,11 @@
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
             this.lbSettles = new DevExpress.XtraEditors.ListBoxControl();
+            this.bsSettle = new System.Windows.Forms.BindingSource(this.components);
             this.groupControl2 = new DevExpress.XtraEditors.GroupControl();
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
+            this.chkIsWriteOff = new DevExpress.XtraEditors.CheckEdit();
+            this.chkIsFree = new DevExpress.XtraEditors.CheckEdit();
             this.btnEdit = new DevExpress.XtraEditors.SimpleButton();
             this.txtRemark = new DevExpress.XtraEditors.MemoEdit();
             this.txtEditTime = new DevExpress.XtraEditors.TextEdit();
@@ -60,21 +63,21 @@
             this.layoutControlItem9 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem10 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem11 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.groupControl3 = new DevExpress.XtraEditors.GroupControl();
-            this.chkIsDebt = new DevExpress.XtraEditors.CheckEdit();
             this.layoutControlItem13 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.chkIsWriteOff = new DevExpress.XtraEditors.CheckEdit();
             this.layoutControlItem14 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.bsSettle = new System.Windows.Forms.BindingSource(this.components);
+            this.groupControl3 = new DevExpress.XtraEditors.GroupControl();
             this.settleRecordGrid = new Poseidon.Recovery.ClientDx.SettleRecordGrid();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
             this.groupControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.lbSettles)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bsSettle)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).BeginInit();
             this.groupControl2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.chkIsWriteOff.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chkIsFree.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtRemark.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtEditTime.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtEditUser.Properties)).BeginInit();
@@ -99,13 +102,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem9)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem10)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem11)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem13)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem14)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl3)).BeginInit();
             this.groupControl3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.chkIsDebt.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem13)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.chkIsWriteOff.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem14)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bsSettle)).BeginInit();
             this.SuspendLayout();
             // 
             // tableLayoutPanel1
@@ -148,6 +148,10 @@
             this.lbSettles.ValueMember = "Id";
             this.lbSettles.SelectedIndexChanged += new System.EventHandler(this.lbSettles_SelectedIndexChanged);
             // 
+            // bsSettle
+            // 
+            this.bsSettle.DataSource = typeof(Poseidon.Recovery.Core.DL.Settle);
+            // 
             // groupControl2
             // 
             this.groupControl2.Controls.Add(this.layoutControl1);
@@ -161,7 +165,7 @@
             // layoutControl1
             // 
             this.layoutControl1.Controls.Add(this.chkIsWriteOff);
-            this.layoutControl1.Controls.Add(this.chkIsDebt);
+            this.layoutControl1.Controls.Add(this.chkIsFree);
             this.layoutControl1.Controls.Add(this.btnEdit);
             this.layoutControl1.Controls.Add(this.txtRemark);
             this.layoutControl1.Controls.Add(this.txtEditTime);
@@ -181,6 +185,26 @@
             this.layoutControl1.Size = new System.Drawing.Size(640, 251);
             this.layoutControl1.TabIndex = 0;
             this.layoutControl1.Text = "layoutControl1";
+            // 
+            // chkIsWriteOff
+            // 
+            this.chkIsWriteOff.Location = new System.Drawing.Point(477, 60);
+            this.chkIsWriteOff.Name = "chkIsWriteOff";
+            this.chkIsWriteOff.Properties.Caption = "是否核销";
+            this.chkIsWriteOff.Properties.ReadOnly = true;
+            this.chkIsWriteOff.Size = new System.Drawing.Size(151, 19);
+            this.chkIsWriteOff.StyleController = this.layoutControl1;
+            this.chkIsWriteOff.TabIndex = 17;
+            // 
+            // chkIsFree
+            // 
+            this.chkIsFree.Location = new System.Drawing.Point(323, 60);
+            this.chkIsFree.Name = "chkIsFree";
+            this.chkIsFree.Properties.Caption = "是否免费";
+            this.chkIsFree.Properties.ReadOnly = true;
+            this.chkIsFree.Size = new System.Drawing.Size(150, 19);
+            this.chkIsFree.StyleController = this.layoutControl1;
+            this.chkIsFree.TabIndex = 16;
             // 
             // btnEdit
             // 
@@ -453,44 +477,14 @@
             this.layoutControlItem11.Text = "备注";
             this.layoutControlItem11.TextSize = new System.Drawing.Size(48, 14);
             // 
-            // groupControl3
-            // 
-            this.groupControl3.Controls.Add(this.settleRecordGrid);
-            this.groupControl3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupControl3.Location = new System.Drawing.Point(143, 283);
-            this.groupControl3.Name = "groupControl3";
-            this.groupControl3.Size = new System.Drawing.Size(644, 237);
-            this.groupControl3.TabIndex = 2;
-            this.groupControl3.Text = "结算记录";
-            // 
-            // chkIsDebt
-            // 
-            this.chkIsDebt.Location = new System.Drawing.Point(323, 60);
-            this.chkIsDebt.Name = "chkIsDebt";
-            this.chkIsDebt.Properties.Caption = "应收款";
-            this.chkIsDebt.Properties.ReadOnly = true;
-            this.chkIsDebt.Size = new System.Drawing.Size(150, 19);
-            this.chkIsDebt.StyleController = this.layoutControl1;
-            this.chkIsDebt.TabIndex = 16;
-            // 
             // layoutControlItem13
             // 
-            this.layoutControlItem13.Control = this.chkIsDebt;
+            this.layoutControlItem13.Control = this.chkIsFree;
             this.layoutControlItem13.Location = new System.Drawing.Point(311, 48);
             this.layoutControlItem13.Name = "layoutControlItem13";
             this.layoutControlItem13.Size = new System.Drawing.Size(154, 24);
             this.layoutControlItem13.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem13.TextVisible = false;
-            // 
-            // chkIsWriteOff
-            // 
-            this.chkIsWriteOff.Location = new System.Drawing.Point(477, 60);
-            this.chkIsWriteOff.Name = "chkIsWriteOff";
-            this.chkIsWriteOff.Properties.Caption = "是否核销";
-            this.chkIsWriteOff.Properties.ReadOnly = true;
-            this.chkIsWriteOff.Size = new System.Drawing.Size(151, 19);
-            this.chkIsWriteOff.StyleController = this.layoutControl1;
-            this.chkIsWriteOff.TabIndex = 17;
             // 
             // layoutControlItem14
             // 
@@ -501,9 +495,15 @@
             this.layoutControlItem14.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem14.TextVisible = false;
             // 
-            // bsSettle
+            // groupControl3
             // 
-            this.bsSettle.DataSource = typeof(Poseidon.Recovery.Core.DL.Settle);
+            this.groupControl3.Controls.Add(this.settleRecordGrid);
+            this.groupControl3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.groupControl3.Location = new System.Drawing.Point(143, 283);
+            this.groupControl3.Name = "groupControl3";
+            this.groupControl3.Size = new System.Drawing.Size(644, 237);
+            this.groupControl3.TabIndex = 2;
+            this.groupControl3.Text = "结算记录";
             // 
             // settleRecordGrid
             // 
@@ -537,10 +537,13 @@
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).EndInit();
             this.groupControl1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.lbSettles)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bsSettle)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).EndInit();
             this.groupControl2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).EndInit();
             this.layoutControl1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.chkIsWriteOff.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chkIsFree.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtRemark.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtEditTime.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtEditUser.Properties)).EndInit();
@@ -565,13 +568,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem9)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem10)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem11)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem13)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem14)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl3)).EndInit();
             this.groupControl3.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.chkIsDebt.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem13)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.chkIsWriteOff.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem14)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bsSettle)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -613,7 +613,7 @@
         private DevExpress.XtraEditors.SimpleButton btnEdit;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem12;
         private DevExpress.XtraEditors.CheckEdit chkIsWriteOff;
-        private DevExpress.XtraEditors.CheckEdit chkIsDebt;
+        private DevExpress.XtraEditors.CheckEdit chkIsFree;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem13;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem14;
     }
