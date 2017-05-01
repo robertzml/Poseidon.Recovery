@@ -68,18 +68,22 @@
             this.dgvEntity.OptionsView.EnableAppearanceEvenRow = true;
             this.dgvEntity.OptionsView.EnableAppearanceOddRow = true;
             this.dgvEntity.OptionsView.ShowGroupPanel = false;
+            this.dgvEntity.CustomColumnDisplayText += new DevExpress.XtraGrid.Views.Base.CustomColumnDisplayTextEventHandler(this.dgvEntity_CustomColumnDisplayText);
             // 
             // colAccountId
             // 
+            this.colAccountId.Caption = "账户名称";
             this.colAccountId.FieldName = "AccountId";
             this.colAccountId.Name = "colAccountId";
+            this.colAccountId.Visible = true;
+            this.colAccountId.VisibleIndex = 0;
             // 
             // colReconcileDate
             // 
             this.colReconcileDate.FieldName = "ReconcileDate";
             this.colReconcileDate.Name = "colReconcileDate";
             this.colReconcileDate.Visible = true;
-            this.colReconcileDate.VisibleIndex = 0;
+            this.colReconcileDate.VisibleIndex = 1;
             // 
             // colCertificateId
             // 
@@ -91,14 +95,14 @@
             this.colCertificateNumber.FieldName = "CertificateNumber";
             this.colCertificateNumber.Name = "colCertificateNumber";
             this.colCertificateNumber.Visible = true;
-            this.colCertificateNumber.VisibleIndex = 1;
+            this.colCertificateNumber.VisibleIndex = 2;
             // 
             // colSummary
             // 
             this.colSummary.FieldName = "Summary";
             this.colSummary.Name = "colSummary";
             this.colSummary.Visible = true;
-            this.colSummary.VisibleIndex = 2;
+            this.colSummary.VisibleIndex = 3;
             // 
             // colAmount
             // 
@@ -107,14 +111,14 @@
             this.colAmount.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
             new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "Amount", "合计={0:0.##}")});
             this.colAmount.Visible = true;
-            this.colAmount.VisibleIndex = 3;
+            this.colAmount.VisibleIndex = 4;
             // 
             // colRemark
             // 
             this.colRemark.FieldName = "Remark";
             this.colRemark.Name = "colRemark";
             this.colRemark.Visible = true;
-            this.colRemark.VisibleIndex = 4;
+            this.colRemark.VisibleIndex = 5;
             // 
             // colId
             // 
@@ -126,6 +130,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Name = "ReconcileGrid";
+            this.Load += new System.EventHandler(this.ReconcileGrid_Load);
             ((System.ComponentModel.ISupportInitialize)(this.bsEntity)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgcEntity)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEntity)).EndInit();

@@ -51,6 +51,7 @@ namespace Poseidon.Recovery.ClientDx
             this.settleYearChartMod.Clear();
             this.recycleYearMod.Clear();
             this.recycleYearChartMod.Clear();
+            this.reconcileYearMod.Clear();
         }
 
         /// <summary>
@@ -96,6 +97,7 @@ namespace Poseidon.Recovery.ClientDx
             this.settleYearChartMod.SetAccount(account);
             this.recycleYearMod.SetAccount(account);
             this.recycleYearChartMod.SetAccount(account);
+            this.reconcileYearMod.SetAccount(account);
         }
         #endregion //Function
 

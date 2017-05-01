@@ -49,6 +49,7 @@ namespace Poseidon.Recovery.ClientDx
             this.settleYearChartMod.Clear();
             this.recycleYearMod.Clear();
             this.recycleYearChartMod.Clear();
+            this.reconcileYearMod.Clear();
         }
 
         /// <summary>
@@ -62,6 +63,37 @@ namespace Poseidon.Recovery.ClientDx
         }
 
         /// <summary>
+        /// 显示摘要
+        /// </summary>
+        /// <param name="group"></param>
+        private async void DisplaySummary(Group group)
+        {
+            var task = Task.Run(() =>
+            {
+                var items = BusinessFactory<GroupBusiness>.Instance.FindAllItems(group.Id);
+
+                List<Settle> settles = new List<Settle>();
+                List<Recycle> recycles = new List<Recycle>();
+
+                foreach (var item in items)
+                {
+                    var st = BusinessFactory<SettleBusiness>.Instance.FindByAccount(item.EntityId, false, false);
+                    settles.AddRange(st);
+
+                    var rc = BusinessFactory<RecycleBusiness>.Instance.FindByAccount(item.EntityId, false);
+                    recycles.AddRange(rc);
+                }
+
+                return new { Settles = settles, Recycles = recycles };
+            });
+
+            var result = await task;
+
+            this.settleGrid.DataSource = result.Settles;
+            this.recycleGrid.DataSource = result.Recycles;
+        }
+
+        /// <summary>
         /// 显示年度信息
         /// </summary>
         /// <param name="group"></param>
@@ -71,6 +103,7 @@ namespace Poseidon.Recovery.ClientDx
             this.settleYearChartMod.SetGroup(group);
             this.recycleYearMod.SetGroup(group);
             this.recycleYearChartMod.SetGroup(group);
+            this.reconcileYearMod.SetGroup(group);
         }
         #endregion //Function
 
@@ -87,6 +120,7 @@ namespace Poseidon.Recovery.ClientDx
 
             this.groupSummaryMod.SetGroup(currentGroup);
             DisplayInfo(currentGroup);
+            DisplaySummary(currentGroup);
             DisplayYear(currentGroup);
         }
         #endregion //Method

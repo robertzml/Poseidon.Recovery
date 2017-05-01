@@ -352,6 +352,12 @@
     <Compile Include="Mod\SettleYearChartModule.Designer.cs">
       <DependentUpon>SettleYearChartModule.cs</DependentUpon>
     </Compile>
+    <Compile Include="Mod\ReconcileYearModule.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Mod\ReconcileYearModule.Designer.cs">
+      <DependentUpon>ReconcileYearModule.cs</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Chart\AccountPieChart.resx">
@@ -437,6 +443,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Mod\ReconcileReceiptModule.resx">
       <DependentUpon>ReconcileReceiptModule.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Mod\ReconcileYearModule.resx">
+      <DependentUpon>ReconcileYearModule.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Mod\RecycleReceiptModule.resx">
       <DependentUpon>RecycleReceiptModule.cs</DependentUpon>

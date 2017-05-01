@@ -85,7 +85,7 @@ namespace Poseidon.Recovery.ClientDx
             if (!this.showAccount)
                 return;
 
-            var record = this.bsEntity[rowIndex] as Settle;
+            var record = this.bsEntity[rowIndex] as Recycle;
             if (e.Column.FieldName == "AccountId")
             {
                 if (e.Value != null && !string.IsNullOrEmpty(e.Value.ToString()))

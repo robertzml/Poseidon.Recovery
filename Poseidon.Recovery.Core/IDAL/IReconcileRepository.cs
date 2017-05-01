@@ -20,5 +20,13 @@ namespace Poseidon.Recovery.Core.IDAL
         /// <param name="settleId">结算ID</param>
         /// <returns></returns>
         IEnumerable<Reconcile> FindBySettle(string settleId);
+
+        /// <summary>
+        /// 获取账户费用回收
+        /// </summary>
+        /// <param name="accountId">回收账户ID</param>
+        /// <param name="year">年度</param>
+        /// <returns></returns>
+        IEnumerable<Reconcile> FindByAccount(string accountId, int year);
     }
 }

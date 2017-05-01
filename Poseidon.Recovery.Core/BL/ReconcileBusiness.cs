@@ -38,6 +38,18 @@ namespace Poseidon.Recovery.Core.BL
         }
 
         /// <summary>
+        /// 获取账户费用回收
+        /// </summary>
+        /// <param name="accountId">回收账户ID</param>
+        /// <param name="year">年度</param>
+        /// <returns></returns>
+        public IEnumerable<Reconcile> FindByAccount(string accountId, int year)
+        {
+            var dal = this.baseDal as IReconcileRepository;
+            return dal.FindByAccount(accountId, year);
+        }
+
+        /// <summary>
         /// 查找借方信息
         /// </summary>
         /// <param name="settleId">结算ID</param>

@@ -42,6 +42,9 @@
             this.tabPageOverview = new DevExpress.XtraTab.XtraTabPage();
             this.groupSummaryMod = new Poseidon.Recovery.ClientDx.GroupSummaryModule();
             this.xtraTabPage2 = new DevExpress.XtraTab.XtraTabPage();
+            this.settleGrid = new Poseidon.Recovery.ClientDx.SettleGrid();
+            this.xtraTabPage1 = new DevExpress.XtraTab.XtraTabPage();
+            this.recycleGrid = new Poseidon.Recovery.ClientDx.RecycleGrid();
             this.tabPageYears = new DevExpress.XtraTab.XtraTabPage();
             this.tabYears = new DevExpress.XtraTab.XtraTabControl();
             this.tabPageSettleYear = new DevExpress.XtraTab.XtraTabPage();
@@ -50,12 +53,14 @@
             this.settleYearMod = new Poseidon.Recovery.ClientDx.SettleYearModule();
             this.groupControl3 = new DevExpress.XtraEditors.GroupControl();
             this.settleYearChartMod = new Poseidon.Recovery.ClientDx.SettleYearChartModule();
-            this.tabPageRecycle = new DevExpress.XtraTab.XtraTabPage();
+            this.tabPageRecycleYear = new DevExpress.XtraTab.XtraTabPage();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.groupControl4 = new DevExpress.XtraEditors.GroupControl();
             this.recycleYearMod = new Poseidon.Recovery.ClientDx.RecycleYearModule();
             this.groupControl5 = new DevExpress.XtraEditors.GroupControl();
             this.recycleYearChartMod = new Poseidon.Recovery.ClientDx.RecycleYearChartModule();
+            this.tabPageReconcileYear = new DevExpress.XtraTab.XtraTabPage();
+            this.reconcileYearMod = new Poseidon.Recovery.ClientDx.ReconcileYearModule();
             ((System.ComponentModel.ISupportInitialize)(this.tabMain)).BeginInit();
             this.tabMain.SuspendLayout();
             this.tabPageSummary.SuspendLayout();
@@ -72,6 +77,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.tabSummary)).BeginInit();
             this.tabSummary.SuspendLayout();
             this.tabPageOverview.SuspendLayout();
+            this.xtraTabPage2.SuspendLayout();
+            this.xtraTabPage1.SuspendLayout();
             this.tabPageYears.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tabYears)).BeginInit();
             this.tabYears.SuspendLayout();
@@ -81,12 +88,13 @@
             this.groupControl2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl3)).BeginInit();
             this.groupControl3.SuspendLayout();
-            this.tabPageRecycle.SuspendLayout();
+            this.tabPageRecycleYear.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl4)).BeginInit();
             this.groupControl4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl5)).BeginInit();
             this.groupControl5.SuspendLayout();
+            this.tabPageReconcileYear.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabMain
@@ -208,7 +216,8 @@
             this.tabSummary.TabIndex = 1;
             this.tabSummary.TabPages.AddRange(new DevExpress.XtraTab.XtraTabPage[] {
             this.tabPageOverview,
-            this.xtraTabPage2});
+            this.xtraTabPage2,
+            this.xtraTabPage1});
             // 
             // tabPageOverview
             // 
@@ -227,9 +236,58 @@
             // 
             // xtraTabPage2
             // 
+            this.xtraTabPage2.Controls.Add(this.settleGrid);
             this.xtraTabPage2.Name = "xtraTabPage2";
             this.xtraTabPage2.Size = new System.Drawing.Size(801, 388);
-            this.xtraTabPage2.Text = "xtraTabPage2";
+            this.xtraTabPage2.Text = "未核销结算";
+            // 
+            // settleGrid
+            // 
+            this.settleGrid.AllowFilter = true;
+            this.settleGrid.AllowGroup = false;
+            this.settleGrid.AllowSort = true;
+            this.settleGrid.DataSource = null;
+            this.settleGrid.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.settleGrid.Editable = false;
+            this.settleGrid.EnableMasterView = false;
+            this.settleGrid.Location = new System.Drawing.Point(0, 0);
+            this.settleGrid.Name = "settleGrid";
+            this.settleGrid.ShowAccount = true;
+            this.settleGrid.ShowAddMenu = false;
+            this.settleGrid.ShowBeginEnd = true;
+            this.settleGrid.ShowFooter = true;
+            this.settleGrid.ShowLineNumber = true;
+            this.settleGrid.ShowMenu = false;
+            this.settleGrid.ShowNavigator = false;
+            this.settleGrid.Size = new System.Drawing.Size(801, 388);
+            this.settleGrid.TabIndex = 0;
+            // 
+            // xtraTabPage1
+            // 
+            this.xtraTabPage1.Controls.Add(this.recycleGrid);
+            this.xtraTabPage1.Name = "xtraTabPage1";
+            this.xtraTabPage1.Size = new System.Drawing.Size(801, 388);
+            this.xtraTabPage1.Text = "未入账回收";
+            // 
+            // recycleGrid
+            // 
+            this.recycleGrid.AllowFilter = true;
+            this.recycleGrid.AllowGroup = false;
+            this.recycleGrid.AllowSort = true;
+            this.recycleGrid.DataSource = null;
+            this.recycleGrid.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.recycleGrid.Editable = false;
+            this.recycleGrid.EnableMasterView = false;
+            this.recycleGrid.Location = new System.Drawing.Point(0, 0);
+            this.recycleGrid.Name = "recycleGrid";
+            this.recycleGrid.ShowAccount = true;
+            this.recycleGrid.ShowAddMenu = false;
+            this.recycleGrid.ShowFooter = true;
+            this.recycleGrid.ShowLineNumber = true;
+            this.recycleGrid.ShowMenu = false;
+            this.recycleGrid.ShowNavigator = false;
+            this.recycleGrid.Size = new System.Drawing.Size(801, 388);
+            this.recycleGrid.TabIndex = 0;
             // 
             // tabPageYears
             // 
@@ -248,7 +306,8 @@
             this.tabYears.TabIndex = 0;
             this.tabYears.TabPages.AddRange(new DevExpress.XtraTab.XtraTabPage[] {
             this.tabPageSettleYear,
-            this.tabPageRecycle});
+            this.tabPageRecycleYear,
+            this.tabPageReconcileYear});
             // 
             // tabPageSettleYear
             // 
@@ -309,12 +368,12 @@
             this.settleYearChartMod.Size = new System.Drawing.Size(797, 228);
             this.settleYearChartMod.TabIndex = 0;
             // 
-            // tabPageRecycle
+            // tabPageRecycleYear
             // 
-            this.tabPageRecycle.Controls.Add(this.tableLayoutPanel3);
-            this.tabPageRecycle.Name = "tabPageRecycle";
-            this.tabPageRecycle.Size = new System.Drawing.Size(807, 514);
-            this.tabPageRecycle.Text = "历年费用回收";
+            this.tabPageRecycleYear.Controls.Add(this.tableLayoutPanel3);
+            this.tabPageRecycleYear.Name = "tabPageRecycleYear";
+            this.tabPageRecycleYear.Size = new System.Drawing.Size(807, 514);
+            this.tabPageRecycleYear.Text = "历年费用回收";
             // 
             // tableLayoutPanel3
             // 
@@ -368,6 +427,21 @@
             this.recycleYearChartMod.Size = new System.Drawing.Size(797, 228);
             this.recycleYearChartMod.TabIndex = 0;
             // 
+            // tabPageReconcileYear
+            // 
+            this.tabPageReconcileYear.Controls.Add(this.reconcileYearMod);
+            this.tabPageReconcileYear.Name = "tabPageReconcileYear";
+            this.tabPageReconcileYear.Size = new System.Drawing.Size(807, 514);
+            this.tabPageReconcileYear.Text = "历年财务对账";
+            // 
+            // reconcileYearMod
+            // 
+            this.reconcileYearMod.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.reconcileYearMod.Location = new System.Drawing.Point(0, 0);
+            this.reconcileYearMod.Name = "reconcileYearMod";
+            this.reconcileYearMod.Size = new System.Drawing.Size(807, 514);
+            this.reconcileYearMod.TabIndex = 0;
+            // 
             // GroupRecoveryModule
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
@@ -391,6 +465,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.tabSummary)).EndInit();
             this.tabSummary.ResumeLayout(false);
             this.tabPageOverview.ResumeLayout(false);
+            this.xtraTabPage2.ResumeLayout(false);
+            this.xtraTabPage1.ResumeLayout(false);
             this.tabPageYears.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.tabYears)).EndInit();
             this.tabYears.ResumeLayout(false);
@@ -400,12 +476,13 @@
             this.groupControl2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.groupControl3)).EndInit();
             this.groupControl3.ResumeLayout(false);
-            this.tabPageRecycle.ResumeLayout(false);
+            this.tabPageRecycleYear.ResumeLayout(false);
             this.tableLayoutPanel3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.groupControl4)).EndInit();
             this.groupControl4.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.groupControl5)).EndInit();
             this.groupControl5.ResumeLayout(false);
+            this.tabPageReconcileYear.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -425,7 +502,7 @@
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem2;
         private DevExpress.XtraTab.XtraTabControl tabYears;
         private DevExpress.XtraTab.XtraTabPage tabPageSettleYear;
-        private DevExpress.XtraTab.XtraTabPage tabPageRecycle;
+        private DevExpress.XtraTab.XtraTabPage tabPageRecycleYear;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
         private DevExpress.XtraEditors.GroupControl groupControl2;
         private DevExpress.XtraEditors.GroupControl groupControl3;
@@ -440,5 +517,10 @@
         private DevExpress.XtraTab.XtraTabPage tabPageOverview;
         private DevExpress.XtraTab.XtraTabPage xtraTabPage2;
         private GroupSummaryModule groupSummaryMod;
+        private SettleGrid settleGrid;
+        private DevExpress.XtraTab.XtraTabPage xtraTabPage1;
+        private RecycleGrid recycleGrid;
+        private DevExpress.XtraTab.XtraTabPage tabPageReconcileYear;
+        private ReconcileYearModule reconcileYearMod;
     }
 }
