@@ -50,6 +50,13 @@ namespace Poseidon.Recovery.ClientDx
             this.recycleYearMod.Clear();
             this.recycleYearChartMod.Clear();
             this.reconcileYearMod.Clear();
+
+            this.propAccountRecycleMod.Clear();
+            this.propAccountSettleMod.Clear();
+            this.propEnergyMod.Clear();
+            this.propFeeTypeMod.Clear();
+            this.propPostMod.Clear();
+            this.propWriteOffMod.Clear();
         }
 
         /// <summary>
@@ -100,10 +107,25 @@ namespace Poseidon.Recovery.ClientDx
         private void DisplayYear(Group group)
         {
             this.settleYearMod.SetGroup(group);
-            this.settleYearChartMod.SetGroup(group);
             this.recycleYearMod.SetGroup(group);
-            this.recycleYearChartMod.SetGroup(group);
             this.reconcileYearMod.SetGroup(group);
+
+            this.propAccountSettleMod.SetGroup(group, 5);
+            this.propEnergyMod.SetGroup(group, 4);
+            this.propWriteOffMod.SetGroup(group, 3);
+            this.propAccountRecycleMod.SetGroup(group, 6);
+            this.propFeeTypeMod.SetGroup(group, 1);
+            this.propPostMod.SetGroup(group, 2);
+        }
+
+        /// <summary>
+        /// 显示年度趋势
+        /// </summary>
+        /// <param name="group"></param>
+        private void DisplayTrend(Group group)
+        {
+            this.settleYearChartMod.SetGroup(group);
+            this.recycleYearChartMod.SetGroup(group);
         }
         #endregion //Function
 

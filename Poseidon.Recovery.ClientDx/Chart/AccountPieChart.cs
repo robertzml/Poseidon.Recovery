@@ -42,9 +42,21 @@ namespace Poseidon.Recovery.ClientDx
         /// <param name="unit">单位</param>
         public void SetSeriesLabel(string unit)
         {
-            this.chartMain.Series[0].Label.TextPattern = "{A}-金额:{V}" + unit;
+            this.chartMain.Series[0].Label.TextPattern = "{A}-{V}" + unit;
         }
         #endregion //Method
+
+        #region Event
+        /// <summary>
+        /// 打印
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void menuPrint_Click(object sender, EventArgs e)
+        {
+            this.chartMain.ShowRibbonPrintPreview();
+        }
+        #endregion //Event
 
         #region Property
         /// <summary>

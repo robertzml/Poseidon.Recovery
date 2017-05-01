@@ -222,7 +222,7 @@ namespace Poseidon.Recovery.ClientDx
                 List<AccountDataModel> data = new List<AccountDataModel>();
                 var items = BusinessFactory<GroupBusiness>.Instance.FindAllItems(group.Id);
 
-                foreach(var item in items)
+                foreach (var item in items)
                 {
                     var account = BusinessFactory<AccountBusiness>.Instance.FindById(item.EntityId);
                     var recycles = BusinessFactory<RecycleBusiness>.Instance.FindByAccount(item.EntityId);
@@ -233,7 +233,7 @@ namespace Poseidon.Recovery.ClientDx
                         Amount = Math.Round(recycles.Where(r => r.IsPost == true).Sum(r => r.TotalAmount) / 10000, 2)
                     };
 
-                    data.Add(model);                    
+                    data.Add(model);
                 }
 
                 return data;
