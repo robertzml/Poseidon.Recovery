@@ -64,18 +64,23 @@
             this.dgvEntity.OptionsView.EnableAppearanceEvenRow = true;
             this.dgvEntity.OptionsView.EnableAppearanceOddRow = true;
             this.dgvEntity.OptionsView.ShowGroupPanel = false;
+            this.dgvEntity.CustomColumnDisplayText += new DevExpress.XtraGrid.Views.Base.CustomColumnDisplayTextEventHandler(this.dgvEntity_CustomColumnDisplayText);
             // 
             // colAccountId
             // 
+            this.colAccountId.Caption = "账户名称";
             this.colAccountId.FieldName = "AccountId";
+            this.colAccountId.FilterMode = DevExpress.XtraGrid.ColumnFilterMode.DisplayText;
             this.colAccountId.Name = "colAccountId";
+            this.colAccountId.Visible = true;
+            this.colAccountId.VisibleIndex = 0;
             // 
             // colRecycleDate
             // 
             this.colRecycleDate.FieldName = "RecycleDate";
             this.colRecycleDate.Name = "colRecycleDate";
             this.colRecycleDate.Visible = true;
-            this.colRecycleDate.VisibleIndex = 0;
+            this.colRecycleDate.VisibleIndex = 1;
             // 
             // colTotalAmount
             // 
@@ -84,21 +89,21 @@
             this.colTotalAmount.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
             new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "TotalAmount", "合计={0:0.##}")});
             this.colTotalAmount.Visible = true;
-            this.colTotalAmount.VisibleIndex = 1;
+            this.colTotalAmount.VisibleIndex = 2;
             // 
             // colIsPost
             // 
             this.colIsPost.FieldName = "IsPost";
             this.colIsPost.Name = "colIsPost";
             this.colIsPost.Visible = true;
-            this.colIsPost.VisibleIndex = 2;
+            this.colIsPost.VisibleIndex = 3;
             // 
             // colRemark
             // 
             this.colRemark.FieldName = "Remark";
             this.colRemark.Name = "colRemark";
             this.colRemark.Visible = true;
-            this.colRemark.VisibleIndex = 3;
+            this.colRemark.VisibleIndex = 4;
             // 
             // colId
             // 
@@ -110,6 +115,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Name = "RecycleGrid";
+            this.Load += new System.EventHandler(this.RecycleGrid_Load);
             ((System.ComponentModel.ISupportInitialize)(this.bsEntity)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgcEntity)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEntity)).EndInit();

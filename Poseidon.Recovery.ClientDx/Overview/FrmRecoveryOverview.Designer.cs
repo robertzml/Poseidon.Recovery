@@ -35,9 +35,9 @@
             this.tabPageConstruction = new DevExpress.XtraTab.XtraTabPage();
             this.navFrame = new DevExpress.XtraBars.Navigation.NavigationFrame();
             this.navigationPage1 = new DevExpress.XtraBars.Navigation.NavigationPage();
+            this.groupMod = new Poseidon.Recovery.ClientDx.GroupRecoveryModule();
             this.navigationPage2 = new DevExpress.XtraBars.Navigation.NavigationPage();
             this.accountMod = new Poseidon.Recovery.ClientDx.AccountRecoveryModule();
-            this.groupMod = new Poseidon.Recovery.ClientDx.GroupRecoveryModule();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainerControl1)).BeginInit();
             this.splitContainerControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tabAccount)).BeginInit();
@@ -101,6 +101,7 @@
             // 
             // navFrame
             // 
+            this.navFrame.AllowTransitionAnimation = DevExpress.Utils.DefaultBoolean.False;
             this.navFrame.Controls.Add(this.navigationPage1);
             this.navFrame.Controls.Add(this.navigationPage2);
             this.navFrame.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -117,9 +118,18 @@
             // 
             // navigationPage1
             // 
+            this.navigationPage1.Caption = "navigationPage1";
             this.navigationPage1.Controls.Add(this.groupMod);
             this.navigationPage1.Name = "navigationPage1";
             this.navigationPage1.Size = new System.Drawing.Size(645, 528);
+            // 
+            // groupMod
+            // 
+            this.groupMod.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.groupMod.Location = new System.Drawing.Point(0, 0);
+            this.groupMod.Name = "groupMod";
+            this.groupMod.Size = new System.Drawing.Size(645, 528);
+            this.groupMod.TabIndex = 0;
             // 
             // navigationPage2
             // 
@@ -135,14 +145,6 @@
             this.accountMod.Name = "accountMod";
             this.accountMod.Size = new System.Drawing.Size(645, 528);
             this.accountMod.TabIndex = 0;
-            // 
-            // groupMod
-            // 
-            this.groupMod.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupMod.Location = new System.Drawing.Point(0, 0);
-            this.groupMod.Name = "groupMod";
-            this.groupMod.Size = new System.Drawing.Size(645, 528);
-            this.groupMod.TabIndex = 0;
             // 
             // FrmRecoveryOverview
             // 

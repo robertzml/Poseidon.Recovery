@@ -27,11 +27,6 @@ namespace Poseidon.Recovery.ClientDx
         /// 当前关联分组
         /// </summary>
         private Group currentGroup;
-
-        /// <summary>
-        /// 今年
-        /// </summary>
-        private int year;
         #endregion //Field
 
         #region Constructor
@@ -43,6 +38,20 @@ namespace Poseidon.Recovery.ClientDx
 
         #region Function
         /// <summary>
+        /// 清空显示
+        /// </summary>
+        private void ClearDisplay()
+        {
+            this.txtGroupName.Text = "";
+            this.txtGroupRemark.Text = "";
+
+            this.settleYearMod.Clear();
+            this.settleYearChartMod.Clear();
+            this.recycleYearMod.Clear();
+            this.recycleYearChartMod.Clear();
+        }
+
+        /// <summary>
         /// 显示基本信息
         /// </summary>
         /// <param name="group"></param>
@@ -50,6 +59,18 @@ namespace Poseidon.Recovery.ClientDx
         {
             this.txtGroupName.Text = group.Name;
             this.txtGroupRemark.Text = group.Remark;
+        }
+
+        /// <summary>
+        /// 显示年度信息
+        /// </summary>
+        /// <param name="group"></param>
+        private void DisplayYear(Group group)
+        {
+            this.settleYearMod.SetGroup(group);
+            this.settleYearChartMod.SetGroup(group);
+            this.recycleYearMod.SetGroup(group);
+            this.recycleYearChartMod.SetGroup(group);
         }
         #endregion //Function
 
@@ -61,7 +82,10 @@ namespace Poseidon.Recovery.ClientDx
         public void SetGroup(string id)
         {
             this.currentGroup = BusinessFactory<GroupBusiness>.Instance.FindById(id);
-            this.year = DateTime.Now.Year;
+
+            ClearDisplay();
+            DisplayInfo(currentGroup);
+            DisplayYear(currentGroup);
         }
         #endregion //Method
     }

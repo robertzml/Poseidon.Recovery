@@ -12,6 +12,7 @@ namespace Poseidon.Recovery.ClientDx
 {
     using Poseidon.Base.Framework;
     using Poseidon.Common;
+    using Poseidon.Core.BL;
     using Poseidon.Core.DL;
     using Poseidon.Recovery.Core.BL;
     using Poseidon.Recovery.Core.DL;
@@ -64,6 +65,15 @@ namespace Poseidon.Recovery.ClientDx
             }
 
             this.cmbYear.SelectedIndex = 0;
+
+            if (this.showType == 2)
+            {
+                this.settleGrid.SetShowAccount(true);
+                if (currentGroup.ModelTypes.Count > 0)
+                {
+                    this.settleGrid.Init(currentGroup.ModelTypes[0]);
+                }
+            }
         }
 
         /// <summary>
@@ -84,6 +94,31 @@ namespace Poseidon.Recovery.ClientDx
 
             this.settleGrid.DataSource = result;
         }
+
+        /// <summary>
+        /// 载入数据
+        /// </summary>
+        /// <param name="group"></param>
+        /// <param name="year"></param>
+        private async void LoadGroupData(Group group, int year)
+        {
+            var task = Task.Run(() =>
+            {
+                var items = BusinessFactory<GroupBusiness>.Instance.FindAllItems(group.Id);
+
+                List<Settle> data = new List<Settle>();
+                foreach (var item in items)
+                {
+                    var settle = BusinessFactory<SettleBusiness>.Instance.FindByAccount(item.EntityId, year);
+                    data.AddRange(settle);
+                }
+
+                return data;
+            });
+
+            var result = await task;
+            this.settleGrid.DataSource = result;
+        }
         #endregion //Function
 
         #region Method
@@ -95,6 +130,19 @@ namespace Poseidon.Recovery.ClientDx
         {
             this.currentAccount = account;
             this.showType = 1;
+            this.nowYear = DateTime.Now.Year;
+
+            InitControls();
+        }
+
+        /// <summary>
+        /// 设置分组
+        /// </summary>
+        /// <param name="group">分组</param>
+        public void SetGroup(Group group)
+        {
+            this.currentGroup = group;
+            this.showType = 2;
             this.nowYear = DateTime.Now.Year;
 
             InitControls();
@@ -124,8 +172,8 @@ namespace Poseidon.Recovery.ClientDx
             int year = Convert.ToInt32(this.cmbYear.SelectedItem.ToString().Substring(0, 4));
             if (this.showType == 1)
                 LoadAccountData(this.currentAccount, year);
-            //else if (this.showType == 2)
-            //    LoadGroupData(this.currentGroup, year, this.energyType);
+            else if (this.showType == 2)
+                LoadGroupData(this.currentGroup, year);
         }
         #endregion //Event
     }

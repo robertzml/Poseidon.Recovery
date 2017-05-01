@@ -58,7 +58,7 @@ namespace Poseidon.Recovery.ClientDx
         /// <param name="e"></param>
         private void commerceAccountTree_GroupSelected(object sender, EventArgs e)
         {
-            this.navFrame.SelectedPageIndex = 1;
+            this.navFrame.SelectedPageIndex = 0;
             var id = this.commerceAccountTree.GetCurrentSelectId();
             this.groupMod.SetGroup(id);
         }

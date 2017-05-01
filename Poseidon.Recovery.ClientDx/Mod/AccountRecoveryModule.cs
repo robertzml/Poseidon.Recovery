@@ -46,6 +46,11 @@ namespace Poseidon.Recovery.ClientDx
             this.settleGrid.Clear();
             this.recycleGrid.Clear();
             this.reconcileGrid.Clear();
+
+            this.settleYearMod.Clear();
+            this.settleYearChartMod.Clear();
+            this.recycleYearMod.Clear();
+            this.recycleYearChartMod.Clear();
         }
 
         /// <summary>

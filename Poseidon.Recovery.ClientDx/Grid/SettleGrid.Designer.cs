@@ -80,6 +80,7 @@
             // 
             this.colAccountId.Caption = "账户名称";
             this.colAccountId.FieldName = "AccountId";
+            this.colAccountId.FilterMode = DevExpress.XtraGrid.ColumnFilterMode.DisplayText;
             this.colAccountId.Name = "colAccountId";
             this.colAccountId.Visible = true;
             this.colAccountId.VisibleIndex = 0;

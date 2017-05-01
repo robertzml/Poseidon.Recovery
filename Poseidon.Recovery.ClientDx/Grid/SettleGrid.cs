@@ -52,6 +52,16 @@ namespace Poseidon.Recovery.ClientDx
         {
             this.accounts = BusinessFactory<AccountBusiness>.Instance.FindAll(modelType).ToList();
         }
+
+        /// <summary>
+        /// 设置是否显示账户
+        /// </summary>
+        /// <param name="showAccount">是否显示账户</param>
+        public void SetShowAccount(bool showAccount)
+        {
+            this.showAccount = showAccount;
+            this.colAccountId.Visible = showAccount;
+        }
         #endregion //Method
 
         #region Event
@@ -76,6 +86,9 @@ namespace Poseidon.Recovery.ClientDx
         {
             int rowIndex = e.ListSourceRowIndex;
             if (rowIndex < 0 || rowIndex >= this.bsEntity.Count)
+                return;
+
+            if (!this.showAccount)
                 return;
 
             var record = this.bsEntity[rowIndex] as Settle;
