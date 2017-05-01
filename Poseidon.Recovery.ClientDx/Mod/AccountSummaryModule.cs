@@ -125,6 +125,64 @@ namespace Poseidon.Recovery.ClientDx
             this.feeTypeChart.SetChartTitle($"{account.Name}回收费用类型");
             this.feeTypeChart.SetSeries(recycles.Group.ToList());
         }
+
+        /// <summary>
+        /// 载入历年数据
+        /// </summary>
+        /// <param name="account"></param>
+        private async void LoadYearsData(Account account)
+        {
+            var task1 = Task.Run(() =>
+            {
+                List<RecoveryDataModel> data = new List<RecoveryDataModel>();
+
+                var data1 = BusinessFactory<SettleBusiness>.Instance.FindByAccount(account.Id);
+                foreach (var item in data1)
+                {
+                    var find = data.FirstOrDefault(r => r.BelongDate == $"{item.SettleDate.Year}年");
+                    if (find == null)
+                    {
+                        RecoveryDataModel model = new RecoveryDataModel
+                        {
+                            BelongDate = $"{item.SettleDate.Year}年",
+                            DueFee = item.TotalAmount
+                        };
+                        data.Add(model);
+                    }
+                    else
+                    {
+                        find.DueFee += item.TotalAmount;
+                    }
+                }
+
+                var data2 = BusinessFactory<RecycleBusiness>.Instance.FindByAccount(account.Id);
+                foreach(var item in data2)
+                {
+                    var find = data.FirstOrDefault(r => r.BelongDate == $"{item.RecycleDate.Year}年");
+                    if (find == null)
+                    {
+                        RecoveryDataModel model = new RecoveryDataModel
+                        {
+                            BelongDate = $"{item.RecycleDate.Year}年",
+                            PaidFee = item.TotalAmount
+                        };
+                        data.Add(model);
+                    }
+                    else
+                    {
+                        find.PaidFee += item.TotalAmount;
+                    }
+                }
+
+                return data.OrderBy(r => r.BelongDate).ToList();
+            });
+
+            var result = await task1;
+
+            this.yearsChart.SetSeriesLengedText(0, "应收金额(元)");
+            this.yearsChart.SetSeriesLengedText(1, "已收金额(元)");
+            this.yearsChart.DataSource = result;
+        }
         #endregion //Function
 
         #region Method
@@ -138,6 +196,7 @@ namespace Poseidon.Recovery.ClientDx
 
             LoadSettleData(account);
             LoadRecycleData(account);
+            LoadYearsData(account);
         }
         #endregion //Method
     }

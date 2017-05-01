@@ -145,7 +145,7 @@
             // 
             this.tabPageMeters.Controls.Add(this.meterGrid);
             this.tabPageMeters.Name = "tabPageMeters";
-            this.tabPageMeters.Size = new System.Drawing.Size(824, 165);
+            this.tabPageMeters.Size = new System.Drawing.Size(882, 165);
             this.tabPageMeters.Text = "包含表具";
             // 
             // meterGrid
@@ -164,7 +164,7 @@
             this.meterGrid.ShowLineNumber = true;
             this.meterGrid.ShowMenu = false;
             this.meterGrid.ShowNavigator = false;
-            this.meterGrid.Size = new System.Drawing.Size(824, 165);
+            this.meterGrid.Size = new System.Drawing.Size(882, 165);
             this.meterGrid.TabIndex = 0;
             // 
             // tabMain
@@ -236,12 +236,12 @@
             // 
             this.tabPageSettleOv.Controls.Add(this.settleGrid);
             this.tabPageSettleOv.Name = "tabPageSettleOv";
-            this.tabPageSettleOv.Size = new System.Drawing.Size(824, 306);
+            this.tabPageSettleOv.Size = new System.Drawing.Size(882, 536);
             this.tabPageSettleOv.Text = "结算汇总";
             // 
             // settleGrid
             // 
-            this.settleGrid.AllowFilter = false;
+            this.settleGrid.AllowFilter = true;
             this.settleGrid.AllowGroup = false;
             this.settleGrid.AllowSort = true;
             this.settleGrid.DataSource = null;
@@ -255,19 +255,19 @@
             this.settleGrid.ShowLineNumber = true;
             this.settleGrid.ShowMenu = false;
             this.settleGrid.ShowNavigator = false;
-            this.settleGrid.Size = new System.Drawing.Size(824, 306);
+            this.settleGrid.Size = new System.Drawing.Size(882, 536);
             this.settleGrid.TabIndex = 0;
             // 
             // tabPageRecycleOv
             // 
             this.tabPageRecycleOv.Controls.Add(this.recycleGrid);
             this.tabPageRecycleOv.Name = "tabPageRecycleOv";
-            this.tabPageRecycleOv.Size = new System.Drawing.Size(824, 306);
+            this.tabPageRecycleOv.Size = new System.Drawing.Size(882, 536);
             this.tabPageRecycleOv.Text = "回收汇总";
             // 
             // recycleGrid
             // 
-            this.recycleGrid.AllowFilter = false;
+            this.recycleGrid.AllowFilter = true;
             this.recycleGrid.AllowGroup = false;
             this.recycleGrid.AllowSort = true;
             this.recycleGrid.DataSource = null;
@@ -281,14 +281,14 @@
             this.recycleGrid.ShowLineNumber = true;
             this.recycleGrid.ShowMenu = false;
             this.recycleGrid.ShowNavigator = false;
-            this.recycleGrid.Size = new System.Drawing.Size(824, 306);
+            this.recycleGrid.Size = new System.Drawing.Size(882, 536);
             this.recycleGrid.TabIndex = 0;
             // 
             // tabPageReconcileOv
             // 
             this.tabPageReconcileOv.Controls.Add(this.reconcileGrid);
             this.tabPageReconcileOv.Name = "tabPageReconcileOv";
-            this.tabPageReconcileOv.Size = new System.Drawing.Size(824, 306);
+            this.tabPageReconcileOv.Size = new System.Drawing.Size(882, 536);
             this.tabPageReconcileOv.Text = "对账汇总";
             // 
             // reconcileGrid
@@ -307,14 +307,14 @@
             this.reconcileGrid.ShowLineNumber = true;
             this.reconcileGrid.ShowMenu = false;
             this.reconcileGrid.ShowNavigator = false;
-            this.reconcileGrid.Size = new System.Drawing.Size(824, 306);
+            this.reconcileGrid.Size = new System.Drawing.Size(882, 536);
             this.reconcileGrid.TabIndex = 0;
             // 
             // tabPageReceipt
             // 
             this.tabPageReceipt.Controls.Add(this.tabBusiness);
             this.tabPageReceipt.Name = "tabPageReceipt";
-            this.tabPageReceipt.Size = new System.Drawing.Size(836, 541);
+            this.tabPageReceipt.Size = new System.Drawing.Size(894, 771);
             this.tabPageReceipt.Text = "单据信息";
             // 
             // tabBusiness
@@ -323,7 +323,7 @@
             this.tabBusiness.Location = new System.Drawing.Point(0, 0);
             this.tabBusiness.Name = "tabBusiness";
             this.tabBusiness.SelectedTabPage = this.tabPageSettleReceipt;
-            this.tabBusiness.Size = new System.Drawing.Size(836, 541);
+            this.tabBusiness.Size = new System.Drawing.Size(894, 771);
             this.tabBusiness.TabIndex = 0;
             this.tabBusiness.TabPages.AddRange(new DevExpress.XtraTab.XtraTabPage[] {
             this.tabPageSettleReceipt,
@@ -335,7 +335,7 @@
             // 
             this.tabPageSettleReceipt.Controls.Add(this.settleReceiptMod);
             this.tabPageSettleReceipt.Name = "tabPageSettleReceipt";
-            this.tabPageSettleReceipt.Size = new System.Drawing.Size(830, 512);
+            this.tabPageSettleReceipt.Size = new System.Drawing.Size(888, 742);
             this.tabPageSettleReceipt.Text = "费用结算";
             // 
             // settleReceiptMod
@@ -344,14 +344,14 @@
             this.settleReceiptMod.Editable = false;
             this.settleReceiptMod.Location = new System.Drawing.Point(0, 0);
             this.settleReceiptMod.Name = "settleReceiptMod";
-            this.settleReceiptMod.Size = new System.Drawing.Size(830, 512);
+            this.settleReceiptMod.Size = new System.Drawing.Size(888, 742);
             this.settleReceiptMod.TabIndex = 0;
             // 
             // tabPageRecycleReceipt
             // 
             this.tabPageRecycleReceipt.Controls.Add(this.recycleReceiptMod);
             this.tabPageRecycleReceipt.Name = "tabPageRecycleReceipt";
-            this.tabPageRecycleReceipt.Size = new System.Drawing.Size(830, 512);
+            this.tabPageRecycleReceipt.Size = new System.Drawing.Size(888, 742);
             this.tabPageRecycleReceipt.Text = "费用回收";
             // 
             // recycleReceiptMod
@@ -360,14 +360,14 @@
             this.recycleReceiptMod.Editable = false;
             this.recycleReceiptMod.Location = new System.Drawing.Point(0, 0);
             this.recycleReceiptMod.Name = "recycleReceiptMod";
-            this.recycleReceiptMod.Size = new System.Drawing.Size(830, 512);
+            this.recycleReceiptMod.Size = new System.Drawing.Size(888, 742);
             this.recycleReceiptMod.TabIndex = 0;
             // 
             // tabPageMeasureReceipt
             // 
             this.tabPageMeasureReceipt.Controls.Add(this.measureReceiptMod);
             this.tabPageMeasureReceipt.Name = "tabPageMeasureReceipt";
-            this.tabPageMeasureReceipt.Size = new System.Drawing.Size(830, 512);
+            this.tabPageMeasureReceipt.Size = new System.Drawing.Size(888, 742);
             this.tabPageMeasureReceipt.Text = "抄表计量";
             // 
             // measureReceiptMod
@@ -376,14 +376,14 @@
             this.measureReceiptMod.Editable = false;
             this.measureReceiptMod.Location = new System.Drawing.Point(0, 0);
             this.measureReceiptMod.Name = "measureReceiptMod";
-            this.measureReceiptMod.Size = new System.Drawing.Size(830, 512);
+            this.measureReceiptMod.Size = new System.Drawing.Size(888, 742);
             this.measureReceiptMod.TabIndex = 0;
             // 
             // tabPageReconcileReceipt
             // 
             this.tabPageReconcileReceipt.Controls.Add(this.reconcileReceiptMod);
             this.tabPageReconcileReceipt.Name = "tabPageReconcileReceipt";
-            this.tabPageReconcileReceipt.Size = new System.Drawing.Size(830, 512);
+            this.tabPageReconcileReceipt.Size = new System.Drawing.Size(888, 742);
             this.tabPageReconcileReceipt.Text = "财务对账";
             // 
             // reconcileReceiptMod
@@ -392,13 +392,13 @@
             this.reconcileReceiptMod.Editable = false;
             this.reconcileReceiptMod.Location = new System.Drawing.Point(0, 0);
             this.reconcileReceiptMod.Name = "reconcileReceiptMod";
-            this.reconcileReceiptMod.Size = new System.Drawing.Size(830, 512);
+            this.reconcileReceiptMod.Size = new System.Drawing.Size(888, 742);
             this.reconcileReceiptMod.TabIndex = 0;
             // 
             // tabPageYear
             // 
             this.tabPageYear.Name = "tabPageYear";
-            this.tabPageYear.Size = new System.Drawing.Size(0, 0);
+            this.tabPageYear.Size = new System.Drawing.Size(894, 771);
             this.tabPageYear.Text = "年度统计";
             // 
             // AccountRecoveryModule

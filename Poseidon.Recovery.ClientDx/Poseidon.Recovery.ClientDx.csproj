@@ -292,10 +292,19 @@
     <Compile Include="Grid\RecycleGrid.Designer.cs">
       <DependentUpon>RecycleGrid.cs</DependentUpon>
     </Compile>
+    <Compile Include="Chart\RecoveryDataChart.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Chart\RecoveryDataChart.Designer.cs">
+      <DependentUpon>RecoveryDataChart.cs</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Chart\FeeTypeChart.resx">
       <DependentUpon>FeeTypeChart.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Chart\RecoveryDataChart.resx">
+      <DependentUpon>RecoveryDataChart.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Grid\CommerceAccountGrid.resx">
       <DependentUpon>CommerceAccountGrid.cs</DependentUpon>
@@ -399,6 +408,7 @@
     <None Include="Properties\DataSources\Poseidon.Recovery.Core.DL.RecycleRecord.datasource" />
     <None Include="Properties\DataSources\Poseidon.Recovery.Core.DL.Settle.datasource" />
     <None Include="Properties\DataSources\Poseidon.Recovery.Core.DL.SettleRecord.datasource" />
+    <None Include="Properties\DataSources\Poseidon.Recovery.Core.Utility.RecoveryDataModel.datasource" />
     <None Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Grid\MeterGrid.resx">
       <DependentUpon>MeterGrid.cs</DependentUpon>

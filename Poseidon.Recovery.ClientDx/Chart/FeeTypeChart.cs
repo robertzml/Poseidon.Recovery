@@ -10,13 +10,9 @@ using System.Windows.Forms;
 namespace Poseidon.Recovery.ClientDx
 {
     using DevExpress.XtraCharts;
-    using Poseidon.Base.Framework;
-    using Poseidon.Common;
     using Poseidon.Core.Utility;
     using Poseidon.Recovery.Core.BL;
     using Poseidon.Recovery.Core.DL;
-    using Poseidon.Recovery.Core.Utility;
-    using Poseidon.Winform.Base;
 
     /// <summary>
     /// 回收费用类型饼状图

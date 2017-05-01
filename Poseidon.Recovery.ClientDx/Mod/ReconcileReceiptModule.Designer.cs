@@ -351,7 +351,7 @@
             this.creditGrid.Location = new System.Drawing.Point(4, 4);
             this.creditGrid.Name = "creditGrid";
             this.creditGrid.ShowAddMenu = false;
-            this.creditGrid.ShowFooter = false;
+            this.creditGrid.ShowFooter = true;
             this.creditGrid.ShowLineNumber = true;
             this.creditGrid.ShowMenu = false;
             this.creditGrid.ShowNavigator = false;
