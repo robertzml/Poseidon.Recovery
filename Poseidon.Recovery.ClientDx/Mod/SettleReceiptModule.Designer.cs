@@ -67,6 +67,11 @@
             this.layoutControlItem14 = new DevExpress.XtraLayout.LayoutControlItem();
             this.groupControl3 = new DevExpress.XtraEditors.GroupControl();
             this.settleRecordGrid = new Poseidon.Recovery.ClientDx.SettleRecordGrid();
+            this.btnRefresh = new DevExpress.XtraEditors.SimpleButton();
+            this.layoutControlItem15 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlGroup2 = new DevExpress.XtraLayout.LayoutControlGroup();
+            this.btnPrint = new DevExpress.XtraEditors.SimpleButton();
+            this.layoutControlItem16 = new DevExpress.XtraLayout.LayoutControlItem();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
             this.groupControl1.SuspendLayout();
@@ -106,6 +111,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem14)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl3)).BeginInit();
             this.groupControl3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem15)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem16)).BeginInit();
             this.SuspendLayout();
             // 
             // tableLayoutPanel1
@@ -164,6 +172,8 @@
             // 
             // layoutControl1
             // 
+            this.layoutControl1.Controls.Add(this.btnPrint);
+            this.layoutControl1.Controls.Add(this.btnRefresh);
             this.layoutControl1.Controls.Add(this.chkIsWriteOff);
             this.layoutControl1.Controls.Add(this.chkIsFree);
             this.layoutControl1.Controls.Add(this.btnEdit);
@@ -208,9 +218,9 @@
             // 
             // btnEdit
             // 
-            this.btnEdit.Location = new System.Drawing.Point(323, 205);
+            this.btnEdit.Location = new System.Drawing.Point(166, 205);
             this.btnEdit.Name = "btnEdit";
-            this.btnEdit.Size = new System.Drawing.Size(293, 22);
+            this.btnEdit.Size = new System.Drawing.Size(144, 22);
             this.btnEdit.StyleController = this.layoutControl1;
             this.btnEdit.TabIndex = 15;
             this.btnEdit.Text = "编辑结算";
@@ -286,7 +296,7 @@
             // 
             this.btnAdd.Location = new System.Drawing.Point(24, 205);
             this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(295, 22);
+            this.btnAdd.Size = new System.Drawing.Size(138, 22);
             this.btnAdd.StyleController = this.layoutControl1;
             this.btnAdd.TabIndex = 8;
             this.btnAdd.Text = "费用结算";
@@ -353,7 +363,8 @@
             this.layoutControlItem10,
             this.layoutControlItem11,
             this.layoutControlItem13,
-            this.layoutControlItem14});
+            this.layoutControlItem14,
+            this.layoutControlGroup2});
             this.layoutControlGroup1.Location = new System.Drawing.Point(0, 0);
             this.layoutControlGroup1.Name = "layoutControlGroup1";
             this.layoutControlGroup1.Size = new System.Drawing.Size(640, 251);
@@ -384,7 +395,7 @@
             this.layoutControlItem12});
             this.lcgAction.Location = new System.Drawing.Point(0, 162);
             this.lcgAction.Name = "lcgAction";
-            this.lcgAction.Size = new System.Drawing.Size(620, 69);
+            this.lcgAction.Size = new System.Drawing.Size(314, 69);
             this.lcgAction.Text = "操作";
             // 
             // layoutControlItem5
@@ -392,16 +403,16 @@
             this.layoutControlItem5.Control = this.btnAdd;
             this.layoutControlItem5.Location = new System.Drawing.Point(0, 0);
             this.layoutControlItem5.Name = "layoutControlItem5";
-            this.layoutControlItem5.Size = new System.Drawing.Size(299, 26);
+            this.layoutControlItem5.Size = new System.Drawing.Size(142, 26);
             this.layoutControlItem5.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem5.TextVisible = false;
             // 
             // layoutControlItem12
             // 
             this.layoutControlItem12.Control = this.btnEdit;
-            this.layoutControlItem12.Location = new System.Drawing.Point(299, 0);
+            this.layoutControlItem12.Location = new System.Drawing.Point(142, 0);
             this.layoutControlItem12.Name = "layoutControlItem12";
-            this.layoutControlItem12.Size = new System.Drawing.Size(297, 26);
+            this.layoutControlItem12.Size = new System.Drawing.Size(148, 26);
             this.layoutControlItem12.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem12.TextVisible = false;
             // 
@@ -525,6 +536,54 @@
             this.settleRecordGrid.Size = new System.Drawing.Size(640, 214);
             this.settleRecordGrid.TabIndex = 0;
             // 
+            // btnRefresh
+            // 
+            this.btnRefresh.Location = new System.Drawing.Point(338, 205);
+            this.btnRefresh.Name = "btnRefresh";
+            this.btnRefresh.Size = new System.Drawing.Size(128, 22);
+            this.btnRefresh.StyleController = this.layoutControl1;
+            this.btnRefresh.TabIndex = 18;
+            this.btnRefresh.Text = "刷新";
+            this.btnRefresh.Click += new System.EventHandler(this.btnRefresh_Click);
+            // 
+            // layoutControlItem15
+            // 
+            this.layoutControlItem15.Control = this.btnRefresh;
+            this.layoutControlItem15.Location = new System.Drawing.Point(0, 0);
+            this.layoutControlItem15.Name = "layoutControlItem15";
+            this.layoutControlItem15.Size = new System.Drawing.Size(132, 26);
+            this.layoutControlItem15.TextSize = new System.Drawing.Size(0, 0);
+            this.layoutControlItem15.TextVisible = false;
+            // 
+            // layoutControlGroup2
+            // 
+            this.layoutControlGroup2.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
+            this.layoutControlItem15,
+            this.layoutControlItem16});
+            this.layoutControlGroup2.Location = new System.Drawing.Point(314, 162);
+            this.layoutControlGroup2.Name = "layoutControlGroup2";
+            this.layoutControlGroup2.Size = new System.Drawing.Size(306, 69);
+            this.layoutControlGroup2.Text = "功能";
+            // 
+            // btnPrint
+            // 
+            this.btnPrint.Location = new System.Drawing.Point(470, 205);
+            this.btnPrint.Name = "btnPrint";
+            this.btnPrint.Size = new System.Drawing.Size(146, 22);
+            this.btnPrint.StyleController = this.layoutControl1;
+            this.btnPrint.TabIndex = 19;
+            this.btnPrint.Text = "打印结算单";
+            this.btnPrint.Click += new System.EventHandler(this.btnPrint_Click);
+            // 
+            // layoutControlItem16
+            // 
+            this.layoutControlItem16.Control = this.btnPrint;
+            this.layoutControlItem16.Location = new System.Drawing.Point(132, 0);
+            this.layoutControlItem16.Name = "layoutControlItem16";
+            this.layoutControlItem16.Size = new System.Drawing.Size(150, 26);
+            this.layoutControlItem16.TextSize = new System.Drawing.Size(0, 0);
+            this.layoutControlItem16.TextVisible = false;
+            // 
             // SettleReceiptModule
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
@@ -572,6 +631,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem14)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl3)).EndInit();
             this.groupControl3.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem15)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem16)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -616,5 +678,10 @@
         private DevExpress.XtraEditors.CheckEdit chkIsFree;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem13;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem14;
+        private DevExpress.XtraEditors.SimpleButton btnPrint;
+        private DevExpress.XtraEditors.SimpleButton btnRefresh;
+        private DevExpress.XtraLayout.LayoutControlGroup layoutControlGroup2;
+        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem15;
+        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem16;
     }
 }

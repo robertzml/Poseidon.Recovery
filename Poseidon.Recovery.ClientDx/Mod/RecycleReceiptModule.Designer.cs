@@ -35,6 +35,7 @@
             this.bsRecycle = new System.Windows.Forms.BindingSource(this.components);
             this.groupControl2 = new DevExpress.XtraEditors.GroupControl();
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
+            this.chkIsPost = new DevExpress.XtraEditors.CheckEdit();
             this.btnEdit = new DevExpress.XtraEditors.SimpleButton();
             this.btnAdd = new DevExpress.XtraEditors.SimpleButton();
             this.txtRemark = new DevExpress.XtraEditors.MemoEdit();
@@ -55,10 +56,12 @@
             this.lcgAction = new DevExpress.XtraLayout.LayoutControlGroup();
             this.layoutControlItem8 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem9 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.groupControl3 = new DevExpress.XtraEditors.GroupControl();
-            this.chkIsPost = new DevExpress.XtraEditors.CheckEdit();
             this.layoutControlItem10 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.groupControl3 = new DevExpress.XtraEditors.GroupControl();
             this.recycleRecordGrid = new Poseidon.Recovery.ClientDx.RecycleRecordGrid();
+            this.btnRefresh = new DevExpress.XtraEditors.SimpleButton();
+            this.layoutControlItem11 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.lcgFunction = new DevExpress.XtraLayout.LayoutControlGroup();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
             this.groupControl1.SuspendLayout();
@@ -68,6 +71,7 @@
             this.groupControl2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.chkIsPost.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtRemark.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtEditTime.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtEditUser.Properties)).BeginInit();
@@ -86,10 +90,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.lcgAction)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem8)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem9)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem10)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl3)).BeginInit();
             this.groupControl3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.chkIsPost.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem10)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem11)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lcgFunction)).BeginInit();
             this.SuspendLayout();
             // 
             // tableLayoutPanel1
@@ -148,6 +153,7 @@
             // 
             // layoutControl1
             // 
+            this.layoutControl1.Controls.Add(this.btnRefresh);
             this.layoutControl1.Controls.Add(this.chkIsPost);
             this.layoutControl1.Controls.Add(this.btnEdit);
             this.layoutControl1.Controls.Add(this.btnAdd);
@@ -166,11 +172,21 @@
             this.layoutControl1.TabIndex = 0;
             this.layoutControl1.Text = "layoutControl1";
             // 
+            // chkIsPost
+            // 
+            this.chkIsPost.Location = new System.Drawing.Point(562, 12);
+            this.chkIsPost.Name = "chkIsPost";
+            this.chkIsPost.Properties.Caption = "是否入账";
+            this.chkIsPost.Properties.ReadOnly = true;
+            this.chkIsPost.Size = new System.Drawing.Size(74, 19);
+            this.chkIsPost.StyleController = this.layoutControl1;
+            this.chkIsPost.TabIndex = 13;
+            // 
             // btnEdit
             // 
-            this.btnEdit.Location = new System.Drawing.Point(326, 165);
+            this.btnEdit.Location = new System.Drawing.Point(217, 165);
             this.btnEdit.Name = "btnEdit";
-            this.btnEdit.Size = new System.Drawing.Size(298, 22);
+            this.btnEdit.Size = new System.Drawing.Size(208, 22);
             this.btnEdit.StyleController = this.layoutControl1;
             this.btnEdit.TabIndex = 12;
             this.btnEdit.Text = "编辑回收";
@@ -180,7 +196,7 @@
             // 
             this.btnAdd.Location = new System.Drawing.Point(24, 165);
             this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(298, 22);
+            this.btnAdd.Size = new System.Drawing.Size(189, 22);
             this.btnAdd.StyleController = this.layoutControl1;
             this.btnAdd.TabIndex = 11;
             this.btnAdd.Text = "回收登记";
@@ -276,7 +292,8 @@
             this.layoutControlItem6,
             this.layoutControlItem7,
             this.lcgAction,
-            this.layoutControlItem10});
+            this.layoutControlItem10,
+            this.lcgFunction});
             this.layoutControlGroup1.Location = new System.Drawing.Point(0, 0);
             this.layoutControlGroup1.Name = "layoutControlGroup1";
             this.layoutControlGroup1.Size = new System.Drawing.Size(648, 211);
@@ -352,7 +369,7 @@
             this.layoutControlItem9});
             this.lcgAction.Location = new System.Drawing.Point(0, 122);
             this.lcgAction.Name = "lcgAction";
-            this.lcgAction.Size = new System.Drawing.Size(628, 69);
+            this.lcgAction.Size = new System.Drawing.Size(429, 69);
             this.lcgAction.Text = "操作";
             // 
             // layoutControlItem8
@@ -360,18 +377,27 @@
             this.layoutControlItem8.Control = this.btnAdd;
             this.layoutControlItem8.Location = new System.Drawing.Point(0, 0);
             this.layoutControlItem8.Name = "layoutControlItem8";
-            this.layoutControlItem8.Size = new System.Drawing.Size(302, 26);
+            this.layoutControlItem8.Size = new System.Drawing.Size(193, 26);
             this.layoutControlItem8.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem8.TextVisible = false;
             // 
             // layoutControlItem9
             // 
             this.layoutControlItem9.Control = this.btnEdit;
-            this.layoutControlItem9.Location = new System.Drawing.Point(302, 0);
+            this.layoutControlItem9.Location = new System.Drawing.Point(193, 0);
             this.layoutControlItem9.Name = "layoutControlItem9";
-            this.layoutControlItem9.Size = new System.Drawing.Size(302, 26);
+            this.layoutControlItem9.Size = new System.Drawing.Size(212, 26);
             this.layoutControlItem9.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem9.TextVisible = false;
+            // 
+            // layoutControlItem10
+            // 
+            this.layoutControlItem10.Control = this.chkIsPost;
+            this.layoutControlItem10.Location = new System.Drawing.Point(550, 0);
+            this.layoutControlItem10.Name = "layoutControlItem10";
+            this.layoutControlItem10.Size = new System.Drawing.Size(78, 24);
+            this.layoutControlItem10.TextSize = new System.Drawing.Size(0, 0);
+            this.layoutControlItem10.TextVisible = false;
             // 
             // groupControl3
             // 
@@ -382,25 +408,6 @@
             this.groupControl3.Size = new System.Drawing.Size(652, 222);
             this.groupControl3.TabIndex = 2;
             this.groupControl3.Text = "回收记录";
-            // 
-            // chkIsPost
-            // 
-            this.chkIsPost.Location = new System.Drawing.Point(562, 12);
-            this.chkIsPost.Name = "chkIsPost";
-            this.chkIsPost.Properties.Caption = "是否入账";
-            this.chkIsPost.Properties.ReadOnly = true;
-            this.chkIsPost.Size = new System.Drawing.Size(74, 19);
-            this.chkIsPost.StyleController = this.layoutControl1;
-            this.chkIsPost.TabIndex = 13;
-            // 
-            // layoutControlItem10
-            // 
-            this.layoutControlItem10.Control = this.chkIsPost;
-            this.layoutControlItem10.Location = new System.Drawing.Point(550, 0);
-            this.layoutControlItem10.Name = "layoutControlItem10";
-            this.layoutControlItem10.Size = new System.Drawing.Size(78, 24);
-            this.layoutControlItem10.TextSize = new System.Drawing.Size(0, 0);
-            this.layoutControlItem10.TextVisible = false;
             // 
             // recycleRecordGrid
             // 
@@ -421,6 +428,34 @@
             this.recycleRecordGrid.Size = new System.Drawing.Size(648, 199);
             this.recycleRecordGrid.TabIndex = 0;
             // 
+            // btnRefresh
+            // 
+            this.btnRefresh.Location = new System.Drawing.Point(453, 165);
+            this.btnRefresh.Name = "btnRefresh";
+            this.btnRefresh.Size = new System.Drawing.Size(171, 22);
+            this.btnRefresh.StyleController = this.layoutControl1;
+            this.btnRefresh.TabIndex = 14;
+            this.btnRefresh.Text = "刷新";
+            this.btnRefresh.Click += new System.EventHandler(this.btnRefresh_Click);
+            // 
+            // layoutControlItem11
+            // 
+            this.layoutControlItem11.Control = this.btnRefresh;
+            this.layoutControlItem11.Location = new System.Drawing.Point(0, 0);
+            this.layoutControlItem11.Name = "layoutControlItem11";
+            this.layoutControlItem11.Size = new System.Drawing.Size(175, 26);
+            this.layoutControlItem11.TextSize = new System.Drawing.Size(0, 0);
+            this.layoutControlItem11.TextVisible = false;
+            // 
+            // lcgFunction
+            // 
+            this.lcgFunction.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
+            this.layoutControlItem11});
+            this.lcgFunction.Location = new System.Drawing.Point(429, 122);
+            this.lcgFunction.Name = "lcgFunction";
+            this.lcgFunction.Size = new System.Drawing.Size(199, 69);
+            this.lcgFunction.Text = "功能";
+            // 
             // RecycleReceiptModule
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
@@ -438,6 +473,7 @@
             this.groupControl2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).EndInit();
             this.layoutControl1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.chkIsPost.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtRemark.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtEditTime.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtEditUser.Properties)).EndInit();
@@ -456,10 +492,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.lcgAction)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem8)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem9)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem10)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl3)).EndInit();
             this.groupControl3.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.chkIsPost.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem10)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem11)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lcgFunction)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -496,5 +533,8 @@
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem9;
         private DevExpress.XtraEditors.CheckEdit chkIsPost;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem10;
+        private DevExpress.XtraEditors.SimpleButton btnRefresh;
+        private DevExpress.XtraLayout.LayoutControlGroup lcgFunction;
+        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem11;
     }
 }

@@ -87,6 +87,14 @@ namespace Poseidon.Recovery.ClientDx
         private void reconcileGrid_RowSelected(object arg1, EventArgs arg2)
         {
             var reconcile = this.reconcileGrid.GetCurrentSelect();
+            if (reconcile == null)
+            {
+                this.debitGrid.Clear();
+                this.debitOtherGrid.Clear();
+                this.creditGrid.Clear();
+                this.recycleRecordGrid.Clear();
+                return;
+            }
 
             this.debitGrid.DataSource = reconcile.Debits.Where(r => !string.IsNullOrEmpty(r.SettleId)).ToList();
             this.debitOtherGrid.DataSource = reconcile.Debits.Where(r => string.IsNullOrEmpty(r.SettleId)).ToList();
@@ -108,6 +116,35 @@ namespace Poseidon.Recovery.ClientDx
                 return;
 
             ChildFormManage.ShowDialogForm(typeof(FrmReconcileAdd), new object[] { this.currentAccount.Id });
+            LoadData(this.currentAccount);
+        }
+
+        /// <summary>
+        /// 撤回对账
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btnRevert_Click(object sender, EventArgs e)
+        {
+            if (this.currentAccount == null || this.reconcileGrid.GetCurrentSelect() == null)
+                return;
+
+            if (MessageUtil.ConfirmYesNo("是否确认撤回选中对账记录") == DialogResult.Yes)
+            {
+                var reconcile = this.reconcileGrid.GetCurrentSelect();
+
+                BusinessFactory<ReconcileBusiness>.Instance.Revert(reconcile);
+                LoadData(this.currentAccount);
+            }
+        }
+
+        /// <summary>
+        /// 刷新
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btnRefresh_Click(object sender, EventArgs e)
+        {
             LoadData(this.currentAccount);
         }
         #endregion //Event

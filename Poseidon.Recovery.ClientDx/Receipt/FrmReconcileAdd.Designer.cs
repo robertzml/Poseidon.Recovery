@@ -126,13 +126,13 @@
             this.plFill.Appearance.BackColor = System.Drawing.Color.White;
             this.plFill.Appearance.Options.UseBackColor = true;
             this.plFill.Controls.Add(this.tableLayoutPanel1);
-            this.plFill.Size = new System.Drawing.Size(924, 661);
+            this.plFill.Size = new System.Drawing.Size(924, 662);
             // 
             // plBottom
             // 
             this.plBottom.Appearance.BackColor = System.Drawing.Color.White;
             this.plBottom.Appearance.Options.UseBackColor = true;
-            this.plBottom.Location = new System.Drawing.Point(0, 661);
+            this.plBottom.Location = new System.Drawing.Point(0, 662);
             this.plBottom.Size = new System.Drawing.Size(924, 60);
             // 
             // tableLayoutPanel1
@@ -152,7 +152,7 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 160F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(924, 661);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(924, 662);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
             // groupControl1
@@ -323,7 +323,7 @@
             this.groupControl3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupControl3.Location = new System.Drawing.Point(3, 163);
             this.groupControl3.Name = "groupControl3";
-            this.groupControl3.Size = new System.Drawing.Size(456, 244);
+            this.groupControl3.Size = new System.Drawing.Size(456, 245);
             this.groupControl3.TabIndex = 2;
             this.groupControl3.Text = "借方 - 结算费用";
             // 
@@ -335,7 +335,7 @@
             this.layoutControl2.Location = new System.Drawing.Point(2, 21);
             this.layoutControl2.Name = "layoutControl2";
             this.layoutControl2.Root = this.layoutControlGroup2;
-            this.layoutControl2.Size = new System.Drawing.Size(452, 221);
+            this.layoutControl2.Size = new System.Drawing.Size(452, 222);
             this.layoutControl2.TabIndex = 0;
             this.layoutControl2.Text = "layoutControl2";
             // 
@@ -355,7 +355,7 @@
             this.debitGrid.ShowLineNumber = true;
             this.debitGrid.ShowMenu = false;
             this.debitGrid.ShowNavigator = false;
-            this.debitGrid.Size = new System.Drawing.Size(428, 173);
+            this.debitGrid.Size = new System.Drawing.Size(428, 174);
             this.debitGrid.TabIndex = 5;
             // 
             // cmbSettles
@@ -386,7 +386,7 @@
             this.layoutControlItem8});
             this.layoutControlGroup2.Location = new System.Drawing.Point(0, 0);
             this.layoutControlGroup2.Name = "layoutControlGroup2";
-            this.layoutControlGroup2.Size = new System.Drawing.Size(452, 221);
+            this.layoutControlGroup2.Size = new System.Drawing.Size(452, 222);
             this.layoutControlGroup2.TextVisible = false;
             // 
             // layoutControlItem7
@@ -403,7 +403,7 @@
             this.layoutControlItem8.Control = this.debitGrid;
             this.layoutControlItem8.Location = new System.Drawing.Point(0, 24);
             this.layoutControlItem8.Name = "layoutControlItem8";
-            this.layoutControlItem8.Size = new System.Drawing.Size(432, 177);
+            this.layoutControlItem8.Size = new System.Drawing.Size(432, 178);
             this.layoutControlItem8.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem8.TextVisible = false;
             // 
@@ -413,7 +413,7 @@
             this.groupControl2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupControl2.Location = new System.Drawing.Point(465, 163);
             this.groupControl2.Name = "groupControl2";
-            this.groupControl2.Size = new System.Drawing.Size(456, 244);
+            this.groupControl2.Size = new System.Drawing.Size(456, 245);
             this.groupControl2.TabIndex = 3;
             this.groupControl2.Text = "贷方 - 总计";
             // 
@@ -425,7 +425,7 @@
             this.layoutControl3.Location = new System.Drawing.Point(2, 21);
             this.layoutControl3.Name = "layoutControl3";
             this.layoutControl3.Root = this.layoutControlGroup3;
-            this.layoutControl3.Size = new System.Drawing.Size(452, 221);
+            this.layoutControl3.Size = new System.Drawing.Size(452, 222);
             this.layoutControl3.TabIndex = 0;
             this.layoutControl3.Text = "layoutControl3";
             // 
@@ -444,7 +444,7 @@
             this.creditGrid.ShowLineNumber = true;
             this.creditGrid.ShowMenu = false;
             this.creditGrid.ShowNavigator = false;
-            this.creditGrid.Size = new System.Drawing.Size(428, 173);
+            this.creditGrid.Size = new System.Drawing.Size(428, 174);
             this.creditGrid.TabIndex = 5;
             // 
             // luRecycles
@@ -482,7 +482,7 @@
             this.layoutControlItem10});
             this.layoutControlGroup3.Location = new System.Drawing.Point(0, 0);
             this.layoutControlGroup3.Name = "layoutControlGroup3";
-            this.layoutControlGroup3.Size = new System.Drawing.Size(452, 221);
+            this.layoutControlGroup3.Size = new System.Drawing.Size(452, 222);
             this.layoutControlGroup3.TextVisible = false;
             // 
             // layoutControlItem9
@@ -499,7 +499,7 @@
             this.layoutControlItem10.Control = this.creditGrid;
             this.layoutControlItem10.Location = new System.Drawing.Point(0, 24);
             this.layoutControlItem10.Name = "layoutControlItem10";
-            this.layoutControlItem10.Size = new System.Drawing.Size(432, 177);
+            this.layoutControlItem10.Size = new System.Drawing.Size(432, 178);
             this.layoutControlItem10.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem10.TextVisible = false;
             // 
@@ -507,7 +507,7 @@
             // 
             this.groupControl4.Controls.Add(this.debitOtherGrid);
             this.groupControl4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupControl4.Location = new System.Drawing.Point(3, 413);
+            this.groupControl4.Location = new System.Drawing.Point(3, 414);
             this.groupControl4.Name = "groupControl4";
             this.groupControl4.Size = new System.Drawing.Size(456, 245);
             this.groupControl4.TabIndex = 4;
@@ -537,7 +537,7 @@
             // 
             this.groupControl5.Controls.Add(this.recycleRecordGrid);
             this.groupControl5.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupControl5.Location = new System.Drawing.Point(465, 413);
+            this.groupControl5.Location = new System.Drawing.Point(465, 414);
             this.groupControl5.Name = "groupControl5";
             this.groupControl5.Size = new System.Drawing.Size(456, 245);
             this.groupControl5.TabIndex = 5;
@@ -566,7 +566,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(924, 721);
+            this.ClientSize = new System.Drawing.Size(924, 722);
             this.Name = "FrmReconcileAdd";
             this.Text = "新增财务对账";
             ((System.ComponentModel.ISupportInitialize)(this.plFill)).EndInit();

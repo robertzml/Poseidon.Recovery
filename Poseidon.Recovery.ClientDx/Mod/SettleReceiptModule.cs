@@ -162,6 +162,26 @@ namespace Poseidon.Recovery.ClientDx
             ChildFormManage.ShowDialogForm(typeof(FrmSettleEdit), new object[] { settle.Id, this.currentAccount.Id });
             LoadData(this.currentAccount);
         }
+
+        /// <summary>
+        /// 刷新
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btnRefresh_Click(object sender, EventArgs e)
+        {
+            LoadData(this.currentAccount);
+        }
+
+        /// <summary>
+        /// 打印结算单
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btnPrint_Click(object sender, EventArgs e)
+        {
+
+        }
         #endregion //Event
 
         #region Property
@@ -180,6 +200,7 @@ namespace Poseidon.Recovery.ClientDx
                 this.editable = value;
             }
         }
+
         #endregion //Property
     }
 }

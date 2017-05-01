@@ -155,6 +155,16 @@ namespace Poseidon.Recovery.ClientDx
             ChildFormManage.ShowDialogForm(typeof(FrmRecycleEdit), new object[] { recycle.Id, this.currentAccount.Id });
             LoadData(this.currentAccount);
         }
+
+        /// <summary>
+        /// 刷新
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btnRefresh_Click(object sender, EventArgs e)
+        {
+            LoadData(this.currentAccount);
+        }
         #endregion //Event
 
         #region Property

@@ -130,6 +130,33 @@ namespace Poseidon.Recovery.Core.BL
             };
             return base.Update(entity);
         }
+
+        /// <summary>
+        /// 撤回财务对账
+        /// </summary>
+        /// <param name="entity">实体对象</param>        
+        public void Revert(Reconcile entity)
+        {
+            var credit = entity.Credits.First();
+            var debits = entity.Debits;
+
+            base.Delete(entity);
+
+            // recycle post
+            RecycleBusiness recycleBusiness = new RecycleBusiness();
+            recycleBusiness.Post(credit.RecycleId, false);
+
+            // settle write-off
+            SettleBusiness settleBusiness = new SettleBusiness();
+            foreach (var item in debits)
+            {
+                if (string.IsNullOrEmpty(item.SettleId))
+                    continue;
+
+                bool isOff = CheckSettle(item.SettleId);
+                settleBusiness.WriteOff(item.SettleId, isOff);
+            }
+        }
         #endregion //Method
     }
 }

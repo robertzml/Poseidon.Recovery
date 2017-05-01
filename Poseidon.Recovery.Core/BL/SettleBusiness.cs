@@ -94,7 +94,11 @@ namespace Poseidon.Recovery.Core.BL
                 Name = user.Name,
                 Time = DateTime.Now
             };
-            entity.IsWriteOff = false;
+
+            if (entity.IsFree == true)
+                entity.IsWriteOff = true;
+            else
+                entity.IsWriteOff = false;
             entity.Status = 0;
             base.Create(entity);
         }
@@ -113,6 +117,10 @@ namespace Poseidon.Recovery.Core.BL
                 Name = user.Name,
                 Time = DateTime.Now
             };
+            if (entity.IsFree == true)
+                entity.IsWriteOff = true;
+            else
+                entity.IsWriteOff = false;
             return base.Update(entity);
         }
         #endregion //Method

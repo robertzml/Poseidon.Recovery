@@ -31,7 +31,8 @@
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.groupControl2 = new DevExpress.XtraEditors.GroupControl();
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
-            this.btnEdit = new DevExpress.XtraEditors.SimpleButton();
+            this.btnRefresh = new DevExpress.XtraEditors.SimpleButton();
+            this.btnRevert = new DevExpress.XtraEditors.SimpleButton();
             this.reconcileGrid = new Poseidon.Recovery.ClientDx.ReconcileGrid();
             this.btnAdd = new DevExpress.XtraEditors.SimpleButton();
             this.layoutControlGroup1 = new DevExpress.XtraLayout.LayoutControlGroup();
@@ -39,6 +40,8 @@
             this.lcgAction = new DevExpress.XtraLayout.LayoutControlGroup();
             this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem7 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlGroup4 = new DevExpress.XtraLayout.LayoutControlGroup();
+            this.layoutControlItem8 = new DevExpress.XtraLayout.LayoutControlItem();
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
             this.layoutControl2 = new DevExpress.XtraLayout.LayoutControl();
             this.debitOtherGrid = new Poseidon.Recovery.ClientDx.ReconcileDebitGrid();
@@ -63,6 +66,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.lcgAction)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem7)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem8)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
             this.groupControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl2)).BeginInit();
@@ -110,7 +115,8 @@
             // 
             // layoutControl1
             // 
-            this.layoutControl1.Controls.Add(this.btnEdit);
+            this.layoutControl1.Controls.Add(this.btnRefresh);
+            this.layoutControl1.Controls.Add(this.btnRevert);
             this.layoutControl1.Controls.Add(this.reconcileGrid);
             this.layoutControl1.Controls.Add(this.btnAdd);
             this.layoutControl1.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -121,14 +127,25 @@
             this.layoutControl1.TabIndex = 0;
             this.layoutControl1.Text = "layoutControl1";
             // 
-            // btnEdit
+            // btnRefresh
             // 
-            this.btnEdit.Location = new System.Drawing.Point(403, 35);
-            this.btnEdit.Name = "btnEdit";
-            this.btnEdit.Size = new System.Drawing.Size(383, 22);
-            this.btnEdit.StyleController = this.layoutControl1;
-            this.btnEdit.TabIndex = 4;
-            this.btnEdit.Text = "编辑对账";
+            this.btnRefresh.Location = new System.Drawing.Point(609, 35);
+            this.btnRefresh.Name = "btnRefresh";
+            this.btnRefresh.Size = new System.Drawing.Size(177, 22);
+            this.btnRefresh.StyleController = this.layoutControl1;
+            this.btnRefresh.TabIndex = 5;
+            this.btnRefresh.Text = "刷新";
+            this.btnRefresh.Click += new System.EventHandler(this.btnRefresh_Click);
+            // 
+            // btnRevert
+            // 
+            this.btnRevert.Location = new System.Drawing.Point(287, 35);
+            this.btnRevert.Name = "btnRevert";
+            this.btnRevert.Size = new System.Drawing.Size(294, 22);
+            this.btnRevert.StyleController = this.layoutControl1;
+            this.btnRevert.TabIndex = 4;
+            this.btnRevert.Text = "撤回对账";
+            this.btnRevert.Click += new System.EventHandler(this.btnRevert_Click);
             // 
             // reconcileGrid
             // 
@@ -153,7 +170,7 @@
             // 
             this.btnAdd.Location = new System.Drawing.Point(16, 35);
             this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(383, 22);
+            this.btnAdd.Size = new System.Drawing.Size(267, 22);
             this.btnAdd.StyleController = this.layoutControl1;
             this.btnAdd.TabIndex = 0;
             this.btnAdd.Text = "登记对账";
@@ -165,7 +182,8 @@
             this.layoutControlGroup1.GroupBordersVisible = false;
             this.layoutControlGroup1.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
             this.layoutControlItem2,
-            this.lcgAction});
+            this.lcgAction,
+            this.layoutControlGroup4});
             this.layoutControlGroup1.Location = new System.Drawing.Point(0, 0);
             this.layoutControlGroup1.Name = "layoutControlGroup1";
             this.layoutControlGroup1.Padding = new DevExpress.XtraLayout.Utils.Padding(2, 2, 2, 2);
@@ -188,7 +206,7 @@
             this.layoutControlItem7});
             this.lcgAction.Location = new System.Drawing.Point(0, 0);
             this.lcgAction.Name = "lcgAction";
-            this.lcgAction.Size = new System.Drawing.Size(798, 69);
+            this.lcgAction.Size = new System.Drawing.Size(593, 69);
             this.lcgAction.Text = "操作";
             // 
             // layoutControlItem1
@@ -196,18 +214,36 @@
             this.layoutControlItem1.Control = this.btnAdd;
             this.layoutControlItem1.Location = new System.Drawing.Point(0, 0);
             this.layoutControlItem1.Name = "layoutControlItem1";
-            this.layoutControlItem1.Size = new System.Drawing.Size(387, 26);
+            this.layoutControlItem1.Size = new System.Drawing.Size(271, 26);
             this.layoutControlItem1.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem1.TextVisible = false;
             // 
             // layoutControlItem7
             // 
-            this.layoutControlItem7.Control = this.btnEdit;
-            this.layoutControlItem7.Location = new System.Drawing.Point(387, 0);
+            this.layoutControlItem7.Control = this.btnRevert;
+            this.layoutControlItem7.Location = new System.Drawing.Point(271, 0);
             this.layoutControlItem7.Name = "layoutControlItem7";
-            this.layoutControlItem7.Size = new System.Drawing.Size(387, 26);
+            this.layoutControlItem7.Size = new System.Drawing.Size(298, 26);
             this.layoutControlItem7.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem7.TextVisible = false;
+            // 
+            // layoutControlGroup4
+            // 
+            this.layoutControlGroup4.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
+            this.layoutControlItem8});
+            this.layoutControlGroup4.Location = new System.Drawing.Point(593, 0);
+            this.layoutControlGroup4.Name = "layoutControlGroup4";
+            this.layoutControlGroup4.Size = new System.Drawing.Size(205, 69);
+            this.layoutControlGroup4.Text = "功能";
+            // 
+            // layoutControlItem8
+            // 
+            this.layoutControlItem8.Control = this.btnRefresh;
+            this.layoutControlItem8.Location = new System.Drawing.Point(0, 0);
+            this.layoutControlItem8.Name = "layoutControlItem8";
+            this.layoutControlItem8.Size = new System.Drawing.Size(181, 26);
+            this.layoutControlItem8.TextSize = new System.Drawing.Size(0, 0);
+            this.layoutControlItem8.TextVisible = false;
             // 
             // groupControl1
             // 
@@ -407,6 +443,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.lcgAction)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem7)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem8)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).EndInit();
             this.groupControl1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl2)).EndInit();
@@ -449,8 +487,11 @@
         private DevExpress.XtraLayout.LayoutControlGroup layoutControlGroup3;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem5;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem6;
-        private DevExpress.XtraEditors.SimpleButton btnEdit;
+        private DevExpress.XtraEditors.SimpleButton btnRevert;
         private DevExpress.XtraLayout.LayoutControlGroup lcgAction;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem7;
+        private DevExpress.XtraEditors.SimpleButton btnRefresh;
+        private DevExpress.XtraLayout.LayoutControlGroup layoutControlGroup4;
+        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem8;
     }
 }

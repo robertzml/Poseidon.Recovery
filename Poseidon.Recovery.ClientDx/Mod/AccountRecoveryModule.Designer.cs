@@ -61,6 +61,7 @@
             this.groupControl3 = new DevExpress.XtraEditors.GroupControl();
             this.settleYearMod = new Poseidon.Recovery.ClientDx.SettleYearModule();
             this.groupControl4 = new DevExpress.XtraEditors.GroupControl();
+            this.settleYearChartMod = new Poseidon.Recovery.ClientDx.SettleYearChartModule();
             this.tabPageReceipt = new DevExpress.XtraTab.XtraTabPage();
             this.tabBusiness = new DevExpress.XtraTab.XtraTabControl();
             this.tabPageSettleReceipt = new DevExpress.XtraTab.XtraTabPage();
@@ -71,7 +72,6 @@
             this.measureReceiptMod = new Poseidon.Recovery.ClientDx.MeasureReceiptModule();
             this.tabPageReconcileReceipt = new DevExpress.XtraTab.XtraTabPage();
             this.reconcileReceiptMod = new Poseidon.Recovery.ClientDx.ReconcileReceiptModule();
-            this.settleYearChartMod = new Poseidon.Recovery.ClientDx.SettleYearChartModule();
             ((System.ComponentModel.ISupportInitialize)(this.tabInfo)).BeginInit();
             this.tabInfo.SuspendLayout();
             this.tabPageBaseInfo.SuspendLayout();
@@ -351,7 +351,7 @@
             this.tabYears.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tabYears.Location = new System.Drawing.Point(0, 0);
             this.tabYears.Name = "tabYears";
-            this.tabYears.SelectedTabPage = this.tabPageRecycleYears;
+            this.tabYears.SelectedTabPage = this.tabPageSettleYears;
             this.tabYears.Size = new System.Drawing.Size(894, 771);
             this.tabYears.TabIndex = 0;
             this.tabYears.TabPages.AddRange(new DevExpress.XtraTab.XtraTabPage[] {
@@ -468,6 +468,14 @@
             this.groupControl4.TabIndex = 1;
             this.groupControl4.Text = "结算趋势图";
             // 
+            // settleYearChartMod
+            // 
+            this.settleYearChartMod.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.settleYearChartMod.Location = new System.Drawing.Point(2, 21);
+            this.settleYearChartMod.Name = "settleYearChartMod";
+            this.settleYearChartMod.Size = new System.Drawing.Size(878, 342);
+            this.settleYearChartMod.TabIndex = 0;
+            // 
             // tabPageReceipt
             // 
             this.tabPageReceipt.Controls.Add(this.tabBusiness);
@@ -552,14 +560,6 @@
             this.reconcileReceiptMod.Name = "reconcileReceiptMod";
             this.reconcileReceiptMod.Size = new System.Drawing.Size(888, 742);
             this.reconcileReceiptMod.TabIndex = 0;
-            // 
-            // settleYearChartMod
-            // 
-            this.settleYearChartMod.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.settleYearChartMod.Location = new System.Drawing.Point(2, 21);
-            this.settleYearChartMod.Name = "settleYearChartMod";
-            this.settleYearChartMod.Size = new System.Drawing.Size(878, 342);
-            this.settleYearChartMod.TabIndex = 0;
             // 
             // AccountRecoveryModule
             // 
