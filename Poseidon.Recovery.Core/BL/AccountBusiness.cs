@@ -27,6 +27,16 @@ namespace Poseidon.Recovery.Core.BL
 
         #region Method
         /// <summary>
+        /// 按模型类型获取账户
+        /// </summary>
+        /// <param name="modelType">模型类型</param>
+        /// <returns></returns>
+        public IEnumerable<Account> FindAll(string modelType)
+        {
+            return this.baseDal.FindListByField("modelType", modelType);
+        }
+
+        /// <summary>
         /// 设置表具
         /// </summary>
         /// <param name="id">账户ID</param>

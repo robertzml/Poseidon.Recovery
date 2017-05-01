@@ -37,12 +37,14 @@
             this.navigationPage1 = new DevExpress.XtraBars.Navigation.NavigationPage();
             this.navigationPage2 = new DevExpress.XtraBars.Navigation.NavigationPage();
             this.accountMod = new Poseidon.Recovery.ClientDx.AccountRecoveryModule();
+            this.groupMod = new Poseidon.Recovery.ClientDx.GroupRecoveryModule();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainerControl1)).BeginInit();
             this.splitContainerControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tabAccount)).BeginInit();
             this.tabAccount.SuspendLayout();
             this.tabPageCommerce.SuspendLayout();
             this.navFrame.SuspendLayout();
+            this.navigationPage1.SuspendLayout();
             this.navigationPage2.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -88,6 +90,7 @@
             this.commerceAccountTree.ShowFindPanel = false;
             this.commerceAccountTree.Size = new System.Drawing.Size(184, 499);
             this.commerceAccountTree.TabIndex = 0;
+            this.commerceAccountTree.GroupSelected += new System.EventHandler(this.commerceAccountTree_GroupSelected);
             this.commerceAccountTree.EntitySelected += new System.EventHandler(this.commerceAccountTree_EntitySelected);
             // 
             // tabPageConstruction
@@ -106,15 +109,15 @@
             this.navFrame.Pages.AddRange(new DevExpress.XtraBars.Navigation.NavigationPage[] {
             this.navigationPage1,
             this.navigationPage2});
-            this.navFrame.SelectedPage = this.navigationPage2;
-            this.navFrame.SelectedPageIndex = 1;
+            this.navFrame.SelectedPage = this.navigationPage1;
+            this.navFrame.SelectedPageIndex = 0;
             this.navFrame.Size = new System.Drawing.Size(645, 528);
             this.navFrame.TabIndex = 0;
             this.navFrame.Text = "navigationFrame1";
             // 
             // navigationPage1
             // 
-            this.navigationPage1.Caption = "navigationPage1";
+            this.navigationPage1.Controls.Add(this.groupMod);
             this.navigationPage1.Name = "navigationPage1";
             this.navigationPage1.Size = new System.Drawing.Size(645, 528);
             // 
@@ -133,6 +136,14 @@
             this.accountMod.Size = new System.Drawing.Size(645, 528);
             this.accountMod.TabIndex = 0;
             // 
+            // groupMod
+            // 
+            this.groupMod.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.groupMod.Location = new System.Drawing.Point(0, 0);
+            this.groupMod.Name = "groupMod";
+            this.groupMod.Size = new System.Drawing.Size(645, 528);
+            this.groupMod.TabIndex = 0;
+            // 
             // FrmRecoveryOverview
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
@@ -147,6 +158,7 @@
             this.tabAccount.ResumeLayout(false);
             this.tabPageCommerce.ResumeLayout(false);
             this.navFrame.ResumeLayout(false);
+            this.navigationPage1.ResumeLayout(false);
             this.navigationPage2.ResumeLayout(false);
             this.ResumeLayout(false);
 
@@ -163,5 +175,6 @@
         private DevExpress.XtraBars.Navigation.NavigationPage navigationPage1;
         private DevExpress.XtraBars.Navigation.NavigationPage navigationPage2;
         private AccountRecoveryModule accountMod;
+        private GroupRecoveryModule groupMod;
     }
 }

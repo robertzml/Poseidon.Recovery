@@ -82,6 +82,12 @@
     <Compile Include="Chart\FeeTypeChart.Designer.cs">
       <DependentUpon>FeeTypeChart.cs</DependentUpon>
     </Compile>
+    <Compile Include="Mod\GroupRecoveryModule.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Mod\GroupRecoveryModule.Designer.cs">
+      <DependentUpon>GroupRecoveryModule.cs</DependentUpon>
+    </Compile>
     <Compile Include="Mod\AccountSummaryModule.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -407,6 +413,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Mod\CommerceAccountInfo.resx">
       <DependentUpon>CommerceAccountInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Mod\GroupRecoveryModule.resx">
+      <DependentUpon>GroupRecoveryModule.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Mod\ReconcileReceiptModule.resx">
       <DependentUpon>ReconcileReceiptModule.cs</DependentUpon>

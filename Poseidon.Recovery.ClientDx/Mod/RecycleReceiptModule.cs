@@ -152,6 +152,12 @@ namespace Poseidon.Recovery.ClientDx
                 return;
 
             var recycle = this.lbRecycles.SelectedItem as Recycle;
+            if (recycle.IsPost)
+            {
+                MessageUtil.ShowWarning("该回收已经入账，无法编辑");
+                return;
+            }
+
             ChildFormManage.ShowDialogForm(typeof(FrmRecycleEdit), new object[] { recycle.Id, this.currentAccount.Id });
             LoadData(this.currentAccount);
         }

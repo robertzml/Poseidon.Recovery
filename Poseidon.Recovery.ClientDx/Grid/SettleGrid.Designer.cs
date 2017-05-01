@@ -74,39 +74,43 @@
             this.dgvEntity.OptionsView.EnableAppearanceEvenRow = true;
             this.dgvEntity.OptionsView.EnableAppearanceOddRow = true;
             this.dgvEntity.OptionsView.ShowGroupPanel = false;
+            this.dgvEntity.CustomColumnDisplayText += new DevExpress.XtraGrid.Views.Base.CustomColumnDisplayTextEventHandler(this.dgvEntity_CustomColumnDisplayText);
             // 
             // colAccountId
             // 
+            this.colAccountId.Caption = "账户名称";
             this.colAccountId.FieldName = "AccountId";
             this.colAccountId.Name = "colAccountId";
+            this.colAccountId.Visible = true;
+            this.colAccountId.VisibleIndex = 0;
             // 
             // colPeriod
             // 
             this.colPeriod.FieldName = "Period";
             this.colPeriod.Name = "colPeriod";
             this.colPeriod.Visible = true;
-            this.colPeriod.VisibleIndex = 0;
+            this.colPeriod.VisibleIndex = 1;
             // 
             // colSettleDate
             // 
             this.colSettleDate.FieldName = "SettleDate";
             this.colSettleDate.Name = "colSettleDate";
             this.colSettleDate.Visible = true;
-            this.colSettleDate.VisibleIndex = 1;
+            this.colSettleDate.VisibleIndex = 2;
             // 
             // colPreviousDate
             // 
             this.colPreviousDate.FieldName = "PreviousDate";
             this.colPreviousDate.Name = "colPreviousDate";
             this.colPreviousDate.Visible = true;
-            this.colPreviousDate.VisibleIndex = 2;
+            this.colPreviousDate.VisibleIndex = 3;
             // 
             // colCurrentDate
             // 
             this.colCurrentDate.FieldName = "CurrentDate";
             this.colCurrentDate.Name = "colCurrentDate";
             this.colCurrentDate.Visible = true;
-            this.colCurrentDate.VisibleIndex = 3;
+            this.colCurrentDate.VisibleIndex = 4;
             // 
             // colTotalAmount
             // 
@@ -115,28 +119,28 @@
             this.colTotalAmount.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
             new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "TotalAmount", "合计={0:0.##}")});
             this.colTotalAmount.Visible = true;
-            this.colTotalAmount.VisibleIndex = 4;
+            this.colTotalAmount.VisibleIndex = 5;
             // 
             // colIsFree
             // 
             this.colIsFree.FieldName = "IsFree";
             this.colIsFree.Name = "colIsFree";
             this.colIsFree.Visible = true;
-            this.colIsFree.VisibleIndex = 5;
+            this.colIsFree.VisibleIndex = 6;
             // 
             // colIsWriteOff
             // 
             this.colIsWriteOff.FieldName = "IsWriteOff";
             this.colIsWriteOff.Name = "colIsWriteOff";
             this.colIsWriteOff.Visible = true;
-            this.colIsWriteOff.VisibleIndex = 6;
+            this.colIsWriteOff.VisibleIndex = 7;
             // 
             // colRemark
             // 
             this.colRemark.FieldName = "Remark";
             this.colRemark.Name = "colRemark";
             this.colRemark.Visible = true;
-            this.colRemark.VisibleIndex = 7;
+            this.colRemark.VisibleIndex = 8;
             // 
             // colStatus
             // 

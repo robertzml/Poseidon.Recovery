@@ -50,6 +50,18 @@ namespace Poseidon.Recovery.ClientDx
             var id = this.commerceAccountTree.GetCurrentSelectId();
             this.accountMod.SetAccount(id, 1);
         }
+
+        /// <summary>
+        /// 分组选择
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void commerceAccountTree_GroupSelected(object sender, EventArgs e)
+        {
+            this.navFrame.SelectedPageIndex = 1;
+            var id = this.commerceAccountTree.GetCurrentSelectId();
+            this.groupMod.SetGroup(id);
+        }
         #endregion //Event
     }
 }

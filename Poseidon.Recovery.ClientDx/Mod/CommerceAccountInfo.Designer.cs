@@ -30,6 +30,7 @@
         {
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
             this.layoutControl2 = new DevExpress.XtraLayout.LayoutControl();
+            this.txtTicketName = new DevExpress.XtraEditors.TextEdit();
             this.txtRemark = new DevExpress.XtraEditors.MemoEdit();
             this.txtContact = new DevExpress.XtraEditors.MemoEdit();
             this.chkType2 = new DevExpress.XtraEditors.CheckEdit();
@@ -43,7 +44,6 @@
             this.layoutControlGroup2 = new DevExpress.XtraLayout.LayoutControlGroup();
             this.layoutControlItem3 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem4 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.layoutControlItem5 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem6 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem7 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem8 = new DevExpress.XtraLayout.LayoutControlItem();
@@ -51,12 +51,13 @@
             this.layoutControlItem10 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem11 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem12 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.txtTicketName = new DevExpress.XtraEditors.TextEdit();
+            this.layoutControlItem5 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl2)).BeginInit();
             this.layoutControl2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.txtTicketName.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtRemark.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtContact.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.chkType2.Properties)).BeginInit();
@@ -70,7 +71,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem7)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem8)).BeginInit();
@@ -78,7 +78,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem10)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem11)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem12)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtTicketName.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -111,6 +111,17 @@
             this.layoutControl2.Size = new System.Drawing.Size(554, 190);
             this.layoutControl2.TabIndex = 1;
             this.layoutControl2.Text = "layoutControl2";
+            // 
+            // txtTicketName
+            // 
+            this.txtTicketName.Location = new System.Drawing.Point(404, 12);
+            this.txtTicketName.Name = "txtTicketName";
+            this.txtTicketName.Properties.Appearance.BackColor = System.Drawing.Color.Lavender;
+            this.txtTicketName.Properties.Appearance.Options.UseBackColor = true;
+            this.txtTicketName.Properties.ReadOnly = true;
+            this.txtTicketName.Size = new System.Drawing.Size(138, 20);
+            this.txtTicketName.StyleController = this.layoutControl2;
+            this.txtTicketName.TabIndex = 14;
             // 
             // txtRemark
             // 
@@ -259,15 +270,6 @@
             this.layoutControlItem4.Text = "简称";
             this.layoutControlItem4.TextSize = new System.Drawing.Size(48, 14);
             // 
-            // layoutControlItem5
-            // 
-            this.layoutControlItem5.Control = this.txtParent;
-            this.layoutControlItem5.Location = new System.Drawing.Point(341, 48);
-            this.layoutControlItem5.Name = "layoutControlItem5";
-            this.layoutControlItem5.Size = new System.Drawing.Size(193, 24);
-            this.layoutControlItem5.Text = "父账户";
-            this.layoutControlItem5.TextSize = new System.Drawing.Size(48, 14);
-            // 
             // layoutControlItem6
             // 
             this.layoutControlItem6.Control = this.txtChargeBuilding;
@@ -331,16 +333,14 @@
             this.layoutControlItem12.Text = "备注";
             this.layoutControlItem12.TextSize = new System.Drawing.Size(48, 14);
             // 
-            // txtTicketName
+            // layoutControlItem5
             // 
-            this.txtTicketName.Location = new System.Drawing.Point(404, 12);
-            this.txtTicketName.Name = "txtTicketName";
-            this.txtTicketName.Properties.Appearance.BackColor = System.Drawing.Color.Lavender;
-            this.txtTicketName.Properties.Appearance.Options.UseBackColor = true;
-            this.txtTicketName.Properties.ReadOnly = true;
-            this.txtTicketName.Size = new System.Drawing.Size(138, 20);
-            this.txtTicketName.StyleController = this.layoutControl2;
-            this.txtTicketName.TabIndex = 14;
+            this.layoutControlItem5.Control = this.txtParent;
+            this.layoutControlItem5.Location = new System.Drawing.Point(341, 48);
+            this.layoutControlItem5.Name = "layoutControlItem5";
+            this.layoutControlItem5.Size = new System.Drawing.Size(193, 24);
+            this.layoutControlItem5.Text = "父账户";
+            this.layoutControlItem5.TextSize = new System.Drawing.Size(48, 14);
             // 
             // layoutControlItem1
             // 
@@ -362,6 +362,7 @@
             this.panelControl1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl2)).EndInit();
             this.layoutControl2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.txtTicketName.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtRemark.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtContact.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.chkType2.Properties)).EndInit();
@@ -375,7 +376,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem7)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem8)).EndInit();
@@ -383,7 +383,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem10)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem11)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem12)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtTicketName.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).EndInit();
             this.ResumeLayout(false);
 

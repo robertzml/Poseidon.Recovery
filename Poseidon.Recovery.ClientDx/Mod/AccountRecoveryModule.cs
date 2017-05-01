@@ -36,6 +36,19 @@ namespace Poseidon.Recovery.ClientDx
 
         #region Function
         /// <summary>
+        /// 清空显示
+        /// </summary>
+        private void ClearDisplay()
+        {
+            this.commerceAccountMod.Clear();
+            this.meterGrid.Clear();
+
+            this.settleGrid.Clear();
+            this.recycleGrid.Clear();
+            this.reconcileGrid.Clear();
+        }
+
+        /// <summary>
         /// 显示表具信息
         /// </summary>
         /// <param name="account"></param>
@@ -91,10 +104,16 @@ namespace Poseidon.Recovery.ClientDx
         {
             this.currentAccount = BusinessFactory<AccountBusiness>.Instance.FindById(id);
 
+            ClearDisplay();
+
             if (accountType == 1)
             {
                 this.navFrame.SelectedPageIndex = 0;
                 this.commerceAccountMod.SetAccount(id);
+            }
+            else if (accountType == 2)
+            {
+                this.navFrame.SelectedPageIndex = 1;
             }
 
             this.accountSummaryMod.SetAccount(currentAccount);

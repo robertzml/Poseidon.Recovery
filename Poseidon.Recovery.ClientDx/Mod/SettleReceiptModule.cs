@@ -159,6 +159,12 @@ namespace Poseidon.Recovery.ClientDx
                 return;
 
             var settle = this.lbSettles.SelectedItem as Settle;
+            if (settle.IsFree == false && settle.IsWriteOff == true)
+            {
+                MessageUtil.ShowWarning("该结算已经核销，无法编辑");
+                return;
+            }
+
             ChildFormManage.ShowDialogForm(typeof(FrmSettleEdit), new object[] { settle.Id, this.currentAccount.Id });
             LoadData(this.currentAccount);
         }

@@ -72,6 +72,23 @@ namespace Poseidon.Recovery.ClientDx
             this.currentAccount = BusinessFactory<CommerceAccountBusiness>.Instance.FindById(id);
             DisplayInfo(this.currentAccount);
         }
+
+        /// <summary>
+        /// 清空显示
+        /// </summary>
+        public void Clear()
+        {
+            this.txtName.Text = "";
+            this.txtShortName.Text = "";
+            this.txtTicketName.Text = "";
+            this.txtChargeBuilding.Text = "";
+            this.txtOpenYear.Text = "";
+            this.txtCloseYear.Text = "";
+            this.chkType1.Checked = false;
+            this.chkType2.Checked = false;
+            this.txtContact.Text = "";
+            this.txtRemark.Text = "";
+        }
         #endregion //Method
     }
 }
