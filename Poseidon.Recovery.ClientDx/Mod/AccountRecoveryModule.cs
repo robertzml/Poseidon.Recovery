@@ -94,10 +94,23 @@ namespace Poseidon.Recovery.ClientDx
         private void DisplayYear(Account account)
         {
             this.settleYearMod.SetAccount(account);
-            this.settleYearChartMod.SetAccount(account);
             this.recycleYearMod.SetAccount(account);
-            this.recycleYearChartMod.SetAccount(account);
             this.reconcileYearMod.SetAccount(account);
+
+            this.propFeeTypeMod.SetAccount(account, 1);
+            this.propPostMod.SetAccount(account, 2);
+            this.propWriteOffMod.SetAccount(account, 3);
+            this.propEnergyMod.SetAccount(account, 4);
+        }
+
+        /// <summary>
+        /// 显示年度趋势
+        /// </summary>
+        /// <param name="account"></param>
+        private void DisplayTrend(Account account)
+        {
+            this.settleYearChartMod.SetAccount(account);
+            this.recycleYearChartMod.SetAccount(account);
         }
         #endregion //Function
 
@@ -128,6 +141,7 @@ namespace Poseidon.Recovery.ClientDx
             DisplaySummary(currentAccount);
             DisplayReceipt(currentAccount);
             DisplayYear(currentAccount);
+            DisplayTrend(currentAccount);
         }
         #endregion //Method
     }

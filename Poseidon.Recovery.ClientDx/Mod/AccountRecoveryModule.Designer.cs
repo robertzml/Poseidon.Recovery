@@ -54,14 +54,22 @@
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.groupControl3 = new DevExpress.XtraEditors.GroupControl();
             this.settleYearMod = new Poseidon.Recovery.ClientDx.SettleYearModule();
-            this.groupControl4 = new DevExpress.XtraEditors.GroupControl();
-            this.settleYearChartMod = new Poseidon.Recovery.ClientDx.SettleYearChartModule();
             this.tabPageRecycleYears = new DevExpress.XtraTab.XtraTabPage();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
             this.recycleYearMod = new Poseidon.Recovery.ClientDx.RecycleYearModule();
+            this.groupControl5 = new DevExpress.XtraEditors.GroupControl();
+            this.propFeeTypeMod = new Poseidon.Recovery.ClientDx.ProportionYearModule();
+            this.groupControl6 = new DevExpress.XtraEditors.GroupControl();
+            this.propPostMod = new Poseidon.Recovery.ClientDx.ProportionYearModule();
+            this.tabPageReconcileYears = new DevExpress.XtraTab.XtraTabPage();
+            this.reconcileYearMod = new Poseidon.Recovery.ClientDx.ReconcileYearModule();
+            this.tabPageTrend = new DevExpress.XtraTab.XtraTabPage();
+            this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
             this.groupControl2 = new DevExpress.XtraEditors.GroupControl();
             this.recycleYearChartMod = new Poseidon.Recovery.ClientDx.RecycleYearChartModule();
+            this.groupControl4 = new DevExpress.XtraEditors.GroupControl();
+            this.settleYearChartMod = new Poseidon.Recovery.ClientDx.SettleYearChartModule();
             this.tabPageReceipt = new DevExpress.XtraTab.XtraTabPage();
             this.tabBusiness = new DevExpress.XtraTab.XtraTabControl();
             this.tabPageSettleReceipt = new DevExpress.XtraTab.XtraTabPage();
@@ -72,8 +80,10 @@
             this.measureReceiptMod = new Poseidon.Recovery.ClientDx.MeasureReceiptModule();
             this.tabPageReconcileReceipt = new DevExpress.XtraTab.XtraTabPage();
             this.reconcileReceiptMod = new Poseidon.Recovery.ClientDx.ReconcileReceiptModule();
-            this.tabPageReconcileYears = new DevExpress.XtraTab.XtraTabPage();
-            this.reconcileYearMod = new Poseidon.Recovery.ClientDx.ReconcileYearModule();
+            this.groupControl7 = new DevExpress.XtraEditors.GroupControl();
+            this.groupControl8 = new DevExpress.XtraEditors.GroupControl();
+            this.propEnergyMod = new Poseidon.Recovery.ClientDx.ProportionYearModule();
+            this.propWriteOffMod = new Poseidon.Recovery.ClientDx.ProportionYearModule();
             ((System.ComponentModel.ISupportInitialize)(this.tabInfo)).BeginInit();
             this.tabInfo.SuspendLayout();
             this.tabPageBaseInfo.SuspendLayout();
@@ -97,14 +107,21 @@
             this.tableLayoutPanel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl3)).BeginInit();
             this.groupControl3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.groupControl4)).BeginInit();
-            this.groupControl4.SuspendLayout();
             this.tabPageRecycleYears.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
             this.groupControl1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.groupControl5)).BeginInit();
+            this.groupControl5.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.groupControl6)).BeginInit();
+            this.groupControl6.SuspendLayout();
+            this.tabPageReconcileYears.SuspendLayout();
+            this.tabPageTrend.SuspendLayout();
+            this.tableLayoutPanel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).BeginInit();
             this.groupControl2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.groupControl4)).BeginInit();
+            this.groupControl4.SuspendLayout();
             this.tabPageReceipt.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tabBusiness)).BeginInit();
             this.tabBusiness.SuspendLayout();
@@ -112,7 +129,10 @@
             this.tabPageRecycleReceipt.SuspendLayout();
             this.tabPageMeasureReceipt.SuspendLayout();
             this.tabPageReconcileReceipt.SuspendLayout();
-            this.tabPageReconcileYears.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.groupControl7)).BeginInit();
+            this.groupControl7.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.groupControl8)).BeginInit();
+            this.groupControl8.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabInfo
@@ -209,6 +229,7 @@
             this.tabMain.TabPages.AddRange(new DevExpress.XtraTab.XtraTabPage[] {
             this.tabPageSummary,
             this.tabPageYear,
+            this.tabPageTrend,
             this.tabPageReceipt});
             // 
             // tabPageSummary
@@ -374,11 +395,12 @@
             // 
             // tableLayoutPanel3
             // 
-            this.tableLayoutPanel3.ColumnCount = 1;
-            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel3.ColumnCount = 2;
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel3.Controls.Add(this.groupControl3, 0, 0);
-            this.tableLayoutPanel3.Controls.Add(this.groupControl4, 0, 1);
+            this.tableLayoutPanel3.Controls.Add(this.groupControl7, 0, 1);
+            this.tableLayoutPanel3.Controls.Add(this.groupControl8, 1, 1);
             this.tableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel3.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
@@ -390,6 +412,7 @@
             // 
             // groupControl3
             // 
+            this.tableLayoutPanel3.SetColumnSpan(this.groupControl3, 2);
             this.groupControl3.Controls.Add(this.settleYearMod);
             this.groupControl3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupControl3.Location = new System.Drawing.Point(3, 3);
@@ -406,24 +429,6 @@
             this.settleYearMod.Size = new System.Drawing.Size(878, 342);
             this.settleYearMod.TabIndex = 0;
             // 
-            // groupControl4
-            // 
-            this.groupControl4.Controls.Add(this.settleYearChartMod);
-            this.groupControl4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupControl4.Location = new System.Drawing.Point(3, 374);
-            this.groupControl4.Name = "groupControl4";
-            this.groupControl4.Size = new System.Drawing.Size(882, 365);
-            this.groupControl4.TabIndex = 1;
-            this.groupControl4.Text = "结算趋势图";
-            // 
-            // settleYearChartMod
-            // 
-            this.settleYearChartMod.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.settleYearChartMod.Location = new System.Drawing.Point(2, 21);
-            this.settleYearChartMod.Name = "settleYearChartMod";
-            this.settleYearChartMod.Size = new System.Drawing.Size(878, 342);
-            this.settleYearChartMod.TabIndex = 0;
-            // 
             // tabPageRecycleYears
             // 
             this.tabPageRecycleYears.Controls.Add(this.tableLayoutPanel2);
@@ -433,11 +438,12 @@
             // 
             // tableLayoutPanel2
             // 
-            this.tableLayoutPanel2.ColumnCount = 1;
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel2.ColumnCount = 2;
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel2.Controls.Add(this.groupControl1, 0, 0);
-            this.tableLayoutPanel2.Controls.Add(this.groupControl2, 0, 1);
+            this.tableLayoutPanel2.Controls.Add(this.groupControl5, 0, 1);
+            this.tableLayoutPanel2.Controls.Add(this.groupControl6, 1, 1);
             this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel2.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
@@ -449,6 +455,7 @@
             // 
             // groupControl1
             // 
+            this.tableLayoutPanel2.SetColumnSpan(this.groupControl1, 2);
             this.groupControl1.Controls.Add(this.recycleYearMod);
             this.groupControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupControl1.Location = new System.Drawing.Point(3, 3);
@@ -465,14 +472,88 @@
             this.recycleYearMod.Size = new System.Drawing.Size(878, 342);
             this.recycleYearMod.TabIndex = 0;
             // 
+            // groupControl5
+            // 
+            this.groupControl5.Controls.Add(this.propFeeTypeMod);
+            this.groupControl5.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.groupControl5.Location = new System.Drawing.Point(3, 374);
+            this.groupControl5.Name = "groupControl5";
+            this.groupControl5.Size = new System.Drawing.Size(438, 365);
+            this.groupControl5.TabIndex = 1;
+            this.groupControl5.Text = "费用类型";
+            // 
+            // propFeeTypeMod
+            // 
+            this.propFeeTypeMod.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.propFeeTypeMod.Location = new System.Drawing.Point(2, 21);
+            this.propFeeTypeMod.Name = "propFeeTypeMod";
+            this.propFeeTypeMod.Size = new System.Drawing.Size(434, 342);
+            this.propFeeTypeMod.TabIndex = 0;
+            // 
+            // groupControl6
+            // 
+            this.groupControl6.Controls.Add(this.propPostMod);
+            this.groupControl6.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.groupControl6.Location = new System.Drawing.Point(447, 374);
+            this.groupControl6.Name = "groupControl6";
+            this.groupControl6.Size = new System.Drawing.Size(438, 365);
+            this.groupControl6.TabIndex = 2;
+            this.groupControl6.Text = "入账比例";
+            // 
+            // propPostMod
+            // 
+            this.propPostMod.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.propPostMod.Location = new System.Drawing.Point(2, 21);
+            this.propPostMod.Name = "propPostMod";
+            this.propPostMod.Size = new System.Drawing.Size(434, 342);
+            this.propPostMod.TabIndex = 0;
+            // 
+            // tabPageReconcileYears
+            // 
+            this.tabPageReconcileYears.Controls.Add(this.reconcileYearMod);
+            this.tabPageReconcileYears.Name = "tabPageReconcileYears";
+            this.tabPageReconcileYears.Size = new System.Drawing.Size(888, 742);
+            this.tabPageReconcileYears.Text = "历年财务对账";
+            // 
+            // reconcileYearMod
+            // 
+            this.reconcileYearMod.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.reconcileYearMod.Location = new System.Drawing.Point(0, 0);
+            this.reconcileYearMod.Name = "reconcileYearMod";
+            this.reconcileYearMod.Size = new System.Drawing.Size(888, 742);
+            this.reconcileYearMod.TabIndex = 0;
+            // 
+            // tabPageTrend
+            // 
+            this.tabPageTrend.Controls.Add(this.tableLayoutPanel4);
+            this.tabPageTrend.Name = "tabPageTrend";
+            this.tabPageTrend.Size = new System.Drawing.Size(894, 771);
+            this.tabPageTrend.Text = "年度趋势";
+            // 
+            // tableLayoutPanel4
+            // 
+            this.tableLayoutPanel4.ColumnCount = 1;
+            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel4.Controls.Add(this.groupControl2, 0, 1);
+            this.tableLayoutPanel4.Controls.Add(this.groupControl4, 0, 0);
+            this.tableLayoutPanel4.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel4.Location = new System.Drawing.Point(0, 0);
+            this.tableLayoutPanel4.Name = "tableLayoutPanel4";
+            this.tableLayoutPanel4.RowCount = 2;
+            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel4.Size = new System.Drawing.Size(894, 771);
+            this.tableLayoutPanel4.TabIndex = 0;
+            // 
             // groupControl2
             // 
             this.groupControl2.Controls.Add(this.recycleYearChartMod);
             this.groupControl2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupControl2.Location = new System.Drawing.Point(3, 374);
+            this.groupControl2.Location = new System.Drawing.Point(3, 388);
             this.groupControl2.Name = "groupControl2";
-            this.groupControl2.Size = new System.Drawing.Size(882, 365);
-            this.groupControl2.TabIndex = 1;
+            this.groupControl2.Size = new System.Drawing.Size(888, 380);
+            this.groupControl2.TabIndex = 3;
             this.groupControl2.Text = "回收趋势图";
             // 
             // recycleYearChartMod
@@ -480,8 +561,26 @@
             this.recycleYearChartMod.Dock = System.Windows.Forms.DockStyle.Fill;
             this.recycleYearChartMod.Location = new System.Drawing.Point(2, 21);
             this.recycleYearChartMod.Name = "recycleYearChartMod";
-            this.recycleYearChartMod.Size = new System.Drawing.Size(878, 342);
+            this.recycleYearChartMod.Size = new System.Drawing.Size(884, 357);
             this.recycleYearChartMod.TabIndex = 0;
+            // 
+            // groupControl4
+            // 
+            this.groupControl4.Controls.Add(this.settleYearChartMod);
+            this.groupControl4.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.groupControl4.Location = new System.Drawing.Point(3, 3);
+            this.groupControl4.Name = "groupControl4";
+            this.groupControl4.Size = new System.Drawing.Size(888, 379);
+            this.groupControl4.TabIndex = 2;
+            this.groupControl4.Text = "结算趋势图";
+            // 
+            // settleYearChartMod
+            // 
+            this.settleYearChartMod.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.settleYearChartMod.Location = new System.Drawing.Point(2, 21);
+            this.settleYearChartMod.Name = "settleYearChartMod";
+            this.settleYearChartMod.Size = new System.Drawing.Size(884, 356);
+            this.settleYearChartMod.TabIndex = 0;
             // 
             // tabPageReceipt
             // 
@@ -568,20 +667,41 @@
             this.reconcileReceiptMod.Size = new System.Drawing.Size(888, 742);
             this.reconcileReceiptMod.TabIndex = 0;
             // 
-            // tabPageReconcileYears
+            // groupControl7
             // 
-            this.tabPageReconcileYears.Controls.Add(this.reconcileYearMod);
-            this.tabPageReconcileYears.Name = "tabPageReconcileYears";
-            this.tabPageReconcileYears.Size = new System.Drawing.Size(888, 742);
-            this.tabPageReconcileYears.Text = "历年财务对账";
+            this.groupControl7.Controls.Add(this.propEnergyMod);
+            this.groupControl7.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.groupControl7.Location = new System.Drawing.Point(3, 374);
+            this.groupControl7.Name = "groupControl7";
+            this.groupControl7.Size = new System.Drawing.Size(438, 365);
+            this.groupControl7.TabIndex = 1;
+            this.groupControl7.Text = "水电费比例";
             // 
-            // reconcileYearMod
+            // groupControl8
             // 
-            this.reconcileYearMod.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.reconcileYearMod.Location = new System.Drawing.Point(0, 0);
-            this.reconcileYearMod.Name = "reconcileYearMod";
-            this.reconcileYearMod.Size = new System.Drawing.Size(888, 742);
-            this.reconcileYearMod.TabIndex = 0;
+            this.groupControl8.Controls.Add(this.propWriteOffMod);
+            this.groupControl8.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.groupControl8.Location = new System.Drawing.Point(447, 374);
+            this.groupControl8.Name = "groupControl8";
+            this.groupControl8.Size = new System.Drawing.Size(438, 365);
+            this.groupControl8.TabIndex = 2;
+            this.groupControl8.Text = "核销费用比例";
+            // 
+            // propEnergyMod
+            // 
+            this.propEnergyMod.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.propEnergyMod.Location = new System.Drawing.Point(2, 21);
+            this.propEnergyMod.Name = "propEnergyMod";
+            this.propEnergyMod.Size = new System.Drawing.Size(434, 342);
+            this.propEnergyMod.TabIndex = 0;
+            // 
+            // propWriteOffMod
+            // 
+            this.propWriteOffMod.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.propWriteOffMod.Location = new System.Drawing.Point(2, 21);
+            this.propWriteOffMod.Name = "propWriteOffMod";
+            this.propWriteOffMod.Size = new System.Drawing.Size(434, 342);
+            this.propWriteOffMod.TabIndex = 0;
             // 
             // AccountRecoveryModule
             // 
@@ -613,14 +733,21 @@
             this.tableLayoutPanel3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.groupControl3)).EndInit();
             this.groupControl3.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.groupControl4)).EndInit();
-            this.groupControl4.ResumeLayout(false);
             this.tabPageRecycleYears.ResumeLayout(false);
             this.tableLayoutPanel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).EndInit();
             this.groupControl1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.groupControl5)).EndInit();
+            this.groupControl5.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.groupControl6)).EndInit();
+            this.groupControl6.ResumeLayout(false);
+            this.tabPageReconcileYears.ResumeLayout(false);
+            this.tabPageTrend.ResumeLayout(false);
+            this.tableLayoutPanel4.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).EndInit();
             this.groupControl2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.groupControl4)).EndInit();
+            this.groupControl4.ResumeLayout(false);
             this.tabPageReceipt.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.tabBusiness)).EndInit();
             this.tabBusiness.ResumeLayout(false);
@@ -628,7 +755,10 @@
             this.tabPageRecycleReceipt.ResumeLayout(false);
             this.tabPageMeasureReceipt.ResumeLayout(false);
             this.tabPageReconcileReceipt.ResumeLayout(false);
-            this.tabPageReconcileYears.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.groupControl7)).EndInit();
+            this.groupControl7.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.groupControl8)).EndInit();
+            this.groupControl8.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -671,14 +801,24 @@
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
         private DevExpress.XtraEditors.GroupControl groupControl1;
         private RecycleYearModule recycleYearMod;
-        private DevExpress.XtraEditors.GroupControl groupControl2;
-        private RecycleYearChartModule recycleYearChartMod;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel3;
         private DevExpress.XtraEditors.GroupControl groupControl3;
-        private DevExpress.XtraEditors.GroupControl groupControl4;
         private SettleYearModule settleYearMod;
-        private SettleYearChartModule settleYearChartMod;
         private DevExpress.XtraTab.XtraTabPage tabPageReconcileYears;
         private ReconcileYearModule reconcileYearMod;
+        private DevExpress.XtraTab.XtraTabPage tabPageTrend;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel4;
+        private DevExpress.XtraEditors.GroupControl groupControl2;
+        private RecycleYearChartModule recycleYearChartMod;
+        private DevExpress.XtraEditors.GroupControl groupControl4;
+        private SettleYearChartModule settleYearChartMod;
+        private DevExpress.XtraEditors.GroupControl groupControl5;
+        private ProportionYearModule propFeeTypeMod;
+        private DevExpress.XtraEditors.GroupControl groupControl6;
+        private ProportionYearModule propPostMod;
+        private DevExpress.XtraEditors.GroupControl groupControl7;
+        private ProportionYearModule propEnergyMod;
+        private DevExpress.XtraEditors.GroupControl groupControl8;
+        private ProportionYearModule propWriteOffMod;
     }
 }

@@ -76,6 +76,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Mod\ProportionYearModule.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Mod\ProportionYearModule.Designer.cs">
+      <DependentUpon>ProportionYearModule.cs</DependentUpon>
+    </Compile>
     <Compile Include="Chart\AccountPieChart.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -401,6 +407,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Grid\SettleRecordGrid.resx">
       <DependentUpon>SettleRecordGrid.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Mod\ProportionYearModule.resx">
+      <DependentUpon>ProportionYearModule.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Mod\AccountReceiptModule.resx">
       <DependentUpon>AccountReceiptModule.cs</DependentUpon>

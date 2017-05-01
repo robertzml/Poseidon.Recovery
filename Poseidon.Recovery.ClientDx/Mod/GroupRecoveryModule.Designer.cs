@@ -61,6 +61,7 @@
             this.recycleYearChartMod = new Poseidon.Recovery.ClientDx.RecycleYearChartModule();
             this.tabPageReconcileYear = new DevExpress.XtraTab.XtraTabPage();
             this.reconcileYearMod = new Poseidon.Recovery.ClientDx.ReconcileYearModule();
+            this.xtraTabPage3 = new DevExpress.XtraTab.XtraTabPage();
             ((System.ComponentModel.ISupportInitialize)(this.tabMain)).BeginInit();
             this.tabMain.SuspendLayout();
             this.tabPageSummary.SuspendLayout();
@@ -307,7 +308,8 @@
             this.tabYears.TabPages.AddRange(new DevExpress.XtraTab.XtraTabPage[] {
             this.tabPageSettleYear,
             this.tabPageRecycleYear,
-            this.tabPageReconcileYear});
+            this.tabPageReconcileYear,
+            this.xtraTabPage3});
             // 
             // tabPageSettleYear
             // 
@@ -442,6 +444,12 @@
             this.reconcileYearMod.Size = new System.Drawing.Size(807, 514);
             this.reconcileYearMod.TabIndex = 0;
             // 
+            // xtraTabPage3
+            // 
+            this.xtraTabPage3.Name = "xtraTabPage3";
+            this.xtraTabPage3.Size = new System.Drawing.Size(807, 514);
+            this.xtraTabPage3.Text = "分类占比";
+            // 
             // GroupRecoveryModule
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
@@ -522,5 +530,6 @@
         private RecycleGrid recycleGrid;
         private DevExpress.XtraTab.XtraTabPage tabPageReconcileYear;
         private ReconcileYearModule reconcileYearMod;
+        private DevExpress.XtraTab.XtraTabPage xtraTabPage3;
     }
 }
