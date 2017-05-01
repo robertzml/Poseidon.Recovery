@@ -78,6 +78,8 @@ namespace Poseidon.Recovery.ClientDx
             // Gauge
             this.digGagDebt.Text = debtFee.ToString();
             this.arcScaleComponent1.Value = Convert.ToSingle(rate);
+
+            this.unoffSettleGrid.DataSource = settles.Where(r => r.IsWriteOff == false).ToList();
         }
 
         /// <summary>
@@ -124,6 +126,8 @@ namespace Poseidon.Recovery.ClientDx
 
             this.feeTypeChart.SetChartTitle($"{account.Name}回收费用类型");
             this.feeTypeChart.SetSeries(recycles.Group.ToList());
+
+            this.unpostRecycleGrid.DataSource = recycles.Recycle.Where(r => r.IsPost == false).ToList();
         }
 
         /// <summary>

@@ -70,11 +70,14 @@
             this.groupControl7 = new DevExpress.XtraEditors.GroupControl();
             this.groupControl8 = new DevExpress.XtraEditors.GroupControl();
             this.digitalBackgroundLayerComponent1 = new DevExpress.XtraGauges.Win.Gauges.Digital.DigitalBackgroundLayerComponent();
+            this.groupControl9 = new DevExpress.XtraEditors.GroupControl();
             this.digGagDebt = new DevExpress.XtraGauges.Win.Gauges.Digital.DigitalGauge();
             this.circularGauge2 = new DevExpress.XtraGauges.Win.Gauges.Circular.CircularGauge();
             this.circularGauge1 = new DevExpress.XtraGauges.Win.Gauges.Circular.CircularGauge();
             this.feeTypeChart = new Poseidon.Recovery.ClientDx.FeeTypeChart();
+            this.unoffSettleGrid = new Poseidon.Recovery.ClientDx.SettleGrid();
             this.yearsChart = new Poseidon.Recovery.ClientDx.RecoveryDataChart();
+            this.unpostRecycleGrid = new Poseidon.Recovery.ClientDx.RecycleGrid();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
             this.groupControl1.SuspendLayout();
@@ -120,9 +123,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.groupControl6)).BeginInit();
             this.groupControl6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl7)).BeginInit();
+            this.groupControl7.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl8)).BeginInit();
             this.groupControl8.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.digitalBackgroundLayerComponent1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.groupControl9)).BeginInit();
+            this.groupControl9.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.digGagDebt)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.circularGauge2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.circularGauge1)).BeginInit();
@@ -142,6 +148,7 @@
             this.tableLayoutPanel1.Controls.Add(this.groupControl6, 2, 1);
             this.tableLayoutPanel1.Controls.Add(this.groupControl7, 1, 1);
             this.tableLayoutPanel1.Controls.Add(this.groupControl8, 0, 3);
+            this.tableLayoutPanel1.Controls.Add(this.groupControl9, 1, 2);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
@@ -189,7 +196,7 @@
             this.groupControl2.Name = "groupControl2";
             this.groupControl2.Size = new System.Drawing.Size(383, 94);
             this.groupControl2.TabIndex = 1;
-            this.groupControl2.Text = "结算金额(元)";
+            this.groupControl2.Text = "结算费用(元)";
             // 
             // layoutControl1
             // 
@@ -329,7 +336,7 @@
             this.groupControl3.Name = "groupControl3";
             this.groupControl3.Size = new System.Drawing.Size(384, 94);
             this.groupControl3.TabIndex = 2;
-            this.groupControl3.Text = "回收金额(元)";
+            this.groupControl3.Text = "回收费用(元)";
             // 
             // layoutControl2
             // 
@@ -570,12 +577,13 @@
             // 
             // groupControl7
             // 
+            this.groupControl7.Controls.Add(this.unoffSettleGrid);
             this.groupControl7.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupControl7.Location = new System.Drawing.Point(253, 103);
             this.groupControl7.Name = "groupControl7";
             this.groupControl7.Size = new System.Drawing.Size(383, 174);
             this.groupControl7.TabIndex = 7;
-            this.groupControl7.Text = "groupControl7";
+            this.groupControl7.Text = "未核销费用";
             // 
             // groupControl8
             // 
@@ -595,6 +603,16 @@
             this.digitalBackgroundLayerComponent1.ShapeType = DevExpress.XtraGauges.Core.Model.DigitalBackgroundShapeSetType.Style16;
             this.digitalBackgroundLayerComponent1.TopLeft = new DevExpress.XtraGauges.Core.Base.PointF2D(26F, 0F);
             this.digitalBackgroundLayerComponent1.ZOrder = 1000;
+            // 
+            // groupControl9
+            // 
+            this.groupControl9.Controls.Add(this.unpostRecycleGrid);
+            this.groupControl9.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.groupControl9.Location = new System.Drawing.Point(253, 283);
+            this.groupControl9.Name = "groupControl9";
+            this.groupControl9.Size = new System.Drawing.Size(383, 174);
+            this.groupControl9.TabIndex = 9;
+            this.groupControl9.Text = "未入账费用";
             // 
             // digGagDebt
             // 
@@ -642,6 +660,26 @@
             this.feeTypeChart.Size = new System.Drawing.Size(380, 331);
             this.feeTypeChart.TabIndex = 5;
             // 
+            // unoffSettleGrid
+            // 
+            this.unoffSettleGrid.AllowFilter = false;
+            this.unoffSettleGrid.AllowGroup = false;
+            this.unoffSettleGrid.AllowSort = true;
+            this.unoffSettleGrid.DataSource = null;
+            this.unoffSettleGrid.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.unoffSettleGrid.Editable = false;
+            this.unoffSettleGrid.EnableMasterView = false;
+            this.unoffSettleGrid.Location = new System.Drawing.Point(2, 21);
+            this.unoffSettleGrid.Name = "unoffSettleGrid";
+            this.unoffSettleGrid.ShowAddMenu = false;
+            this.unoffSettleGrid.ShowBeginEnd = false;
+            this.unoffSettleGrid.ShowFooter = true;
+            this.unoffSettleGrid.ShowLineNumber = true;
+            this.unoffSettleGrid.ShowMenu = false;
+            this.unoffSettleGrid.ShowNavigator = false;
+            this.unoffSettleGrid.Size = new System.Drawing.Size(379, 151);
+            this.unoffSettleGrid.TabIndex = 0;
+            // 
             // yearsChart
             // 
             this.yearsChart.DataSource = null;
@@ -650,6 +688,25 @@
             this.yearsChart.Name = "yearsChart";
             this.yearsChart.Size = new System.Drawing.Size(1019, 183);
             this.yearsChart.TabIndex = 0;
+            // 
+            // unpostRecycleGrid
+            // 
+            this.unpostRecycleGrid.AllowFilter = false;
+            this.unpostRecycleGrid.AllowGroup = false;
+            this.unpostRecycleGrid.AllowSort = true;
+            this.unpostRecycleGrid.DataSource = null;
+            this.unpostRecycleGrid.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.unpostRecycleGrid.Editable = false;
+            this.unpostRecycleGrid.EnableMasterView = false;
+            this.unpostRecycleGrid.Location = new System.Drawing.Point(2, 21);
+            this.unpostRecycleGrid.Name = "unpostRecycleGrid";
+            this.unpostRecycleGrid.ShowAddMenu = false;
+            this.unpostRecycleGrid.ShowFooter = true;
+            this.unpostRecycleGrid.ShowLineNumber = true;
+            this.unpostRecycleGrid.ShowMenu = false;
+            this.unpostRecycleGrid.ShowNavigator = false;
+            this.unpostRecycleGrid.Size = new System.Drawing.Size(379, 151);
+            this.unpostRecycleGrid.TabIndex = 0;
             // 
             // AccountSummaryModule
             // 
@@ -703,9 +760,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.groupControl6)).EndInit();
             this.groupControl6.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.groupControl7)).EndInit();
+            this.groupControl7.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.groupControl8)).EndInit();
             this.groupControl8.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.digitalBackgroundLayerComponent1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.groupControl9)).EndInit();
+            this.groupControl9.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.digGagDebt)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.circularGauge2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.circularGauge1)).EndInit();
@@ -762,5 +822,8 @@
         private DevExpress.XtraEditors.GroupControl groupControl7;
         private DevExpress.XtraEditors.GroupControl groupControl8;
         private RecoveryDataChart yearsChart;
+        private SettleGrid unoffSettleGrid;
+        private DevExpress.XtraEditors.GroupControl groupControl9;
+        private RecycleGrid unpostRecycleGrid;
     }
 }
