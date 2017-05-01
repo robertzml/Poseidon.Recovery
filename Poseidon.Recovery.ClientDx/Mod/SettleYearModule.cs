@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Drawing;
 using System.Data;
 using System.Linq;
 using System.Text;
@@ -17,9 +18,9 @@ namespace Poseidon.Recovery.ClientDx
     using Poseidon.Recovery.Core.Utility;
 
     /// <summary>
-    /// 年度回收组件
+    /// 年度结算组件
     /// </summary>
-    public partial class RecycleYearModule : DevExpress.XtraEditors.XtraUserControl
+    public partial class SettleYearModule : DevExpress.XtraEditors.XtraUserControl
     {
         #region Field
         /// <summary>
@@ -43,7 +44,7 @@ namespace Poseidon.Recovery.ClientDx
         #endregion //Field
 
         #region Constructor
-        public RecycleYearModule()
+        public SettleYearModule()
         {
             InitializeComponent();
         }
@@ -74,14 +75,14 @@ namespace Poseidon.Recovery.ClientDx
         {
             var task = Task.Run(() =>
             {
-                var data = BusinessFactory<RecycleBusiness>.Instance.FindByAccount(account.Id, year);
+                var data = BusinessFactory<SettleBusiness>.Instance.FindByAccount(account.Id, year);
 
                 return data.ToList();
             });
 
             var result = await task;
 
-            this.recycleGrid.DataSource = result;
+            this.settleGrid.DataSource = result;
         }
         #endregion //Function
 
@@ -105,7 +106,7 @@ namespace Poseidon.Recovery.ClientDx
         public void Clear()
         {
             this.cmbYear.EditValue = "";
-            this.recycleGrid.Clear();
+            this.settleGrid.Clear();
         }
         #endregion //Method
 

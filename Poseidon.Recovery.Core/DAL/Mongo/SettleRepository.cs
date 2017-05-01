@@ -166,6 +166,23 @@ namespace Poseidon.Recovery.Core.DAL.Mongo
 
             return base.FindList(filter);
         }
+
+        /// <summary>
+        /// 获取账户费用结算
+        /// </summary>
+        /// <param name="accountId">回收账户ID</param>
+        /// <param name="year">年度</param>
+        /// <returns></returns>
+        public IEnumerable<Settle> FindByAccount(string accountId, int year)
+        {
+            var start = new DateTime(year, 1, 1);
+            var end = new DateTime(year, 12, 31);
+
+            var builder = Builders<BsonDocument>.Filter;
+            var filter = builder.Eq("accountId", accountId) & builder.Gte("settleDate", start) & builder.Lte("settleDate", end);
+
+            return base.FindList(filter);
+        }
         #endregion //Method
     }
 }

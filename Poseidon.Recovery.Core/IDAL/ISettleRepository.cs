@@ -22,5 +22,13 @@ namespace Poseidon.Recovery.Core.IDAL
         /// <param name="isWriteOff">是否核销</param>
         /// <returns></returns>
         IEnumerable<Settle> FindByAccount(string accountId, bool isFree, bool isWriteOff);
+
+        /// <summary>
+        /// 获取账户费用结算
+        /// </summary>
+        /// <param name="accountId">回收账户ID</param>
+        /// <param name="year">年度</param>
+        /// <returns></returns>
+        IEnumerable<Settle> FindByAccount(string accountId, int year);
     }
 }

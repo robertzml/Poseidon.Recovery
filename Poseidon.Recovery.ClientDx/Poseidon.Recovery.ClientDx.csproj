@@ -304,6 +304,36 @@
     <Compile Include="Mod\RecycleYearModule.Designer.cs">
       <DependentUpon>RecycleYearModule.cs</DependentUpon>
     </Compile>
+    <Compile Include="Chart\RecycleDataChart.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Chart\RecycleDataChart.Designer.cs">
+      <DependentUpon>RecycleDataChart.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Mod\RecycleYearChartModule.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Mod\RecycleYearChartModule.Designer.cs">
+      <DependentUpon>RecycleYearChartModule.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Mod\SettleYearModule.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Mod\SettleYearModule.Designer.cs">
+      <DependentUpon>SettleYearModule.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Chart\SettleDataChart.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Chart\SettleDataChart.Designer.cs">
+      <DependentUpon>SettleDataChart.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Mod\SettleYearChartModule.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Mod\SettleYearChartModule.Designer.cs">
+      <DependentUpon>SettleYearChartModule.cs</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Chart\FeeTypeChart.resx">
@@ -311,6 +341,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Chart\RecoveryDataChart.resx">
       <DependentUpon>RecoveryDataChart.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Chart\RecycleDataChart.resx">
+      <DependentUpon>RecycleDataChart.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Chart\SettleDataChart.resx">
+      <DependentUpon>SettleDataChart.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Grid\CommerceAccountGrid.resx">
       <DependentUpon>CommerceAccountGrid.cs</DependentUpon>
@@ -378,8 +414,17 @@
     <EmbeddedResource Include="Mod\RecycleReceiptModule.resx">
       <DependentUpon>RecycleReceiptModule.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Mod\RecycleYearChartModule.resx">
+      <DependentUpon>RecycleYearChartModule.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Mod\RecycleYearModule.resx">
       <DependentUpon>RecycleYearModule.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Mod\SettleYearChartModule.resx">
+      <DependentUpon>SettleYearChartModule.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Mod\SettleYearModule.resx">
+      <DependentUpon>SettleYearModule.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Overview\FrmRecoveryOverview.resx">
       <DependentUpon>FrmRecoveryOverview.cs</DependentUpon>

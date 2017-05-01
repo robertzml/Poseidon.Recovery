@@ -74,7 +74,10 @@ namespace Poseidon.Recovery.ClientDx
         /// <param name="account"></param>
         private void DisplayYear(Account account)
         {
+            this.settleYearMod.SetAccount(account);
+            this.settleYearChartMod.SetAccount(account);
             this.recycleYearMod.SetAccount(account);
+            this.recycleYearChartMod.SetAccount(account);
         }
         #endregion //Function
 

@@ -51,6 +51,18 @@ namespace Poseidon.Recovery.Core.BL
         }
 
         /// <summary>
+        /// 获取账户费用结算
+        /// </summary>
+        /// <param name="accountId">回收账户ID</param>
+        /// <param name="year">年度</param>
+        /// <returns></returns>
+        public IEnumerable<Settle> FindByAccount(string accountId, int year)
+        {
+            var dal = this.baseDal as ISettleRepository;
+            return dal.FindByAccount(accountId, year);
+        }
+
+        /// <summary>
         /// 结算核销
         /// </summary>
         /// <param name="id">结算ID</param>
