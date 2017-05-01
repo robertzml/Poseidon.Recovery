@@ -38,13 +38,13 @@ namespace Poseidon.Recovery.ClientDx
         }
 
         /// <summary>
-        /// 设置图例标题
+        /// 设置系列标题
         /// </summary>
         /// <param name="index">序号</param>
         /// <param name="text">标题</param>
-        public void SetSeriesLengedText(int index, string text)
+        public void SetSeriesName(int index, string text)
         {
-            this.chartMain.Series[index].LegendText = text;
+            this.chartMain.Series[index].Name = text;
         }
         #endregion //Method
 

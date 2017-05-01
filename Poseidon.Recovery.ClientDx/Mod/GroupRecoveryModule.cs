@@ -84,6 +84,8 @@ namespace Poseidon.Recovery.ClientDx
             this.currentGroup = BusinessFactory<GroupBusiness>.Instance.FindById(id);
 
             ClearDisplay();
+
+            this.groupSummaryMod.SetGroup(currentGroup);
             DisplayInfo(currentGroup);
             DisplayYear(currentGroup);
         }

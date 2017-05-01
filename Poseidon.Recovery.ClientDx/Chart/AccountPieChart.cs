@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Drawing;
 using System.Data;
 using System.Linq;
 using System.Text;
@@ -11,16 +12,15 @@ namespace Poseidon.Recovery.ClientDx
 {
     using DevExpress.XtraCharts;
     using Poseidon.Core.Utility;
-    using Poseidon.Recovery.Core.BL;
-    using Poseidon.Recovery.Core.DL;
+    using Poseidon.Recovery.Core.Utility;
 
     /// <summary>
-    /// 回收费用类型饼状图
+    /// 账户相关饼图
     /// </summary>
-    public partial class FeeTypeChart : DevExpress.XtraEditors.XtraUserControl
+    public partial class AccountPieChart : DevExpress.XtraEditors.XtraUserControl
     {
         #region Constructor
-        public FeeTypeChart()
+        public AccountPieChart()
         {
             InitializeComponent();
         }
@@ -44,33 +44,24 @@ namespace Poseidon.Recovery.ClientDx
         {
             this.chartMain.Series[0].Label.TextPattern = "{A}-金额:{V}" + unit;
         }
-
-        /// <summary>
-        /// 设置数据
-        /// </summary>
-        /// <param name="data"></param>
-        public void SetSeries(List<RecycleRecord> data)
-        {
-            this.chartMain.Series[0].Points.Clear();
-
-            foreach (var item in data)
-            {
-                string dict = DictUtility.GetDictValue(item, "FeeType", item.FeeType);
-                this.chartMain.Series[0].Points.Add(new SeriesPoint(dict, item.Amount));
-            }
-        }
         #endregion //Method
 
-        #region Event
+        #region Property
         /// <summary>
-        /// 打印
+        /// 数据源
         /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void menuPrint_Click(object sender, EventArgs e)
+        [Description("数据源")]
+        public List<AccountDataModel> DataSource
         {
-            this.chartMain.ShowRibbonPrintPreview();
+            get
+            {
+                return this.bsAccountData.DataSource as List<AccountDataModel>;
+            }
+            set
+            {
+                this.bsAccountData.DataSource = value;
+            }
         }
-        #endregion //Event
+        #endregion //Property
     }
 }

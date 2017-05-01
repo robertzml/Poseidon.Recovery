@@ -98,6 +98,7 @@
     <Compile Include="IDAL\IRecycleRepository.cs" />
     <Compile Include="IDAL\ISettleRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Utility\AccountDataModel.cs" />
     <Compile Include="Utility\ModelTypeCode.cs" />
     <Compile Include="Utility\RecoveryConstant.cs" />
     <Compile Include="Utility\RecoveryDataModel.cs" />

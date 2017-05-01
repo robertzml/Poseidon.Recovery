@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             DevExpress.XtraCharts.XYDiagram xyDiagram1 = new DevExpress.XtraCharts.XYDiagram();
             DevExpress.XtraCharts.Series series1 = new DevExpress.XtraCharts.Series();
             DevExpress.XtraCharts.SideBySideBarSeriesView sideBySideBarSeriesView1 = new DevExpress.XtraCharts.SideBySideBarSeriesView();
@@ -36,8 +35,8 @@
             DevExpress.XtraCharts.SideBySideBarSeriesView sideBySideBarSeriesView2 = new DevExpress.XtraCharts.SideBySideBarSeriesView();
             DevExpress.XtraCharts.ChartTitle chartTitle1 = new DevExpress.XtraCharts.ChartTitle();
             this.chartMain = new DevExpress.XtraCharts.ChartControl();
-            this.bsRecovery = new System.Windows.Forms.BindingSource(this.components);
-            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.bsRecovery = new System.Windows.Forms.BindingSource();
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip();
             this.menuPrint = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.chartMain)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(xyDiagram1)).BeginInit();
@@ -62,14 +61,14 @@
             series1.ArgumentDataMember = "BelongDate";
             series1.ArgumentScaleType = DevExpress.XtraCharts.ScaleType.Qualitative;
             series1.LabelsVisibility = DevExpress.Utils.DefaultBoolean.True;
-            series1.Name = "应收费用(元)";
+            series1.Name = "Series 1";
             series1.ValueDataMembersSerializable = "DueFee";
             sideBySideBarSeriesView1.Color = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(80)))), ((int)(((byte)(77)))));
             series1.View = sideBySideBarSeriesView1;
             series2.ArgumentDataMember = "BelongDate";
             series2.ArgumentScaleType = DevExpress.XtraCharts.ScaleType.Qualitative;
             series2.LabelsVisibility = DevExpress.Utils.DefaultBoolean.True;
-            series2.Name = "已收费用(元)";
+            series2.Name = "Series 2";
             series2.ValueDataMembersSerializable = "PaidFee";
             sideBySideBarSeriesView2.Color = System.Drawing.Color.FromArgb(((int)(((byte)(118)))), ((int)(((byte)(146)))), ((int)(((byte)(60)))));
             series2.View = sideBySideBarSeriesView2;

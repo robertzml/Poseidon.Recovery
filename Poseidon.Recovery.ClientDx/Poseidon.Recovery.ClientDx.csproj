@@ -76,11 +76,23 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Chart\AccountPieChart.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Chart\AccountPieChart.Designer.cs">
+      <DependentUpon>AccountPieChart.cs</DependentUpon>
+    </Compile>
     <Compile Include="Chart\FeeTypeChart.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="Chart\FeeTypeChart.Designer.cs">
       <DependentUpon>FeeTypeChart.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Mod\GroupSummaryModule.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Mod\GroupSummaryModule.Designer.cs">
+      <DependentUpon>GroupSummaryModule.cs</DependentUpon>
     </Compile>
     <Compile Include="Mod\GroupRecoveryModule.cs">
       <SubType>UserControl</SubType>
@@ -342,6 +354,9 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Chart\AccountPieChart.resx">
+      <DependentUpon>AccountPieChart.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Chart\FeeTypeChart.resx">
       <DependentUpon>FeeTypeChart.cs</DependentUpon>
     </EmbeddedResource>
@@ -417,6 +432,9 @@
     <EmbeddedResource Include="Mod\GroupRecoveryModule.resx">
       <DependentUpon>GroupRecoveryModule.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Mod\GroupSummaryModule.resx">
+      <DependentUpon>GroupSummaryModule.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Mod\ReconcileReceiptModule.resx">
       <DependentUpon>ReconcileReceiptModule.cs</DependentUpon>
     </EmbeddedResource>
@@ -471,6 +489,7 @@
     <None Include="Properties\DataSources\Poseidon.Recovery.Core.DL.RecycleRecord.datasource" />
     <None Include="Properties\DataSources\Poseidon.Recovery.Core.DL.Settle.datasource" />
     <None Include="Properties\DataSources\Poseidon.Recovery.Core.DL.SettleRecord.datasource" />
+    <None Include="Properties\DataSources\Poseidon.Recovery.Core.Utility.AccountDataModel.datasource" />
     <None Include="Properties\DataSources\Poseidon.Recovery.Core.Utility.RecoveryDataModel.datasource" />
     <None Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Grid\MeterGrid.resx">

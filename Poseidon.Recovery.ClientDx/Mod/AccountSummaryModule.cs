@@ -60,7 +60,7 @@ namespace Poseidon.Recovery.ClientDx
             var paidFee = settles.Where(r => r.IsFree == false && r.IsWriteOff == true).Sum(r => r.TotalAmount);
 
             ///欠款
-            var debtFee = dueFee - paidFee;           
+            var debtFee = dueFee - paidFee;
 
             this.txtSettleAmount.Text = totalFee.ToString();
             this.txtSettleDue.Text = dueFee.ToString();
@@ -70,9 +70,7 @@ namespace Poseidon.Recovery.ClientDx
 
             //核销率
             decimal rate = 1;
-            if (dueFee == 0)
-                rate = 1;
-            else
+            if (dueFee != 0)
                 rate = Math.Round(paidFee / dueFee * 100, 2);
 
             // Gauge
@@ -93,7 +91,7 @@ namespace Poseidon.Recovery.ClientDx
                 var data = BusinessFactory<RecycleBusiness>.Instance.FindByAccount(account.Id);
 
                 List<RecycleRecord> records = new List<RecycleRecord>();
-                foreach(var recycle in data)
+                foreach (var recycle in data)
                 {
                     records.AddRange(recycle.Records);
                 }
@@ -125,6 +123,7 @@ namespace Poseidon.Recovery.ClientDx
             this.arcScaleComponent2.Value = Convert.ToSingle(rate);
 
             this.feeTypeChart.SetChartTitle($"{account.Name}回收费用类型");
+            this.feeTypeChart.SetSeriesLabel("元");
             this.feeTypeChart.SetSeries(recycles.Group.ToList());
 
             this.unpostRecycleGrid.DataSource = recycles.Recycle.Where(r => r.IsPost == false).ToList();
@@ -160,7 +159,7 @@ namespace Poseidon.Recovery.ClientDx
                 }
 
                 var data2 = BusinessFactory<RecycleBusiness>.Instance.FindByAccount(account.Id);
-                foreach(var item in data2)
+                foreach (var item in data2)
                 {
                     var find = data.FirstOrDefault(r => r.BelongDate == $"{item.RecycleDate.Year}年");
                     if (find == null)
@@ -183,8 +182,8 @@ namespace Poseidon.Recovery.ClientDx
 
             var result = await task1;
 
-            this.yearsChart.SetSeriesLengedText(0, "应收金额(元)");
-            this.yearsChart.SetSeriesLengedText(1, "已收金额(元)");
+            this.yearsChart.SetSeriesName(0, "应收金额(元)");
+            this.yearsChart.SetSeriesName(1, "已收金额(元)");
             this.yearsChart.DataSource = result;
         }
         #endregion //Function
