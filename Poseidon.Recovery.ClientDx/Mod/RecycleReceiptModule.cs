@@ -25,7 +25,6 @@ namespace Poseidon.Recovery.ClientDx
         /// <summary>
         /// 当前关联账户
         /// </summary>
-        /// 
         private Account currentAccount;
 
         /// <summary>

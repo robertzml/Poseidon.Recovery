@@ -21,5 +21,13 @@ namespace Poseidon.Recovery.Core.IDAL
         /// <param name="isPost">是否入账</param>
         /// <returns></returns>
         IEnumerable<Recycle> FindByAccount(string accountId, bool isPost);
+
+        /// <summary>
+        /// 获取账户费用回收
+        /// </summary>
+        /// <param name="accountId">回收账户ID</param>
+        /// <param name="year">年度</param>
+        /// <returns></returns>
+        IEnumerable<Recycle> FindByAccount(string accountId, int year);
     }
 }

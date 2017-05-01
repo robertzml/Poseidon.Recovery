@@ -298,6 +298,12 @@
     <Compile Include="Chart\RecoveryDataChart.Designer.cs">
       <DependentUpon>RecoveryDataChart.cs</DependentUpon>
     </Compile>
+    <Compile Include="Mod\RecycleYearModule.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Mod\RecycleYearModule.Designer.cs">
+      <DependentUpon>RecycleYearModule.cs</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Chart\FeeTypeChart.resx">
@@ -371,6 +377,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Mod\RecycleReceiptModule.resx">
       <DependentUpon>RecycleReceiptModule.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Mod\RecycleYearModule.resx">
+      <DependentUpon>RecycleYearModule.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Overview\FrmRecoveryOverview.resx">
       <DependentUpon>FrmRecoveryOverview.cs</DependentUpon>

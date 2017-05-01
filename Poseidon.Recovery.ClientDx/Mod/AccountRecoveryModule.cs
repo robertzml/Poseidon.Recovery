@@ -67,6 +67,15 @@ namespace Poseidon.Recovery.ClientDx
             this.measureReceiptMod.SetAccount(account);
             this.reconcileReceiptMod.SetAccount(account);
         }
+
+        /// <summary>
+        /// 显示年度信息
+        /// </summary>
+        /// <param name="account"></param>
+        private void DisplayYear(Account account)
+        {
+            this.recycleYearMod.SetAccount(account);
+        }
         #endregion //Function
 
         #region Method
@@ -89,6 +98,7 @@ namespace Poseidon.Recovery.ClientDx
             DisplayMeter(currentAccount);
             DisplaySummary(currentAccount);
             DisplayReceipt(currentAccount);
+            DisplayYear(currentAccount);
         }
         #endregion //Method
     }

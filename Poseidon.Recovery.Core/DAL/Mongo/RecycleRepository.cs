@@ -145,6 +145,23 @@ namespace Poseidon.Recovery.Core.DAL.Mongo
 
             return base.FindList(filter);
         }
+
+        /// <summary>
+        /// 获取账户费用回收
+        /// </summary>
+        /// <param name="accountId">回收账户ID</param>
+        /// <param name="year">年度</param>
+        /// <returns></returns>
+        public IEnumerable<Recycle> FindByAccount(string accountId, int year)
+        {
+            var start = new DateTime(year, 1, 1);
+            var end = new DateTime(year, 12, 31);
+
+            var builder = Builders<BsonDocument>.Filter;
+            var filter = builder.Eq("accountId", accountId) & builder.Gte("recycleDate", start) & builder.Lte("recycleDate", end);
+
+            return base.FindList(filter);
+        }
         #endregion //Method
     }
 }
