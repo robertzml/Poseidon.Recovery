@@ -9,8 +9,10 @@ using System.Windows.Forms;
 
 namespace Poseidon.Recovery.ClientDx
 {
+    using DevExpress.XtraReports.UI;
     using Poseidon.Base.Framework;
     using Poseidon.Common;
+    using Poseidon.Recovery.ClientDx.Report;
     using Poseidon.Recovery.Core.BL;
     using Poseidon.Recovery.Core.DL;
     using Poseidon.Recovery.Core.Utility;
@@ -186,7 +188,21 @@ namespace Poseidon.Recovery.ClientDx
         /// <param name="e"></param>
         private void btnPrint_Click(object sender, EventArgs e)
         {
+            if (this.currentAccount == null || this.lbSettles.SelectedValue == null)
+                return;
 
+            var settle = this.lbSettles.SelectedItem as Settle;
+
+            List<Settle> ds = new List<Settle>();
+            ds.Add(settle);
+
+            RepSettle report = new RepSettle(settle);
+            report.DataSource = ds;
+            //report.Parameters["Year"].Value = target.Year;
+
+            ReportPrintTool printTool = new ReportPrintTool(report);
+
+            printTool.ShowRibbonPreview();
         }
         #endregion //Event
 
