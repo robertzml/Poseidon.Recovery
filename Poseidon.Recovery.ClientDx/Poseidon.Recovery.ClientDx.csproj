@@ -1,0 +1,547 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{6A48D005-FCDD-4B00-91F4-E2CFA703D32A}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Poseidon.Recovery.ClientDx</RootNamespace>
+    <AssemblyName>Poseidon.Recovery.ClientDx</AssemblyName>
+    <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="DevExpress.Charts.v15.1.Core, Version=15.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Data.v15.1, Version=15.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Printing.v15.1.Core, Version=15.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Sparkline.v15.1.Core, Version=15.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Utils.v15.1, Version=15.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraBars.v15.1, Version=15.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraCharts.v15.1, Version=15.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraCharts.v15.1.UI, Version=15.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraCharts.v15.1.Wizard, Version=15.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraEditors.v15.1, Version=15.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraGauges.v15.1.Core, Version=15.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraGauges.v15.1.Win, Version=15.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraGrid.v15.1, Version=15.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraLayout.v15.1, Version=15.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraPrinting.v15.1, Version=15.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraTreeList.v15.1, Version=15.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="Poseidon.Base">
+      <HintPath>..\..\Assembly\Poseidon.Base.dll</HintPath>
+    </Reference>
+    <Reference Include="Poseidon.Common, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Assembly\Poseidon.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Poseidon.Core">
+      <HintPath>..\..\Assembly\Poseidon.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Poseidon.Winform.Base">
+      <HintPath>..\..\Assembly\Poseidon.Winform.Base.dll</HintPath>
+    </Reference>
+    <Reference Include="Poseidon.Winform.Core">
+      <HintPath>..\..\Assembly\Poseidon.Winform.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Mod\ProportionYearModule.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Mod\ProportionYearModule.Designer.cs">
+      <DependentUpon>ProportionYearModule.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Chart\AccountPieChart.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Chart\AccountPieChart.Designer.cs">
+      <DependentUpon>AccountPieChart.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Chart\FeeTypeChart.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Chart\FeeTypeChart.Designer.cs">
+      <DependentUpon>FeeTypeChart.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Mod\GroupSummaryModule.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Mod\GroupSummaryModule.Designer.cs">
+      <DependentUpon>GroupSummaryModule.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Mod\GroupRecoveryModule.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Mod\GroupRecoveryModule.Designer.cs">
+      <DependentUpon>GroupRecoveryModule.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Mod\AccountSummaryModule.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Mod\AccountSummaryModule.Designer.cs">
+      <DependentUpon>AccountSummaryModule.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Receipt\FrmReconcileAdd.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Receipt\FrmReconcileAdd.Designer.cs">
+      <DependentUpon>FrmReconcileAdd.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Mod\AccountRecoveryModule.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Mod\AccountRecoveryModule.Designer.cs">
+      <DependentUpon>AccountRecoveryModule.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Overview\FrmRecoveryOverview.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Overview\FrmRecoveryOverview.Designer.cs">
+      <DependentUpon>FrmRecoveryOverview.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Receipt\FrmRecycleEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Receipt\FrmRecycleEdit.Designer.cs">
+      <DependentUpon>FrmRecycleEdit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Receipt\FrmSettleEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Receipt\FrmSettleEdit.Designer.cs">
+      <DependentUpon>FrmSettleEdit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Receipt\FrmMeasureEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Receipt\FrmMeasureEdit.Designer.cs">
+      <DependentUpon>FrmMeasureEdit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Receipt\FrmRecycleAdd.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Receipt\FrmRecycleAdd.Designer.cs">
+      <DependentUpon>FrmRecycleAdd.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Mod\CommerceAccountInfo.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Mod\CommerceAccountInfo.Designer.cs">
+      <DependentUpon>CommerceAccountInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Receipt\FrmSettleAdd.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Receipt\FrmSettleAdd.Designer.cs">
+      <DependentUpon>FrmSettleAdd.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Grid\CommerceAccountGrid.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Grid\CommerceAccountGrid.Designer.cs">
+      <DependentUpon>CommerceAccountGrid.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Grid\MeasureRecordGrid.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Grid\MeasureRecordGrid.Designer.cs">
+      <DependentUpon>MeasureRecordGrid.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Mod\MeasureReceiptModule.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Mod\MeasureReceiptModule.Designer.cs">
+      <DependentUpon>MeasureReceiptModule.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Receipt\FrmMeasureAdd.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Receipt\FrmMeasureAdd.Designer.cs">
+      <DependentUpon>FrmMeasureAdd.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Mod\AccountReceiptModule.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Mod\AccountReceiptModule.Designer.cs">
+      <DependentUpon>AccountReceiptModule.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Account\FrmCommerceAccountEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Account\FrmCommerceAccountEdit.Designer.cs">
+      <DependentUpon>FrmCommerceAccountEdit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Account\FrmMeterSet.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Account\FrmMeterSet.Designer.cs">
+      <DependentUpon>FrmMeterSet.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Building\FrmChargeBuildingManage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Building\FrmChargeBuildingManage.Designer.cs">
+      <DependentUpon>FrmChargeBuildingManage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Building\FrmChargeBuildingAdd.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Building\FrmChargeBuildingAdd.Designer.cs">
+      <DependentUpon>FrmChargeBuildingAdd.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Building\FrmChargeBuildingEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Building\FrmChargeBuildingEdit.Designer.cs">
+      <DependentUpon>FrmChargeBuildingEdit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Account\FrmAccountManage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Account\FrmAccountManage.Designer.cs">
+      <DependentUpon>FrmAccountManage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Account\FrmCommerceAccountAdd.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Account\FrmCommerceAccountAdd.Designer.cs">
+      <DependentUpon>FrmCommerceAccountAdd.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Grid\MeterGrid.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Grid\MeterGrid.Designer.cs">
+      <DependentUpon>MeterGrid.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Receipt\FrmRecoveryReceipt.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Receipt\FrmRecoveryReceipt.Designer.cs">
+      <DependentUpon>FrmRecoveryReceipt.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Mod\SettleReceiptModule.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Mod\SettleReceiptModule.Designer.cs">
+      <DependentUpon>SettleReceiptModule.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Grid\SettleRecordGrid.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Grid\SettleRecordGrid.Designer.cs">
+      <DependentUpon>SettleRecordGrid.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Mod\RecycleReceiptModule.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Mod\RecycleReceiptModule.Designer.cs">
+      <DependentUpon>RecycleReceiptModule.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Grid\RecycleRecordGrid.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Grid\RecycleRecordGrid.Designer.cs">
+      <DependentUpon>RecycleRecordGrid.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Mod\ReconcileReceiptModule.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Mod\ReconcileReceiptModule.Designer.cs">
+      <DependentUpon>ReconcileReceiptModule.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Grid\ReconcileGrid.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Grid\ReconcileGrid.Designer.cs">
+      <DependentUpon>ReconcileGrid.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Grid\ReconcileDebitGrid.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Grid\ReconcileDebitGrid.Designer.cs">
+      <DependentUpon>ReconcileDebitGrid.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Grid\ReconcileCreditGrid.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Grid\ReconcileCreditGrid.Designer.cs">
+      <DependentUpon>ReconcileCreditGrid.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Grid\SettleGrid.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Grid\SettleGrid.Designer.cs">
+      <DependentUpon>SettleGrid.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Grid\RecycleGrid.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Grid\RecycleGrid.Designer.cs">
+      <DependentUpon>RecycleGrid.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Chart\RecoveryDataChart.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Chart\RecoveryDataChart.Designer.cs">
+      <DependentUpon>RecoveryDataChart.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Mod\RecycleYearModule.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Mod\RecycleYearModule.Designer.cs">
+      <DependentUpon>RecycleYearModule.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Chart\RecycleDataChart.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Chart\RecycleDataChart.Designer.cs">
+      <DependentUpon>RecycleDataChart.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Mod\RecycleYearChartModule.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Mod\RecycleYearChartModule.Designer.cs">
+      <DependentUpon>RecycleYearChartModule.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Mod\SettleYearModule.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Mod\SettleYearModule.Designer.cs">
+      <DependentUpon>SettleYearModule.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Chart\SettleDataChart.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Chart\SettleDataChart.Designer.cs">
+      <DependentUpon>SettleDataChart.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Mod\SettleYearChartModule.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Mod\SettleYearChartModule.Designer.cs">
+      <DependentUpon>SettleYearChartModule.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Mod\ReconcileYearModule.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Mod\ReconcileYearModule.Designer.cs">
+      <DependentUpon>ReconcileYearModule.cs</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Chart\AccountPieChart.resx">
+      <DependentUpon>AccountPieChart.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Chart\FeeTypeChart.resx">
+      <DependentUpon>FeeTypeChart.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Chart\RecoveryDataChart.resx">
+      <DependentUpon>RecoveryDataChart.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Chart\RecycleDataChart.resx">
+      <DependentUpon>RecycleDataChart.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Chart\SettleDataChart.resx">
+      <DependentUpon>SettleDataChart.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Grid\CommerceAccountGrid.resx">
+      <DependentUpon>CommerceAccountGrid.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Grid\MeasureRecordGrid.resx">
+      <DependentUpon>MeasureRecordGrid.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Grid\ReconcileCreditGrid.resx">
+      <DependentUpon>ReconcileCreditGrid.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Grid\ReconcileDebitGrid.resx">
+      <DependentUpon>ReconcileDebitGrid.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Grid\ReconcileGrid.resx">
+      <DependentUpon>ReconcileGrid.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Grid\RecycleGrid.resx">
+      <DependentUpon>RecycleGrid.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Grid\RecycleRecordGrid.resx">
+      <DependentUpon>RecycleRecordGrid.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Grid\SettleGrid.resx">
+      <DependentUpon>SettleGrid.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Grid\SettleRecordGrid.resx">
+      <DependentUpon>SettleRecordGrid.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Mod\ProportionYearModule.resx">
+      <DependentUpon>ProportionYearModule.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Mod\AccountReceiptModule.resx">
+      <DependentUpon>AccountReceiptModule.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Account\FrmCommerceAccountEdit.resx">
+      <DependentUpon>FrmCommerceAccountEdit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Account\FrmMeterSet.resx">
+      <DependentUpon>FrmMeterSet.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Account\FrmCommerceAccountAdd.resx">
+      <DependentUpon>FrmCommerceAccountAdd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Account\FrmAccountManage.resx">
+      <DependentUpon>FrmAccountManage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Building\FrmChargeBuildingAdd.resx">
+      <DependentUpon>FrmChargeBuildingAdd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Building\FrmChargeBuildingEdit.resx">
+      <DependentUpon>FrmChargeBuildingEdit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Building\FrmChargeBuildingManage.resx">
+      <DependentUpon>FrmChargeBuildingManage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Mod\AccountRecoveryModule.resx">
+      <DependentUpon>AccountRecoveryModule.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Mod\AccountSummaryModule.resx">
+      <DependentUpon>AccountSummaryModule.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Mod\CommerceAccountInfo.resx">
+      <DependentUpon>CommerceAccountInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Mod\GroupRecoveryModule.resx">
+      <DependentUpon>GroupRecoveryModule.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Mod\GroupSummaryModule.resx">
+      <DependentUpon>GroupSummaryModule.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Mod\ReconcileReceiptModule.resx">
+      <DependentUpon>ReconcileReceiptModule.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Mod\ReconcileYearModule.resx">
+      <DependentUpon>ReconcileYearModule.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Mod\RecycleReceiptModule.resx">
+      <DependentUpon>RecycleReceiptModule.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Mod\RecycleYearChartModule.resx">
+      <DependentUpon>RecycleYearChartModule.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Mod\RecycleYearModule.resx">
+      <DependentUpon>RecycleYearModule.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Mod\SettleYearChartModule.resx">
+      <DependentUpon>SettleYearChartModule.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Mod\SettleYearModule.resx">
+      <DependentUpon>SettleYearModule.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Overview\FrmRecoveryOverview.resx">
+      <DependentUpon>FrmRecoveryOverview.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Receipt\FrmMeasureEdit.resx">
+      <DependentUpon>FrmMeasureEdit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Receipt\FrmReconcileAdd.resx">
+      <DependentUpon>FrmReconcileAdd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Receipt\FrmRecycleAdd.resx">
+      <DependentUpon>FrmRecycleAdd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Receipt\FrmRecycleEdit.resx">
+      <DependentUpon>FrmRecycleEdit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Receipt\FrmSettleAdd.resx">
+      <DependentUpon>FrmSettleAdd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Receipt\FrmSettleEdit.resx">
+      <DependentUpon>FrmSettleEdit.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="Properties\DataSources\Poseidon.Recovery.Core.DL.CommerceAccount.datasource" />
+    <None Include="Properties\DataSources\Poseidon.Recovery.Core.DL.Measure.datasource" />
+    <None Include="Properties\DataSources\Poseidon.Recovery.Core.DL.MeasureRecord.datasource" />
+    <None Include="Properties\DataSources\Poseidon.Recovery.Core.DL.Meter.datasource" />
+    <None Include="Properties\DataSources\Poseidon.Recovery.Core.DL.Reconcile.datasource" />
+    <None Include="Properties\DataSources\Poseidon.Recovery.Core.DL.ReconcileCredit.datasource" />
+    <None Include="Properties\DataSources\Poseidon.Recovery.Core.DL.ReconcileDebit.datasource" />
+    <None Include="Properties\DataSources\Poseidon.Recovery.Core.DL.Recycle.datasource" />
+    <None Include="Properties\DataSources\Poseidon.Recovery.Core.DL.RecycleRecord.datasource" />
+    <None Include="Properties\DataSources\Poseidon.Recovery.Core.DL.Settle.datasource" />
+    <None Include="Properties\DataSources\Poseidon.Recovery.Core.DL.SettleRecord.datasource" />
+    <None Include="Properties\DataSources\Poseidon.Recovery.Core.Utility.AccountDataModel.datasource" />
+    <None Include="Properties\DataSources\Poseidon.Recovery.Core.Utility.RecoveryDataModel.datasource" />
+    <None Include="Properties\licenses.licx" />
+    <EmbeddedResource Include="Grid\MeterGrid.resx">
+      <DependentUpon>MeterGrid.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Mod\MeasureReceiptModule.resx">
+      <DependentUpon>MeasureReceiptModule.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Mod\SettleReceiptModule.resx">
+      <DependentUpon>SettleReceiptModule.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Receipt\FrmMeasureAdd.resx">
+      <DependentUpon>FrmMeasureAdd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Receipt\FrmRecoveryReceipt.resx">
+      <DependentUpon>FrmRecoveryReceipt.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Poseidon.Recovery.Core\Poseidon.Recovery.Core.csproj">
+      <Project>{69a4b85d-41fc-4e20-b0b3-2b5e07429c3d}</Project>
+      <Name>Poseidon.Recovery.Core</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\DataSources\Poseidon.Recovery.Core.DL.ChargeBuilding.datasource" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
