@@ -193,12 +193,20 @@ namespace Poseidon.Recovery.ClientDx
 
             var settle = this.lbSettles.SelectedItem as Settle;
 
+            int count = settle.Records.Count;
+            if (count < 9)
+            {
+                for(int i = 0; i < 9 - count; i++)
+                {
+                    settle.Records.Add(new SettleRecord { MeterType = 0 });
+                }
+            }
+
             List<Settle> ds = new List<Settle>();
             ds.Add(settle);
 
             RepSettle report = new RepSettle(settle);
             report.DataSource = ds;
-            //report.Parameters["Year"].Value = target.Year;
 
             ReportPrintTool printTool = new ReportPrintTool(report);
 
