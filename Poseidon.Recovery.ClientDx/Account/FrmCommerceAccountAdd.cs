@@ -62,7 +62,7 @@ namespace Poseidon.Recovery.ClientDx
             entity.Name = this.txtName.Text;
             entity.ShortName = this.txtShortName.Text;
             entity.TicketName = this.txtTicketName.Text;
-            entity.Contract = this.txtContact.Text;
+            entity.Contact = this.txtContact.Text;
             entity.Remark = this.txtRemark.Text;
 
             if (this.tluParent.EditValue != null)
@@ -86,7 +86,6 @@ namespace Poseidon.Recovery.ClientDx
                 entity.EnergyType.Add(1);
             if (chkType2.Checked)
                 entity.EnergyType.Add(2);
-
         }
         #endregion //Function
 

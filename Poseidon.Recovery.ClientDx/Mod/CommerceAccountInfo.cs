@@ -57,7 +57,7 @@ namespace Poseidon.Recovery.ClientDx
             if (account.EnergyType.Contains(2))
                 this.chkType2.Checked = true;
 
-            this.txtContact.Text = account.Contract;
+            this.txtContact.Text = account.Contact;
             this.txtRemark.Text = account.Remark;
         }
         #endregion //Function

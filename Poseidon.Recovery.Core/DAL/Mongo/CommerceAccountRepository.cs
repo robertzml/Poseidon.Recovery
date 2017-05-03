@@ -50,6 +50,7 @@ namespace Poseidon.Recovery.Core.DAL.Mongo
             entity.TicketName = doc["ticketName"].ToString();
             entity.ModelType = doc["modelType"].ToString();
             entity.OpenYear = doc["openYear"].ToInt32();
+            entity.Contact = doc["contact"].ToString();
             entity.Remark = doc["remark"].ToString();
             entity.Status = doc["status"].ToInt32();
 
@@ -110,6 +111,7 @@ namespace Poseidon.Recovery.Core.DAL.Mongo
                 { "ticketName", entity.TicketName },
                 { "modelType", entity.ModelType },
                 { "openYear", entity.OpenYear },
+                { "contact", entity.Contact },
                 { "remark", entity.Remark },
                 { "status", entity.Status }
             };

@@ -42,7 +42,7 @@ namespace Poseidon.Recovery.ClientDx
         private void LoadData()
         {
             this.commerceAccountGrid.DataSource = BusinessFactory<CommerceAccountBusiness>.Instance.FindAll().ToList();
-
+            this.constructionAccountGrid.DataSource = BusinessFactory<ConstructionAccountBusiness>.Instance.FindAll().ToList();
         }
         #endregion //Function
 
@@ -57,6 +57,10 @@ namespace Poseidon.Recovery.ClientDx
             if (tabAccount.SelectedTabPage == tabPageCommerce)
             {
                 ChildFormManage.ShowDialogForm(typeof(FrmCommerceAccountAdd));
+            }
+            else if (tabAccount.SelectedTabPage == tabPageConstruction)
+            {
+                ChildFormManage.ShowDialogForm(typeof(FrmConstructionAccountAdd));
             }
 
             LoadData();
@@ -77,7 +81,14 @@ namespace Poseidon.Recovery.ClientDx
 
                 ChildFormManage.ShowDialogForm(typeof(FrmCommerceAccountEdit), new object[] { select.Id });
             }
+            else if (tabAccount.SelectedTabPage == tabPageConstruction)
+            {
+                var select = this.constructionAccountGrid.GetCurrentSelect();
+                if (select == null)
+                    return;
 
+                ChildFormManage.ShowDialogForm(typeof(FrmConstructionAccountEdit), new object[] { select.Id });
+            }
 
             LoadData();
         }
@@ -92,6 +103,14 @@ namespace Poseidon.Recovery.ClientDx
             if (tabAccount.SelectedTabPage == tabPageCommerce)
             {
                 var select = this.commerceAccountGrid.GetCurrentSelect();
+                if (select == null)
+                    return;
+
+                ChildFormManage.ShowDialogForm(typeof(FrmMeterSet), new object[] { select.Id });
+            }
+            else if (tabAccount.SelectedTabPage == tabPageConstruction)
+            {
+                var select = this.constructionAccountGrid.GetCurrentSelect();
                 if (select == null)
                     return;
 

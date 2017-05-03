@@ -1,6 +1,6 @@
 ﻿namespace Poseidon.Recovery.ClientDx
 {
-    partial class FrmConstructionAccountAdd
+    partial class FrmConstructionAccountEdit
     {
         /// <summary>
         /// Required designer variable.
@@ -42,7 +42,6 @@
             this.chkType2 = new DevExpress.XtraEditors.CheckEdit();
             this.chkType1 = new DevExpress.XtraEditors.CheckEdit();
             this.tluParent = new DevExpress.XtraEditors.TreeListLookUpEdit();
-            this.bsAccount = new System.Windows.Forms.BindingSource(this.components);
             this.treeListLookUpEdit1TreeList = new DevExpress.XtraTreeList.TreeList();
             this.colName = new DevExpress.XtraTreeList.Columns.TreeListColumn();
             this.colRemark = new DevExpress.XtraTreeList.Columns.TreeListColumn();
@@ -62,6 +61,7 @@
             this.layoutControlItem11 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem12 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem13 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.bsAccount = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.plFill)).BeginInit();
             this.plFill.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.plBottom)).BeginInit();
@@ -81,7 +81,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.chkType2.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.chkType1.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tluParent.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bsAccount)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.treeListLookUpEdit1TreeList)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtShortName.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtName.Properties)).BeginInit();
@@ -99,6 +98,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem11)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem12)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem13)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bsAccount)).BeginInit();
             this.SuspendLayout();
             // 
             // btnCancel
@@ -131,7 +131,7 @@
             this.groupControl1.Location = new System.Drawing.Point(0, 0);
             this.groupControl1.Name = "groupControl1";
             this.groupControl1.Size = new System.Drawing.Size(424, 352);
-            this.groupControl1.TabIndex = 1;
+            this.groupControl1.TabIndex = 2;
             this.groupControl1.Text = "账户信息";
             // 
             // layoutControl1
@@ -274,10 +274,6 @@
             this.tluParent.Size = new System.Drawing.Size(345, 20);
             this.tluParent.StyleController = this.layoutControl1;
             this.tluParent.TabIndex = 6;
-            // 
-            // bsAccount
-            // 
-            this.bsAccount.DataSource = typeof(Poseidon.Recovery.Core.DL.ConstructionAccount);
             // 
             // treeListLookUpEdit1TreeList
             // 
@@ -468,13 +464,17 @@
             this.layoutControlItem13.Text = "计费方式";
             this.layoutControlItem13.TextSize = new System.Drawing.Size(48, 14);
             // 
-            // FrmConstructionAccountAdd
+            // bsAccount
+            // 
+            this.bsAccount.DataSource = typeof(Poseidon.Recovery.Core.DL.ConstructionAccount);
+            // 
+            // FrmConstructionAccountEdit
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(424, 412);
-            this.Name = "FrmConstructionAccountAdd";
-            this.Text = "新增工程类账户";
+            this.Name = "FrmConstructionAccountEdit";
+            this.Text = "编辑工程类账户";
             ((System.ComponentModel.ISupportInitialize)(this.plFill)).EndInit();
             this.plFill.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.plBottom)).EndInit();
@@ -494,7 +494,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.chkType2.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.chkType1.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tluParent.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bsAccount)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.treeListLookUpEdit1TreeList)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtShortName.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtName.Properties)).EndInit();
@@ -512,6 +511,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem11)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem12)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem13)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bsAccount)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -520,6 +520,9 @@
 
         private DevExpress.XtraEditors.GroupControl groupControl1;
         private DevExpress.XtraLayout.LayoutControl layoutControl1;
+        private DevExpress.XtraEditors.ImageComboBoxEdit cmbChargeType;
+        private DevExpress.XtraEditors.TextEdit txtConstructionName;
+        private DevExpress.XtraEditors.TextEdit txtConstructionCompany;
         private DevExpress.XtraEditors.TextEdit txtTicketName;
         private DevExpress.XtraEditors.MemoEdit txtRemark;
         private DevExpress.XtraEditors.MemoEdit txtContact;
@@ -544,11 +547,8 @@
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem9;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem10;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem6;
-        private DevExpress.XtraEditors.TextEdit txtConstructionName;
-        private DevExpress.XtraEditors.TextEdit txtConstructionCompany;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem11;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem12;
-        private DevExpress.XtraEditors.ImageComboBoxEdit cmbChargeType;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem13;
         private System.Windows.Forms.BindingSource bsAccount;
     }

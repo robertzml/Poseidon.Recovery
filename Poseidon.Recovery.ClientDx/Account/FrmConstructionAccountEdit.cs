@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
-using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -15,21 +14,22 @@ namespace Poseidon.Recovery.ClientDx
     using Poseidon.Winform.Base;
     using Poseidon.Recovery.Core.BL;
     using Poseidon.Recovery.Core.DL;
+    using Poseidon.Winform.Core.Utility;
 
     /// <summary>
-    /// 编辑账户窗体
+    /// 编辑工程类账户窗体
     /// </summary>
-    public partial class FrmCommerceAccountEdit : BaseSingleForm
+    public partial class FrmConstructionAccountEdit : BaseSingleForm
     {
         #region Field
         /// <summary>
         /// 当前关联账户
         /// </summary>
-        private CommerceAccount currentAccount;
+        private ConstructionAccount currentAccount;
         #endregion //Field
 
         #region Constructor
-        public FrmCommerceAccountEdit(string id)
+        public FrmConstructionAccountEdit(string id)
         {
             InitializeComponent();
             InitData(id);
@@ -39,25 +39,27 @@ namespace Poseidon.Recovery.ClientDx
         #region Function
         private void InitData(string id)
         {
-            this.currentAccount = BusinessFactory<CommerceAccountBusiness>.Instance.FindById(id);
+            this.currentAccount = BusinessFactory<ConstructionAccountBusiness>.Instance.FindById(id);
         }
 
         protected override void InitForm()
         {
-            this.bsAccount.DataSource = BusinessFactory<CommerceAccountBusiness>.Instance.FindAll();
-            this.bsChargeBuilding.DataSource = BusinessFactory<ChargeBuildingBusiness>.Instance.FindAll();
+            this.bsAccount.DataSource = BusinessFactory<ConstructionAccountBusiness>.Instance.FindAll();
+            ControlUtil.BindDictToComboBox(this.cmbChargeType, typeof(ConstructionAccount), "ChargeType");
 
             this.txtName.Text = this.currentAccount.Name;
             this.txtShortName.Text = this.currentAccount.ShortName;
             this.txtTicketName.Text = this.currentAccount.TicketName;
+            this.txtConstructionCompany.Text = this.currentAccount.ConstructionCompany;
+            this.txtConstructionName.Text = this.currentAccount.ConstructionName;
+            this.cmbChargeType.EditValue = this.currentAccount.ChargeType;
             this.txtContact.Text = this.currentAccount.Contact;
             this.txtRemark.Text = this.currentAccount.Remark;
 
             this.spOpenYear.Value = this.currentAccount.OpenYear;
             this.spCloseYear.Value = this.currentAccount.CloseYear == null ? 0 : this.currentAccount.CloseYear.Value;
 
-            this.tluParent.EditValue = this.currentAccount.ParentId;
-            this.tluChargeBuilding.EditValue = this.currentAccount.ChargeBuildingId;
+            this.tluParent.EditValue = string.IsNullOrEmpty(this.currentAccount.ParentId) ? null : this.currentAccount.ParentId;
 
             if (this.currentAccount.EnergyType.Contains(1))
                 this.chkType1.Checked = true;
@@ -80,6 +82,11 @@ namespace Poseidon.Recovery.ClientDx
                 errorMessage = "名称不能为空";
                 return new Tuple<bool, string>(false, errorMessage);
             }
+            if (this.cmbChargeType.SelectedIndex == -1)
+            {
+                errorMessage = "请选择计费方式";
+                return new Tuple<bool, string>(false, errorMessage);
+            }
 
             return new Tuple<bool, string>(true, "");
         }
@@ -88,23 +95,21 @@ namespace Poseidon.Recovery.ClientDx
         /// 设置实体
         /// </summary>
         /// <param name="entity"></param>
-        private void SetEntity(CommerceAccount entity)
+        private void SetEntity(ConstructionAccount entity)
         {
             entity.Name = this.txtName.Text;
             entity.ShortName = this.txtShortName.Text;
             entity.TicketName = this.txtTicketName.Text;
             entity.Contact = this.txtContact.Text;
+            entity.ConstructionCompany = this.txtConstructionCompany.Text;
+            entity.ConstructionName = this.txtConstructionName.Text;
+            entity.ChargeType = (int)this.cmbChargeType.EditValue;
             entity.Remark = this.txtRemark.Text;
 
             if (this.tluParent.EditValue != null)
                 entity.ParentId = this.tluParent.EditValue.ToString();
             else
                 entity.ParentId = null;
-
-            if (this.tluChargeBuilding.EditValue != null)
-                entity.ChargeBuildingId = this.tluChargeBuilding.EditValue.ToString();
-            else
-                entity.ChargeBuildingId = null;
 
             entity.OpenYear = Convert.ToInt32(this.spOpenYear.Value);
             if (this.spCloseYear.Value != 0)
@@ -137,10 +142,10 @@ namespace Poseidon.Recovery.ClientDx
 
             try
             {
-                var entity = BusinessFactory<CommerceAccountBusiness>.Instance.FindById(this.currentAccount.Id);
+                ConstructionAccount entity = BusinessFactory<ConstructionAccountBusiness>.Instance.FindById(this.currentAccount.Id);
                 SetEntity(entity);
 
-                BusinessFactory<CommerceAccountBusiness>.Instance.Update(entity);
+                BusinessFactory<ConstructionAccountBusiness>.Instance.Update(entity);
 
                 MessageUtil.ShowInfo("保存成功");
                 this.Close();

@@ -43,6 +43,7 @@
             this.tabPageCommerce = new DevExpress.XtraTab.XtraTabPage();
             this.commerceAccountGrid = new Poseidon.Recovery.ClientDx.CommerceAccountGrid();
             this.tabPageConstruction = new DevExpress.XtraTab.XtraTabPage();
+            this.constructionAccountGrid = new Poseidon.Recovery.ClientDx.ConstructionAccountGrid();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).BeginInit();
             this.groupControl2.SuspendLayout();
@@ -57,6 +58,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.tabAccount)).BeginInit();
             this.tabAccount.SuspendLayout();
             this.tabPageCommerce.SuspendLayout();
+            this.tabPageConstruction.SuspendLayout();
             this.SuspendLayout();
             // 
             // tableLayoutPanel1
@@ -218,9 +220,29 @@
             // 
             // tabPageConstruction
             // 
+            this.tabPageConstruction.Controls.Add(this.constructionAccountGrid);
             this.tabPageConstruction.Name = "tabPageConstruction";
             this.tabPageConstruction.Size = new System.Drawing.Size(844, 331);
             this.tabPageConstruction.Text = "工程类账户";
+            // 
+            // constructionAccountGrid
+            // 
+            this.constructionAccountGrid.AllowFilter = true;
+            this.constructionAccountGrid.AllowGroup = true;
+            this.constructionAccountGrid.AllowSort = true;
+            this.constructionAccountGrid.DataSource = null;
+            this.constructionAccountGrid.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.constructionAccountGrid.Editable = false;
+            this.constructionAccountGrid.EnableMasterView = false;
+            this.constructionAccountGrid.Location = new System.Drawing.Point(0, 0);
+            this.constructionAccountGrid.Name = "constructionAccountGrid";
+            this.constructionAccountGrid.ShowAddMenu = false;
+            this.constructionAccountGrid.ShowFooter = false;
+            this.constructionAccountGrid.ShowLineNumber = true;
+            this.constructionAccountGrid.ShowMenu = false;
+            this.constructionAccountGrid.ShowNavigator = false;
+            this.constructionAccountGrid.Size = new System.Drawing.Size(844, 331);
+            this.constructionAccountGrid.TabIndex = 0;
             // 
             // FrmAccountManage
             // 
@@ -244,6 +266,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.tabAccount)).EndInit();
             this.tabAccount.ResumeLayout(false);
             this.tabPageCommerce.ResumeLayout(false);
+            this.tabPageConstruction.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -265,5 +288,6 @@
         private DevExpress.XtraTab.XtraTabPage tabPageCommerce;
         private CommerceAccountGrid commerceAccountGrid;
         private DevExpress.XtraTab.XtraTabPage tabPageConstruction;
+        private ConstructionAccountGrid constructionAccountGrid;
     }
 }

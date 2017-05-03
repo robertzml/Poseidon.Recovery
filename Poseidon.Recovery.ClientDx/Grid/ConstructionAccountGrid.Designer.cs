@@ -1,6 +1,6 @@
 ﻿namespace Poseidon.Recovery.ClientDx
 {
-    partial class CommerceAccountGrid
+    partial class ConstructionAccountGrid
     {
         /// <summary> 
         /// 必需的设计器变量。
@@ -28,8 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.colChargeBuildingId = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colConstructionCompany = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colConstructionName = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colChargeType = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colShortName = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colTicketName = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colOpenYear = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colCloseYear = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colContract = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -45,7 +48,7 @@
             // 
             // bsEntity
             // 
-            this.bsEntity.DataSource = typeof(Poseidon.Recovery.Core.DL.CommerceAccount);
+            this.bsEntity.DataSource = typeof(Poseidon.Recovery.Core.DL.ConstructionAccount);
             // 
             // dgcEntity
             // 
@@ -58,7 +61,10 @@
             this.colName,
             this.colShortName,
             this.colParentId,
-            this.colChargeBuildingId,
+            this.colConstructionCompany,
+            this.colConstructionName,
+            this.colChargeType,
+            this.colTicketName,
             this.colOpenYear,
             this.colCloseYear,
             this.colContract,
@@ -74,13 +80,26 @@
             this.dgvEntity.OptionsView.ShowGroupPanel = false;
             this.dgvEntity.CustomColumnDisplayText += new DevExpress.XtraGrid.Views.Base.CustomColumnDisplayTextEventHandler(this.dgvEntity_CustomColumnDisplayText);
             // 
-            // colChargeBuildingId
+            // colConstructionCompany
             // 
-            this.colChargeBuildingId.Caption = "计费建筑";
-            this.colChargeBuildingId.FieldName = "ChargeBuildingId";
-            this.colChargeBuildingId.Name = "colChargeBuildingId";
-            this.colChargeBuildingId.Visible = true;
-            this.colChargeBuildingId.VisibleIndex = 3;
+            this.colConstructionCompany.FieldName = "ConstructionCompany";
+            this.colConstructionCompany.Name = "colConstructionCompany";
+            this.colConstructionCompany.Visible = true;
+            this.colConstructionCompany.VisibleIndex = 3;
+            // 
+            // colConstructionName
+            // 
+            this.colConstructionName.FieldName = "ConstructionName";
+            this.colConstructionName.Name = "colConstructionName";
+            this.colConstructionName.Visible = true;
+            this.colConstructionName.VisibleIndex = 4;
+            // 
+            // colChargeType
+            // 
+            this.colChargeType.FieldName = "ChargeType";
+            this.colChargeType.Name = "colChargeType";
+            this.colChargeType.Visible = true;
+            this.colChargeType.VisibleIndex = 5;
             // 
             // colShortName
             // 
@@ -89,19 +108,26 @@
             this.colShortName.Visible = true;
             this.colShortName.VisibleIndex = 1;
             // 
+            // colTicketName
+            // 
+            this.colTicketName.FieldName = "TicketName";
+            this.colTicketName.Name = "colTicketName";
+            this.colTicketName.Visible = true;
+            this.colTicketName.VisibleIndex = 6;
+            // 
             // colOpenYear
             // 
             this.colOpenYear.FieldName = "OpenYear";
             this.colOpenYear.Name = "colOpenYear";
             this.colOpenYear.Visible = true;
-            this.colOpenYear.VisibleIndex = 4;
+            this.colOpenYear.VisibleIndex = 7;
             // 
             // colCloseYear
             // 
             this.colCloseYear.FieldName = "CloseYear";
             this.colCloseYear.Name = "colCloseYear";
             this.colCloseYear.Visible = true;
-            this.colCloseYear.VisibleIndex = 5;
+            this.colCloseYear.VisibleIndex = 8;
             // 
             // colContract
             // 
@@ -109,7 +135,7 @@
             this.colContract.FieldName = "Contact";
             this.colContract.Name = "colContract";
             this.colContract.Visible = true;
-            this.colContract.VisibleIndex = 6;
+            this.colContract.VisibleIndex = 9;
             // 
             // colParentId
             // 
@@ -131,25 +157,25 @@
             this.colRemark.FieldName = "Remark";
             this.colRemark.Name = "colRemark";
             this.colRemark.Visible = true;
-            this.colRemark.VisibleIndex = 7;
+            this.colRemark.VisibleIndex = 10;
             // 
             // colStatus
             // 
             this.colStatus.FieldName = "Status";
             this.colStatus.Name = "colStatus";
             this.colStatus.Visible = true;
-            this.colStatus.VisibleIndex = 8;
+            this.colStatus.VisibleIndex = 11;
             // 
             // colId
             // 
             this.colId.FieldName = "Id";
             this.colId.Name = "colId";
             // 
-            // CommerceAccountGrid
+            // ConstructionAccountGrid
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Name = "CommerceAccountGrid";
+            this.Name = "ConstructionAccountGrid";
             ((System.ComponentModel.ISupportInitialize)(this.bsEntity)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgcEntity)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEntity)).EndInit();
@@ -159,8 +185,11 @@
 
         #endregion
 
-        private DevExpress.XtraGrid.Columns.GridColumn colChargeBuildingId;
+        private DevExpress.XtraGrid.Columns.GridColumn colConstructionCompany;
+        private DevExpress.XtraGrid.Columns.GridColumn colConstructionName;
+        private DevExpress.XtraGrid.Columns.GridColumn colChargeType;
         private DevExpress.XtraGrid.Columns.GridColumn colShortName;
+        private DevExpress.XtraGrid.Columns.GridColumn colTicketName;
         private DevExpress.XtraGrid.Columns.GridColumn colOpenYear;
         private DevExpress.XtraGrid.Columns.GridColumn colCloseYear;
         private DevExpress.XtraGrid.Columns.GridColumn colContract;

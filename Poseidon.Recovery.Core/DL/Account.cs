@@ -50,7 +50,7 @@ namespace Poseidon.Recovery.Core.DL
         /// 联系方式
         /// </summary>
         [Display(Name = "联系方式")]
-        public string Contract { get; set; }
+        public string Contact { get; set; }
 
         /// <summary>
         /// 包含表具

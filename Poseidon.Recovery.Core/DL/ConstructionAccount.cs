@@ -7,6 +7,8 @@ using System.Threading.Tasks;
 
 namespace Poseidon.Recovery.Core.DL
 {
+    using Poseidon.Base.Utility;
+
     /// <summary>
     /// 工程类回收账户
     /// </summary>
@@ -28,6 +30,7 @@ namespace Poseidon.Recovery.Core.DL
         /// <summary>
         /// 计费方式 1:抄表  2:比例
         /// </summary>
+        [Dict("Recovery.AccountChargeType")]
         [Display(Name = "计费方式")]
         public int ChargeType { get; set; }
         #endregion //Property
