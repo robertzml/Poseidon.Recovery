@@ -13,6 +13,9 @@ namespace Poseidon.Recovery.Core.DAL.Mongo
     using Poseidon.Recovery.Core.DL;
     using Poseidon.Recovery.Core.IDAL;
 
+    /// <summary>
+    /// 经营类回收账户数据访问类
+    /// </summary>
     internal class CommerceAccountRepository : AbstractDALMongo<CommerceAccount>, ICommerceAccountRepository
     {
         #region Field

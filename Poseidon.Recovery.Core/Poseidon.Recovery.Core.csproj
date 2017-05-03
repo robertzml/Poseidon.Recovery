@@ -70,6 +70,7 @@
     <Compile Include="BL\AccountBusiness.cs" />
     <Compile Include="BL\ChargeBuildingBusiness.cs" />
     <Compile Include="BL\CommerceAccountBusiness.cs" />
+    <Compile Include="BL\ConstructionAccountBusiness.cs" />
     <Compile Include="BL\MeasureBusiness.cs" />
     <Compile Include="BL\ReconcileBusiness.cs" />
     <Compile Include="BL\RecycleBusiness.cs" />
@@ -77,6 +78,7 @@
     <Compile Include="DAL\Mongo\AccountRepository.cs" />
     <Compile Include="DAL\Mongo\ChargeBuildingRepository.cs" />
     <Compile Include="DAL\Mongo\CommerceAccountRepository.cs" />
+    <Compile Include="DAL\Mongo\ConstructionAccountRepository.cs" />
     <Compile Include="DAL\Mongo\MeasureRepository.cs" />
     <Compile Include="DAL\Mongo\ReconcileRepository.cs" />
     <Compile Include="DAL\Mongo\RecycleRepository.cs" />
@@ -93,6 +95,7 @@
     <Compile Include="IDAL\IAccountRepository.cs" />
     <Compile Include="IDAL\IChargeBuildingRepository.cs" />
     <Compile Include="IDAL\ICommerceAccountRepository.cs" />
+    <Compile Include="IDAL\IConstructionAccountRepository.cs" />
     <Compile Include="IDAL\IMeasureRepository.cs" />
     <Compile Include="IDAL\IReconcileRepository.cs" />
     <Compile Include="IDAL\IRecycleRepository.cs" />

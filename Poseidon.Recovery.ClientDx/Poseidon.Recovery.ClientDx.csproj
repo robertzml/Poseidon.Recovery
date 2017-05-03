@@ -82,6 +82,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Account\FrmConstructionAccountAdd.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Account\FrmConstructionAccountAdd.Designer.cs">
+      <DependentUpon>FrmConstructionAccountAdd.cs</DependentUpon>
+    </Compile>
     <Compile Include="Mod\ProportionYearModule.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -378,6 +384,9 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Account\FrmConstructionAccountAdd.resx">
+      <DependentUpon>FrmConstructionAccountAdd.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Chart\AccountPieChart.resx">
       <DependentUpon>AccountPieChart.cs</DependentUpon>
     </EmbeddedResource>
@@ -512,6 +521,7 @@
       <DependentUpon>RepSettle.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\DataSources\Poseidon.Recovery.Core.DL.CommerceAccount.datasource" />
+    <None Include="Properties\DataSources\Poseidon.Recovery.Core.DL.ConstructionAccount.datasource" />
     <None Include="Properties\DataSources\Poseidon.Recovery.Core.DL.Measure.datasource" />
     <None Include="Properties\DataSources\Poseidon.Recovery.Core.DL.MeasureRecord.datasource" />
     <None Include="Properties\DataSources\Poseidon.Recovery.Core.DL.Meter.datasource" />

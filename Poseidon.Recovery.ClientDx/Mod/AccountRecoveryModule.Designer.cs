@@ -54,6 +54,10 @@
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.groupControl3 = new DevExpress.XtraEditors.GroupControl();
             this.settleYearMod = new Poseidon.Recovery.ClientDx.SettleYearModule();
+            this.groupControl7 = new DevExpress.XtraEditors.GroupControl();
+            this.propEnergyMod = new Poseidon.Recovery.ClientDx.ProportionYearModule();
+            this.groupControl8 = new DevExpress.XtraEditors.GroupControl();
+            this.propWriteOffMod = new Poseidon.Recovery.ClientDx.ProportionYearModule();
             this.tabPageRecycleYears = new DevExpress.XtraTab.XtraTabPage();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
@@ -80,10 +84,6 @@
             this.measureReceiptMod = new Poseidon.Recovery.ClientDx.MeasureReceiptModule();
             this.tabPageReconcileReceipt = new DevExpress.XtraTab.XtraTabPage();
             this.reconcileReceiptMod = new Poseidon.Recovery.ClientDx.ReconcileReceiptModule();
-            this.groupControl7 = new DevExpress.XtraEditors.GroupControl();
-            this.groupControl8 = new DevExpress.XtraEditors.GroupControl();
-            this.propEnergyMod = new Poseidon.Recovery.ClientDx.ProportionYearModule();
-            this.propWriteOffMod = new Poseidon.Recovery.ClientDx.ProportionYearModule();
             ((System.ComponentModel.ISupportInitialize)(this.tabInfo)).BeginInit();
             this.tabInfo.SuspendLayout();
             this.tabPageBaseInfo.SuspendLayout();
@@ -107,6 +107,10 @@
             this.tableLayoutPanel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl3)).BeginInit();
             this.groupControl3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.groupControl7)).BeginInit();
+            this.groupControl7.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.groupControl8)).BeginInit();
+            this.groupControl8.SuspendLayout();
             this.tabPageRecycleYears.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
@@ -129,10 +133,6 @@
             this.tabPageRecycleReceipt.SuspendLayout();
             this.tabPageMeasureReceipt.SuspendLayout();
             this.tabPageReconcileReceipt.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.groupControl7)).BeginInit();
-            this.groupControl7.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.groupControl8)).BeginInit();
-            this.groupControl8.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabInfo
@@ -141,7 +141,7 @@
             this.tabInfo.Location = new System.Drawing.Point(3, 3);
             this.tabInfo.Name = "tabInfo";
             this.tabInfo.SelectedTabPage = this.tabPageBaseInfo;
-            this.tabInfo.Size = new System.Drawing.Size(888, 194);
+            this.tabInfo.Size = new System.Drawing.Size(888, 174);
             this.tabInfo.TabIndex = 5;
             this.tabInfo.TabPages.AddRange(new DevExpress.XtraTab.XtraTabPage[] {
             this.tabPageBaseInfo,
@@ -151,7 +151,7 @@
             // 
             this.tabPageBaseInfo.Controls.Add(this.navFrame);
             this.tabPageBaseInfo.Name = "tabPageBaseInfo";
-            this.tabPageBaseInfo.Size = new System.Drawing.Size(882, 165);
+            this.tabPageBaseInfo.Size = new System.Drawing.Size(882, 145);
             this.tabPageBaseInfo.Text = "基本信息";
             // 
             // navFrame
@@ -167,7 +167,7 @@
             this.navigationPage2});
             this.navFrame.SelectedPage = this.navigationPage2;
             this.navFrame.SelectedPageIndex = 0;
-            this.navFrame.Size = new System.Drawing.Size(882, 165);
+            this.navFrame.Size = new System.Drawing.Size(882, 145);
             this.navFrame.TabIndex = 0;
             this.navFrame.Text = "navigationFrame1";
             // 
@@ -176,27 +176,27 @@
             this.navigationPage1.Caption = "navigationPage1";
             this.navigationPage1.Controls.Add(this.commerceAccountMod);
             this.navigationPage1.Name = "navigationPage1";
-            this.navigationPage1.Size = new System.Drawing.Size(882, 165);
+            this.navigationPage1.Size = new System.Drawing.Size(882, 145);
             // 
             // commerceAccountMod
             // 
             this.commerceAccountMod.Dock = System.Windows.Forms.DockStyle.Fill;
             this.commerceAccountMod.Location = new System.Drawing.Point(0, 0);
             this.commerceAccountMod.Name = "commerceAccountMod";
-            this.commerceAccountMod.Size = new System.Drawing.Size(882, 165);
+            this.commerceAccountMod.Size = new System.Drawing.Size(882, 145);
             this.commerceAccountMod.TabIndex = 0;
             // 
             // navigationPage2
             // 
             this.navigationPage2.Caption = "navigationPage2";
             this.navigationPage2.Name = "navigationPage2";
-            this.navigationPage2.Size = new System.Drawing.Size(882, 165);
+            this.navigationPage2.Size = new System.Drawing.Size(882, 145);
             // 
             // tabPageMeters
             // 
             this.tabPageMeters.Controls.Add(this.meterGrid);
             this.tabPageMeters.Name = "tabPageMeters";
-            this.tabPageMeters.Size = new System.Drawing.Size(882, 165);
+            this.tabPageMeters.Size = new System.Drawing.Size(882, 145);
             this.tabPageMeters.Text = "包含表具";
             // 
             // meterGrid
@@ -215,7 +215,7 @@
             this.meterGrid.ShowLineNumber = true;
             this.meterGrid.ShowMenu = false;
             this.meterGrid.ShowNavigator = false;
-            this.meterGrid.Size = new System.Drawing.Size(882, 165);
+            this.meterGrid.Size = new System.Drawing.Size(882, 145);
             this.meterGrid.TabIndex = 0;
             // 
             // tabMain
@@ -243,14 +243,13 @@
             // 
             this.tableLayoutPanel1.ColumnCount = 1;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel1.Controls.Add(this.tabInfo, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.tabOverview, 0, 1);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 2;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 200F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 180F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(894, 771);
             this.tableLayoutPanel1.TabIndex = 0;
@@ -258,10 +257,10 @@
             // tabOverview
             // 
             this.tabOverview.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tabOverview.Location = new System.Drawing.Point(3, 203);
+            this.tabOverview.Location = new System.Drawing.Point(3, 183);
             this.tabOverview.Name = "tabOverview";
             this.tabOverview.SelectedTabPage = this.tabPageOverview;
-            this.tabOverview.Size = new System.Drawing.Size(888, 565);
+            this.tabOverview.Size = new System.Drawing.Size(888, 585);
             this.tabOverview.TabIndex = 6;
             this.tabOverview.TabPages.AddRange(new DevExpress.XtraTab.XtraTabPage[] {
             this.tabPageOverview,
@@ -273,7 +272,7 @@
             // 
             this.tabPageOverview.Controls.Add(this.accountSummaryMod);
             this.tabPageOverview.Name = "tabPageOverview";
-            this.tabPageOverview.Size = new System.Drawing.Size(882, 536);
+            this.tabPageOverview.Size = new System.Drawing.Size(882, 556);
             this.tabPageOverview.Text = "账目总览";
             // 
             // accountSummaryMod
@@ -281,7 +280,7 @@
             this.accountSummaryMod.Dock = System.Windows.Forms.DockStyle.Fill;
             this.accountSummaryMod.Location = new System.Drawing.Point(0, 0);
             this.accountSummaryMod.Name = "accountSummaryMod";
-            this.accountSummaryMod.Size = new System.Drawing.Size(882, 536);
+            this.accountSummaryMod.Size = new System.Drawing.Size(882, 556);
             this.accountSummaryMod.TabIndex = 0;
             // 
             // tabPageSettleOv
@@ -428,6 +427,42 @@
             this.settleYearMod.Name = "settleYearMod";
             this.settleYearMod.Size = new System.Drawing.Size(878, 342);
             this.settleYearMod.TabIndex = 0;
+            // 
+            // groupControl7
+            // 
+            this.groupControl7.Controls.Add(this.propEnergyMod);
+            this.groupControl7.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.groupControl7.Location = new System.Drawing.Point(3, 374);
+            this.groupControl7.Name = "groupControl7";
+            this.groupControl7.Size = new System.Drawing.Size(438, 365);
+            this.groupControl7.TabIndex = 1;
+            this.groupControl7.Text = "水电费比例";
+            // 
+            // propEnergyMod
+            // 
+            this.propEnergyMod.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.propEnergyMod.Location = new System.Drawing.Point(2, 21);
+            this.propEnergyMod.Name = "propEnergyMod";
+            this.propEnergyMod.Size = new System.Drawing.Size(434, 342);
+            this.propEnergyMod.TabIndex = 0;
+            // 
+            // groupControl8
+            // 
+            this.groupControl8.Controls.Add(this.propWriteOffMod);
+            this.groupControl8.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.groupControl8.Location = new System.Drawing.Point(447, 374);
+            this.groupControl8.Name = "groupControl8";
+            this.groupControl8.Size = new System.Drawing.Size(438, 365);
+            this.groupControl8.TabIndex = 2;
+            this.groupControl8.Text = "核销费用比例";
+            // 
+            // propWriteOffMod
+            // 
+            this.propWriteOffMod.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.propWriteOffMod.Location = new System.Drawing.Point(2, 21);
+            this.propWriteOffMod.Name = "propWriteOffMod";
+            this.propWriteOffMod.Size = new System.Drawing.Size(434, 342);
+            this.propWriteOffMod.TabIndex = 0;
             // 
             // tabPageRecycleYears
             // 
@@ -667,42 +702,6 @@
             this.reconcileReceiptMod.Size = new System.Drawing.Size(888, 742);
             this.reconcileReceiptMod.TabIndex = 0;
             // 
-            // groupControl7
-            // 
-            this.groupControl7.Controls.Add(this.propEnergyMod);
-            this.groupControl7.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupControl7.Location = new System.Drawing.Point(3, 374);
-            this.groupControl7.Name = "groupControl7";
-            this.groupControl7.Size = new System.Drawing.Size(438, 365);
-            this.groupControl7.TabIndex = 1;
-            this.groupControl7.Text = "水电费比例";
-            // 
-            // groupControl8
-            // 
-            this.groupControl8.Controls.Add(this.propWriteOffMod);
-            this.groupControl8.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupControl8.Location = new System.Drawing.Point(447, 374);
-            this.groupControl8.Name = "groupControl8";
-            this.groupControl8.Size = new System.Drawing.Size(438, 365);
-            this.groupControl8.TabIndex = 2;
-            this.groupControl8.Text = "核销费用比例";
-            // 
-            // propEnergyMod
-            // 
-            this.propEnergyMod.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.propEnergyMod.Location = new System.Drawing.Point(2, 21);
-            this.propEnergyMod.Name = "propEnergyMod";
-            this.propEnergyMod.Size = new System.Drawing.Size(434, 342);
-            this.propEnergyMod.TabIndex = 0;
-            // 
-            // propWriteOffMod
-            // 
-            this.propWriteOffMod.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.propWriteOffMod.Location = new System.Drawing.Point(2, 21);
-            this.propWriteOffMod.Name = "propWriteOffMod";
-            this.propWriteOffMod.Size = new System.Drawing.Size(434, 342);
-            this.propWriteOffMod.TabIndex = 0;
-            // 
             // AccountRecoveryModule
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
@@ -733,6 +732,10 @@
             this.tableLayoutPanel3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.groupControl3)).EndInit();
             this.groupControl3.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.groupControl7)).EndInit();
+            this.groupControl7.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.groupControl8)).EndInit();
+            this.groupControl8.ResumeLayout(false);
             this.tabPageRecycleYears.ResumeLayout(false);
             this.tableLayoutPanel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).EndInit();
@@ -755,10 +758,6 @@
             this.tabPageRecycleReceipt.ResumeLayout(false);
             this.tabPageMeasureReceipt.ResumeLayout(false);
             this.tabPageReconcileReceipt.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.groupControl7)).EndInit();
-            this.groupControl7.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.groupControl8)).EndInit();
-            this.groupControl8.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }

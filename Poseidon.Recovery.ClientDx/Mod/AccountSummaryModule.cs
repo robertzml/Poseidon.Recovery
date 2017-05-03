@@ -158,7 +158,7 @@ namespace Poseidon.Recovery.ClientDx
                     }
                 }
 
-                var data2 = BusinessFactory<RecycleBusiness>.Instance.FindByAccount(account.Id);
+                var data2 = BusinessFactory<RecycleBusiness>.Instance.FindByAccount(account.Id, true);
                 foreach (var item in data2)
                 {
                     var find = data.FirstOrDefault(r => r.BelongDate == $"{item.RecycleDate.Year}年");

@@ -18,6 +18,11 @@ namespace Poseidon.Recovery.Core.Utility
         public static readonly string CommerceAccount = "Recovery.CommerceAccount";
 
         /// <summary>
+        /// 工程类回收账户模型
+        /// </summary>
+        public static readonly string ConstructionAccount = "Recovery.ConstructionAccount";
+
+        /// <summary>
         /// 计费建筑模型
         /// </summary>
         public static readonly string ChargeBuilding = "Recovery.ChargeBuilding";
