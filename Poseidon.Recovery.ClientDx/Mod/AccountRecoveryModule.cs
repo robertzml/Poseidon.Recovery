@@ -139,6 +139,7 @@ namespace Poseidon.Recovery.ClientDx
             else if (accountType == 2)
             {
                 this.navFrame.SelectedPageIndex = 1;
+                this.constructionAccountMod.SetAccount(id);
             }
 
             this.accountSummaryMod.SetAccount(currentAccount);

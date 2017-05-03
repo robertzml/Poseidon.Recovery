@@ -13,9 +13,19 @@ namespace Poseidon.Recovery.Core.Utility
     {
         #region Field
         /// <summary>
+        /// 全校回收账户分组代码
+        /// </summary>
+        public static readonly string RecoveryAccountGroupCode = "RecoveryAccount";
+
+        /// <summary>
         /// 经营类回收账户分组代码
         /// </summary>
         public static readonly string CommerceRecoveryAccountGroupCode = "CommerceRecoveryAccount";
+
+        /// <summary>
+        /// 工程类回收账户分组代码
+        /// </summary>
+        public static readonly string ConstructionRecoveryAccountGroupCode = "ConstructionRecoveryAccount";
 
         /// <summary>
         /// 计费建筑分组代码

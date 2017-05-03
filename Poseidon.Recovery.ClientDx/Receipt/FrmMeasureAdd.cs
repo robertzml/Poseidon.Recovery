@@ -45,7 +45,7 @@ namespace Poseidon.Recovery.ClientDx
         protected override void InitForm()
         {
             this.txtAccountName.Text = this.currentAccount.Name;
-            this.bsMeasure.DataSource = BusinessFactory<MeasureBusiness>.Instance.FindAll();
+            this.bsMeasure.DataSource = BusinessFactory<MeasureBusiness>.Instance.FindByAccount(this.currentAccount.Id);
 
             this.measureRecordGrid.Init();
 

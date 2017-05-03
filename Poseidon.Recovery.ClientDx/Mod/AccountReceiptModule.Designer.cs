@@ -46,12 +46,14 @@
             this.measureMod = new Poseidon.Recovery.ClientDx.MeasureReceiptModule();
             this.tabPageReconcile = new DevExpress.XtraTab.XtraTabPage();
             this.reconcileMod = new Poseidon.Recovery.ClientDx.ReconcileReceiptModule();
+            this.constructionAccountMod = new Poseidon.Recovery.ClientDx.ConstructionAccountInfo();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tabInfo)).BeginInit();
             this.tabInfo.SuspendLayout();
             this.tabPageBaseInfo.SuspendLayout();
             this.navFrame.SuspendLayout();
             this.navigationPage1.SuspendLayout();
+            this.navigationPage2.SuspendLayout();
             this.tabPageMeters.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tabBusiness)).BeginInit();
             this.tabBusiness.SuspendLayout();
@@ -107,7 +109,7 @@
             this.navigationPage1,
             this.navigationPage2});
             this.navFrame.SelectedPage = this.navigationPage2;
-            this.navFrame.SelectedPageIndex = 0;
+            this.navFrame.SelectedPageIndex = 1;
             this.navFrame.Size = new System.Drawing.Size(907, 165);
             this.navFrame.TabIndex = 0;
             this.navFrame.Text = "navigationFrame1";
@@ -129,7 +131,7 @@
             // 
             // navigationPage2
             // 
-            this.navigationPage2.Caption = "navigationPage2";
+            this.navigationPage2.Controls.Add(this.constructionAccountMod);
             this.navigationPage2.Name = "navigationPage2";
             this.navigationPage2.Size = new System.Drawing.Size(907, 165);
             // 
@@ -237,6 +239,14 @@
             this.reconcileMod.Size = new System.Drawing.Size(907, 410);
             this.reconcileMod.TabIndex = 0;
             // 
+            // constructionAccountMod
+            // 
+            this.constructionAccountMod.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.constructionAccountMod.Location = new System.Drawing.Point(0, 0);
+            this.constructionAccountMod.Name = "constructionAccountMod";
+            this.constructionAccountMod.Size = new System.Drawing.Size(907, 165);
+            this.constructionAccountMod.TabIndex = 0;
+            // 
             // AccountReceiptModule
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
@@ -250,6 +260,7 @@
             this.tabPageBaseInfo.ResumeLayout(false);
             this.navFrame.ResumeLayout(false);
             this.navigationPage1.ResumeLayout(false);
+            this.navigationPage2.ResumeLayout(false);
             this.tabPageMeters.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.tabBusiness)).EndInit();
             this.tabBusiness.ResumeLayout(false);
@@ -281,5 +292,6 @@
         private RecycleReceiptModule recycleMod;
         private DevExpress.XtraTab.XtraTabPage tabPageReconcile;
         private ReconcileReceiptModule reconcileMod;
+        private ConstructionAccountInfo constructionAccountMod;
     }
 }

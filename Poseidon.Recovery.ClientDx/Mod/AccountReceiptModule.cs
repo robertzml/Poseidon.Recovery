@@ -73,6 +73,11 @@ namespace Poseidon.Recovery.ClientDx
                 this.navFrame.SelectedPageIndex = 0;
                 this.commerceAccountMod.SetAccount(id);
             }
+            else if (accountType == 2)
+            {
+                this.navFrame.SelectedPageIndex = 1;
+                this.constructionAccountMod.SetAccount(id);
+            }
 
             DisplayMeter(currentAccount);
             DisplayBusiness(currentAccount);

@@ -32,35 +32,40 @@ namespace Poseidon.Recovery.ClientDx
         #region Function
         protected override void InitForm()
         {
-            this.commerceAccountTree.SetGroupCode(RecoveryConstant.CommerceRecoveryAccountGroupCode, true);
+            this.accountTree.SetGroupCode(RecoveryConstant.RecoveryAccountGroupCode, true);
             base.InitForm();
         }
         #endregion //Function
 
         #region Event
         /// <summary>
-        /// 经营类账户选择
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void commerceAccountTree_EntitySelected(object sender, EventArgs e)
-        {
-            this.navFrame.SelectedPageIndex = 1;
-
-            var id = this.commerceAccountTree.GetCurrentSelectId();
-            this.accountMod.SetAccount(id, 1);
-        }
-
-        /// <summary>
         /// 分组选择
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void commerceAccountTree_GroupSelected(object sender, EventArgs e)
+        private void accountTree_GroupSelected(object sender, EventArgs e)
         {
             this.navFrame.SelectedPageIndex = 0;
-            var id = this.commerceAccountTree.GetCurrentSelectId();
+            var id = this.accountTree.GetCurrentSelectId();
             this.groupMod.SetGroup(id);
+        }
+
+        /// <summary>
+        /// 账户选择
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void accountTree_EntitySelected(object sender, EventArgs e)
+        {
+            this.navFrame.SelectedPageIndex = 1;
+
+            var accountId = this.accountTree.GetCurrentSelectId();
+            var account = BusinessFactory<AccountBusiness>.Instance.FindById(accountId);
+
+            if (account.ModelType == ModelTypeCode.CommerceAccount)
+                this.accountMod.SetAccount(accountId, 1);
+            else if (account.ModelType == ModelTypeCode.ConstructionAccount)
+                this.accountMod.SetAccount(accountId, 2);
         }
         #endregion //Event
     }

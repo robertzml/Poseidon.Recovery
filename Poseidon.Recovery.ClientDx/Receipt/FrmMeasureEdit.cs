@@ -53,7 +53,7 @@ namespace Poseidon.Recovery.ClientDx
             this.measureRecordGrid.Init();
 
             this.txtAccountName.Text = this.currentAccount.Name;
-            this.bsMeasure.DataSource = BusinessFactory<MeasureBusiness>.Instance.FindAll();
+            this.bsMeasure.DataSource = BusinessFactory<MeasureBusiness>.Instance.FindByAccount(this.currentAccount.Id);
 
             this.dpMeasureDate.DateTime = this.currentMeasure.MeasureDate;
             this.txtRemark.Text = this.currentMeasure.Remark;

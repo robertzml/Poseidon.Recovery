@@ -84,11 +84,13 @@
             this.measureReceiptMod = new Poseidon.Recovery.ClientDx.MeasureReceiptModule();
             this.tabPageReconcileReceipt = new DevExpress.XtraTab.XtraTabPage();
             this.reconcileReceiptMod = new Poseidon.Recovery.ClientDx.ReconcileReceiptModule();
+            this.constructionAccountMod = new Poseidon.Recovery.ClientDx.ConstructionAccountInfo();
             ((System.ComponentModel.ISupportInitialize)(this.tabInfo)).BeginInit();
             this.tabInfo.SuspendLayout();
             this.tabPageBaseInfo.SuspendLayout();
             this.navFrame.SuspendLayout();
             this.navigationPage1.SuspendLayout();
+            this.navigationPage2.SuspendLayout();
             this.tabPageMeters.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tabMain)).BeginInit();
             this.tabMain.SuspendLayout();
@@ -166,7 +168,7 @@
             this.navigationPage1,
             this.navigationPage2});
             this.navFrame.SelectedPage = this.navigationPage2;
-            this.navFrame.SelectedPageIndex = 0;
+            this.navFrame.SelectedPageIndex = 1;
             this.navFrame.Size = new System.Drawing.Size(882, 145);
             this.navFrame.TabIndex = 0;
             this.navFrame.Text = "navigationFrame1";
@@ -188,7 +190,7 @@
             // 
             // navigationPage2
             // 
-            this.navigationPage2.Caption = "navigationPage2";
+            this.navigationPage2.Controls.Add(this.constructionAccountMod);
             this.navigationPage2.Name = "navigationPage2";
             this.navigationPage2.Size = new System.Drawing.Size(882, 145);
             // 
@@ -287,7 +289,7 @@
             // 
             this.tabPageSettleOv.Controls.Add(this.settleGrid);
             this.tabPageSettleOv.Name = "tabPageSettleOv";
-            this.tabPageSettleOv.Size = new System.Drawing.Size(882, 536);
+            this.tabPageSettleOv.Size = new System.Drawing.Size(882, 556);
             this.tabPageSettleOv.Text = "结算汇总";
             // 
             // settleGrid
@@ -308,14 +310,14 @@
             this.settleGrid.ShowLineNumber = true;
             this.settleGrid.ShowMenu = false;
             this.settleGrid.ShowNavigator = false;
-            this.settleGrid.Size = new System.Drawing.Size(882, 536);
+            this.settleGrid.Size = new System.Drawing.Size(882, 556);
             this.settleGrid.TabIndex = 0;
             // 
             // tabPageRecycleOv
             // 
             this.tabPageRecycleOv.Controls.Add(this.recycleGrid);
             this.tabPageRecycleOv.Name = "tabPageRecycleOv";
-            this.tabPageRecycleOv.Size = new System.Drawing.Size(882, 536);
+            this.tabPageRecycleOv.Size = new System.Drawing.Size(882, 556);
             this.tabPageRecycleOv.Text = "回收汇总";
             // 
             // recycleGrid
@@ -335,14 +337,14 @@
             this.recycleGrid.ShowLineNumber = true;
             this.recycleGrid.ShowMenu = false;
             this.recycleGrid.ShowNavigator = false;
-            this.recycleGrid.Size = new System.Drawing.Size(882, 536);
+            this.recycleGrid.Size = new System.Drawing.Size(882, 556);
             this.recycleGrid.TabIndex = 0;
             // 
             // tabPageReconcileOv
             // 
             this.tabPageReconcileOv.Controls.Add(this.reconcileGrid);
             this.tabPageReconcileOv.Name = "tabPageReconcileOv";
-            this.tabPageReconcileOv.Size = new System.Drawing.Size(882, 536);
+            this.tabPageReconcileOv.Size = new System.Drawing.Size(882, 556);
             this.tabPageReconcileOv.Text = "对账汇总";
             // 
             // reconcileGrid
@@ -362,7 +364,7 @@
             this.reconcileGrid.ShowLineNumber = true;
             this.reconcileGrid.ShowMenu = false;
             this.reconcileGrid.ShowNavigator = false;
-            this.reconcileGrid.Size = new System.Drawing.Size(882, 536);
+            this.reconcileGrid.Size = new System.Drawing.Size(882, 556);
             this.reconcileGrid.TabIndex = 0;
             // 
             // tabPageYear
@@ -702,6 +704,14 @@
             this.reconcileReceiptMod.Size = new System.Drawing.Size(888, 742);
             this.reconcileReceiptMod.TabIndex = 0;
             // 
+            // constructionAccountMod
+            // 
+            this.constructionAccountMod.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.constructionAccountMod.Location = new System.Drawing.Point(0, 0);
+            this.constructionAccountMod.Name = "constructionAccountMod";
+            this.constructionAccountMod.Size = new System.Drawing.Size(882, 145);
+            this.constructionAccountMod.TabIndex = 0;
+            // 
             // AccountRecoveryModule
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
@@ -714,6 +724,7 @@
             this.tabPageBaseInfo.ResumeLayout(false);
             this.navFrame.ResumeLayout(false);
             this.navigationPage1.ResumeLayout(false);
+            this.navigationPage2.ResumeLayout(false);
             this.tabPageMeters.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.tabMain)).EndInit();
             this.tabMain.ResumeLayout(false);
@@ -819,5 +830,6 @@
         private ProportionYearModule propEnergyMod;
         private DevExpress.XtraEditors.GroupControl groupControl8;
         private ProportionYearModule propWriteOffMod;
+        private ConstructionAccountInfo constructionAccountMod;
     }
 }

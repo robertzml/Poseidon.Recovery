@@ -94,6 +94,12 @@
     <Compile Include="Account\FrmConstructionAccountEdit.Designer.cs">
       <DependentUpon>FrmConstructionAccountEdit.cs</DependentUpon>
     </Compile>
+    <Compile Include="Mod\ConstructionAccountInfo.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Mod\ConstructionAccountInfo.Designer.cs">
+      <DependentUpon>ConstructionAccountInfo.cs</DependentUpon>
+    </Compile>
     <Compile Include="Grid\ConstructionAccountGrid.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -446,6 +452,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Grid\SettleRecordGrid.resx">
       <DependentUpon>SettleRecordGrid.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Mod\ConstructionAccountInfo.resx">
+      <DependentUpon>ConstructionAccountInfo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Mod\ProportionYearModule.resx">
       <DependentUpon>ProportionYearModule.cs</DependentUpon>
