@@ -45,6 +45,7 @@ namespace Poseidon.Recovery.ClientDx
             this.txtGroupName.Text = "";
             this.txtGroupRemark.Text = "";
 
+            this.recoveryYearChartMod.Clear();
             this.settleYearMod.Clear();
             this.settleYearChartMod.Clear();
             this.recycleYearMod.Clear();
@@ -124,6 +125,7 @@ namespace Poseidon.Recovery.ClientDx
         /// <param name="group"></param>
         private void DisplayTrend(Group group)
         {
+            this.recoveryYearChartMod.SetGroup(group);
             this.settleYearChartMod.SetGroup(group);
             this.recycleYearChartMod.SetGroup(group);
         }
@@ -144,6 +146,7 @@ namespace Poseidon.Recovery.ClientDx
             DisplayInfo(currentGroup);
             DisplaySummary(currentGroup);
             DisplayYear(currentGroup);
+            DisplayTrend(currentGroup);
         }
         #endregion //Method
     }

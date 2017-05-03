@@ -145,73 +145,6 @@ namespace Poseidon.Recovery.ClientDx
         }
 
         /// <summary>
-        /// 载入历年数据
-        /// </summary>
-        /// <param name="group"></param>
-        private async void LoadYearsData(Group group)
-        {
-            var task = Task.Run(() =>
-            {
-                List<RecoveryDataModel> data = new List<RecoveryDataModel>();
-                var items = BusinessFactory<GroupBusiness>.Instance.FindAllItems(group.Id);
-
-                foreach (var item in items)
-                {
-                    var settles = BusinessFactory<SettleBusiness>.Instance.FindByAccount(item.EntityId);
-                    foreach (var settle in settles)
-                    {
-                        var find = data.FirstOrDefault(r => r.BelongDate == $"{settle.SettleDate.Year}年");
-                        if (find == null)
-                        {
-                            RecoveryDataModel model = new RecoveryDataModel
-                            {
-                                BelongDate = $"{settle.SettleDate.Year}年",
-                                DueFee = settle.TotalAmount
-                            };
-                            data.Add(model);
-                        }
-                        else
-                        {
-                            find.DueFee += settle.TotalAmount;
-                        }
-                    }
-
-                    var recycles = BusinessFactory<RecycleBusiness>.Instance.FindByAccount(item.EntityId);
-                    foreach (var recycle in recycles)
-                    {
-                        var find = data.FirstOrDefault(r => r.BelongDate == $"{recycle.RecycleDate.Year}年");
-                        if (find == null)
-                        {
-                            RecoveryDataModel model = new RecoveryDataModel
-                            {
-                                BelongDate = $"{recycle.RecycleDate.Year}年",
-                                PaidFee = recycle.TotalAmount
-                            };
-                            data.Add(model);
-                        }
-                        else
-                        {
-                            find.PaidFee += recycle.TotalAmount;
-                        }
-                    }
-                }
-
-                data.ForEach((r) =>
-                {
-                    r.DueFee = Math.Round(r.DueFee / 10000, 2);
-                    r.PaidFee = Math.Round(r.PaidFee / 10000, 2);
-                });
-                return data.OrderBy(r => r.BelongDate).ToList();
-            });
-
-            var result = await task;
-
-            this.yearsChart.SetSeriesName(0, "应收金额(万元)");
-            this.yearsChart.SetSeriesName(1, "已收金额(万元)");
-            this.yearsChart.DataSource = result;
-        }
-
-        /// <summary>
         /// 载入账户数据
         /// </summary>
         /// <param name="group"></param>
@@ -258,7 +191,6 @@ namespace Poseidon.Recovery.ClientDx
 
             LoadSettleData(group);
             LoadRecycleData(group);
-            LoadYearsData(group);
             LoadAccountData(group);
         }
         #endregion //Method

@@ -30,9 +30,29 @@
         {
             this.components = new System.ComponentModel.Container();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
-            this.gaugeControl1 = new DevExpress.XtraGauges.Win.GaugeControl();
-            this.digitalBackgroundLayerComponent1 = new DevExpress.XtraGauges.Win.Gauges.Digital.DigitalBackgroundLayerComponent();
+            this.groupControl3 = new DevExpress.XtraEditors.GroupControl();
+            this.gaugeControl3 = new DevExpress.XtraGauges.Win.GaugeControl();
+            this.circularGauge1 = new DevExpress.XtraGauges.Win.Gauges.Circular.CircularGauge();
+            this.arcScaleBackgroundLayerComponent2 = new DevExpress.XtraGauges.Win.Gauges.Circular.ArcScaleBackgroundLayerComponent();
+            this.arcScaleComponent2 = new DevExpress.XtraGauges.Win.Gauges.Circular.ArcScaleComponent();
+            this.arcScaleEffectLayerComponent2 = new DevExpress.XtraGauges.Win.Gauges.Circular.ArcScaleEffectLayerComponent();
+            this.arcScaleNeedleComponent2 = new DevExpress.XtraGauges.Win.Gauges.Circular.ArcScaleNeedleComponent();
+            this.groupControl2 = new DevExpress.XtraEditors.GroupControl();
+            this.gaugeControl2 = new DevExpress.XtraGauges.Win.GaugeControl();
+            this.circularGauge2 = new DevExpress.XtraGauges.Win.Gauges.Circular.CircularGauge();
+            this.arcScaleBackgroundLayerComponent1 = new DevExpress.XtraGauges.Win.Gauges.Circular.ArcScaleBackgroundLayerComponent();
+            this.arcScaleComponent1 = new DevExpress.XtraGauges.Win.Gauges.Circular.ArcScaleComponent();
+            this.arcScaleEffectLayerComponent1 = new DevExpress.XtraGauges.Win.Gauges.Circular.ArcScaleEffectLayerComponent();
+            this.arcScaleNeedleComponent1 = new DevExpress.XtraGauges.Win.Gauges.Circular.ArcScaleNeedleComponent();
+            this.groupControl5 = new DevExpress.XtraEditors.GroupControl();
+            this.layoutControl2 = new DevExpress.XtraLayout.LayoutControl();
+            this.txtRecycleNotPost = new DevExpress.XtraEditors.TextEdit();
+            this.txtRecyclePost = new DevExpress.XtraEditors.TextEdit();
+            this.txtRecycleAmount = new DevExpress.XtraEditors.TextEdit();
+            this.layoutControlGroup2 = new DevExpress.XtraLayout.LayoutControlGroup();
+            this.layoutControlItem6 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlItem7 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlItem8 = new DevExpress.XtraLayout.LayoutControlItem();
             this.groupControl4 = new DevExpress.XtraEditors.GroupControl();
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
             this.txtSettleDue = new DevExpress.XtraEditors.TextEdit();
@@ -46,40 +66,40 @@
             this.layoutControlItem3 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem4 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem5 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.groupControl5 = new DevExpress.XtraEditors.GroupControl();
-            this.layoutControl2 = new DevExpress.XtraLayout.LayoutControl();
-            this.txtRecycleNotPost = new DevExpress.XtraEditors.TextEdit();
-            this.txtRecyclePost = new DevExpress.XtraEditors.TextEdit();
-            this.txtRecycleAmount = new DevExpress.XtraEditors.TextEdit();
-            this.layoutControlGroup2 = new DevExpress.XtraLayout.LayoutControlGroup();
-            this.layoutControlItem6 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.layoutControlItem7 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.layoutControlItem8 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.groupControl2 = new DevExpress.XtraEditors.GroupControl();
-            this.gaugeControl2 = new DevExpress.XtraGauges.Win.GaugeControl();
-            this.arcScaleBackgroundLayerComponent1 = new DevExpress.XtraGauges.Win.Gauges.Circular.ArcScaleBackgroundLayerComponent();
-            this.arcScaleComponent1 = new DevExpress.XtraGauges.Win.Gauges.Circular.ArcScaleComponent();
-            this.arcScaleEffectLayerComponent1 = new DevExpress.XtraGauges.Win.Gauges.Circular.ArcScaleEffectLayerComponent();
-            this.arcScaleNeedleComponent1 = new DevExpress.XtraGauges.Win.Gauges.Circular.ArcScaleNeedleComponent();
-            this.groupControl3 = new DevExpress.XtraEditors.GroupControl();
-            this.gaugeControl3 = new DevExpress.XtraGauges.Win.GaugeControl();
-            this.arcScaleBackgroundLayerComponent2 = new DevExpress.XtraGauges.Win.Gauges.Circular.ArcScaleBackgroundLayerComponent();
-            this.arcScaleComponent2 = new DevExpress.XtraGauges.Win.Gauges.Circular.ArcScaleComponent();
-            this.arcScaleEffectLayerComponent2 = new DevExpress.XtraGauges.Win.Gauges.Circular.ArcScaleEffectLayerComponent();
-            this.arcScaleNeedleComponent2 = new DevExpress.XtraGauges.Win.Gauges.Circular.ArcScaleNeedleComponent();
-            this.groupControl6 = new DevExpress.XtraEditors.GroupControl();
-            this.groupControl7 = new DevExpress.XtraEditors.GroupControl();
-            this.groupControl8 = new DevExpress.XtraEditors.GroupControl();
-            this.circularGauge1 = new DevExpress.XtraGauges.Win.Gauges.Circular.CircularGauge();
-            this.circularGauge2 = new DevExpress.XtraGauges.Win.Gauges.Circular.CircularGauge();
+            this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
+            this.gaugeControl1 = new DevExpress.XtraGauges.Win.GaugeControl();
             this.digitalGauge1 = new DevExpress.XtraGauges.Win.Gauges.Digital.DigitalGauge();
+            this.digitalBackgroundLayerComponent1 = new DevExpress.XtraGauges.Win.Gauges.Digital.DigitalBackgroundLayerComponent();
+            this.groupControl6 = new DevExpress.XtraEditors.GroupControl();
             this.feeTypeChart = new Poseidon.Recovery.ClientDx.FeeTypeChart();
-            this.yearsChart = new Poseidon.Recovery.ClientDx.RecoveryDataChart();
+            this.groupControl8 = new DevExpress.XtraEditors.GroupControl();
             this.accountPieChart = new Poseidon.Recovery.ClientDx.AccountPieChart();
             this.tableLayoutPanel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
-            this.groupControl1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.digitalBackgroundLayerComponent1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.groupControl3)).BeginInit();
+            this.groupControl3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.circularGauge1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.arcScaleBackgroundLayerComponent2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.arcScaleComponent2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.arcScaleEffectLayerComponent2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.arcScaleNeedleComponent2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).BeginInit();
+            this.groupControl2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.circularGauge2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.arcScaleBackgroundLayerComponent1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.arcScaleComponent1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.arcScaleEffectLayerComponent1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.arcScaleNeedleComponent1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.groupControl5)).BeginInit();
+            this.groupControl5.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControl2)).BeginInit();
+            this.layoutControl2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.txtRecycleNotPost.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtRecyclePost.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtRecycleAmount.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem7)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem8)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl4)).BeginInit();
             this.groupControl4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
@@ -95,38 +115,14 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.groupControl5)).BeginInit();
-            this.groupControl5.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControl2)).BeginInit();
-            this.layoutControl2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.txtRecycleNotPost.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtRecyclePost.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtRecycleAmount.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem7)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem8)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).BeginInit();
-            this.groupControl2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.arcScaleBackgroundLayerComponent1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.arcScaleComponent1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.arcScaleEffectLayerComponent1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.arcScaleNeedleComponent1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.groupControl3)).BeginInit();
-            this.groupControl3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.arcScaleBackgroundLayerComponent2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.arcScaleComponent2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.arcScaleEffectLayerComponent2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.arcScaleNeedleComponent2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
+            this.groupControl1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.digitalGauge1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.digitalBackgroundLayerComponent1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl6)).BeginInit();
             this.groupControl6.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.groupControl7)).BeginInit();
-            this.groupControl7.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl8)).BeginInit();
             this.groupControl8.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.circularGauge1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.circularGauge2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.digitalGauge1)).BeginInit();
             this.SuspendLayout();
             // 
             // tableLayoutPanel1
@@ -141,46 +137,279 @@
             this.tableLayoutPanel1.Controls.Add(this.groupControl4, 1, 0);
             this.tableLayoutPanel1.Controls.Add(this.groupControl1, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.groupControl6, 2, 1);
-            this.tableLayoutPanel1.Controls.Add(this.groupControl7, 0, 3);
             this.tableLayoutPanel1.Controls.Add(this.groupControl8, 1, 1);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            this.tableLayoutPanel1.RowCount = 4;
+            this.tableLayoutPanel1.RowCount = 3;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 100F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 180F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 180F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(924, 637);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
-            // groupControl1
+            // groupControl3
             // 
-            this.groupControl1.Controls.Add(this.gaugeControl1);
-            this.groupControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupControl1.Location = new System.Drawing.Point(3, 3);
-            this.groupControl1.Name = "groupControl1";
-            this.groupControl1.Size = new System.Drawing.Size(244, 94);
-            this.groupControl1.TabIndex = 0;
-            this.groupControl1.Text = "当前未收费用(元)";
+            this.groupControl3.Controls.Add(this.gaugeControl3);
+            this.groupControl3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.groupControl3.Location = new System.Drawing.Point(3, 371);
+            this.groupControl3.Name = "groupControl3";
+            this.groupControl3.Size = new System.Drawing.Size(244, 263);
+            this.groupControl3.TabIndex = 6;
+            this.groupControl3.Text = "回收入帐率";
             // 
-            // gaugeControl1
+            // gaugeControl3
             // 
-            this.gaugeControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gaugeControl1.Gauges.AddRange(new DevExpress.XtraGauges.Base.IGauge[] {
-            this.digitalGauge1});
-            this.gaugeControl1.Location = new System.Drawing.Point(2, 21);
-            this.gaugeControl1.Name = "gaugeControl1";
-            this.gaugeControl1.Size = new System.Drawing.Size(240, 71);
-            this.gaugeControl1.TabIndex = 0;
+            this.gaugeControl3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.gaugeControl3.Gauges.AddRange(new DevExpress.XtraGauges.Base.IGauge[] {
+            this.circularGauge1});
+            this.gaugeControl3.Location = new System.Drawing.Point(2, 21);
+            this.gaugeControl3.Name = "gaugeControl3";
+            this.gaugeControl3.Size = new System.Drawing.Size(240, 240);
+            this.gaugeControl3.TabIndex = 0;
             // 
-            // digitalBackgroundLayerComponent1
+            // circularGauge1
             // 
-            this.digitalBackgroundLayerComponent1.BottomRight = new DevExpress.XtraGauges.Core.Base.PointF2D(409.7F, 99.9625F);
-            this.digitalBackgroundLayerComponent1.Name = "digitalBackgroundLayerComponent1";
-            this.digitalBackgroundLayerComponent1.ShapeType = DevExpress.XtraGauges.Core.Model.DigitalBackgroundShapeSetType.Style16;
-            this.digitalBackgroundLayerComponent1.TopLeft = new DevExpress.XtraGauges.Core.Base.PointF2D(26F, 0F);
-            this.digitalBackgroundLayerComponent1.ZOrder = 1000;
+            this.circularGauge1.BackgroundLayers.AddRange(new DevExpress.XtraGauges.Win.Gauges.Circular.ArcScaleBackgroundLayerComponent[] {
+            this.arcScaleBackgroundLayerComponent2});
+            this.circularGauge1.Bounds = new System.Drawing.Rectangle(6, 6, 228, 228);
+            this.circularGauge1.EffectLayers.AddRange(new DevExpress.XtraGauges.Win.Gauges.Circular.ArcScaleEffectLayerComponent[] {
+            this.arcScaleEffectLayerComponent2});
+            this.circularGauge1.Name = "circularGauge1";
+            this.circularGauge1.Needles.AddRange(new DevExpress.XtraGauges.Win.Gauges.Circular.ArcScaleNeedleComponent[] {
+            this.arcScaleNeedleComponent2});
+            this.circularGauge1.Scales.AddRange(new DevExpress.XtraGauges.Win.Gauges.Circular.ArcScaleComponent[] {
+            this.arcScaleComponent2});
+            // 
+            // arcScaleBackgroundLayerComponent2
+            // 
+            this.arcScaleBackgroundLayerComponent2.ArcScale = this.arcScaleComponent2;
+            this.arcScaleBackgroundLayerComponent2.Name = "bg1";
+            this.arcScaleBackgroundLayerComponent2.ScaleCenterPos = new DevExpress.XtraGauges.Core.Base.PointF2D(0.5F, 0.815F);
+            this.arcScaleBackgroundLayerComponent2.ShapeType = DevExpress.XtraGauges.Core.Model.BackgroundLayerShapeType.CircularHalf_Style7;
+            this.arcScaleBackgroundLayerComponent2.Size = new System.Drawing.SizeF(250F, 154F);
+            this.arcScaleBackgroundLayerComponent2.ZOrder = 1000;
+            // 
+            // arcScaleComponent2
+            // 
+            this.arcScaleComponent2.AppearanceMajorTickmark.BorderBrush = new DevExpress.XtraGauges.Core.Drawing.SolidBrushObject("Color:White");
+            this.arcScaleComponent2.AppearanceMajorTickmark.ContentBrush = new DevExpress.XtraGauges.Core.Drawing.SolidBrushObject("Color:White");
+            this.arcScaleComponent2.AppearanceMinorTickmark.BorderBrush = new DevExpress.XtraGauges.Core.Drawing.SolidBrushObject("Color:White");
+            this.arcScaleComponent2.AppearanceMinorTickmark.ContentBrush = new DevExpress.XtraGauges.Core.Drawing.SolidBrushObject("Color:White");
+            this.arcScaleComponent2.AppearanceTickmarkText.TextBrush = new DevExpress.XtraGauges.Core.Drawing.SolidBrushObject("Color:White");
+            this.arcScaleComponent2.Center = new DevExpress.XtraGauges.Core.Base.PointF2D(125F, 165F);
+            this.arcScaleComponent2.EndAngle = 0F;
+            this.arcScaleComponent2.MajorTickCount = 6;
+            this.arcScaleComponent2.MajorTickmark.FormatString = "{0:F0}";
+            this.arcScaleComponent2.MajorTickmark.ShapeType = DevExpress.XtraGauges.Core.Model.TickmarkShapeType.Circular_Style7_2;
+            this.arcScaleComponent2.MajorTickmark.TextOffset = 22F;
+            this.arcScaleComponent2.MajorTickmark.TextOrientation = DevExpress.XtraGauges.Core.Model.LabelOrientation.LeftToRight;
+            this.arcScaleComponent2.MaxValue = 100F;
+            this.arcScaleComponent2.MinorTickCount = 4;
+            this.arcScaleComponent2.MinorTickmark.ShapeType = DevExpress.XtraGauges.Core.Model.TickmarkShapeType.Circular_Style7_1;
+            this.arcScaleComponent2.Name = "scale1";
+            this.arcScaleComponent2.RadiusX = 83F;
+            this.arcScaleComponent2.RadiusY = 83F;
+            this.arcScaleComponent2.StartAngle = -180F;
+            this.arcScaleComponent2.Value = 20F;
+            // 
+            // arcScaleEffectLayerComponent2
+            // 
+            this.arcScaleEffectLayerComponent2.ArcScale = this.arcScaleComponent2;
+            this.arcScaleEffectLayerComponent2.Name = "effect1";
+            this.arcScaleEffectLayerComponent2.Shader = new DevExpress.XtraGauges.Core.Drawing.OpacityShader("Opacity[0.75]");
+            this.arcScaleEffectLayerComponent2.ShapeType = DevExpress.XtraGauges.Core.Model.EffectLayerShapeType.CircularFull_Style7;
+            this.arcScaleEffectLayerComponent2.Size = new System.Drawing.SizeF(230F, 110F);
+            this.arcScaleEffectLayerComponent2.ZOrder = -1000;
+            // 
+            // arcScaleNeedleComponent2
+            // 
+            this.arcScaleNeedleComponent2.ArcScale = this.arcScaleComponent2;
+            this.arcScaleNeedleComponent2.EndOffset = -25F;
+            this.arcScaleNeedleComponent2.Name = "needle1";
+            this.arcScaleNeedleComponent2.ShapeType = DevExpress.XtraGauges.Core.Model.NeedleShapeType.CircularFull_Style7;
+            this.arcScaleNeedleComponent2.StartOffset = -21F;
+            this.arcScaleNeedleComponent2.ZOrder = -50;
+            // 
+            // groupControl2
+            // 
+            this.groupControl2.Controls.Add(this.gaugeControl2);
+            this.groupControl2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.groupControl2.Location = new System.Drawing.Point(3, 103);
+            this.groupControl2.Name = "groupControl2";
+            this.groupControl2.Size = new System.Drawing.Size(244, 262);
+            this.groupControl2.TabIndex = 5;
+            this.groupControl2.Text = "结算核销率";
+            // 
+            // gaugeControl2
+            // 
+            this.gaugeControl2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.gaugeControl2.Gauges.AddRange(new DevExpress.XtraGauges.Base.IGauge[] {
+            this.circularGauge2});
+            this.gaugeControl2.Location = new System.Drawing.Point(2, 21);
+            this.gaugeControl2.Name = "gaugeControl2";
+            this.gaugeControl2.Size = new System.Drawing.Size(240, 239);
+            this.gaugeControl2.TabIndex = 0;
+            // 
+            // circularGauge2
+            // 
+            this.circularGauge2.BackgroundLayers.AddRange(new DevExpress.XtraGauges.Win.Gauges.Circular.ArcScaleBackgroundLayerComponent[] {
+            this.arcScaleBackgroundLayerComponent1});
+            this.circularGauge2.Bounds = new System.Drawing.Rectangle(6, 6, 228, 227);
+            this.circularGauge2.EffectLayers.AddRange(new DevExpress.XtraGauges.Win.Gauges.Circular.ArcScaleEffectLayerComponent[] {
+            this.arcScaleEffectLayerComponent1});
+            this.circularGauge2.Name = "circularGauge2";
+            this.circularGauge2.Needles.AddRange(new DevExpress.XtraGauges.Win.Gauges.Circular.ArcScaleNeedleComponent[] {
+            this.arcScaleNeedleComponent1});
+            this.circularGauge2.Scales.AddRange(new DevExpress.XtraGauges.Win.Gauges.Circular.ArcScaleComponent[] {
+            this.arcScaleComponent1});
+            // 
+            // arcScaleBackgroundLayerComponent1
+            // 
+            this.arcScaleBackgroundLayerComponent1.ArcScale = this.arcScaleComponent1;
+            this.arcScaleBackgroundLayerComponent1.Name = "bg1";
+            this.arcScaleBackgroundLayerComponent1.ScaleCenterPos = new DevExpress.XtraGauges.Core.Base.PointF2D(0.5F, 0.815F);
+            this.arcScaleBackgroundLayerComponent1.ShapeType = DevExpress.XtraGauges.Core.Model.BackgroundLayerShapeType.CircularHalf_Style7;
+            this.arcScaleBackgroundLayerComponent1.Size = new System.Drawing.SizeF(250F, 154F);
+            this.arcScaleBackgroundLayerComponent1.ZOrder = 1000;
+            // 
+            // arcScaleComponent1
+            // 
+            this.arcScaleComponent1.AppearanceMajorTickmark.BorderBrush = new DevExpress.XtraGauges.Core.Drawing.SolidBrushObject("Color:White");
+            this.arcScaleComponent1.AppearanceMajorTickmark.ContentBrush = new DevExpress.XtraGauges.Core.Drawing.SolidBrushObject("Color:White");
+            this.arcScaleComponent1.AppearanceMinorTickmark.BorderBrush = new DevExpress.XtraGauges.Core.Drawing.SolidBrushObject("Color:White");
+            this.arcScaleComponent1.AppearanceMinorTickmark.ContentBrush = new DevExpress.XtraGauges.Core.Drawing.SolidBrushObject("Color:White");
+            this.arcScaleComponent1.AppearanceTickmarkText.TextBrush = new DevExpress.XtraGauges.Core.Drawing.SolidBrushObject("Color:White");
+            this.arcScaleComponent1.Center = new DevExpress.XtraGauges.Core.Base.PointF2D(125F, 165F);
+            this.arcScaleComponent1.EndAngle = 0F;
+            this.arcScaleComponent1.MajorTickCount = 6;
+            this.arcScaleComponent1.MajorTickmark.FormatString = "{0:F0}";
+            this.arcScaleComponent1.MajorTickmark.ShapeType = DevExpress.XtraGauges.Core.Model.TickmarkShapeType.Circular_Style7_2;
+            this.arcScaleComponent1.MajorTickmark.TextOffset = 22F;
+            this.arcScaleComponent1.MajorTickmark.TextOrientation = DevExpress.XtraGauges.Core.Model.LabelOrientation.LeftToRight;
+            this.arcScaleComponent1.MaxValue = 100F;
+            this.arcScaleComponent1.MinorTickCount = 4;
+            this.arcScaleComponent1.MinorTickmark.ShapeType = DevExpress.XtraGauges.Core.Model.TickmarkShapeType.Circular_Style7_1;
+            this.arcScaleComponent1.Name = "scale1";
+            this.arcScaleComponent1.RadiusX = 83F;
+            this.arcScaleComponent1.RadiusY = 83F;
+            this.arcScaleComponent1.StartAngle = -180F;
+            this.arcScaleComponent1.Value = 20F;
+            // 
+            // arcScaleEffectLayerComponent1
+            // 
+            this.arcScaleEffectLayerComponent1.ArcScale = this.arcScaleComponent1;
+            this.arcScaleEffectLayerComponent1.Name = "effect1";
+            this.arcScaleEffectLayerComponent1.Shader = new DevExpress.XtraGauges.Core.Drawing.OpacityShader("Opacity[0.75]");
+            this.arcScaleEffectLayerComponent1.ShapeType = DevExpress.XtraGauges.Core.Model.EffectLayerShapeType.CircularFull_Style7;
+            this.arcScaleEffectLayerComponent1.Size = new System.Drawing.SizeF(230F, 110F);
+            this.arcScaleEffectLayerComponent1.ZOrder = -1000;
+            // 
+            // arcScaleNeedleComponent1
+            // 
+            this.arcScaleNeedleComponent1.ArcScale = this.arcScaleComponent1;
+            this.arcScaleNeedleComponent1.EndOffset = -25F;
+            this.arcScaleNeedleComponent1.Name = "needle1";
+            this.arcScaleNeedleComponent1.ShapeType = DevExpress.XtraGauges.Core.Model.NeedleShapeType.CircularFull_Style7;
+            this.arcScaleNeedleComponent1.StartOffset = -21F;
+            this.arcScaleNeedleComponent1.ZOrder = -50;
+            // 
+            // groupControl5
+            // 
+            this.groupControl5.Controls.Add(this.layoutControl2);
+            this.groupControl5.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.groupControl5.Location = new System.Drawing.Point(590, 3);
+            this.groupControl5.Name = "groupControl5";
+            this.groupControl5.Size = new System.Drawing.Size(331, 94);
+            this.groupControl5.TabIndex = 4;
+            this.groupControl5.Text = "回收费用(元)";
+            // 
+            // layoutControl2
+            // 
+            this.layoutControl2.Controls.Add(this.txtRecycleNotPost);
+            this.layoutControl2.Controls.Add(this.txtRecyclePost);
+            this.layoutControl2.Controls.Add(this.txtRecycleAmount);
+            this.layoutControl2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.layoutControl2.Location = new System.Drawing.Point(2, 21);
+            this.layoutControl2.Name = "layoutControl2";
+            this.layoutControl2.Root = this.layoutControlGroup2;
+            this.layoutControl2.Size = new System.Drawing.Size(327, 71);
+            this.layoutControl2.TabIndex = 0;
+            this.layoutControl2.Text = "layoutControl2";
+            // 
+            // txtRecycleNotPost
+            // 
+            this.txtRecycleNotPost.Location = new System.Drawing.Point(205, 36);
+            this.txtRecycleNotPost.Name = "txtRecycleNotPost";
+            this.txtRecycleNotPost.Properties.Appearance.BackColor = System.Drawing.Color.Lavender;
+            this.txtRecycleNotPost.Properties.Appearance.Options.UseBackColor = true;
+            this.txtRecycleNotPost.Properties.ReadOnly = true;
+            this.txtRecycleNotPost.Size = new System.Drawing.Size(110, 20);
+            this.txtRecycleNotPost.StyleController = this.layoutControl2;
+            this.txtRecycleNotPost.TabIndex = 6;
+            // 
+            // txtRecyclePost
+            // 
+            this.txtRecyclePost.Location = new System.Drawing.Point(51, 36);
+            this.txtRecyclePost.Name = "txtRecyclePost";
+            this.txtRecyclePost.Properties.Appearance.BackColor = System.Drawing.Color.Lavender;
+            this.txtRecyclePost.Properties.Appearance.Options.UseBackColor = true;
+            this.txtRecyclePost.Properties.ReadOnly = true;
+            this.txtRecyclePost.Size = new System.Drawing.Size(111, 20);
+            this.txtRecyclePost.StyleController = this.layoutControl2;
+            this.txtRecyclePost.TabIndex = 5;
+            // 
+            // txtRecycleAmount
+            // 
+            this.txtRecycleAmount.Location = new System.Drawing.Point(51, 12);
+            this.txtRecycleAmount.Name = "txtRecycleAmount";
+            this.txtRecycleAmount.Properties.Appearance.BackColor = System.Drawing.Color.Lavender;
+            this.txtRecycleAmount.Properties.Appearance.Options.UseBackColor = true;
+            this.txtRecycleAmount.Properties.ReadOnly = true;
+            this.txtRecycleAmount.Size = new System.Drawing.Size(264, 20);
+            this.txtRecycleAmount.StyleController = this.layoutControl2;
+            this.txtRecycleAmount.TabIndex = 4;
+            // 
+            // layoutControlGroup2
+            // 
+            this.layoutControlGroup2.EnableIndentsWithoutBorders = DevExpress.Utils.DefaultBoolean.True;
+            this.layoutControlGroup2.GroupBordersVisible = false;
+            this.layoutControlGroup2.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
+            this.layoutControlItem6,
+            this.layoutControlItem7,
+            this.layoutControlItem8});
+            this.layoutControlGroup2.Location = new System.Drawing.Point(0, 0);
+            this.layoutControlGroup2.Name = "layoutControlGroup2";
+            this.layoutControlGroup2.Size = new System.Drawing.Size(327, 71);
+            this.layoutControlGroup2.TextVisible = false;
+            // 
+            // layoutControlItem6
+            // 
+            this.layoutControlItem6.Control = this.txtRecycleAmount;
+            this.layoutControlItem6.Location = new System.Drawing.Point(0, 0);
+            this.layoutControlItem6.Name = "layoutControlItem6";
+            this.layoutControlItem6.Size = new System.Drawing.Size(307, 24);
+            this.layoutControlItem6.Text = "合计";
+            this.layoutControlItem6.TextSize = new System.Drawing.Size(36, 14);
+            // 
+            // layoutControlItem7
+            // 
+            this.layoutControlItem7.Control = this.txtRecyclePost;
+            this.layoutControlItem7.Location = new System.Drawing.Point(0, 24);
+            this.layoutControlItem7.Name = "layoutControlItem7";
+            this.layoutControlItem7.Size = new System.Drawing.Size(154, 27);
+            this.layoutControlItem7.Text = "已入账";
+            this.layoutControlItem7.TextSize = new System.Drawing.Size(36, 14);
+            // 
+            // layoutControlItem8
+            // 
+            this.layoutControlItem8.Control = this.txtRecycleNotPost;
+            this.layoutControlItem8.Location = new System.Drawing.Point(154, 24);
+            this.layoutControlItem8.Name = "layoutControlItem8";
+            this.layoutControlItem8.Size = new System.Drawing.Size(153, 27);
+            this.layoutControlItem8.Text = "未入账";
+            this.layoutControlItem8.TextSize = new System.Drawing.Size(36, 14);
             // 
             // groupControl4
             // 
@@ -322,300 +551,25 @@
             this.layoutControlItem5.Text = "应收";
             this.layoutControlItem5.TextSize = new System.Drawing.Size(36, 14);
             // 
-            // groupControl5
+            // groupControl1
             // 
-            this.groupControl5.Controls.Add(this.layoutControl2);
-            this.groupControl5.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupControl5.Location = new System.Drawing.Point(590, 3);
-            this.groupControl5.Name = "groupControl5";
-            this.groupControl5.Size = new System.Drawing.Size(331, 94);
-            this.groupControl5.TabIndex = 4;
-            this.groupControl5.Text = "回收费用(元)";
+            this.groupControl1.Controls.Add(this.gaugeControl1);
+            this.groupControl1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.groupControl1.Location = new System.Drawing.Point(3, 3);
+            this.groupControl1.Name = "groupControl1";
+            this.groupControl1.Size = new System.Drawing.Size(244, 94);
+            this.groupControl1.TabIndex = 0;
+            this.groupControl1.Text = "当前未收费用(元)";
             // 
-            // layoutControl2
+            // gaugeControl1
             // 
-            this.layoutControl2.Controls.Add(this.txtRecycleNotPost);
-            this.layoutControl2.Controls.Add(this.txtRecyclePost);
-            this.layoutControl2.Controls.Add(this.txtRecycleAmount);
-            this.layoutControl2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.layoutControl2.Location = new System.Drawing.Point(2, 21);
-            this.layoutControl2.Name = "layoutControl2";
-            this.layoutControl2.Root = this.layoutControlGroup2;
-            this.layoutControl2.Size = new System.Drawing.Size(327, 71);
-            this.layoutControl2.TabIndex = 0;
-            this.layoutControl2.Text = "layoutControl2";
-            // 
-            // txtRecycleNotPost
-            // 
-            this.txtRecycleNotPost.Location = new System.Drawing.Point(205, 36);
-            this.txtRecycleNotPost.Name = "txtRecycleNotPost";
-            this.txtRecycleNotPost.Properties.Appearance.BackColor = System.Drawing.Color.Lavender;
-            this.txtRecycleNotPost.Properties.Appearance.Options.UseBackColor = true;
-            this.txtRecycleNotPost.Properties.ReadOnly = true;
-            this.txtRecycleNotPost.Size = new System.Drawing.Size(110, 20);
-            this.txtRecycleNotPost.StyleController = this.layoutControl2;
-            this.txtRecycleNotPost.TabIndex = 6;
-            // 
-            // txtRecyclePost
-            // 
-            this.txtRecyclePost.Location = new System.Drawing.Point(51, 36);
-            this.txtRecyclePost.Name = "txtRecyclePost";
-            this.txtRecyclePost.Properties.Appearance.BackColor = System.Drawing.Color.Lavender;
-            this.txtRecyclePost.Properties.Appearance.Options.UseBackColor = true;
-            this.txtRecyclePost.Properties.ReadOnly = true;
-            this.txtRecyclePost.Size = new System.Drawing.Size(111, 20);
-            this.txtRecyclePost.StyleController = this.layoutControl2;
-            this.txtRecyclePost.TabIndex = 5;
-            // 
-            // txtRecycleAmount
-            // 
-            this.txtRecycleAmount.Location = new System.Drawing.Point(51, 12);
-            this.txtRecycleAmount.Name = "txtRecycleAmount";
-            this.txtRecycleAmount.Properties.Appearance.BackColor = System.Drawing.Color.Lavender;
-            this.txtRecycleAmount.Properties.Appearance.Options.UseBackColor = true;
-            this.txtRecycleAmount.Properties.ReadOnly = true;
-            this.txtRecycleAmount.Size = new System.Drawing.Size(264, 20);
-            this.txtRecycleAmount.StyleController = this.layoutControl2;
-            this.txtRecycleAmount.TabIndex = 4;
-            // 
-            // layoutControlGroup2
-            // 
-            this.layoutControlGroup2.EnableIndentsWithoutBorders = DevExpress.Utils.DefaultBoolean.True;
-            this.layoutControlGroup2.GroupBordersVisible = false;
-            this.layoutControlGroup2.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
-            this.layoutControlItem6,
-            this.layoutControlItem7,
-            this.layoutControlItem8});
-            this.layoutControlGroup2.Location = new System.Drawing.Point(0, 0);
-            this.layoutControlGroup2.Name = "layoutControlGroup2";
-            this.layoutControlGroup2.Size = new System.Drawing.Size(327, 71);
-            this.layoutControlGroup2.TextVisible = false;
-            // 
-            // layoutControlItem6
-            // 
-            this.layoutControlItem6.Control = this.txtRecycleAmount;
-            this.layoutControlItem6.Location = new System.Drawing.Point(0, 0);
-            this.layoutControlItem6.Name = "layoutControlItem6";
-            this.layoutControlItem6.Size = new System.Drawing.Size(307, 24);
-            this.layoutControlItem6.Text = "合计";
-            this.layoutControlItem6.TextSize = new System.Drawing.Size(36, 14);
-            // 
-            // layoutControlItem7
-            // 
-            this.layoutControlItem7.Control = this.txtRecyclePost;
-            this.layoutControlItem7.Location = new System.Drawing.Point(0, 24);
-            this.layoutControlItem7.Name = "layoutControlItem7";
-            this.layoutControlItem7.Size = new System.Drawing.Size(154, 27);
-            this.layoutControlItem7.Text = "已入账";
-            this.layoutControlItem7.TextSize = new System.Drawing.Size(36, 14);
-            // 
-            // layoutControlItem8
-            // 
-            this.layoutControlItem8.Control = this.txtRecycleNotPost;
-            this.layoutControlItem8.Location = new System.Drawing.Point(154, 24);
-            this.layoutControlItem8.Name = "layoutControlItem8";
-            this.layoutControlItem8.Size = new System.Drawing.Size(153, 27);
-            this.layoutControlItem8.Text = "未入账";
-            this.layoutControlItem8.TextSize = new System.Drawing.Size(36, 14);
-            // 
-            // groupControl2
-            // 
-            this.groupControl2.Controls.Add(this.gaugeControl2);
-            this.groupControl2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupControl2.Location = new System.Drawing.Point(3, 103);
-            this.groupControl2.Name = "groupControl2";
-            this.groupControl2.Size = new System.Drawing.Size(244, 174);
-            this.groupControl2.TabIndex = 5;
-            this.groupControl2.Text = "结算核销率";
-            // 
-            // gaugeControl2
-            // 
-            this.gaugeControl2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gaugeControl2.Gauges.AddRange(new DevExpress.XtraGauges.Base.IGauge[] {
-            this.circularGauge2});
-            this.gaugeControl2.Location = new System.Drawing.Point(2, 21);
-            this.gaugeControl2.Name = "gaugeControl2";
-            this.gaugeControl2.Size = new System.Drawing.Size(240, 151);
-            this.gaugeControl2.TabIndex = 0;
-            // 
-            // arcScaleBackgroundLayerComponent1
-            // 
-            this.arcScaleBackgroundLayerComponent1.ArcScale = this.arcScaleComponent1;
-            this.arcScaleBackgroundLayerComponent1.Name = "bg1";
-            this.arcScaleBackgroundLayerComponent1.ScaleCenterPos = new DevExpress.XtraGauges.Core.Base.PointF2D(0.5F, 0.815F);
-            this.arcScaleBackgroundLayerComponent1.ShapeType = DevExpress.XtraGauges.Core.Model.BackgroundLayerShapeType.CircularHalf_Style7;
-            this.arcScaleBackgroundLayerComponent1.Size = new System.Drawing.SizeF(250F, 154F);
-            this.arcScaleBackgroundLayerComponent1.ZOrder = 1000;
-            // 
-            // arcScaleComponent1
-            // 
-            this.arcScaleComponent1.AppearanceMajorTickmark.BorderBrush = new DevExpress.XtraGauges.Core.Drawing.SolidBrushObject("Color:White");
-            this.arcScaleComponent1.AppearanceMajorTickmark.ContentBrush = new DevExpress.XtraGauges.Core.Drawing.SolidBrushObject("Color:White");
-            this.arcScaleComponent1.AppearanceMinorTickmark.BorderBrush = new DevExpress.XtraGauges.Core.Drawing.SolidBrushObject("Color:White");
-            this.arcScaleComponent1.AppearanceMinorTickmark.ContentBrush = new DevExpress.XtraGauges.Core.Drawing.SolidBrushObject("Color:White");
-            this.arcScaleComponent1.AppearanceTickmarkText.TextBrush = new DevExpress.XtraGauges.Core.Drawing.SolidBrushObject("Color:White");
-            this.arcScaleComponent1.Center = new DevExpress.XtraGauges.Core.Base.PointF2D(125F, 165F);
-            this.arcScaleComponent1.EndAngle = 0F;
-            this.arcScaleComponent1.MajorTickCount = 6;
-            this.arcScaleComponent1.MajorTickmark.FormatString = "{0:F0}";
-            this.arcScaleComponent1.MajorTickmark.ShapeType = DevExpress.XtraGauges.Core.Model.TickmarkShapeType.Circular_Style7_2;
-            this.arcScaleComponent1.MajorTickmark.TextOffset = 22F;
-            this.arcScaleComponent1.MajorTickmark.TextOrientation = DevExpress.XtraGauges.Core.Model.LabelOrientation.LeftToRight;
-            this.arcScaleComponent1.MaxValue = 100F;
-            this.arcScaleComponent1.MinorTickCount = 4;
-            this.arcScaleComponent1.MinorTickmark.ShapeType = DevExpress.XtraGauges.Core.Model.TickmarkShapeType.Circular_Style7_1;
-            this.arcScaleComponent1.Name = "scale1";
-            this.arcScaleComponent1.RadiusX = 83F;
-            this.arcScaleComponent1.RadiusY = 83F;
-            this.arcScaleComponent1.StartAngle = -180F;
-            this.arcScaleComponent1.Value = 20F;
-            // 
-            // arcScaleEffectLayerComponent1
-            // 
-            this.arcScaleEffectLayerComponent1.ArcScale = this.arcScaleComponent1;
-            this.arcScaleEffectLayerComponent1.Name = "effect1";
-            this.arcScaleEffectLayerComponent1.Shader = new DevExpress.XtraGauges.Core.Drawing.OpacityShader("Opacity[0.75]");
-            this.arcScaleEffectLayerComponent1.ShapeType = DevExpress.XtraGauges.Core.Model.EffectLayerShapeType.CircularFull_Style7;
-            this.arcScaleEffectLayerComponent1.Size = new System.Drawing.SizeF(230F, 110F);
-            this.arcScaleEffectLayerComponent1.ZOrder = -1000;
-            // 
-            // arcScaleNeedleComponent1
-            // 
-            this.arcScaleNeedleComponent1.ArcScale = this.arcScaleComponent1;
-            this.arcScaleNeedleComponent1.EndOffset = -25F;
-            this.arcScaleNeedleComponent1.Name = "needle1";
-            this.arcScaleNeedleComponent1.ShapeType = DevExpress.XtraGauges.Core.Model.NeedleShapeType.CircularFull_Style7;
-            this.arcScaleNeedleComponent1.StartOffset = -21F;
-            this.arcScaleNeedleComponent1.ZOrder = -50;
-            // 
-            // groupControl3
-            // 
-            this.groupControl3.Controls.Add(this.gaugeControl3);
-            this.groupControl3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupControl3.Location = new System.Drawing.Point(3, 283);
-            this.groupControl3.Name = "groupControl3";
-            this.groupControl3.Size = new System.Drawing.Size(244, 174);
-            this.groupControl3.TabIndex = 6;
-            this.groupControl3.Text = "回收入帐率";
-            // 
-            // gaugeControl3
-            // 
-            this.gaugeControl3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gaugeControl3.Gauges.AddRange(new DevExpress.XtraGauges.Base.IGauge[] {
-            this.circularGauge1});
-            this.gaugeControl3.Location = new System.Drawing.Point(2, 21);
-            this.gaugeControl3.Name = "gaugeControl3";
-            this.gaugeControl3.Size = new System.Drawing.Size(240, 151);
-            this.gaugeControl3.TabIndex = 0;
-            // 
-            // arcScaleBackgroundLayerComponent2
-            // 
-            this.arcScaleBackgroundLayerComponent2.ArcScale = this.arcScaleComponent2;
-            this.arcScaleBackgroundLayerComponent2.Name = "bg1";
-            this.arcScaleBackgroundLayerComponent2.ScaleCenterPos = new DevExpress.XtraGauges.Core.Base.PointF2D(0.5F, 0.815F);
-            this.arcScaleBackgroundLayerComponent2.ShapeType = DevExpress.XtraGauges.Core.Model.BackgroundLayerShapeType.CircularHalf_Style7;
-            this.arcScaleBackgroundLayerComponent2.Size = new System.Drawing.SizeF(250F, 154F);
-            this.arcScaleBackgroundLayerComponent2.ZOrder = 1000;
-            // 
-            // arcScaleComponent2
-            // 
-            this.arcScaleComponent2.AppearanceMajorTickmark.BorderBrush = new DevExpress.XtraGauges.Core.Drawing.SolidBrushObject("Color:White");
-            this.arcScaleComponent2.AppearanceMajorTickmark.ContentBrush = new DevExpress.XtraGauges.Core.Drawing.SolidBrushObject("Color:White");
-            this.arcScaleComponent2.AppearanceMinorTickmark.BorderBrush = new DevExpress.XtraGauges.Core.Drawing.SolidBrushObject("Color:White");
-            this.arcScaleComponent2.AppearanceMinorTickmark.ContentBrush = new DevExpress.XtraGauges.Core.Drawing.SolidBrushObject("Color:White");
-            this.arcScaleComponent2.AppearanceTickmarkText.TextBrush = new DevExpress.XtraGauges.Core.Drawing.SolidBrushObject("Color:White");
-            this.arcScaleComponent2.Center = new DevExpress.XtraGauges.Core.Base.PointF2D(125F, 165F);
-            this.arcScaleComponent2.EndAngle = 0F;
-            this.arcScaleComponent2.MajorTickCount = 6;
-            this.arcScaleComponent2.MajorTickmark.FormatString = "{0:F0}";
-            this.arcScaleComponent2.MajorTickmark.ShapeType = DevExpress.XtraGauges.Core.Model.TickmarkShapeType.Circular_Style7_2;
-            this.arcScaleComponent2.MajorTickmark.TextOffset = 22F;
-            this.arcScaleComponent2.MajorTickmark.TextOrientation = DevExpress.XtraGauges.Core.Model.LabelOrientation.LeftToRight;
-            this.arcScaleComponent2.MaxValue = 100F;
-            this.arcScaleComponent2.MinorTickCount = 4;
-            this.arcScaleComponent2.MinorTickmark.ShapeType = DevExpress.XtraGauges.Core.Model.TickmarkShapeType.Circular_Style7_1;
-            this.arcScaleComponent2.Name = "scale1";
-            this.arcScaleComponent2.RadiusX = 83F;
-            this.arcScaleComponent2.RadiusY = 83F;
-            this.arcScaleComponent2.StartAngle = -180F;
-            this.arcScaleComponent2.Value = 20F;
-            // 
-            // arcScaleEffectLayerComponent2
-            // 
-            this.arcScaleEffectLayerComponent2.ArcScale = this.arcScaleComponent2;
-            this.arcScaleEffectLayerComponent2.Name = "effect1";
-            this.arcScaleEffectLayerComponent2.Shader = new DevExpress.XtraGauges.Core.Drawing.OpacityShader("Opacity[0.75]");
-            this.arcScaleEffectLayerComponent2.ShapeType = DevExpress.XtraGauges.Core.Model.EffectLayerShapeType.CircularFull_Style7;
-            this.arcScaleEffectLayerComponent2.Size = new System.Drawing.SizeF(230F, 110F);
-            this.arcScaleEffectLayerComponent2.ZOrder = -1000;
-            // 
-            // arcScaleNeedleComponent2
-            // 
-            this.arcScaleNeedleComponent2.ArcScale = this.arcScaleComponent2;
-            this.arcScaleNeedleComponent2.EndOffset = -25F;
-            this.arcScaleNeedleComponent2.Name = "needle1";
-            this.arcScaleNeedleComponent2.ShapeType = DevExpress.XtraGauges.Core.Model.NeedleShapeType.CircularFull_Style7;
-            this.arcScaleNeedleComponent2.StartOffset = -21F;
-            this.arcScaleNeedleComponent2.ZOrder = -50;
-            // 
-            // groupControl6
-            // 
-            this.groupControl6.Controls.Add(this.feeTypeChart);
-            this.groupControl6.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupControl6.Location = new System.Drawing.Point(590, 103);
-            this.groupControl6.Name = "groupControl6";
-            this.tableLayoutPanel1.SetRowSpan(this.groupControl6, 2);
-            this.groupControl6.Size = new System.Drawing.Size(331, 354);
-            this.groupControl6.TabIndex = 7;
-            this.groupControl6.Text = "回收费用类型";
-            // 
-            // groupControl7
-            // 
-            this.tableLayoutPanel1.SetColumnSpan(this.groupControl7, 3);
-            this.groupControl7.Controls.Add(this.yearsChart);
-            this.groupControl7.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupControl7.Location = new System.Drawing.Point(3, 463);
-            this.groupControl7.Name = "groupControl7";
-            this.groupControl7.Size = new System.Drawing.Size(918, 171);
-            this.groupControl7.TabIndex = 8;
-            this.groupControl7.Text = "历年费用情况";
-            // 
-            // groupControl8
-            // 
-            this.groupControl8.Controls.Add(this.accountPieChart);
-            this.groupControl8.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupControl8.Location = new System.Drawing.Point(253, 103);
-            this.groupControl8.Name = "groupControl8";
-            this.tableLayoutPanel1.SetRowSpan(this.groupControl8, 2);
-            this.groupControl8.Size = new System.Drawing.Size(331, 354);
-            this.groupControl8.TabIndex = 9;
-            this.groupControl8.Text = "各账户回收费用(已入账)";
-            // 
-            // circularGauge1
-            // 
-            this.circularGauge1.BackgroundLayers.AddRange(new DevExpress.XtraGauges.Win.Gauges.Circular.ArcScaleBackgroundLayerComponent[] {
-            this.arcScaleBackgroundLayerComponent2});
-            this.circularGauge1.Bounds = new System.Drawing.Rectangle(6, 6, 228, 139);
-            this.circularGauge1.EffectLayers.AddRange(new DevExpress.XtraGauges.Win.Gauges.Circular.ArcScaleEffectLayerComponent[] {
-            this.arcScaleEffectLayerComponent2});
-            this.circularGauge1.Name = "circularGauge1";
-            this.circularGauge1.Needles.AddRange(new DevExpress.XtraGauges.Win.Gauges.Circular.ArcScaleNeedleComponent[] {
-            this.arcScaleNeedleComponent2});
-            this.circularGauge1.Scales.AddRange(new DevExpress.XtraGauges.Win.Gauges.Circular.ArcScaleComponent[] {
-            this.arcScaleComponent2});
-            // 
-            // circularGauge2
-            // 
-            this.circularGauge2.BackgroundLayers.AddRange(new DevExpress.XtraGauges.Win.Gauges.Circular.ArcScaleBackgroundLayerComponent[] {
-            this.arcScaleBackgroundLayerComponent1});
-            this.circularGauge2.Bounds = new System.Drawing.Rectangle(6, 6, 228, 139);
-            this.circularGauge2.EffectLayers.AddRange(new DevExpress.XtraGauges.Win.Gauges.Circular.ArcScaleEffectLayerComponent[] {
-            this.arcScaleEffectLayerComponent1});
-            this.circularGauge2.Name = "circularGauge2";
-            this.circularGauge2.Needles.AddRange(new DevExpress.XtraGauges.Win.Gauges.Circular.ArcScaleNeedleComponent[] {
-            this.arcScaleNeedleComponent1});
-            this.circularGauge2.Scales.AddRange(new DevExpress.XtraGauges.Win.Gauges.Circular.ArcScaleComponent[] {
-            this.arcScaleComponent1});
+            this.gaugeControl1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.gaugeControl1.Gauges.AddRange(new DevExpress.XtraGauges.Base.IGauge[] {
+            this.digitalGauge1});
+            this.gaugeControl1.Location = new System.Drawing.Point(2, 21);
+            this.gaugeControl1.Name = "gaugeControl1";
+            this.gaugeControl1.Size = new System.Drawing.Size(240, 71);
+            this.gaugeControl1.TabIndex = 0;
             // 
             // digitalGauge1
             // 
@@ -629,22 +583,43 @@
             this.digitalGauge1.Padding = new DevExpress.XtraGauges.Core.Base.TextSpacing(26, 20, 26, 20);
             this.digitalGauge1.Text = "000";
             // 
+            // digitalBackgroundLayerComponent1
+            // 
+            this.digitalBackgroundLayerComponent1.BottomRight = new DevExpress.XtraGauges.Core.Base.PointF2D(409.7F, 99.9625F);
+            this.digitalBackgroundLayerComponent1.Name = "digitalBackgroundLayerComponent1";
+            this.digitalBackgroundLayerComponent1.ShapeType = DevExpress.XtraGauges.Core.Model.DigitalBackgroundShapeSetType.Style16;
+            this.digitalBackgroundLayerComponent1.TopLeft = new DevExpress.XtraGauges.Core.Base.PointF2D(26F, 0F);
+            this.digitalBackgroundLayerComponent1.ZOrder = 1000;
+            // 
+            // groupControl6
+            // 
+            this.groupControl6.Controls.Add(this.feeTypeChart);
+            this.groupControl6.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.groupControl6.Location = new System.Drawing.Point(590, 103);
+            this.groupControl6.Name = "groupControl6";
+            this.tableLayoutPanel1.SetRowSpan(this.groupControl6, 2);
+            this.groupControl6.Size = new System.Drawing.Size(331, 531);
+            this.groupControl6.TabIndex = 7;
+            this.groupControl6.Text = "回收费用类型";
+            // 
             // feeTypeChart
             // 
             this.feeTypeChart.Dock = System.Windows.Forms.DockStyle.Fill;
             this.feeTypeChart.Location = new System.Drawing.Point(2, 21);
             this.feeTypeChart.Name = "feeTypeChart";
-            this.feeTypeChart.Size = new System.Drawing.Size(327, 331);
+            this.feeTypeChart.Size = new System.Drawing.Size(327, 508);
             this.feeTypeChart.TabIndex = 0;
             // 
-            // yearsChart
+            // groupControl8
             // 
-            this.yearsChart.DataSource = null;
-            this.yearsChart.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.yearsChart.Location = new System.Drawing.Point(2, 21);
-            this.yearsChart.Name = "yearsChart";
-            this.yearsChart.Size = new System.Drawing.Size(914, 148);
-            this.yearsChart.TabIndex = 0;
+            this.groupControl8.Controls.Add(this.accountPieChart);
+            this.groupControl8.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.groupControl8.Location = new System.Drawing.Point(253, 103);
+            this.groupControl8.Name = "groupControl8";
+            this.tableLayoutPanel1.SetRowSpan(this.groupControl8, 2);
+            this.groupControl8.Size = new System.Drawing.Size(331, 531);
+            this.groupControl8.TabIndex = 9;
+            this.groupControl8.Text = "各账户回收费用(已入账)";
             // 
             // accountPieChart
             // 
@@ -652,7 +627,7 @@
             this.accountPieChart.Dock = System.Windows.Forms.DockStyle.Fill;
             this.accountPieChart.Location = new System.Drawing.Point(2, 21);
             this.accountPieChart.Name = "accountPieChart";
-            this.accountPieChart.Size = new System.Drawing.Size(327, 331);
+            this.accountPieChart.Size = new System.Drawing.Size(327, 508);
             this.accountPieChart.TabIndex = 0;
             // 
             // GroupSummaryModule
@@ -663,9 +638,31 @@
             this.Name = "GroupSummaryModule";
             this.Size = new System.Drawing.Size(924, 637);
             this.tableLayoutPanel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).EndInit();
-            this.groupControl1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.digitalBackgroundLayerComponent1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.groupControl3)).EndInit();
+            this.groupControl3.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.circularGauge1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.arcScaleBackgroundLayerComponent2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.arcScaleComponent2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.arcScaleEffectLayerComponent2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.arcScaleNeedleComponent2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).EndInit();
+            this.groupControl2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.circularGauge2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.arcScaleBackgroundLayerComponent1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.arcScaleComponent1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.arcScaleEffectLayerComponent1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.arcScaleNeedleComponent1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.groupControl5)).EndInit();
+            this.groupControl5.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControl2)).EndInit();
+            this.layoutControl2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.txtRecycleNotPost.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtRecyclePost.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtRecycleAmount.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem7)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem8)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl4)).EndInit();
             this.groupControl4.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).EndInit();
@@ -681,38 +678,14 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.groupControl5)).EndInit();
-            this.groupControl5.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControl2)).EndInit();
-            this.layoutControl2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.txtRecycleNotPost.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtRecyclePost.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtRecycleAmount.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem7)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem8)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).EndInit();
-            this.groupControl2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.arcScaleBackgroundLayerComponent1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.arcScaleComponent1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.arcScaleEffectLayerComponent1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.arcScaleNeedleComponent1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.groupControl3)).EndInit();
-            this.groupControl3.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.arcScaleBackgroundLayerComponent2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.arcScaleComponent2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.arcScaleEffectLayerComponent2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.arcScaleNeedleComponent2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).EndInit();
+            this.groupControl1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.digitalGauge1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.digitalBackgroundLayerComponent1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl6)).EndInit();
             this.groupControl6.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.groupControl7)).EndInit();
-            this.groupControl7.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.groupControl8)).EndInit();
             this.groupControl8.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.circularGauge1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.circularGauge2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.digitalGauge1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -762,8 +735,6 @@
         private DevExpress.XtraGauges.Win.Gauges.Circular.ArcScaleNeedleComponent arcScaleNeedleComponent2;
         private DevExpress.XtraEditors.GroupControl groupControl6;
         private FeeTypeChart feeTypeChart;
-        private DevExpress.XtraEditors.GroupControl groupControl7;
-        private RecoveryDataChart yearsChart;
         private DevExpress.XtraEditors.GroupControl groupControl8;
         private AccountPieChart accountPieChart;
     }

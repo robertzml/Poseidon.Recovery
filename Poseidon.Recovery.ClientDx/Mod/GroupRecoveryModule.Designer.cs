@@ -70,6 +70,12 @@
             this.tabPageReconcileYear = new DevExpress.XtraTab.XtraTabPage();
             this.reconcileYearMod = new Poseidon.Recovery.ClientDx.ReconcileYearModule();
             this.tabPageTrend = new DevExpress.XtraTab.XtraTabPage();
+            this.xtraTabControl1 = new DevExpress.XtraTab.XtraTabControl();
+            this.xtraTabPage3 = new DevExpress.XtraTab.XtraTabPage();
+            this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
+            this.groupControl12 = new DevExpress.XtraEditors.GroupControl();
+            this.recoveryYearChartMod = new Poseidon.Recovery.ClientDx.RecoveryYearChartModule();
+            this.xtraTabPage4 = new DevExpress.XtraTab.XtraTabPage();
             this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
             this.groupControl5 = new DevExpress.XtraEditors.GroupControl();
             this.recycleYearChartMod = new Poseidon.Recovery.ClientDx.RecycleYearChartModule();
@@ -118,6 +124,13 @@
             this.groupControl11.SuspendLayout();
             this.tabPageReconcileYear.SuspendLayout();
             this.tabPageTrend.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.xtraTabControl1)).BeginInit();
+            this.xtraTabControl1.SuspendLayout();
+            this.xtraTabPage3.SuspendLayout();
+            this.tableLayoutPanel5.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.groupControl12)).BeginInit();
+            this.groupControl12.SuspendLayout();
+            this.xtraTabPage4.SuspendLayout();
             this.tableLayoutPanel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl5)).BeginInit();
             this.groupControl5.SuspendLayout();
@@ -149,14 +162,13 @@
             // 
             this.tableLayoutPanel1.ColumnCount = 1;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel1.Controls.Add(this.groupControl1, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.tabSummary, 0, 1);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 2;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 120F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 150F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(813, 543);
             this.tableLayoutPanel1.TabIndex = 0;
@@ -167,7 +179,7 @@
             this.groupControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupControl1.Location = new System.Drawing.Point(3, 3);
             this.groupControl1.Name = "groupControl1";
-            this.groupControl1.Size = new System.Drawing.Size(807, 114);
+            this.groupControl1.Size = new System.Drawing.Size(807, 144);
             this.groupControl1.TabIndex = 0;
             this.groupControl1.Text = "分组信息";
             // 
@@ -179,7 +191,7 @@
             this.layoutControl1.Location = new System.Drawing.Point(2, 21);
             this.layoutControl1.Name = "layoutControl1";
             this.layoutControl1.Root = this.layoutControlGroup1;
-            this.layoutControl1.Size = new System.Drawing.Size(803, 91);
+            this.layoutControl1.Size = new System.Drawing.Size(803, 121);
             this.layoutControl1.TabIndex = 0;
             this.layoutControl1.Text = "layoutControl1";
             // 
@@ -190,7 +202,7 @@
             this.txtGroupRemark.Properties.Appearance.BackColor = System.Drawing.Color.Lavender;
             this.txtGroupRemark.Properties.Appearance.Options.UseBackColor = true;
             this.txtGroupRemark.Properties.ReadOnly = true;
-            this.txtGroupRemark.Size = new System.Drawing.Size(728, 43);
+            this.txtGroupRemark.Size = new System.Drawing.Size(728, 73);
             this.txtGroupRemark.StyleController = this.layoutControl1;
             this.txtGroupRemark.TabIndex = 5;
             // 
@@ -214,7 +226,7 @@
             this.layoutControlItem2});
             this.layoutControlGroup1.Location = new System.Drawing.Point(0, 0);
             this.layoutControlGroup1.Name = "layoutControlGroup1";
-            this.layoutControlGroup1.Size = new System.Drawing.Size(803, 91);
+            this.layoutControlGroup1.Size = new System.Drawing.Size(803, 121);
             this.layoutControlGroup1.TextVisible = false;
             // 
             // layoutControlItem1
@@ -231,17 +243,17 @@
             this.layoutControlItem2.Control = this.txtGroupRemark;
             this.layoutControlItem2.Location = new System.Drawing.Point(0, 24);
             this.layoutControlItem2.Name = "layoutControlItem2";
-            this.layoutControlItem2.Size = new System.Drawing.Size(783, 47);
+            this.layoutControlItem2.Size = new System.Drawing.Size(783, 77);
             this.layoutControlItem2.Text = "备注";
             this.layoutControlItem2.TextSize = new System.Drawing.Size(48, 14);
             // 
             // tabSummary
             // 
             this.tabSummary.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tabSummary.Location = new System.Drawing.Point(3, 123);
+            this.tabSummary.Location = new System.Drawing.Point(3, 153);
             this.tabSummary.Name = "tabSummary";
             this.tabSummary.SelectedTabPage = this.tabPageOverview;
-            this.tabSummary.Size = new System.Drawing.Size(807, 417);
+            this.tabSummary.Size = new System.Drawing.Size(807, 387);
             this.tabSummary.TabIndex = 1;
             this.tabSummary.TabPages.AddRange(new DevExpress.XtraTab.XtraTabPage[] {
             this.tabPageOverview,
@@ -252,7 +264,7 @@
             // 
             this.tabPageOverview.Controls.Add(this.groupSummaryMod);
             this.tabPageOverview.Name = "tabPageOverview";
-            this.tabPageOverview.Size = new System.Drawing.Size(801, 388);
+            this.tabPageOverview.Size = new System.Drawing.Size(801, 358);
             this.tabPageOverview.Text = "账户总览";
             // 
             // groupSummaryMod
@@ -260,14 +272,14 @@
             this.groupSummaryMod.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupSummaryMod.Location = new System.Drawing.Point(0, 0);
             this.groupSummaryMod.Name = "groupSummaryMod";
-            this.groupSummaryMod.Size = new System.Drawing.Size(801, 388);
+            this.groupSummaryMod.Size = new System.Drawing.Size(801, 358);
             this.groupSummaryMod.TabIndex = 0;
             // 
             // xtraTabPage2
             // 
             this.xtraTabPage2.Controls.Add(this.settleGrid);
             this.xtraTabPage2.Name = "xtraTabPage2";
-            this.xtraTabPage2.Size = new System.Drawing.Size(801, 388);
+            this.xtraTabPage2.Size = new System.Drawing.Size(801, 358);
             this.xtraTabPage2.Text = "未核销结算";
             // 
             // settleGrid
@@ -288,14 +300,14 @@
             this.settleGrid.ShowLineNumber = true;
             this.settleGrid.ShowMenu = false;
             this.settleGrid.ShowNavigator = false;
-            this.settleGrid.Size = new System.Drawing.Size(801, 388);
+            this.settleGrid.Size = new System.Drawing.Size(801, 358);
             this.settleGrid.TabIndex = 0;
             // 
             // xtraTabPage1
             // 
             this.xtraTabPage1.Controls.Add(this.recycleGrid);
             this.xtraTabPage1.Name = "xtraTabPage1";
-            this.xtraTabPage1.Size = new System.Drawing.Size(801, 388);
+            this.xtraTabPage1.Size = new System.Drawing.Size(801, 358);
             this.xtraTabPage1.Text = "未入账回收";
             // 
             // recycleGrid
@@ -315,7 +327,7 @@
             this.recycleGrid.ShowLineNumber = true;
             this.recycleGrid.ShowMenu = false;
             this.recycleGrid.ShowNavigator = false;
-            this.recycleGrid.Size = new System.Drawing.Size(801, 388);
+            this.recycleGrid.Size = new System.Drawing.Size(801, 358);
             this.recycleGrid.TabIndex = 0;
             // 
             // tabPageYears
@@ -553,10 +565,70 @@
             // 
             // tabPageTrend
             // 
-            this.tabPageTrend.Controls.Add(this.tableLayoutPanel4);
+            this.tabPageTrend.Controls.Add(this.xtraTabControl1);
             this.tabPageTrend.Name = "tabPageTrend";
             this.tabPageTrend.Size = new System.Drawing.Size(813, 543);
             this.tabPageTrend.Text = "年度趋势";
+            // 
+            // xtraTabControl1
+            // 
+            this.xtraTabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.xtraTabControl1.Location = new System.Drawing.Point(0, 0);
+            this.xtraTabControl1.Name = "xtraTabControl1";
+            this.xtraTabControl1.SelectedTabPage = this.xtraTabPage3;
+            this.xtraTabControl1.Size = new System.Drawing.Size(813, 543);
+            this.xtraTabControl1.TabIndex = 1;
+            this.xtraTabControl1.TabPages.AddRange(new DevExpress.XtraTab.XtraTabPage[] {
+            this.xtraTabPage3,
+            this.xtraTabPage4});
+            // 
+            // xtraTabPage3
+            // 
+            this.xtraTabPage3.Controls.Add(this.tableLayoutPanel5);
+            this.xtraTabPage3.Name = "xtraTabPage3";
+            this.xtraTabPage3.Size = new System.Drawing.Size(807, 514);
+            this.xtraTabPage3.Text = "应收实收";
+            // 
+            // tableLayoutPanel5
+            // 
+            this.tableLayoutPanel5.ColumnCount = 1;
+            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel5.Controls.Add(this.groupControl12, 0, 0);
+            this.tableLayoutPanel5.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel5.Location = new System.Drawing.Point(0, 0);
+            this.tableLayoutPanel5.Name = "tableLayoutPanel5";
+            this.tableLayoutPanel5.RowCount = 2;
+            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel5.Size = new System.Drawing.Size(807, 514);
+            this.tableLayoutPanel5.TabIndex = 0;
+            // 
+            // groupControl12
+            // 
+            this.groupControl12.Controls.Add(this.recoveryYearChartMod);
+            this.groupControl12.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.groupControl12.Location = new System.Drawing.Point(3, 3);
+            this.groupControl12.Name = "groupControl12";
+            this.tableLayoutPanel5.SetRowSpan(this.groupControl12, 2);
+            this.groupControl12.Size = new System.Drawing.Size(801, 508);
+            this.groupControl12.TabIndex = 0;
+            this.groupControl12.Text = "历年费用情况";
+            // 
+            // recoveryYearChartMod
+            // 
+            this.recoveryYearChartMod.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.recoveryYearChartMod.Location = new System.Drawing.Point(2, 21);
+            this.recoveryYearChartMod.Name = "recoveryYearChartMod";
+            this.recoveryYearChartMod.Size = new System.Drawing.Size(797, 485);
+            this.recoveryYearChartMod.TabIndex = 0;
+            // 
+            // xtraTabPage4
+            // 
+            this.xtraTabPage4.Controls.Add(this.tableLayoutPanel4);
+            this.xtraTabPage4.Name = "xtraTabPage4";
+            this.xtraTabPage4.Size = new System.Drawing.Size(807, 514);
+            this.xtraTabPage4.Text = "结算回收";
             // 
             // tableLayoutPanel4
             // 
@@ -571,16 +643,16 @@
             this.tableLayoutPanel4.RowCount = 2;
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel4.Size = new System.Drawing.Size(813, 543);
+            this.tableLayoutPanel4.Size = new System.Drawing.Size(807, 514);
             this.tableLayoutPanel4.TabIndex = 0;
             // 
             // groupControl5
             // 
             this.groupControl5.Controls.Add(this.recycleYearChartMod);
             this.groupControl5.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupControl5.Location = new System.Drawing.Point(3, 274);
+            this.groupControl5.Location = new System.Drawing.Point(3, 260);
             this.groupControl5.Name = "groupControl5";
-            this.groupControl5.Size = new System.Drawing.Size(807, 266);
+            this.groupControl5.Size = new System.Drawing.Size(801, 251);
             this.groupControl5.TabIndex = 3;
             this.groupControl5.Text = "回收趋势图";
             // 
@@ -589,7 +661,7 @@
             this.recycleYearChartMod.Dock = System.Windows.Forms.DockStyle.Fill;
             this.recycleYearChartMod.Location = new System.Drawing.Point(2, 21);
             this.recycleYearChartMod.Name = "recycleYearChartMod";
-            this.recycleYearChartMod.Size = new System.Drawing.Size(803, 243);
+            this.recycleYearChartMod.Size = new System.Drawing.Size(797, 228);
             this.recycleYearChartMod.TabIndex = 0;
             // 
             // groupControl3
@@ -598,7 +670,7 @@
             this.groupControl3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupControl3.Location = new System.Drawing.Point(3, 3);
             this.groupControl3.Name = "groupControl3";
-            this.groupControl3.Size = new System.Drawing.Size(807, 265);
+            this.groupControl3.Size = new System.Drawing.Size(801, 251);
             this.groupControl3.TabIndex = 2;
             this.groupControl3.Text = "结算趋势图";
             // 
@@ -607,7 +679,7 @@
             this.settleYearChartMod.Dock = System.Windows.Forms.DockStyle.Fill;
             this.settleYearChartMod.Location = new System.Drawing.Point(2, 21);
             this.settleYearChartMod.Name = "settleYearChartMod";
-            this.settleYearChartMod.Size = new System.Drawing.Size(803, 242);
+            this.settleYearChartMod.Size = new System.Drawing.Size(797, 228);
             this.settleYearChartMod.TabIndex = 0;
             // 
             // GroupRecoveryModule
@@ -660,6 +732,13 @@
             this.groupControl11.ResumeLayout(false);
             this.tabPageReconcileYear.ResumeLayout(false);
             this.tabPageTrend.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.xtraTabControl1)).EndInit();
+            this.xtraTabControl1.ResumeLayout(false);
+            this.xtraTabPage3.ResumeLayout(false);
+            this.tableLayoutPanel5.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.groupControl12)).EndInit();
+            this.groupControl12.ResumeLayout(false);
+            this.xtraTabPage4.ResumeLayout(false);
             this.tableLayoutPanel4.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.groupControl5)).EndInit();
             this.groupControl5.ResumeLayout(false);
@@ -718,5 +797,11 @@
         private ProportionYearModule propAccountRecycleMod;
         private ProportionYearModule propFeeTypeMod;
         private ProportionYearModule propPostMod;
+        private DevExpress.XtraTab.XtraTabControl xtraTabControl1;
+        private DevExpress.XtraTab.XtraTabPage xtraTabPage3;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel5;
+        private DevExpress.XtraEditors.GroupControl groupControl12;
+        private DevExpress.XtraTab.XtraTabPage xtraTabPage4;
+        private RecoveryYearChartModule recoveryYearChartMod;
     }
 }

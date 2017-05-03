@@ -394,6 +394,12 @@
     <Compile Include="Mod\ReconcileYearModule.Designer.cs">
       <DependentUpon>ReconcileYearModule.cs</DependentUpon>
     </Compile>
+    <Compile Include="Mod\RecoveryYearChartModule.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Mod\RecoveryYearChartModule.Designer.cs">
+      <DependentUpon>RecoveryYearChartModule.cs</DependentUpon>
+    </Compile>
     <Compile Include="Report\RepSettle.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -500,6 +506,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Mod\ReconcileReceiptModule.resx">
       <DependentUpon>ReconcileReceiptModule.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Mod\RecoveryYearChartModule.resx">
+      <DependentUpon>RecoveryYearChartModule.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Mod\ReconcileYearModule.resx">
       <DependentUpon>ReconcileYearModule.cs</DependentUpon>

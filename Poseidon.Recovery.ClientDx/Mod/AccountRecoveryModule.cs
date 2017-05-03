@@ -47,6 +47,7 @@ namespace Poseidon.Recovery.ClientDx
             this.recycleGrid.Clear();
             this.reconcileGrid.Clear();
 
+            this.recoveryYearChartMod.Clear();
             this.settleYearMod.Clear();
             this.settleYearChartMod.Clear();
             this.recycleYearMod.Clear();
@@ -114,6 +115,7 @@ namespace Poseidon.Recovery.ClientDx
         /// <param name="account"></param>
         private void DisplayTrend(Account account)
         {
+            this.recoveryYearChartMod.SetAccount(account);
             this.settleYearChartMod.SetAccount(account);
             this.recycleYearChartMod.SetAccount(account);
         }

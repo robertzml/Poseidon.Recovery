@@ -128,64 +128,6 @@ namespace Poseidon.Recovery.ClientDx
 
             this.unpostRecycleGrid.DataSource = recycles.Recycle.Where(r => r.IsPost == false).ToList();
         }
-
-        /// <summary>
-        /// 载入历年数据
-        /// </summary>
-        /// <param name="account"></param>
-        private async void LoadYearsData(Account account)
-        {
-            var task1 = Task.Run(() =>
-            {
-                List<RecoveryDataModel> data = new List<RecoveryDataModel>();
-
-                var data1 = BusinessFactory<SettleBusiness>.Instance.FindByAccount(account.Id);
-                foreach (var item in data1)
-                {
-                    var find = data.FirstOrDefault(r => r.BelongDate == $"{item.SettleDate.Year}年");
-                    if (find == null)
-                    {
-                        RecoveryDataModel model = new RecoveryDataModel
-                        {
-                            BelongDate = $"{item.SettleDate.Year}年",
-                            DueFee = item.TotalAmount
-                        };
-                        data.Add(model);
-                    }
-                    else
-                    {
-                        find.DueFee += item.TotalAmount;
-                    }
-                }
-
-                var data2 = BusinessFactory<RecycleBusiness>.Instance.FindByAccount(account.Id, true);
-                foreach (var item in data2)
-                {
-                    var find = data.FirstOrDefault(r => r.BelongDate == $"{item.RecycleDate.Year}年");
-                    if (find == null)
-                    {
-                        RecoveryDataModel model = new RecoveryDataModel
-                        {
-                            BelongDate = $"{item.RecycleDate.Year}年",
-                            PaidFee = item.TotalAmount
-                        };
-                        data.Add(model);
-                    }
-                    else
-                    {
-                        find.PaidFee += item.TotalAmount;
-                    }
-                }
-
-                return data.OrderBy(r => r.BelongDate).ToList();
-            });
-
-            var result = await task1;
-
-            this.yearsChart.SetSeriesName(0, "应收金额(元)");
-            this.yearsChart.SetSeriesName(1, "已收金额(元)");
-            this.yearsChart.DataSource = result;
-        }
         #endregion //Function
 
         #region Method
@@ -199,7 +141,6 @@ namespace Poseidon.Recovery.ClientDx
 
             LoadSettleData(account);
             LoadRecycleData(account);
-            LoadYearsData(account);
         }
         #endregion //Method
     }
