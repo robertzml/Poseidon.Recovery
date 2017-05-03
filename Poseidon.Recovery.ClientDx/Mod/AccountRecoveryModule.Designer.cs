@@ -91,6 +91,12 @@
             this.measureReceiptMod = new Poseidon.Recovery.ClientDx.MeasureReceiptModule();
             this.tabPageReconcileReceipt = new DevExpress.XtraTab.XtraTabPage();
             this.reconcileReceiptMod = new Poseidon.Recovery.ClientDx.ReconcileReceiptModule();
+            this.tabPageInspect = new DevExpress.XtraTab.XtraTabPage();
+            this.tabInspect = new DevExpress.XtraTab.XtraTabControl();
+            this.tabPageSettleInspect = new DevExpress.XtraTab.XtraTabPage();
+            this.settleInspectMod = new Poseidon.Recovery.ClientDx.SettleInspectModule();
+            this.tabPageRecycleInspect = new DevExpress.XtraTab.XtraTabPage();
+            this.recycleInspectMod = new Poseidon.Recovery.ClientDx.RecycleInspectModule();
             ((System.ComponentModel.ISupportInitialize)(this.tabInfo)).BeginInit();
             this.tabInfo.SuspendLayout();
             this.tabPageBaseInfo.SuspendLayout();
@@ -148,6 +154,11 @@
             this.tabPageRecycleReceipt.SuspendLayout();
             this.tabPageMeasureReceipt.SuspendLayout();
             this.tabPageReconcileReceipt.SuspendLayout();
+            this.tabPageInspect.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.tabInspect)).BeginInit();
+            this.tabInspect.SuspendLayout();
+            this.tabPageSettleInspect.SuspendLayout();
+            this.tabPageRecycleInspect.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabInfo
@@ -220,7 +231,7 @@
             // 
             this.tabPageMeters.Controls.Add(this.meterGrid);
             this.tabPageMeters.Name = "tabPageMeters";
-            this.tabPageMeters.Size = new System.Drawing.Size(882, 145);
+            this.tabPageMeters.Size = new System.Drawing.Size(882, 185);
             this.tabPageMeters.Text = "包含表具";
             // 
             // meterGrid
@@ -239,7 +250,7 @@
             this.meterGrid.ShowLineNumber = true;
             this.meterGrid.ShowMenu = false;
             this.meterGrid.ShowNavigator = false;
-            this.meterGrid.Size = new System.Drawing.Size(882, 145);
+            this.meterGrid.Size = new System.Drawing.Size(882, 185);
             this.meterGrid.TabIndex = 0;
             // 
             // tabMain
@@ -254,7 +265,8 @@
             this.tabPageSummary,
             this.tabPageYear,
             this.tabPageTrend,
-            this.tabPageReceipt});
+            this.tabPageReceipt,
+            this.tabPageInspect});
             // 
             // tabPageSummary
             // 
@@ -311,7 +323,7 @@
             // 
             this.tabPageSettleOv.Controls.Add(this.settleGrid);
             this.tabPageSettleOv.Name = "tabPageSettleOv";
-            this.tabPageSettleOv.Size = new System.Drawing.Size(882, 556);
+            this.tabPageSettleOv.Size = new System.Drawing.Size(882, 516);
             this.tabPageSettleOv.Text = "结算汇总";
             // 
             // settleGrid
@@ -332,14 +344,14 @@
             this.settleGrid.ShowLineNumber = true;
             this.settleGrid.ShowMenu = false;
             this.settleGrid.ShowNavigator = false;
-            this.settleGrid.Size = new System.Drawing.Size(882, 556);
+            this.settleGrid.Size = new System.Drawing.Size(882, 516);
             this.settleGrid.TabIndex = 0;
             // 
             // tabPageRecycleOv
             // 
             this.tabPageRecycleOv.Controls.Add(this.recycleGrid);
             this.tabPageRecycleOv.Name = "tabPageRecycleOv";
-            this.tabPageRecycleOv.Size = new System.Drawing.Size(882, 556);
+            this.tabPageRecycleOv.Size = new System.Drawing.Size(882, 516);
             this.tabPageRecycleOv.Text = "回收汇总";
             // 
             // recycleGrid
@@ -359,14 +371,14 @@
             this.recycleGrid.ShowLineNumber = true;
             this.recycleGrid.ShowMenu = false;
             this.recycleGrid.ShowNavigator = false;
-            this.recycleGrid.Size = new System.Drawing.Size(882, 556);
+            this.recycleGrid.Size = new System.Drawing.Size(882, 516);
             this.recycleGrid.TabIndex = 0;
             // 
             // tabPageReconcileOv
             // 
             this.tabPageReconcileOv.Controls.Add(this.reconcileGrid);
             this.tabPageReconcileOv.Name = "tabPageReconcileOv";
-            this.tabPageReconcileOv.Size = new System.Drawing.Size(882, 556);
+            this.tabPageReconcileOv.Size = new System.Drawing.Size(882, 516);
             this.tabPageReconcileOv.Text = "对账汇总";
             // 
             // reconcileGrid
@@ -386,7 +398,7 @@
             this.reconcileGrid.ShowLineNumber = true;
             this.reconcileGrid.ShowMenu = false;
             this.reconcileGrid.ShowNavigator = false;
-            this.reconcileGrid.Size = new System.Drawing.Size(882, 556);
+            this.reconcileGrid.Size = new System.Drawing.Size(882, 516);
             this.reconcileGrid.TabIndex = 0;
             // 
             // tabPageYear
@@ -787,6 +799,55 @@
             this.reconcileReceiptMod.Size = new System.Drawing.Size(888, 742);
             this.reconcileReceiptMod.TabIndex = 0;
             // 
+            // tabPageInspect
+            // 
+            this.tabPageInspect.Controls.Add(this.tabInspect);
+            this.tabPageInspect.Name = "tabPageInspect";
+            this.tabPageInspect.Size = new System.Drawing.Size(894, 771);
+            this.tabPageInspect.Text = "费用核查";
+            // 
+            // tabInspect
+            // 
+            this.tabInspect.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tabInspect.Location = new System.Drawing.Point(0, 0);
+            this.tabInspect.Name = "tabInspect";
+            this.tabInspect.SelectedTabPage = this.tabPageSettleInspect;
+            this.tabInspect.Size = new System.Drawing.Size(894, 771);
+            this.tabInspect.TabIndex = 0;
+            this.tabInspect.TabPages.AddRange(new DevExpress.XtraTab.XtraTabPage[] {
+            this.tabPageSettleInspect,
+            this.tabPageRecycleInspect});
+            // 
+            // tabPageSettleInspect
+            // 
+            this.tabPageSettleInspect.Controls.Add(this.settleInspectMod);
+            this.tabPageSettleInspect.Name = "tabPageSettleInspect";
+            this.tabPageSettleInspect.Size = new System.Drawing.Size(888, 742);
+            this.tabPageSettleInspect.Text = "结算核查";
+            // 
+            // settleInspectMod
+            // 
+            this.settleInspectMod.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.settleInspectMod.Location = new System.Drawing.Point(0, 0);
+            this.settleInspectMod.Name = "settleInspectMod";
+            this.settleInspectMod.Size = new System.Drawing.Size(888, 742);
+            this.settleInspectMod.TabIndex = 0;
+            // 
+            // tabPageRecycleInspect
+            // 
+            this.tabPageRecycleInspect.Controls.Add(this.recycleInspectMod);
+            this.tabPageRecycleInspect.Name = "tabPageRecycleInspect";
+            this.tabPageRecycleInspect.Size = new System.Drawing.Size(888, 742);
+            this.tabPageRecycleInspect.Text = "回收核查";
+            // 
+            // recycleInspectMod
+            // 
+            this.recycleInspectMod.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.recycleInspectMod.Location = new System.Drawing.Point(0, 0);
+            this.recycleInspectMod.Name = "recycleInspectMod";
+            this.recycleInspectMod.Size = new System.Drawing.Size(888, 742);
+            this.recycleInspectMod.TabIndex = 0;
+            // 
             // AccountRecoveryModule
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
@@ -851,6 +912,11 @@
             this.tabPageRecycleReceipt.ResumeLayout(false);
             this.tabPageMeasureReceipt.ResumeLayout(false);
             this.tabPageReconcileReceipt.ResumeLayout(false);
+            this.tabPageInspect.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.tabInspect)).EndInit();
+            this.tabInspect.ResumeLayout(false);
+            this.tabPageSettleInspect.ResumeLayout(false);
+            this.tabPageRecycleInspect.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -919,5 +985,11 @@
         private DevExpress.XtraTab.XtraTabPage xtraTabPage2;
         private DevExpress.XtraEditors.GroupControl groupControl9;
         private RecoveryYearChartModule recoveryYearChartMod;
+        private DevExpress.XtraTab.XtraTabPage tabPageInspect;
+        private DevExpress.XtraTab.XtraTabControl tabInspect;
+        private DevExpress.XtraTab.XtraTabPage tabPageSettleInspect;
+        private DevExpress.XtraTab.XtraTabPage tabPageRecycleInspect;
+        private SettleInspectModule settleInspectMod;
+        private RecycleInspectModule recycleInspectMod;
     }
 }

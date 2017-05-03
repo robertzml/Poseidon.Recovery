@@ -44,7 +44,7 @@ namespace Poseidon.Recovery.ClientDx
         #region Function
         private void LoadData(Account account)
         {
-            var data = BusinessFactory<ReconcileBusiness>.Instance.FindAll().ToList();
+            var data = BusinessFactory<ReconcileBusiness>.Instance.FindByAccount(account.Id).ToList();
             this.reconcileGrid.DataSource = data;
         }
         #endregion //Function

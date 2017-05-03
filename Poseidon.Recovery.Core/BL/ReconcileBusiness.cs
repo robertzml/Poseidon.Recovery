@@ -38,7 +38,7 @@ namespace Poseidon.Recovery.Core.BL
         }
 
         /// <summary>
-        /// 获取账户费用回收
+        /// 获取账户财务对账
         /// </summary>
         /// <param name="accountId">回收账户ID</param>
         /// <param name="year">年度</param>
@@ -47,6 +47,28 @@ namespace Poseidon.Recovery.Core.BL
         {
             var dal = this.baseDal as IReconcileRepository;
             return dal.FindByAccount(accountId, year);
+        }
+
+        /// <summary>
+        /// 按结算获取财务对账
+        /// </summary>
+        /// <param name="settleId">结算ID</param>
+        /// <returns></returns>
+        public IEnumerable<Reconcile> FindBySettle(string settleId)
+        {
+            var dal = this.baseDal as IReconcileRepository;
+            return dal.FindBySettle(settleId);
+        }
+
+        /// <summary>
+        /// 按回收获取财务对账
+        /// </summary>
+        /// <param name="recycleId">回收ID</param>
+        /// <returns></returns>
+        public IEnumerable<Reconcile> FindByRecycle(string recycleId)
+        {
+            var dal = this.baseDal as IReconcileRepository;
+            return dal.FindByRecycle(recycleId);
         }
 
         /// <summary>

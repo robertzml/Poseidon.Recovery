@@ -58,6 +58,9 @@ namespace Poseidon.Recovery.ClientDx
             this.propFeeTypeMod.Clear();
             this.propPostMod.Clear();
             this.propWriteOffMod.Clear();
+
+            this.settleInspectMod.Clear();
+            this.recycleInspectMod.Clear();
         }
 
         /// <summary>
@@ -119,6 +122,16 @@ namespace Poseidon.Recovery.ClientDx
             this.settleYearChartMod.SetAccount(account);
             this.recycleYearChartMod.SetAccount(account);
         }
+
+        /// <summary>
+        /// 显示核查信息
+        /// </summary>
+        /// <param name="account"></param>
+        private void DisplayInspect(Account account)
+        {
+            this.settleInspectMod.SetAccount(account);
+            this.recycleInspectMod.SetAccount(account);
+        }
         #endregion //Function
 
         #region Method
@@ -150,6 +163,7 @@ namespace Poseidon.Recovery.ClientDx
             DisplayReceipt(currentAccount);
             DisplayYear(currentAccount);
             DisplayTrend(currentAccount);
+            DisplayInspect(currentAccount);
         }
         #endregion //Method
     }

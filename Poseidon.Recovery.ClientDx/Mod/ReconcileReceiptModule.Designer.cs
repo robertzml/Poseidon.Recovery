@@ -157,6 +157,7 @@
             this.reconcileGrid.EnableMasterView = false;
             this.reconcileGrid.Location = new System.Drawing.Point(4, 73);
             this.reconcileGrid.Name = "reconcileGrid";
+            this.reconcileGrid.ShowAccount = false;
             this.reconcileGrid.ShowAddMenu = false;
             this.reconcileGrid.ShowFooter = false;
             this.reconcileGrid.ShowLineNumber = true;

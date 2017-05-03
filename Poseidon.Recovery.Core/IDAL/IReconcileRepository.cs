@@ -22,7 +22,14 @@ namespace Poseidon.Recovery.Core.IDAL
         IEnumerable<Reconcile> FindBySettle(string settleId);
 
         /// <summary>
-        /// 获取账户费用回收
+        /// 按回收查找
+        /// </summary>
+        /// <param name="recycleId">回收ID</param>
+        /// <returns></returns>
+        IEnumerable<Reconcile> FindByRecycle(string recycleId);
+
+        /// <summary>
+        /// 获取账户对账数据
         /// </summary>
         /// <param name="accountId">回收账户ID</param>
         /// <param name="year">年度</param>

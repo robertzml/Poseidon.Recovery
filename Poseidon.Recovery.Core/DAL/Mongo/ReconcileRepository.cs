@@ -185,7 +185,18 @@ namespace Poseidon.Recovery.Core.DAL.Mongo
         }
 
         /// <summary>
-        /// 获取账户费用回收
+        /// 按回收查找
+        /// </summary>
+        /// <param name="recycleId">回收ID</param>
+        /// <returns></returns>
+        public IEnumerable<Reconcile> FindByRecycle(string recycleId)
+        {
+            var filter = Builders<BsonDocument>.Filter.Eq("credits.recycleId", recycleId);
+            return base.FindList(filter);
+        }
+
+        /// <summary>
+        /// 获取账户财务对账
         /// </summary>
         /// <param name="accountId">回收账户ID</param>
         /// <param name="year">年度</param>
