@@ -71,7 +71,7 @@ namespace Poseidon.Recovery.ClientDx
             {
                 ReconcileDebit debt = new ReconcileDebit();
                 debt.AccountId = this.currentAccount.Id;
-                debt.SettleId = item;
+                debt.SettleId = item.Trim();
 
                 data.Add(debt);
             }
