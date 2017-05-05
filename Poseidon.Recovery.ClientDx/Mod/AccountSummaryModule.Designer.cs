@@ -32,6 +32,7 @@
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
             this.gaugeControl1 = new DevExpress.XtraGauges.Win.GaugeControl();
+            this.digGagDebt = new DevExpress.XtraGauges.Win.Gauges.Digital.DigitalGauge();
             this.digitalBackgroundLayerComponent4 = new DevExpress.XtraGauges.Win.Gauges.Digital.DigitalBackgroundLayerComponent();
             this.groupControl2 = new DevExpress.XtraEditors.GroupControl();
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
@@ -57,29 +58,29 @@
             this.layoutControlItem8 = new DevExpress.XtraLayout.LayoutControlItem();
             this.groupControl4 = new DevExpress.XtraEditors.GroupControl();
             this.gaugeControl2 = new DevExpress.XtraGauges.Win.GaugeControl();
+            this.circularGauge2 = new DevExpress.XtraGauges.Win.Gauges.Circular.CircularGauge();
             this.arcScaleBackgroundLayerComponent1 = new DevExpress.XtraGauges.Win.Gauges.Circular.ArcScaleBackgroundLayerComponent();
             this.arcScaleComponent1 = new DevExpress.XtraGauges.Win.Gauges.Circular.ArcScaleComponent();
             this.arcScaleEffectLayerComponent1 = new DevExpress.XtraGauges.Win.Gauges.Circular.ArcScaleEffectLayerComponent();
             this.arcScaleNeedleComponent1 = new DevExpress.XtraGauges.Win.Gauges.Circular.ArcScaleNeedleComponent();
             this.groupControl5 = new DevExpress.XtraEditors.GroupControl();
             this.gaugeControl3 = new DevExpress.XtraGauges.Win.GaugeControl();
+            this.circularGauge1 = new DevExpress.XtraGauges.Win.Gauges.Circular.CircularGauge();
             this.arcScaleBackgroundLayerComponent2 = new DevExpress.XtraGauges.Win.Gauges.Circular.ArcScaleBackgroundLayerComponent();
             this.arcScaleComponent2 = new DevExpress.XtraGauges.Win.Gauges.Circular.ArcScaleComponent();
             this.arcScaleEffectLayerComponent2 = new DevExpress.XtraGauges.Win.Gauges.Circular.ArcScaleEffectLayerComponent();
             this.arcScaleNeedleComponent2 = new DevExpress.XtraGauges.Win.Gauges.Circular.ArcScaleNeedleComponent();
             this.groupControl6 = new DevExpress.XtraEditors.GroupControl();
-            this.groupControl7 = new DevExpress.XtraEditors.GroupControl();
-            this.groupControl9 = new DevExpress.XtraEditors.GroupControl();
-            this.digitalBackgroundLayerComponent1 = new DevExpress.XtraGauges.Win.Gauges.Digital.DigitalBackgroundLayerComponent();
-            this.digGagDebt = new DevExpress.XtraGauges.Win.Gauges.Digital.DigitalGauge();
-            this.circularGauge2 = new DevExpress.XtraGauges.Win.Gauges.Circular.CircularGauge();
-            this.circularGauge1 = new DevExpress.XtraGauges.Win.Gauges.Circular.CircularGauge();
             this.feeTypeChart = new Poseidon.Recovery.ClientDx.FeeTypeChart();
+            this.groupControl7 = new DevExpress.XtraEditors.GroupControl();
             this.unoffSettleGrid = new Poseidon.Recovery.ClientDx.SettleGrid();
+            this.groupControl9 = new DevExpress.XtraEditors.GroupControl();
             this.unpostRecycleGrid = new Poseidon.Recovery.ClientDx.RecycleGrid();
+            this.digitalBackgroundLayerComponent1 = new DevExpress.XtraGauges.Win.Gauges.Digital.DigitalBackgroundLayerComponent();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
             this.groupControl1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.digGagDebt)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.digitalBackgroundLayerComponent4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).BeginInit();
             this.groupControl2.SuspendLayout();
@@ -109,12 +110,14 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem8)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl4)).BeginInit();
             this.groupControl4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.circularGauge2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.arcScaleBackgroundLayerComponent1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.arcScaleComponent1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.arcScaleEffectLayerComponent1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.arcScaleNeedleComponent1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl5)).BeginInit();
             this.groupControl5.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.circularGauge1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.arcScaleBackgroundLayerComponent2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.arcScaleComponent2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.arcScaleEffectLayerComponent2)).BeginInit();
@@ -126,9 +129,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.groupControl9)).BeginInit();
             this.groupControl9.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.digitalBackgroundLayerComponent1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.digGagDebt)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.circularGauge2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.circularGauge1)).BeginInit();
             this.SuspendLayout();
             // 
             // tableLayoutPanel1
@@ -176,9 +176,21 @@
             this.gaugeControl1.Size = new System.Drawing.Size(240, 71);
             this.gaugeControl1.TabIndex = 0;
             // 
+            // digGagDebt
+            // 
+            this.digGagDebt.AppearanceOff.ContentBrush = new DevExpress.XtraGauges.Core.Drawing.SolidBrushObject("Color:#EAECF1");
+            this.digGagDebt.AppearanceOn.ContentBrush = new DevExpress.XtraGauges.Core.Drawing.SolidBrushObject("Color:#7184BA");
+            this.digGagDebt.BackgroundLayers.AddRange(new DevExpress.XtraGauges.Win.Gauges.Digital.DigitalBackgroundLayerComponent[] {
+            this.digitalBackgroundLayerComponent4});
+            this.digGagDebt.Bounds = new System.Drawing.Rectangle(6, 6, 228, 59);
+            this.digGagDebt.DigitCount = 8;
+            this.digGagDebt.Name = "digGagDebt";
+            this.digGagDebt.Padding = new DevExpress.XtraGauges.Core.Base.TextSpacing(26, 20, 26, 20);
+            this.digGagDebt.Text = "00,000";
+            // 
             // digitalBackgroundLayerComponent4
             // 
-            this.digitalBackgroundLayerComponent4.BottomRight = new DevExpress.XtraGauges.Core.Base.PointF2D(361.7375F, 99.9625F);
+            this.digitalBackgroundLayerComponent4.BottomRight = new DevExpress.XtraGauges.Core.Base.PointF2D(409.7F, 99.9625F);
             this.digitalBackgroundLayerComponent4.Name = "digitalBackgroundLayerComponent1";
             this.digitalBackgroundLayerComponent4.ShapeType = DevExpress.XtraGauges.Core.Model.DigitalBackgroundShapeSetType.Style16;
             this.digitalBackgroundLayerComponent4.TopLeft = new DevExpress.XtraGauges.Core.Base.PointF2D(26F, 0F);
@@ -440,6 +452,19 @@
             this.gaugeControl2.Size = new System.Drawing.Size(240, 180);
             this.gaugeControl2.TabIndex = 0;
             // 
+            // circularGauge2
+            // 
+            this.circularGauge2.BackgroundLayers.AddRange(new DevExpress.XtraGauges.Win.Gauges.Circular.ArcScaleBackgroundLayerComponent[] {
+            this.arcScaleBackgroundLayerComponent1});
+            this.circularGauge2.Bounds = new System.Drawing.Rectangle(6, 6, 228, 168);
+            this.circularGauge2.EffectLayers.AddRange(new DevExpress.XtraGauges.Win.Gauges.Circular.ArcScaleEffectLayerComponent[] {
+            this.arcScaleEffectLayerComponent1});
+            this.circularGauge2.Name = "circularGauge2";
+            this.circularGauge2.Needles.AddRange(new DevExpress.XtraGauges.Win.Gauges.Circular.ArcScaleNeedleComponent[] {
+            this.arcScaleNeedleComponent1});
+            this.circularGauge2.Scales.AddRange(new DevExpress.XtraGauges.Win.Gauges.Circular.ArcScaleComponent[] {
+            this.arcScaleComponent1});
+            // 
             // arcScaleBackgroundLayerComponent1
             // 
             this.arcScaleBackgroundLayerComponent1.ArcScale = this.arcScaleComponent1;
@@ -510,6 +535,19 @@
             this.gaugeControl3.Size = new System.Drawing.Size(240, 181);
             this.gaugeControl3.TabIndex = 0;
             // 
+            // circularGauge1
+            // 
+            this.circularGauge1.BackgroundLayers.AddRange(new DevExpress.XtraGauges.Win.Gauges.Circular.ArcScaleBackgroundLayerComponent[] {
+            this.arcScaleBackgroundLayerComponent2});
+            this.circularGauge1.Bounds = new System.Drawing.Rectangle(6, 6, 228, 169);
+            this.circularGauge1.EffectLayers.AddRange(new DevExpress.XtraGauges.Win.Gauges.Circular.ArcScaleEffectLayerComponent[] {
+            this.arcScaleEffectLayerComponent2});
+            this.circularGauge1.Name = "circularGauge1";
+            this.circularGauge1.Needles.AddRange(new DevExpress.XtraGauges.Win.Gauges.Circular.ArcScaleNeedleComponent[] {
+            this.arcScaleNeedleComponent2});
+            this.circularGauge1.Scales.AddRange(new DevExpress.XtraGauges.Win.Gauges.Circular.ArcScaleComponent[] {
+            this.arcScaleComponent2});
+            // 
             // arcScaleBackgroundLayerComponent2
             // 
             this.arcScaleBackgroundLayerComponent2.ArcScale = this.arcScaleComponent2;
@@ -571,6 +609,14 @@
             this.groupControl6.TabIndex = 6;
             this.groupControl6.Text = "回收费用类型";
             // 
+            // feeTypeChart
+            // 
+            this.feeTypeChart.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.feeTypeChart.Location = new System.Drawing.Point(2, 21);
+            this.feeTypeChart.Name = "feeTypeChart";
+            this.feeTypeChart.Size = new System.Drawing.Size(380, 390);
+            this.feeTypeChart.TabIndex = 5;
+            // 
             // groupControl7
             // 
             this.groupControl7.Controls.Add(this.unoffSettleGrid);
@@ -580,70 +626,6 @@
             this.groupControl7.Size = new System.Drawing.Size(383, 203);
             this.groupControl7.TabIndex = 7;
             this.groupControl7.Text = "未核销费用";
-            // 
-            // groupControl9
-            // 
-            this.groupControl9.Controls.Add(this.unpostRecycleGrid);
-            this.groupControl9.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupControl9.Location = new System.Drawing.Point(253, 312);
-            this.groupControl9.Name = "groupControl9";
-            this.groupControl9.Size = new System.Drawing.Size(383, 204);
-            this.groupControl9.TabIndex = 9;
-            this.groupControl9.Text = "未入账费用";
-            // 
-            // digitalBackgroundLayerComponent1
-            // 
-            this.digitalBackgroundLayerComponent1.BottomRight = new DevExpress.XtraGauges.Core.Base.PointF2D(361.7375F, 99.9625F);
-            this.digitalBackgroundLayerComponent1.Name = "digitalBackgroundLayerComponent1";
-            this.digitalBackgroundLayerComponent1.ShapeType = DevExpress.XtraGauges.Core.Model.DigitalBackgroundShapeSetType.Style16;
-            this.digitalBackgroundLayerComponent1.TopLeft = new DevExpress.XtraGauges.Core.Base.PointF2D(26F, 0F);
-            this.digitalBackgroundLayerComponent1.ZOrder = 1000;
-            // 
-            // digGagDebt
-            // 
-            this.digGagDebt.AppearanceOff.ContentBrush = new DevExpress.XtraGauges.Core.Drawing.SolidBrushObject("Color:#EAECF1");
-            this.digGagDebt.AppearanceOn.ContentBrush = new DevExpress.XtraGauges.Core.Drawing.SolidBrushObject("Color:#7184BA");
-            this.digGagDebt.BackgroundLayers.AddRange(new DevExpress.XtraGauges.Win.Gauges.Digital.DigitalBackgroundLayerComponent[] {
-            this.digitalBackgroundLayerComponent4});
-            this.digGagDebt.Bounds = new System.Drawing.Rectangle(6, 6, 228, 59);
-            this.digGagDebt.DigitCount = 7;
-            this.digGagDebt.Name = "digGagDebt";
-            this.digGagDebt.Padding = new DevExpress.XtraGauges.Core.Base.TextSpacing(26, 20, 26, 20);
-            this.digGagDebt.Text = "00,000";
-            // 
-            // circularGauge2
-            // 
-            this.circularGauge2.BackgroundLayers.AddRange(new DevExpress.XtraGauges.Win.Gauges.Circular.ArcScaleBackgroundLayerComponent[] {
-            this.arcScaleBackgroundLayerComponent1});
-            this.circularGauge2.Bounds = new System.Drawing.Rectangle(6, 6, 228, 168);
-            this.circularGauge2.EffectLayers.AddRange(new DevExpress.XtraGauges.Win.Gauges.Circular.ArcScaleEffectLayerComponent[] {
-            this.arcScaleEffectLayerComponent1});
-            this.circularGauge2.Name = "circularGauge2";
-            this.circularGauge2.Needles.AddRange(new DevExpress.XtraGauges.Win.Gauges.Circular.ArcScaleNeedleComponent[] {
-            this.arcScaleNeedleComponent1});
-            this.circularGauge2.Scales.AddRange(new DevExpress.XtraGauges.Win.Gauges.Circular.ArcScaleComponent[] {
-            this.arcScaleComponent1});
-            // 
-            // circularGauge1
-            // 
-            this.circularGauge1.BackgroundLayers.AddRange(new DevExpress.XtraGauges.Win.Gauges.Circular.ArcScaleBackgroundLayerComponent[] {
-            this.arcScaleBackgroundLayerComponent2});
-            this.circularGauge1.Bounds = new System.Drawing.Rectangle(6, 6, 228, 169);
-            this.circularGauge1.EffectLayers.AddRange(new DevExpress.XtraGauges.Win.Gauges.Circular.ArcScaleEffectLayerComponent[] {
-            this.arcScaleEffectLayerComponent2});
-            this.circularGauge1.Name = "circularGauge1";
-            this.circularGauge1.Needles.AddRange(new DevExpress.XtraGauges.Win.Gauges.Circular.ArcScaleNeedleComponent[] {
-            this.arcScaleNeedleComponent2});
-            this.circularGauge1.Scales.AddRange(new DevExpress.XtraGauges.Win.Gauges.Circular.ArcScaleComponent[] {
-            this.arcScaleComponent2});
-            // 
-            // feeTypeChart
-            // 
-            this.feeTypeChart.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.feeTypeChart.Location = new System.Drawing.Point(2, 21);
-            this.feeTypeChart.Name = "feeTypeChart";
-            this.feeTypeChart.Size = new System.Drawing.Size(380, 390);
-            this.feeTypeChart.TabIndex = 5;
             // 
             // unoffSettleGrid
             // 
@@ -666,6 +648,16 @@
             this.unoffSettleGrid.Size = new System.Drawing.Size(379, 180);
             this.unoffSettleGrid.TabIndex = 0;
             // 
+            // groupControl9
+            // 
+            this.groupControl9.Controls.Add(this.unpostRecycleGrid);
+            this.groupControl9.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.groupControl9.Location = new System.Drawing.Point(253, 312);
+            this.groupControl9.Name = "groupControl9";
+            this.groupControl9.Size = new System.Drawing.Size(383, 204);
+            this.groupControl9.TabIndex = 9;
+            this.groupControl9.Text = "未入账费用";
+            // 
             // unpostRecycleGrid
             // 
             this.unpostRecycleGrid.AllowFilter = false;
@@ -686,6 +678,14 @@
             this.unpostRecycleGrid.Size = new System.Drawing.Size(379, 181);
             this.unpostRecycleGrid.TabIndex = 0;
             // 
+            // digitalBackgroundLayerComponent1
+            // 
+            this.digitalBackgroundLayerComponent1.BottomRight = new DevExpress.XtraGauges.Core.Base.PointF2D(361.7375F, 99.9625F);
+            this.digitalBackgroundLayerComponent1.Name = "digitalBackgroundLayerComponent1";
+            this.digitalBackgroundLayerComponent1.ShapeType = DevExpress.XtraGauges.Core.Model.DigitalBackgroundShapeSetType.Style16;
+            this.digitalBackgroundLayerComponent1.TopLeft = new DevExpress.XtraGauges.Core.Base.PointF2D(26F, 0F);
+            this.digitalBackgroundLayerComponent1.ZOrder = 1000;
+            // 
             // AccountSummaryModule
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
@@ -696,6 +696,7 @@
             this.tableLayoutPanel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).EndInit();
             this.groupControl1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.digGagDebt)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.digitalBackgroundLayerComponent4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).EndInit();
             this.groupControl2.ResumeLayout(false);
@@ -725,12 +726,14 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem8)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl4)).EndInit();
             this.groupControl4.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.circularGauge2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.arcScaleBackgroundLayerComponent1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.arcScaleComponent1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.arcScaleEffectLayerComponent1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.arcScaleNeedleComponent1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl5)).EndInit();
             this.groupControl5.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.circularGauge1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.arcScaleBackgroundLayerComponent2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.arcScaleComponent2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.arcScaleEffectLayerComponent2)).EndInit();
@@ -742,9 +745,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.groupControl9)).EndInit();
             this.groupControl9.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.digitalBackgroundLayerComponent1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.digGagDebt)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.circularGauge2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.circularGauge1)).EndInit();
             this.ResumeLayout(false);
 
         }

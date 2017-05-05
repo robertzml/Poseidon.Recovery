@@ -74,7 +74,7 @@ namespace Poseidon.Recovery.ClientDx
                 rate = Math.Round(paidFee / dueFee * 100, 2);
 
             // Gauge
-            this.digGagDebt.Text = debtFee.ToString();
+            this.digGagDebt.Text = Convert.ToInt32(debtFee).ToString();
             this.arcScaleComponent1.Value = Convert.ToSingle(rate);
 
             this.unoffSettleGrid.DataSource = settles.Where(r => r.IsWriteOff == false).ToList();

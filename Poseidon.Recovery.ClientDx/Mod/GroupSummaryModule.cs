@@ -85,7 +85,7 @@ namespace Poseidon.Recovery.ClientDx
                 rate = Math.Round(paidFee / dueFee * 100, 2);
 
             // Gauge
-            this.digitalGauge1.Text = debtFee.ToString();
+            this.digitalGauge1.Text = Convert.ToInt32(debtFee).ToString();
             this.arcScaleComponent1.Value = Convert.ToSingle(rate);
         }
 
