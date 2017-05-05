@@ -35,6 +35,7 @@
             this.navigationPage1 = new DevExpress.XtraBars.Navigation.NavigationPage();
             this.commerceAccountMod = new Poseidon.Recovery.ClientDx.CommerceAccountInfo();
             this.navigationPage2 = new DevExpress.XtraBars.Navigation.NavigationPage();
+            this.constructionAccountMod = new Poseidon.Recovery.ClientDx.ConstructionAccountInfo();
             this.tabPageMeters = new DevExpress.XtraTab.XtraTabPage();
             this.meterGrid = new Poseidon.Recovery.ClientDx.MeterGrid();
             this.tabBusiness = new DevExpress.XtraTab.XtraTabControl();
@@ -46,7 +47,6 @@
             this.measureMod = new Poseidon.Recovery.ClientDx.MeasureReceiptModule();
             this.tabPageReconcile = new DevExpress.XtraTab.XtraTabPage();
             this.reconcileMod = new Poseidon.Recovery.ClientDx.ReconcileReceiptModule();
-            this.constructionAccountMod = new Poseidon.Recovery.ClientDx.ConstructionAccountInfo();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tabInfo)).BeginInit();
             this.tabInfo.SuspendLayout();
@@ -73,7 +73,7 @@
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 2;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 200F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 190F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(919, 645);
             this.tableLayoutPanel1.TabIndex = 0;
@@ -84,7 +84,7 @@
             this.tabInfo.Location = new System.Drawing.Point(3, 3);
             this.tabInfo.Name = "tabInfo";
             this.tabInfo.SelectedTabPage = this.tabPageBaseInfo;
-            this.tabInfo.Size = new System.Drawing.Size(913, 194);
+            this.tabInfo.Size = new System.Drawing.Size(913, 184);
             this.tabInfo.TabIndex = 4;
             this.tabInfo.TabPages.AddRange(new DevExpress.XtraTab.XtraTabPage[] {
             this.tabPageBaseInfo,
@@ -94,7 +94,7 @@
             // 
             this.tabPageBaseInfo.Controls.Add(this.navFrame);
             this.tabPageBaseInfo.Name = "tabPageBaseInfo";
-            this.tabPageBaseInfo.Size = new System.Drawing.Size(907, 165);
+            this.tabPageBaseInfo.Size = new System.Drawing.Size(907, 155);
             this.tabPageBaseInfo.Text = "基本信息";
             // 
             // navFrame
@@ -110,7 +110,7 @@
             this.navigationPage2});
             this.navFrame.SelectedPage = this.navigationPage2;
             this.navFrame.SelectedPageIndex = 1;
-            this.navFrame.Size = new System.Drawing.Size(907, 165);
+            this.navFrame.Size = new System.Drawing.Size(907, 155);
             this.navFrame.TabIndex = 0;
             this.navFrame.Text = "navigationFrame1";
             // 
@@ -119,21 +119,30 @@
             this.navigationPage1.Caption = "navigationPage1";
             this.navigationPage1.Controls.Add(this.commerceAccountMod);
             this.navigationPage1.Name = "navigationPage1";
-            this.navigationPage1.Size = new System.Drawing.Size(907, 165);
+            this.navigationPage1.Size = new System.Drawing.Size(907, 155);
             // 
             // commerceAccountMod
             // 
             this.commerceAccountMod.Dock = System.Windows.Forms.DockStyle.Fill;
             this.commerceAccountMod.Location = new System.Drawing.Point(0, 0);
             this.commerceAccountMod.Name = "commerceAccountMod";
-            this.commerceAccountMod.Size = new System.Drawing.Size(907, 165);
+            this.commerceAccountMod.Size = new System.Drawing.Size(907, 155);
             this.commerceAccountMod.TabIndex = 0;
             // 
             // navigationPage2
             // 
+            this.navigationPage2.Caption = "navigationPage2";
             this.navigationPage2.Controls.Add(this.constructionAccountMod);
             this.navigationPage2.Name = "navigationPage2";
-            this.navigationPage2.Size = new System.Drawing.Size(907, 165);
+            this.navigationPage2.Size = new System.Drawing.Size(907, 155);
+            // 
+            // constructionAccountMod
+            // 
+            this.constructionAccountMod.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.constructionAccountMod.Location = new System.Drawing.Point(0, 0);
+            this.constructionAccountMod.Name = "constructionAccountMod";
+            this.constructionAccountMod.Size = new System.Drawing.Size(907, 155);
+            this.constructionAccountMod.TabIndex = 0;
             // 
             // tabPageMeters
             // 
@@ -164,10 +173,10 @@
             // tabBusiness
             // 
             this.tabBusiness.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tabBusiness.Location = new System.Drawing.Point(3, 203);
+            this.tabBusiness.Location = new System.Drawing.Point(3, 193);
             this.tabBusiness.Name = "tabBusiness";
             this.tabBusiness.SelectedTabPage = this.tabPageSettlement;
-            this.tabBusiness.Size = new System.Drawing.Size(913, 439);
+            this.tabBusiness.Size = new System.Drawing.Size(913, 449);
             this.tabBusiness.TabIndex = 3;
             this.tabBusiness.TabPages.AddRange(new DevExpress.XtraTab.XtraTabPage[] {
             this.tabPageSettlement,
@@ -179,7 +188,7 @@
             // 
             this.tabPageSettlement.Controls.Add(this.settleMod);
             this.tabPageSettlement.Name = "tabPageSettlement";
-            this.tabPageSettlement.Size = new System.Drawing.Size(907, 410);
+            this.tabPageSettlement.Size = new System.Drawing.Size(907, 420);
             this.tabPageSettlement.Text = "费用结算";
             // 
             // settleMod
@@ -188,7 +197,7 @@
             this.settleMod.Editable = true;
             this.settleMod.Location = new System.Drawing.Point(0, 0);
             this.settleMod.Name = "settleMod";
-            this.settleMod.Size = new System.Drawing.Size(907, 410);
+            this.settleMod.Size = new System.Drawing.Size(907, 420);
             this.settleMod.TabIndex = 0;
             // 
             // tabPageRecycle
@@ -238,14 +247,6 @@
             this.reconcileMod.Name = "reconcileMod";
             this.reconcileMod.Size = new System.Drawing.Size(907, 410);
             this.reconcileMod.TabIndex = 0;
-            // 
-            // constructionAccountMod
-            // 
-            this.constructionAccountMod.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.constructionAccountMod.Location = new System.Drawing.Point(0, 0);
-            this.constructionAccountMod.Name = "constructionAccountMod";
-            this.constructionAccountMod.Size = new System.Drawing.Size(907, 165);
-            this.constructionAccountMod.TabIndex = 0;
             // 
             // AccountReceiptModule
             // 

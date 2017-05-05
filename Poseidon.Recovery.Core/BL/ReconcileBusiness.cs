@@ -46,7 +46,7 @@ namespace Poseidon.Recovery.Core.BL
         public IEnumerable<Reconcile> FindByAccount(string accountId, int year)
         {
             var dal = this.baseDal as IReconcileRepository;
-            return dal.FindByAccount(accountId, year);
+            return dal.FindByAccount(accountId, year).OrderBy(r => r.ReconcileDate);
         }
 
         /// <summary>

@@ -371,8 +371,8 @@
             this.tableLayoutPanel2.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 2;
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 40F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 60F));
             this.tableLayoutPanel2.Size = new System.Drawing.Size(807, 514);
             this.tableLayoutPanel2.TabIndex = 0;
             // 
@@ -383,7 +383,7 @@
             this.groupControl2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupControl2.Location = new System.Drawing.Point(3, 3);
             this.groupControl2.Name = "groupControl2";
-            this.groupControl2.Size = new System.Drawing.Size(801, 251);
+            this.groupControl2.Size = new System.Drawing.Size(801, 199);
             this.groupControl2.TabIndex = 0;
             this.groupControl2.Text = "结算记录";
             // 
@@ -392,16 +392,16 @@
             this.settleYearMod.Dock = System.Windows.Forms.DockStyle.Fill;
             this.settleYearMod.Location = new System.Drawing.Point(2, 21);
             this.settleYearMod.Name = "settleYearMod";
-            this.settleYearMod.Size = new System.Drawing.Size(797, 228);
+            this.settleYearMod.Size = new System.Drawing.Size(797, 176);
             this.settleYearMod.TabIndex = 0;
             // 
             // groupControl6
             // 
             this.groupControl6.Controls.Add(this.propAccountSettleMod);
             this.groupControl6.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupControl6.Location = new System.Drawing.Point(3, 260);
+            this.groupControl6.Location = new System.Drawing.Point(3, 208);
             this.groupControl6.Name = "groupControl6";
-            this.groupControl6.Size = new System.Drawing.Size(260, 251);
+            this.groupControl6.Size = new System.Drawing.Size(260, 303);
             this.groupControl6.TabIndex = 1;
             this.groupControl6.Text = "账户结算费用(全部非免费)";
             // 
@@ -410,16 +410,16 @@
             this.propAccountSettleMod.Dock = System.Windows.Forms.DockStyle.Fill;
             this.propAccountSettleMod.Location = new System.Drawing.Point(2, 21);
             this.propAccountSettleMod.Name = "propAccountSettleMod";
-            this.propAccountSettleMod.Size = new System.Drawing.Size(256, 228);
+            this.propAccountSettleMod.Size = new System.Drawing.Size(256, 280);
             this.propAccountSettleMod.TabIndex = 0;
             // 
             // groupControl7
             // 
             this.groupControl7.Controls.Add(this.propEnergyMod);
             this.groupControl7.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupControl7.Location = new System.Drawing.Point(269, 260);
+            this.groupControl7.Location = new System.Drawing.Point(269, 208);
             this.groupControl7.Name = "groupControl7";
-            this.groupControl7.Size = new System.Drawing.Size(260, 251);
+            this.groupControl7.Size = new System.Drawing.Size(260, 303);
             this.groupControl7.TabIndex = 2;
             this.groupControl7.Text = "水电费比例";
             // 
@@ -428,16 +428,16 @@
             this.propEnergyMod.Dock = System.Windows.Forms.DockStyle.Fill;
             this.propEnergyMod.Location = new System.Drawing.Point(2, 21);
             this.propEnergyMod.Name = "propEnergyMod";
-            this.propEnergyMod.Size = new System.Drawing.Size(256, 228);
+            this.propEnergyMod.Size = new System.Drawing.Size(256, 280);
             this.propEnergyMod.TabIndex = 0;
             // 
             // groupControl8
             // 
             this.groupControl8.Controls.Add(this.propWriteOffMod);
             this.groupControl8.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupControl8.Location = new System.Drawing.Point(535, 260);
+            this.groupControl8.Location = new System.Drawing.Point(535, 208);
             this.groupControl8.Name = "groupControl8";
-            this.groupControl8.Size = new System.Drawing.Size(269, 251);
+            this.groupControl8.Size = new System.Drawing.Size(269, 303);
             this.groupControl8.TabIndex = 3;
             this.groupControl8.Text = "核销比例";
             // 
@@ -446,7 +446,7 @@
             this.propWriteOffMod.Dock = System.Windows.Forms.DockStyle.Fill;
             this.propWriteOffMod.Location = new System.Drawing.Point(2, 21);
             this.propWriteOffMod.Name = "propWriteOffMod";
-            this.propWriteOffMod.Size = new System.Drawing.Size(265, 228);
+            this.propWriteOffMod.Size = new System.Drawing.Size(265, 280);
             this.propWriteOffMod.TabIndex = 0;
             // 
             // tabPageRecycleYear
@@ -470,8 +470,8 @@
             this.tableLayoutPanel3.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
             this.tableLayoutPanel3.RowCount = 2;
-            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 40F));
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 60F));
             this.tableLayoutPanel3.Size = new System.Drawing.Size(807, 514);
             this.tableLayoutPanel3.TabIndex = 0;
             // 
@@ -482,7 +482,7 @@
             this.groupControl4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupControl4.Location = new System.Drawing.Point(3, 3);
             this.groupControl4.Name = "groupControl4";
-            this.groupControl4.Size = new System.Drawing.Size(801, 251);
+            this.groupControl4.Size = new System.Drawing.Size(801, 199);
             this.groupControl4.TabIndex = 0;
             this.groupControl4.Text = "回收记录";
             // 
@@ -491,16 +491,16 @@
             this.recycleYearMod.Dock = System.Windows.Forms.DockStyle.Fill;
             this.recycleYearMod.Location = new System.Drawing.Point(2, 21);
             this.recycleYearMod.Name = "recycleYearMod";
-            this.recycleYearMod.Size = new System.Drawing.Size(797, 228);
+            this.recycleYearMod.Size = new System.Drawing.Size(797, 176);
             this.recycleYearMod.TabIndex = 0;
             // 
             // groupControl9
             // 
             this.groupControl9.Controls.Add(this.propAccountRecycleMod);
             this.groupControl9.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupControl9.Location = new System.Drawing.Point(3, 260);
+            this.groupControl9.Location = new System.Drawing.Point(3, 208);
             this.groupControl9.Name = "groupControl9";
-            this.groupControl9.Size = new System.Drawing.Size(260, 251);
+            this.groupControl9.Size = new System.Drawing.Size(260, 303);
             this.groupControl9.TabIndex = 1;
             this.groupControl9.Text = "账户回收费用(已入账)";
             // 
@@ -509,16 +509,16 @@
             this.propAccountRecycleMod.Dock = System.Windows.Forms.DockStyle.Fill;
             this.propAccountRecycleMod.Location = new System.Drawing.Point(2, 21);
             this.propAccountRecycleMod.Name = "propAccountRecycleMod";
-            this.propAccountRecycleMod.Size = new System.Drawing.Size(256, 228);
+            this.propAccountRecycleMod.Size = new System.Drawing.Size(256, 280);
             this.propAccountRecycleMod.TabIndex = 0;
             // 
             // groupControl10
             // 
             this.groupControl10.Controls.Add(this.propFeeTypeMod);
             this.groupControl10.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupControl10.Location = new System.Drawing.Point(269, 260);
+            this.groupControl10.Location = new System.Drawing.Point(269, 208);
             this.groupControl10.Name = "groupControl10";
-            this.groupControl10.Size = new System.Drawing.Size(260, 251);
+            this.groupControl10.Size = new System.Drawing.Size(260, 303);
             this.groupControl10.TabIndex = 2;
             this.groupControl10.Text = "费用类型";
             // 
@@ -527,16 +527,16 @@
             this.propFeeTypeMod.Dock = System.Windows.Forms.DockStyle.Fill;
             this.propFeeTypeMod.Location = new System.Drawing.Point(2, 21);
             this.propFeeTypeMod.Name = "propFeeTypeMod";
-            this.propFeeTypeMod.Size = new System.Drawing.Size(256, 228);
+            this.propFeeTypeMod.Size = new System.Drawing.Size(256, 280);
             this.propFeeTypeMod.TabIndex = 0;
             // 
             // groupControl11
             // 
             this.groupControl11.Controls.Add(this.propPostMod);
             this.groupControl11.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupControl11.Location = new System.Drawing.Point(535, 260);
+            this.groupControl11.Location = new System.Drawing.Point(535, 208);
             this.groupControl11.Name = "groupControl11";
-            this.groupControl11.Size = new System.Drawing.Size(269, 251);
+            this.groupControl11.Size = new System.Drawing.Size(269, 303);
             this.groupControl11.TabIndex = 3;
             this.groupControl11.Text = "入账比例";
             // 
@@ -545,7 +545,7 @@
             this.propPostMod.Dock = System.Windows.Forms.DockStyle.Fill;
             this.propPostMod.Location = new System.Drawing.Point(2, 21);
             this.propPostMod.Name = "propPostMod";
-            this.propPostMod.Size = new System.Drawing.Size(265, 228);
+            this.propPostMod.Size = new System.Drawing.Size(265, 280);
             this.propPostMod.TabIndex = 0;
             // 
             // tabPageReconcileYear

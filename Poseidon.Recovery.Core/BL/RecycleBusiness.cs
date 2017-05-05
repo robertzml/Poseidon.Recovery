@@ -46,7 +46,7 @@ namespace Poseidon.Recovery.Core.BL
         public IEnumerable<Recycle> FindByAccount(string accountId, bool isPost)
         {
             var dal = this.baseDal as IRecycleRepository;
-            return dal.FindByAccount(accountId, isPost);
+            return dal.FindByAccount(accountId, isPost).OrderBy(r => r.RecycleDate);
         }
 
         /// <summary>
@@ -58,7 +58,7 @@ namespace Poseidon.Recovery.Core.BL
         public IEnumerable<Recycle> FindByAccount(string accountId, int year)
         {
             var dal = this.baseDal as IRecycleRepository;
-            return dal.FindByAccount(accountId, year);
+            return dal.FindByAccount(accountId, year).OrderBy(r => r.RecycleDate);
         }
 
         /// <summary>

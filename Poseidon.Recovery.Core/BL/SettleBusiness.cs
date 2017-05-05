@@ -47,7 +47,7 @@ namespace Poseidon.Recovery.Core.BL
         public IEnumerable<Settle> FindByAccount(string accountId, bool isFree, bool isWriteOff)
         {
             var dal = this.baseDal as ISettleRepository;
-            return dal.FindByAccount(accountId, isFree, isWriteOff);
+            return dal.FindByAccount(accountId, isFree, isWriteOff).OrderBy(r => r.SettleDate);
         }
 
         /// <summary>
@@ -59,7 +59,7 @@ namespace Poseidon.Recovery.Core.BL
         public IEnumerable<Settle> FindByAccount(string accountId, int year)
         {
             var dal = this.baseDal as ISettleRepository;
-            return dal.FindByAccount(accountId, year);
+            return dal.FindByAccount(accountId, year).OrderBy(r => r.SettleDate);
         }
 
         /// <summary>

@@ -98,7 +98,7 @@ namespace Poseidon.Recovery.ClientDx
 
             this.recoveryChart.SetChartTitle($"{account.Name}历年应收实收费用");
             this.recoveryChart.SetSeriesName(0, "应收金额(元)");
-            this.recoveryChart.SetSeriesName(1, "已收金额(元)");
+            this.recoveryChart.SetSeriesName(1, "实收金额(元)");
             this.recoveryChart.DataSource = result;
         }
 
@@ -166,7 +166,7 @@ namespace Poseidon.Recovery.ClientDx
 
             this.recoveryChart.SetChartTitle($"{group.Name}历年应收实收费用");
             this.recoveryChart.SetSeriesName(0, "应收金额(万元)");
-            this.recoveryChart.SetSeriesName(1, "已收金额(万元)");
+            this.recoveryChart.SetSeriesName(1, "实收金额(万元)");
             this.recoveryChart.DataSource = result;
         }
         #endregion //Function
