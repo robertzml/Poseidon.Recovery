@@ -82,6 +82,15 @@ namespace Poseidon.Recovery.ClientDx
             DisplayMeter(currentAccount);
             DisplayBusiness(currentAccount);
         }
+
+        /// <summary>
+        /// 清空显示
+        /// </summary>
+        public void Clear()
+        {
+            this.commerceAccountMod.Clear();
+            this.constructionAccountMod.Clear();
+        }
         #endregion //Method
     }
 }

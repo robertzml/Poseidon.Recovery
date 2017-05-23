@@ -71,6 +71,9 @@ namespace Poseidon.Recovery.ClientDx
             this.txtEditUser.Text = settle.UpdateBy.Name;
             this.txtEditTime.Text = settle.UpdateBy.Time.ToDateTimeString();
 
+            this.txtElectricQuantum.Text = settle.Records.Where(r => r.MeterType == (int)MeterEnergyType.Electric).Sum(r => r.Quantum).ToString();
+            this.txtWaterQuantum.Text = settle.Records.Where(r => r.MeterType == (int)MeterEnergyType.Water).Sum(r => r.Quantum).ToString();
+
             this.settleRecordGrid.DataSource = settle.Records;
         }
         #endregion //Function
@@ -98,6 +101,8 @@ namespace Poseidon.Recovery.ClientDx
             this.txtPreviousDate.Text = "";
             this.txtCurrentDate.Text = "";
             this.txtTotalAmount.Text = "";
+            this.txtElectricQuantum.Text = "";
+            this.txtWaterQuantum.Text = "";
             this.txtRemark.Text = "";
             this.txtCreateUser.Text = "";
             this.txtCreateTime.Text = "";
@@ -196,7 +201,7 @@ namespace Poseidon.Recovery.ClientDx
             int count = settle.Records.Count;
             if (count < 9)
             {
-                for(int i = 0; i < 9 - count; i++)
+                for (int i = 0; i < 9 - count; i++)
                 {
                     settle.Records.Add(new SettleRecord { MeterType = 0 });
                 }

@@ -46,6 +46,8 @@ namespace Poseidon.Recovery.ClientDx
         /// <param name="e"></param>
         private void accountTree_EntitySelected(object sender, EventArgs e)
         {
+            this.accountReceiptMod.Clear();
+
             var accountId = this.accountTree.GetCurrentSelectId();
             var account = BusinessFactory<AccountBusiness>.Instance.FindById(accountId);
 
