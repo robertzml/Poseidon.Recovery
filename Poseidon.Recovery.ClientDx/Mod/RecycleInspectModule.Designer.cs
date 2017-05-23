@@ -32,6 +32,7 @@
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
+            this.recordGrid = new Poseidon.Recovery.ClientDx.RecycleRecordGrid();
             this.txtRemark = new DevExpress.XtraEditors.MemoEdit();
             this.txtEditTime = new DevExpress.XtraEditors.TextEdit();
             this.txtEditUser = new DevExpress.XtraEditors.TextEdit();
@@ -53,17 +54,16 @@
             this.layoutControlItem11 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem12 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem13 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.groupControl2 = new DevExpress.XtraEditors.GroupControl();
-            this.groupControl3 = new DevExpress.XtraEditors.GroupControl();
-            this.groupControl4 = new DevExpress.XtraEditors.GroupControl();
-            this.groupControl6 = new DevExpress.XtraEditors.GroupControl();
-            this.groupControl5 = new DevExpress.XtraEditors.GroupControl();
-            this.recordGrid = new Poseidon.Recovery.ClientDx.RecycleRecordGrid();
             this.layoutControlItem4 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.groupControl2 = new DevExpress.XtraEditors.GroupControl();
             this.reconcileGrid = new Poseidon.Recovery.ClientDx.ReconcileGrid();
+            this.groupControl3 = new DevExpress.XtraEditors.GroupControl();
             this.debitGrid = new Poseidon.Recovery.ClientDx.ReconcileDebitGrid();
+            this.groupControl4 = new DevExpress.XtraEditors.GroupControl();
             this.creditGrid = new Poseidon.Recovery.ClientDx.ReconcileCreditGrid();
+            this.groupControl6 = new DevExpress.XtraEditors.GroupControl();
             this.recycleRecordGrid = new Poseidon.Recovery.ClientDx.RecycleRecordGrid();
+            this.groupControl5 = new DevExpress.XtraEditors.GroupControl();
             this.debitOtherGrid = new Poseidon.Recovery.ClientDx.ReconcileDebitGrid();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
@@ -91,6 +91,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem11)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem12)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem13)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).BeginInit();
             this.groupControl2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl3)).BeginInit();
@@ -101,7 +102,6 @@
             this.groupControl6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl5)).BeginInit();
             this.groupControl5.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).BeginInit();
             this.SuspendLayout();
             // 
             // tableLayoutPanel1
@@ -156,6 +156,25 @@
             this.layoutControl1.Size = new System.Drawing.Size(424, 531);
             this.layoutControl1.TabIndex = 0;
             this.layoutControl1.Text = "layoutControl1";
+            // 
+            // recordGrid
+            // 
+            this.recordGrid.AllowFilter = true;
+            this.recordGrid.AllowGroup = true;
+            this.recordGrid.AllowSort = true;
+            this.recordGrid.DataSource = null;
+            this.recordGrid.Editable = false;
+            this.recordGrid.EnableMasterView = false;
+            this.recordGrid.EnableMultiSelect = false;
+            this.recordGrid.Location = new System.Drawing.Point(24, 269);
+            this.recordGrid.Name = "recordGrid";
+            this.recordGrid.ShowAddMenu = false;
+            this.recordGrid.ShowFooter = false;
+            this.recordGrid.ShowLineNumber = true;
+            this.recordGrid.ShowMenu = false;
+            this.recordGrid.ShowNavigator = false;
+            this.recordGrid.Size = new System.Drawing.Size(376, 238);
+            this.recordGrid.TabIndex = 17;
             // 
             // txtRemark
             // 
@@ -380,6 +399,15 @@
             this.layoutControlItem13.Text = "备注";
             this.layoutControlItem13.TextSize = new System.Drawing.Size(48, 14);
             // 
+            // layoutControlItem4
+            // 
+            this.layoutControlItem4.Control = this.recordGrid;
+            this.layoutControlItem4.Location = new System.Drawing.Point(0, 202);
+            this.layoutControlItem4.Name = "layoutControlItem4";
+            this.layoutControlItem4.Size = new System.Drawing.Size(380, 242);
+            this.layoutControlItem4.TextSize = new System.Drawing.Size(0, 0);
+            this.layoutControlItem4.TextVisible = false;
+            // 
             // groupControl2
             // 
             this.tableLayoutPanel1.SetColumnSpan(this.groupControl2, 2);
@@ -391,6 +419,28 @@
             this.groupControl2.TabIndex = 1;
             this.groupControl2.Text = "对账记录";
             // 
+            // reconcileGrid
+            // 
+            this.reconcileGrid.AllowFilter = false;
+            this.reconcileGrid.AllowGroup = false;
+            this.reconcileGrid.AllowSort = false;
+            this.reconcileGrid.DataSource = null;
+            this.reconcileGrid.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.reconcileGrid.Editable = false;
+            this.reconcileGrid.EnableMasterView = false;
+            this.reconcileGrid.EnableMultiSelect = false;
+            this.reconcileGrid.Location = new System.Drawing.Point(2, 21);
+            this.reconcileGrid.Name = "reconcileGrid";
+            this.reconcileGrid.ShowAccount = false;
+            this.reconcileGrid.ShowAddMenu = false;
+            this.reconcileGrid.ShowFooter = true;
+            this.reconcileGrid.ShowLineNumber = true;
+            this.reconcileGrid.ShowMenu = false;
+            this.reconcileGrid.ShowNavigator = false;
+            this.reconcileGrid.Size = new System.Drawing.Size(425, 204);
+            this.reconcileGrid.TabIndex = 0;
+            this.reconcileGrid.RowSelected += new System.Action<object, System.EventArgs>(this.reconcileGrid_RowSelected);
+            // 
             // groupControl3
             // 
             this.groupControl3.Controls.Add(this.debitGrid);
@@ -401,84 +451,6 @@
             this.groupControl3.TabIndex = 2;
             this.groupControl3.Text = "借方数据";
             // 
-            // groupControl4
-            // 
-            this.groupControl4.Controls.Add(this.creditGrid);
-            this.groupControl4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupControl4.Location = new System.Drawing.Point(654, 236);
-            this.groupControl4.Name = "groupControl4";
-            this.groupControl4.Size = new System.Drawing.Size(212, 157);
-            this.groupControl4.TabIndex = 3;
-            this.groupControl4.Text = "贷方数据";
-            // 
-            // groupControl6
-            // 
-            this.groupControl6.Controls.Add(this.recycleRecordGrid);
-            this.groupControl6.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupControl6.Location = new System.Drawing.Point(654, 399);
-            this.groupControl6.Name = "groupControl6";
-            this.groupControl6.Size = new System.Drawing.Size(212, 158);
-            this.groupControl6.TabIndex = 5;
-            this.groupControl6.Text = "贷方明细";
-            // 
-            // groupControl5
-            // 
-            this.groupControl5.Controls.Add(this.debitOtherGrid);
-            this.groupControl5.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupControl5.Location = new System.Drawing.Point(437, 399);
-            this.groupControl5.Name = "groupControl5";
-            this.groupControl5.Size = new System.Drawing.Size(211, 158);
-            this.groupControl5.TabIndex = 6;
-            this.groupControl5.Text = "借方其它数据";
-            // 
-            // recordGrid
-            // 
-            this.recordGrid.AllowFilter = true;
-            this.recordGrid.AllowGroup = true;
-            this.recordGrid.AllowSort = true;
-            this.recordGrid.DataSource = null;
-            this.recordGrid.Editable = false;
-            this.recordGrid.EnableMasterView = false;
-            this.recordGrid.Location = new System.Drawing.Point(24, 269);
-            this.recordGrid.Name = "recordGrid";
-            this.recordGrid.ShowAddMenu = false;
-            this.recordGrid.ShowFooter = false;
-            this.recordGrid.ShowLineNumber = true;
-            this.recordGrid.ShowMenu = false;
-            this.recordGrid.ShowNavigator = false;
-            this.recordGrid.Size = new System.Drawing.Size(376, 238);
-            this.recordGrid.TabIndex = 17;
-            // 
-            // layoutControlItem4
-            // 
-            this.layoutControlItem4.Control = this.recordGrid;
-            this.layoutControlItem4.Location = new System.Drawing.Point(0, 202);
-            this.layoutControlItem4.Name = "layoutControlItem4";
-            this.layoutControlItem4.Size = new System.Drawing.Size(380, 242);
-            this.layoutControlItem4.TextSize = new System.Drawing.Size(0, 0);
-            this.layoutControlItem4.TextVisible = false;
-            // 
-            // reconcileGrid
-            // 
-            this.reconcileGrid.AllowFilter = false;
-            this.reconcileGrid.AllowGroup = false;
-            this.reconcileGrid.AllowSort = false;
-            this.reconcileGrid.DataSource = null;
-            this.reconcileGrid.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.reconcileGrid.Editable = false;
-            this.reconcileGrid.EnableMasterView = false;
-            this.reconcileGrid.Location = new System.Drawing.Point(2, 21);
-            this.reconcileGrid.Name = "reconcileGrid";
-            this.reconcileGrid.ShowAccount = false;
-            this.reconcileGrid.ShowAddMenu = false;
-            this.reconcileGrid.ShowFooter = false;
-            this.reconcileGrid.ShowLineNumber = true;
-            this.reconcileGrid.ShowMenu = false;
-            this.reconcileGrid.ShowNavigator = false;
-            this.reconcileGrid.Size = new System.Drawing.Size(425, 204);
-            this.reconcileGrid.TabIndex = 0;
-            this.reconcileGrid.RowSelected += new System.Action<object, System.EventArgs>(this.reconcileGrid_RowSelected);
-            // 
             // debitGrid
             // 
             this.debitGrid.AllowFilter = false;
@@ -488,6 +460,7 @@
             this.debitGrid.Dock = System.Windows.Forms.DockStyle.Fill;
             this.debitGrid.Editable = false;
             this.debitGrid.EnableMasterView = false;
+            this.debitGrid.EnableMultiSelect = false;
             this.debitGrid.IsSettle = true;
             this.debitGrid.Location = new System.Drawing.Point(2, 21);
             this.debitGrid.Name = "debitGrid";
@@ -499,6 +472,16 @@
             this.debitGrid.Size = new System.Drawing.Size(207, 134);
             this.debitGrid.TabIndex = 0;
             // 
+            // groupControl4
+            // 
+            this.groupControl4.Controls.Add(this.creditGrid);
+            this.groupControl4.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.groupControl4.Location = new System.Drawing.Point(654, 236);
+            this.groupControl4.Name = "groupControl4";
+            this.groupControl4.Size = new System.Drawing.Size(212, 157);
+            this.groupControl4.TabIndex = 3;
+            this.groupControl4.Text = "贷方数据";
+            // 
             // creditGrid
             // 
             this.creditGrid.AllowFilter = false;
@@ -508,6 +491,7 @@
             this.creditGrid.Dock = System.Windows.Forms.DockStyle.Fill;
             this.creditGrid.Editable = false;
             this.creditGrid.EnableMasterView = false;
+            this.creditGrid.EnableMultiSelect = false;
             this.creditGrid.Location = new System.Drawing.Point(2, 21);
             this.creditGrid.Name = "creditGrid";
             this.creditGrid.ShowAddMenu = false;
@@ -518,6 +502,16 @@
             this.creditGrid.Size = new System.Drawing.Size(208, 134);
             this.creditGrid.TabIndex = 0;
             // 
+            // groupControl6
+            // 
+            this.groupControl6.Controls.Add(this.recycleRecordGrid);
+            this.groupControl6.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.groupControl6.Location = new System.Drawing.Point(654, 399);
+            this.groupControl6.Name = "groupControl6";
+            this.groupControl6.Size = new System.Drawing.Size(212, 158);
+            this.groupControl6.TabIndex = 5;
+            this.groupControl6.Text = "贷方明细";
+            // 
             // recycleRecordGrid
             // 
             this.recycleRecordGrid.AllowFilter = false;
@@ -527,6 +521,7 @@
             this.recycleRecordGrid.Dock = System.Windows.Forms.DockStyle.Fill;
             this.recycleRecordGrid.Editable = false;
             this.recycleRecordGrid.EnableMasterView = false;
+            this.recycleRecordGrid.EnableMultiSelect = false;
             this.recycleRecordGrid.Location = new System.Drawing.Point(2, 21);
             this.recycleRecordGrid.Name = "recycleRecordGrid";
             this.recycleRecordGrid.ShowAddMenu = false;
@@ -537,6 +532,16 @@
             this.recycleRecordGrid.Size = new System.Drawing.Size(208, 135);
             this.recycleRecordGrid.TabIndex = 0;
             // 
+            // groupControl5
+            // 
+            this.groupControl5.Controls.Add(this.debitOtherGrid);
+            this.groupControl5.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.groupControl5.Location = new System.Drawing.Point(437, 399);
+            this.groupControl5.Name = "groupControl5";
+            this.groupControl5.Size = new System.Drawing.Size(211, 158);
+            this.groupControl5.TabIndex = 6;
+            this.groupControl5.Text = "借方其它数据";
+            // 
             // debitOtherGrid
             // 
             this.debitOtherGrid.AllowFilter = false;
@@ -546,6 +551,7 @@
             this.debitOtherGrid.Dock = System.Windows.Forms.DockStyle.Fill;
             this.debitOtherGrid.Editable = false;
             this.debitOtherGrid.EnableMasterView = false;
+            this.debitOtherGrid.EnableMultiSelect = false;
             this.debitOtherGrid.IsSettle = true;
             this.debitOtherGrid.Location = new System.Drawing.Point(2, 21);
             this.debitOtherGrid.Name = "debitOtherGrid";
@@ -590,6 +596,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem11)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem12)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem13)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).EndInit();
             this.groupControl2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.groupControl3)).EndInit();
@@ -600,7 +607,6 @@
             this.groupControl6.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.groupControl5)).EndInit();
             this.groupControl5.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).EndInit();
             this.ResumeLayout(false);
 
         }
