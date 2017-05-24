@@ -54,6 +54,8 @@ namespace Poseidon.Recovery.ClientDx
             this.recycleYearChartMod.Clear();
             this.reconcileYearMod.Clear();
 
+            this.reconcileReceiptMod.Clear();
+
             this.propEnergyMod.Clear();
             this.propFeeTypeMod.Clear();
             this.propPostMod.Clear();

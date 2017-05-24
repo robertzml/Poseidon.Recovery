@@ -65,6 +65,18 @@ namespace Poseidon.Recovery.ClientDx
 
             LoadData(account);
         }
+
+        /// <summary>
+        /// 清空显示
+        /// </summary>
+        public void Clear()
+        {
+            this.reconcileGrid.Clear();
+            this.debitGrid.Clear();
+            this.debitOtherGrid.Clear();
+            this.creditGrid.Clear();
+            this.recycleRecordGrid.Clear();
+        }
         #endregion //Method
 
         #region Event

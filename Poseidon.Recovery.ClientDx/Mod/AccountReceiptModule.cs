@@ -79,6 +79,8 @@ namespace Poseidon.Recovery.ClientDx
                 this.constructionAccountMod.SetAccount(id);
             }
 
+            this.reconcileMod.Clear();
+
             DisplayMeter(currentAccount);
             DisplayBusiness(currentAccount);
         }

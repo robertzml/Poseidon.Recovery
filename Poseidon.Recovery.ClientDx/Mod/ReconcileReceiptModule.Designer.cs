@@ -155,6 +155,7 @@
             this.reconcileGrid.DataSource = null;
             this.reconcileGrid.Editable = false;
             this.reconcileGrid.EnableMasterView = false;
+            this.reconcileGrid.EnableMultiSelect = false;
             this.reconcileGrid.Location = new System.Drawing.Point(4, 73);
             this.reconcileGrid.Name = "reconcileGrid";
             this.reconcileGrid.ShowAccount = false;
@@ -276,6 +277,7 @@
             this.debitOtherGrid.DataSource = null;
             this.debitOtherGrid.Editable = false;
             this.debitOtherGrid.EnableMasterView = false;
+            this.debitOtherGrid.EnableMultiSelect = false;
             this.debitOtherGrid.IsSettle = false;
             this.debitOtherGrid.Location = new System.Drawing.Point(4, 145);
             this.debitOtherGrid.Name = "debitOtherGrid";
@@ -295,6 +297,7 @@
             this.debitGrid.DataSource = null;
             this.debitGrid.Editable = false;
             this.debitGrid.EnableMasterView = false;
+            this.debitGrid.EnableMultiSelect = false;
             this.debitGrid.IsSettle = true;
             this.debitGrid.Location = new System.Drawing.Point(4, 4);
             this.debitGrid.Name = "debitGrid";
@@ -367,6 +370,7 @@
             this.recycleRecordGrid.DataSource = null;
             this.recycleRecordGrid.Editable = false;
             this.recycleRecordGrid.EnableMasterView = false;
+            this.recycleRecordGrid.EnableMultiSelect = false;
             this.recycleRecordGrid.Location = new System.Drawing.Point(4, 145);
             this.recycleRecordGrid.Name = "recycleRecordGrid";
             this.recycleRecordGrid.ShowAddMenu = false;
@@ -385,6 +389,7 @@
             this.creditGrid.DataSource = null;
             this.creditGrid.Editable = false;
             this.creditGrid.EnableMasterView = false;
+            this.creditGrid.EnableMultiSelect = false;
             this.creditGrid.Location = new System.Drawing.Point(4, 4);
             this.creditGrid.Name = "creditGrid";
             this.creditGrid.ShowAddMenu = false;
