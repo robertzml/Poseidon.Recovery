@@ -71,6 +71,8 @@ namespace Poseidon.Recovery.ClientDx
         /// </summary>
         public void Clear()
         {
+            this.txtCreateUser.Text = "";
+            this.txtCreateTime.Text = "";
             this.reconcileGrid.Clear();
             this.debitGrid.Clear();
             this.debitOtherGrid.Clear();
@@ -107,6 +109,9 @@ namespace Poseidon.Recovery.ClientDx
                 this.recycleRecordGrid.Clear();
                 return;
             }
+
+            this.txtCreateUser.Text = reconcile.CreateBy.Name;
+            this.txtCreateTime.Text = reconcile.CreateBy.Time.ToDateTimeString();
 
             this.debitGrid.DataSource = reconcile.Debits.Where(r => !string.IsNullOrEmpty(r.SettleId)).ToList();
             this.debitOtherGrid.DataSource = reconcile.Debits.Where(r => string.IsNullOrEmpty(r.SettleId)).ToList();
