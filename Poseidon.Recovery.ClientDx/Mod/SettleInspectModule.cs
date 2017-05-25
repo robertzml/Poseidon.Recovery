@@ -78,6 +78,22 @@ namespace Poseidon.Recovery.ClientDx
         {
             this.reconcileGrid.DataSource = BusinessFactory<ReconcileBusiness>.Instance.FindBySettle(settle.Id).ToList();
         }
+
+        /// <summary>
+        /// 显示对账明细
+        /// </summary>
+        /// <param name="reconcile"></param>
+        /// <param name="settle"></param>
+        private void DisplayReconcileDetails(Reconcile reconcile, Settle settle)
+        {
+            this.debitGrid.DataSource = reconcile.Debits.Where(r => r.SettleId == settle.Id).ToList();
+            this.debitOtherGrid.DataSource = reconcile.Debits.Where(r => r.SettleId == settle.Id).ToList();
+
+            this.creditGrid.DataSource = reconcile.Credits.ToList();
+
+            var recycle = BusinessFactory<RecycleBusiness>.Instance.FindById(reconcile.Credits.First().RecycleId);
+            this.recycleRecordGrid.DataSource = recycle.Records;
+        }
         #endregion //Function
 
         #region Method
@@ -94,9 +110,11 @@ namespace Poseidon.Recovery.ClientDx
         /// <summary>
         /// 清空显示
         /// </summary>
-        public void Clear()
+        /// <param name="include">是否包含选择框</param>
+        public void Clear(bool include = true)
         {
-            this.bsSettle.DataSource = null;
+            if (include)
+                this.bsSettle.DataSource = null;
 
             this.txtPeriod.Text = "";
             this.txtSettleDate.Text = "";
@@ -129,6 +147,7 @@ namespace Poseidon.Recovery.ClientDx
             if (this.luReceipt.EditValue == null)
                 return;
 
+            this.Clear(false);
             var settle = this.luReceipt.GetSelectedDataRow() as Settle;
             DisplaySettleInfo(settle);
             DisplayReconcile(settle);
@@ -151,13 +170,8 @@ namespace Poseidon.Recovery.ClientDx
                 return;
             }
 
-            this.debitGrid.DataSource = reconcile.Debits.Where(r => !string.IsNullOrEmpty(r.SettleId)).ToList();
-            this.debitOtherGrid.DataSource = reconcile.Debits.Where(r => string.IsNullOrEmpty(r.SettleId)).ToList();
-
-            this.creditGrid.DataSource = reconcile.Credits.ToList();
-
-            var recycle = BusinessFactory<RecycleBusiness>.Instance.FindById(reconcile.Credits.First().RecycleId);
-            this.recycleRecordGrid.DataSource = recycle.Records;
+            var settle = this.luReceipt.GetSelectedDataRow() as Settle;
+            DisplayReconcileDetails(reconcile, settle);
         }
         #endregion //Event
     }

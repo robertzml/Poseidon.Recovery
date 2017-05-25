@@ -67,10 +67,25 @@ namespace Poseidon.Recovery.ClientDx
         /// <summary>
         /// 显示对账信息
         /// </summary>
-        /// <param name="recyclee"></param>
-        private void DisplayReconcile(Recycle recyclee)
+        /// <param name="recycle"></param>
+        private void DisplayReconcile(Recycle recycle)
         {
-            this.reconcileGrid.DataSource = BusinessFactory<ReconcileBusiness>.Instance.FindByRecycle(recyclee.Id).ToList();
+            this.reconcileGrid.DataSource = BusinessFactory<ReconcileBusiness>.Instance.FindByRecycle(recycle.Id).ToList();
+        }
+
+        /// <summary>
+        /// 显示对账明细
+        /// </summary>
+        /// <param name="reconcile"></param>
+        private void DisplayReconcileDetails(Reconcile reconcile)
+        {
+            this.debitGrid.DataSource = reconcile.Debits.Where(r => !string.IsNullOrEmpty(r.SettleId)).ToList();
+            this.debitOtherGrid.DataSource = reconcile.Debits.Where(r => string.IsNullOrEmpty(r.SettleId)).ToList();
+
+            this.creditGrid.DataSource = reconcile.Credits.ToList();
+
+            var recycle = BusinessFactory<RecycleBusiness>.Instance.FindById(reconcile.Credits.First().RecycleId);
+            this.recycleRecordGrid.DataSource = recycle.Records;
         }
         #endregion //Function
 
@@ -118,6 +133,7 @@ namespace Poseidon.Recovery.ClientDx
             if (this.luReceipt.EditValue == null)
                 return;
 
+            this.Clear();
             var recycle = this.luReceipt.GetSelectedDataRow() as Recycle;
             DisplayRecycleInfo(recycle);
             DisplayReconcile(recycle);
@@ -140,13 +156,7 @@ namespace Poseidon.Recovery.ClientDx
                 return;
             }
 
-            this.debitGrid.DataSource = reconcile.Debits.Where(r => !string.IsNullOrEmpty(r.SettleId)).ToList();
-            this.debitOtherGrid.DataSource = reconcile.Debits.Where(r => string.IsNullOrEmpty(r.SettleId)).ToList();
-
-            this.creditGrid.DataSource = reconcile.Credits.ToList();
-
-            var recycle = BusinessFactory<RecycleBusiness>.Instance.FindById(reconcile.Credits.First().RecycleId);
-            this.recycleRecordGrid.DataSource = recycle.Records;
+            DisplayReconcileDetails(reconcile);
         }
         #endregion //Event
     }
