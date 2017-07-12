@@ -8,11 +8,12 @@ using System.Threading.Tasks;
 namespace Poseidon.Recovery.Core.DL
 {
     using Poseidon.Base.Framework;
+    using Poseidon.Attachment.Core.Utility;
 
     /// <summary>
     /// 抄表计量类
     /// </summary>
-    public class Measure : BusinessEntity
+    public class Measure : BusinessEntity, IAttachmentEntity
     {
         #region Property
         /// <summary>
@@ -32,6 +33,12 @@ namespace Poseidon.Recovery.Core.DL
         /// </summary>
         [Display(Name = "抄表记录")]
         public List<MeasureRecord> Records { get; set; }
+
+        /// <summary>
+        /// 附件ID
+        /// </summary>
+        [Display(Name = "附件ID")]
+        public List<string> AttachmentIds { get; set; }
         #endregion //Property
     }
 

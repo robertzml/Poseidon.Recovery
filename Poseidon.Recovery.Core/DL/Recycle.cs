@@ -9,11 +9,12 @@ namespace Poseidon.Recovery.Core.DL
 {
     using Poseidon.Base.Framework;
     using Poseidon.Base.Utility;
+    using Poseidon.Attachment.Core.Utility;
 
     /// <summary>
     /// 费用回收类
     /// </summary>
-    public class Recycle : BusinessEntity
+    public class Recycle : BusinessEntity, IAttachmentEntity
     {
         #region Property
         /// <summary>
@@ -45,6 +46,12 @@ namespace Poseidon.Recovery.Core.DL
         /// </summary>
         [Display(Name = "回收记录")]
         public List<RecycleRecord> Records { get; set; }
+
+        /// <summary>
+        /// 附件ID
+        /// </summary>
+        [Display(Name = "附件ID")]
+        public List<string> AttachmentIds { get; set; }
         #endregion //Property
     }
 

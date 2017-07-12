@@ -50,6 +50,7 @@ namespace Poseidon.Recovery.ClientDx
             this.bsMeasure.DataSource = BusinessFactory<MeasureBusiness>.Instance.FindByAccount(this.currentAccount.Id);
 
             this.settleRecordGrid.Init();
+            this.upTool.Init();
 
             InitRecords();
 
@@ -172,6 +173,8 @@ namespace Poseidon.Recovery.ClientDx
                 item.MeterName = item.MeterName ?? "";
                 item.Remark = item.Remark ?? "";
             }
+
+            entity.AttachmentIds = this.upTool.AttachmentIds;
         }
         #endregion //Function
 

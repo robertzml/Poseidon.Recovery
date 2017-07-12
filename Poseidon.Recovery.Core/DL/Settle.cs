@@ -8,11 +8,12 @@ using System.Threading.Tasks;
 namespace Poseidon.Recovery.Core.DL
 {
     using Poseidon.Base.Framework;
+    using Poseidon.Attachment.Core.Utility;
 
     /// <summary>
     /// 费用结算类
     /// </summary>
-    public class Settle : BusinessEntity
+    public class Settle : BusinessEntity, IAttachmentEntity
     {
         #region Property
         /// <summary>
@@ -68,6 +69,12 @@ namespace Poseidon.Recovery.Core.DL
         /// </summary>
         [Display(Name = "结算记录")]
         public List<SettleRecord> Records { get; set; }
+
+        /// <summary>
+        /// 附件ID
+        /// </summary>
+        [Display(Name = "附件ID")]
+        public List<string> AttachmentIds { get; set; }
         #endregion //Property
     }
 

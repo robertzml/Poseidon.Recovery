@@ -59,6 +59,8 @@ namespace Poseidon.Recovery.ClientDx
             this.txtRemark.Text = this.currentMeasure.Remark;
             this.measureRecordGrid.DataSource = this.currentMeasure.Records;
 
+            this.upTool.Init(this.currentMeasure.AttachmentIds);
+
             base.InitForm();
         }
 
@@ -120,6 +122,8 @@ namespace Poseidon.Recovery.ClientDx
                 item.MeterName = item.MeterName ?? "";
                 item.Remark = item.Remark ?? "";
             }
+
+            entity.AttachmentIds = this.upTool.AttachmentIds;
         }
         #endregion //Function
 

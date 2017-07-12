@@ -66,6 +66,7 @@ namespace Poseidon.Recovery.ClientDx
             this.txtEditTime.Text = recycle.UpdateBy.Time.ToDateTimeString();
 
             this.recycleRecordGrid.DataSource = recycle.Records;
+            this.attachmentTool.Init(recycle.AttachmentIds);
         }
         #endregion //Function
 

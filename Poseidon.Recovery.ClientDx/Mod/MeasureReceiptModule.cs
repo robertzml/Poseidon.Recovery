@@ -65,6 +65,7 @@ namespace Poseidon.Recovery.ClientDx
             this.txtEditTime.Text = measure.UpdateBy.Time.ToDateTimeString();
 
             this.measureRecordGrid.DataSource = measure.Records;
+            this.attachmentTool.Init(measure.AttachmentIds);
         }
         #endregion //Function
 

@@ -28,13 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
             this.lbSettles = new DevExpress.XtraEditors.ListBoxControl();
-            this.bsSettle = new System.Windows.Forms.BindingSource(this.components);
+            this.bsSettle = new System.Windows.Forms.BindingSource();
             this.groupControl2 = new DevExpress.XtraEditors.GroupControl();
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
+            this.txtWaterQuantum = new DevExpress.XtraEditors.TextEdit();
+            this.txtElectricQuantum = new DevExpress.XtraEditors.TextEdit();
             this.btnPrint = new DevExpress.XtraEditors.SimpleButton();
             this.btnRefresh = new DevExpress.XtraEditors.SimpleButton();
             this.chkIsWriteOff = new DevExpress.XtraEditors.CheckEdit();
@@ -70,12 +71,12 @@
             this.layoutControlGroup2 = new DevExpress.XtraLayout.LayoutControlGroup();
             this.layoutControlItem15 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem16 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlItem17 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlItem18 = new DevExpress.XtraLayout.LayoutControlItem();
             this.groupControl3 = new DevExpress.XtraEditors.GroupControl();
             this.settleRecordGrid = new Poseidon.Recovery.ClientDx.SettleRecordGrid();
-            this.txtElectricQuantum = new DevExpress.XtraEditors.TextEdit();
-            this.layoutControlItem17 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.txtWaterQuantum = new DevExpress.XtraEditors.TextEdit();
-            this.layoutControlItem18 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.groupControl4 = new DevExpress.XtraEditors.GroupControl();
+            this.attachmentTool = new Poseidon.Winform.Core.AttachmentTool();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
             this.groupControl1.SuspendLayout();
@@ -85,6 +86,8 @@
             this.groupControl2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.txtWaterQuantum.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtElectricQuantum.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.chkIsWriteOff.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.chkIsFree.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtRemark.Properties)).BeginInit();
@@ -116,12 +119,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem15)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem16)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem17)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem18)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl3)).BeginInit();
             this.groupControl3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.txtElectricQuantum.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem17)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtWaterQuantum.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem18)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.groupControl4)).BeginInit();
+            this.groupControl4.SuspendLayout();
             this.SuspendLayout();
             // 
             // tableLayoutPanel1
@@ -132,12 +135,14 @@
             this.tableLayoutPanel1.Controls.Add(this.groupControl1, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.groupControl2, 1, 0);
             this.tableLayoutPanel1.Controls.Add(this.groupControl3, 1, 1);
+            this.tableLayoutPanel1.Controls.Add(this.groupControl4, 1, 2);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            this.tableLayoutPanel1.RowCount = 2;
+            this.tableLayoutPanel1.RowCount = 3;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 300F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 60F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 40F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(790, 523);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
@@ -147,7 +152,7 @@
             this.groupControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupControl1.Location = new System.Drawing.Point(3, 3);
             this.groupControl1.Name = "groupControl1";
-            this.tableLayoutPanel1.SetRowSpan(this.groupControl1, 2);
+            this.tableLayoutPanel1.SetRowSpan(this.groupControl1, 3);
             this.groupControl1.Size = new System.Drawing.Size(134, 517);
             this.groupControl1.TabIndex = 0;
             this.groupControl1.Text = "结算单据";
@@ -205,6 +210,28 @@
             this.layoutControl1.Size = new System.Drawing.Size(640, 271);
             this.layoutControl1.TabIndex = 0;
             this.layoutControl1.Text = "layoutControl1";
+            // 
+            // txtWaterQuantum
+            // 
+            this.txtWaterQuantum.Location = new System.Drawing.Point(384, 84);
+            this.txtWaterQuantum.Name = "txtWaterQuantum";
+            this.txtWaterQuantum.Properties.Appearance.BackColor = System.Drawing.Color.Lavender;
+            this.txtWaterQuantum.Properties.Appearance.Options.UseBackColor = true;
+            this.txtWaterQuantum.Properties.ReadOnly = true;
+            this.txtWaterQuantum.Size = new System.Drawing.Size(244, 20);
+            this.txtWaterQuantum.StyleController = this.layoutControl1;
+            this.txtWaterQuantum.TabIndex = 21;
+            // 
+            // txtElectricQuantum
+            // 
+            this.txtElectricQuantum.Location = new System.Drawing.Point(73, 84);
+            this.txtElectricQuantum.Name = "txtElectricQuantum";
+            this.txtElectricQuantum.Properties.Appearance.BackColor = System.Drawing.Color.Lavender;
+            this.txtElectricQuantum.Properties.Appearance.Options.UseBackColor = true;
+            this.txtElectricQuantum.Properties.ReadOnly = true;
+            this.txtElectricQuantum.Size = new System.Drawing.Size(246, 20);
+            this.txtElectricQuantum.StyleController = this.layoutControl1;
+            this.txtElectricQuantum.TabIndex = 20;
             // 
             // btnPrint
             // 
@@ -566,13 +593,31 @@
             this.layoutControlItem16.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem16.TextVisible = false;
             // 
+            // layoutControlItem17
+            // 
+            this.layoutControlItem17.Control = this.txtElectricQuantum;
+            this.layoutControlItem17.Location = new System.Drawing.Point(0, 72);
+            this.layoutControlItem17.Name = "layoutControlItem17";
+            this.layoutControlItem17.Size = new System.Drawing.Size(311, 24);
+            this.layoutControlItem17.Text = "用电量(度)";
+            this.layoutControlItem17.TextSize = new System.Drawing.Size(58, 14);
+            // 
+            // layoutControlItem18
+            // 
+            this.layoutControlItem18.Control = this.txtWaterQuantum;
+            this.layoutControlItem18.Location = new System.Drawing.Point(311, 72);
+            this.layoutControlItem18.Name = "layoutControlItem18";
+            this.layoutControlItem18.Size = new System.Drawing.Size(309, 24);
+            this.layoutControlItem18.Text = "用水量(吨)";
+            this.layoutControlItem18.TextSize = new System.Drawing.Size(58, 14);
+            // 
             // groupControl3
             // 
             this.groupControl3.Controls.Add(this.settleRecordGrid);
             this.groupControl3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupControl3.Location = new System.Drawing.Point(143, 303);
             this.groupControl3.Name = "groupControl3";
-            this.groupControl3.Size = new System.Drawing.Size(644, 217);
+            this.groupControl3.Size = new System.Drawing.Size(644, 127);
             this.groupControl3.TabIndex = 2;
             this.groupControl3.Text = "结算记录";
             // 
@@ -594,48 +639,26 @@
             this.settleRecordGrid.ShowLineNumber = true;
             this.settleRecordGrid.ShowMenu = false;
             this.settleRecordGrid.ShowNavigator = false;
-            this.settleRecordGrid.Size = new System.Drawing.Size(640, 194);
+            this.settleRecordGrid.Size = new System.Drawing.Size(640, 104);
             this.settleRecordGrid.TabIndex = 0;
             // 
-            // txtElectricQuantum
+            // groupControl4
             // 
-            this.txtElectricQuantum.Location = new System.Drawing.Point(73, 84);
-            this.txtElectricQuantum.Name = "txtElectricQuantum";
-            this.txtElectricQuantum.Properties.Appearance.BackColor = System.Drawing.Color.Lavender;
-            this.txtElectricQuantum.Properties.Appearance.Options.UseBackColor = true;
-            this.txtElectricQuantum.Properties.ReadOnly = true;
-            this.txtElectricQuantum.Size = new System.Drawing.Size(246, 20);
-            this.txtElectricQuantum.StyleController = this.layoutControl1;
-            this.txtElectricQuantum.TabIndex = 20;
+            this.groupControl4.Controls.Add(this.attachmentTool);
+            this.groupControl4.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.groupControl4.Location = new System.Drawing.Point(143, 436);
+            this.groupControl4.Name = "groupControl4";
+            this.groupControl4.Size = new System.Drawing.Size(644, 84);
+            this.groupControl4.TabIndex = 3;
+            this.groupControl4.Text = "附件";
             // 
-            // layoutControlItem17
+            // attachmentTool
             // 
-            this.layoutControlItem17.Control = this.txtElectricQuantum;
-            this.layoutControlItem17.Location = new System.Drawing.Point(0, 72);
-            this.layoutControlItem17.Name = "layoutControlItem17";
-            this.layoutControlItem17.Size = new System.Drawing.Size(311, 24);
-            this.layoutControlItem17.Text = "用电量(度)";
-            this.layoutControlItem17.TextSize = new System.Drawing.Size(58, 14);
-            // 
-            // txtWaterQuantum
-            // 
-            this.txtWaterQuantum.Location = new System.Drawing.Point(384, 84);
-            this.txtWaterQuantum.Name = "txtWaterQuantum";
-            this.txtWaterQuantum.Properties.Appearance.BackColor = System.Drawing.Color.Lavender;
-            this.txtWaterQuantum.Properties.Appearance.Options.UseBackColor = true;
-            this.txtWaterQuantum.Properties.ReadOnly = true;
-            this.txtWaterQuantum.Size = new System.Drawing.Size(244, 20);
-            this.txtWaterQuantum.StyleController = this.layoutControl1;
-            this.txtWaterQuantum.TabIndex = 21;
-            // 
-            // layoutControlItem18
-            // 
-            this.layoutControlItem18.Control = this.txtWaterQuantum;
-            this.layoutControlItem18.Location = new System.Drawing.Point(311, 72);
-            this.layoutControlItem18.Name = "layoutControlItem18";
-            this.layoutControlItem18.Size = new System.Drawing.Size(309, 24);
-            this.layoutControlItem18.Text = "用水量(吨)";
-            this.layoutControlItem18.TextSize = new System.Drawing.Size(58, 14);
+            this.attachmentTool.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.attachmentTool.Location = new System.Drawing.Point(2, 21);
+            this.attachmentTool.Name = "attachmentTool";
+            this.attachmentTool.Size = new System.Drawing.Size(640, 61);
+            this.attachmentTool.TabIndex = 0;
             // 
             // SettleReceiptModule
             // 
@@ -654,6 +677,8 @@
             this.groupControl2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).EndInit();
             this.layoutControl1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.txtWaterQuantum.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtElectricQuantum.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.chkIsWriteOff.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.chkIsFree.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtRemark.Properties)).EndInit();
@@ -685,12 +710,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem15)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem16)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem17)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem18)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl3)).EndInit();
             this.groupControl3.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.txtElectricQuantum.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem17)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtWaterQuantum.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem18)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.groupControl4)).EndInit();
+            this.groupControl4.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -744,5 +769,7 @@
         private DevExpress.XtraEditors.TextEdit txtElectricQuantum;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem17;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem18;
+        private DevExpress.XtraEditors.GroupControl groupControl4;
+        private Winform.Core.AttachmentTool attachmentTool;
     }
 }

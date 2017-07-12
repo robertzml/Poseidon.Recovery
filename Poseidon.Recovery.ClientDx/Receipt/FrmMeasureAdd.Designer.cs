@@ -28,12 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
             this.luPrevious = new DevExpress.XtraEditors.LookUpEdit();
-            this.bsMeasure = new System.Windows.Forms.BindingSource(this.components);
+            this.bsMeasure = new System.Windows.Forms.BindingSource();
             this.txtRemark = new DevExpress.XtraEditors.MemoEdit();
             this.dpMeasureDate = new DevExpress.XtraEditors.DateEdit();
             this.txtAccountName = new DevExpress.XtraEditors.TextEdit();
@@ -44,6 +43,8 @@
             this.layoutControlItem4 = new DevExpress.XtraLayout.LayoutControlItem();
             this.groupControl2 = new DevExpress.XtraEditors.GroupControl();
             this.measureRecordGrid = new Poseidon.Recovery.ClientDx.MeasureRecordGrid();
+            this.upTool = new Poseidon.Winform.Core.UploadTool();
+            this.layoutControlItem5 = new DevExpress.XtraLayout.LayoutControlItem();
             ((System.ComponentModel.ISupportInitialize)(this.plFill)).BeginInit();
             this.plFill.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.plBottom)).BeginInit();
@@ -66,6 +67,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).BeginInit();
             this.groupControl2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).BeginInit();
             this.SuspendLayout();
             // 
             // btnCancel
@@ -119,6 +121,7 @@
             // 
             // layoutControl1
             // 
+            this.layoutControl1.Controls.Add(this.upTool);
             this.layoutControl1.Controls.Add(this.luPrevious);
             this.layoutControl1.Controls.Add(this.txtRemark);
             this.layoutControl1.Controls.Add(this.dpMeasureDate);
@@ -147,7 +150,7 @@
             this.luPrevious.Properties.DisplayMember = "MeasureDate";
             this.luPrevious.Properties.NullText = "请选择";
             this.luPrevious.Properties.ValueMember = "Id";
-            this.luPrevious.Size = new System.Drawing.Size(699, 20);
+            this.luPrevious.Size = new System.Drawing.Size(537, 20);
             this.luPrevious.StyleController = this.layoutControl1;
             this.luPrevious.TabIndex = 7;
             this.luPrevious.EditValueChanged += new System.EventHandler(this.luPrevious_EditValueChanged);
@@ -160,14 +163,14 @@
             // 
             this.txtRemark.Location = new System.Drawing.Point(63, 36);
             this.txtRemark.Name = "txtRemark";
-            this.txtRemark.Size = new System.Drawing.Size(699, 59);
+            this.txtRemark.Size = new System.Drawing.Size(537, 59);
             this.txtRemark.StyleController = this.layoutControl1;
             this.txtRemark.TabIndex = 6;
             // 
             // dpMeasureDate
             // 
             this.dpMeasureDate.EditValue = null;
-            this.dpMeasureDate.Location = new System.Drawing.Point(439, 12);
+            this.dpMeasureDate.Location = new System.Drawing.Point(373, 12);
             this.dpMeasureDate.Name = "dpMeasureDate";
             this.dpMeasureDate.Properties.AllowNullInput = DevExpress.Utils.DefaultBoolean.False;
             this.dpMeasureDate.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
@@ -175,7 +178,7 @@
             this.dpMeasureDate.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.dpMeasureDate.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
-            this.dpMeasureDate.Size = new System.Drawing.Size(323, 20);
+            this.dpMeasureDate.Size = new System.Drawing.Size(227, 20);
             this.dpMeasureDate.StyleController = this.layoutControl1;
             this.dpMeasureDate.TabIndex = 5;
             // 
@@ -186,7 +189,7 @@
             this.txtAccountName.Properties.Appearance.BackColor = System.Drawing.Color.Lavender;
             this.txtAccountName.Properties.Appearance.Options.UseBackColor = true;
             this.txtAccountName.Properties.ReadOnly = true;
-            this.txtAccountName.Size = new System.Drawing.Size(321, 20);
+            this.txtAccountName.Size = new System.Drawing.Size(255, 20);
             this.txtAccountName.StyleController = this.layoutControl1;
             this.txtAccountName.TabIndex = 4;
             // 
@@ -198,7 +201,8 @@
             this.layoutControlItem1,
             this.layoutControlItem2,
             this.layoutControlItem3,
-            this.layoutControlItem4});
+            this.layoutControlItem4,
+            this.layoutControlItem5});
             this.layoutControlGroup1.Location = new System.Drawing.Point(0, 0);
             this.layoutControlGroup1.Name = "layoutControlGroup1";
             this.layoutControlGroup1.Size = new System.Drawing.Size(774, 131);
@@ -209,16 +213,16 @@
             this.layoutControlItem1.Control = this.txtAccountName;
             this.layoutControlItem1.Location = new System.Drawing.Point(0, 0);
             this.layoutControlItem1.Name = "layoutControlItem1";
-            this.layoutControlItem1.Size = new System.Drawing.Size(376, 24);
+            this.layoutControlItem1.Size = new System.Drawing.Size(310, 24);
             this.layoutControlItem1.Text = "账户名称";
             this.layoutControlItem1.TextSize = new System.Drawing.Size(48, 14);
             // 
             // layoutControlItem2
             // 
             this.layoutControlItem2.Control = this.dpMeasureDate;
-            this.layoutControlItem2.Location = new System.Drawing.Point(376, 0);
+            this.layoutControlItem2.Location = new System.Drawing.Point(310, 0);
             this.layoutControlItem2.Name = "layoutControlItem2";
-            this.layoutControlItem2.Size = new System.Drawing.Size(378, 24);
+            this.layoutControlItem2.Size = new System.Drawing.Size(282, 24);
             this.layoutControlItem2.Text = "抄表日期";
             this.layoutControlItem2.TextSize = new System.Drawing.Size(48, 14);
             // 
@@ -227,7 +231,7 @@
             this.layoutControlItem3.Control = this.txtRemark;
             this.layoutControlItem3.Location = new System.Drawing.Point(0, 24);
             this.layoutControlItem3.Name = "layoutControlItem3";
-            this.layoutControlItem3.Size = new System.Drawing.Size(754, 63);
+            this.layoutControlItem3.Size = new System.Drawing.Size(592, 63);
             this.layoutControlItem3.Text = "备注";
             this.layoutControlItem3.TextSize = new System.Drawing.Size(48, 14);
             // 
@@ -236,7 +240,7 @@
             this.layoutControlItem4.Control = this.luPrevious;
             this.layoutControlItem4.Location = new System.Drawing.Point(0, 87);
             this.layoutControlItem4.Name = "layoutControlItem4";
-            this.layoutControlItem4.Size = new System.Drawing.Size(754, 24);
+            this.layoutControlItem4.Size = new System.Drawing.Size(592, 24);
             this.layoutControlItem4.Text = "上期记录";
             this.layoutControlItem4.TextSize = new System.Drawing.Size(48, 14);
             // 
@@ -259,6 +263,7 @@
             this.measureRecordGrid.Dock = System.Windows.Forms.DockStyle.Fill;
             this.measureRecordGrid.Editable = true;
             this.measureRecordGrid.EnableMasterView = false;
+            this.measureRecordGrid.EnableMultiSelect = false;
             this.measureRecordGrid.Location = new System.Drawing.Point(2, 21);
             this.measureRecordGrid.Name = "measureRecordGrid";
             this.measureRecordGrid.ShowAddMenu = false;
@@ -269,6 +274,22 @@
             this.measureRecordGrid.ShowPrevious = true;
             this.measureRecordGrid.Size = new System.Drawing.Size(774, 292);
             this.measureRecordGrid.TabIndex = 0;
+            // 
+            // upTool
+            // 
+            this.upTool.Location = new System.Drawing.Point(604, 12);
+            this.upTool.Name = "upTool";
+            this.upTool.Size = new System.Drawing.Size(158, 107);
+            this.upTool.TabIndex = 8;
+            // 
+            // layoutControlItem5
+            // 
+            this.layoutControlItem5.Control = this.upTool;
+            this.layoutControlItem5.Location = new System.Drawing.Point(592, 0);
+            this.layoutControlItem5.Name = "layoutControlItem5";
+            this.layoutControlItem5.Size = new System.Drawing.Size(162, 111);
+            this.layoutControlItem5.TextSize = new System.Drawing.Size(0, 0);
+            this.layoutControlItem5.TextVisible = false;
             // 
             // FrmMeasureAdd
             // 
@@ -299,6 +320,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).EndInit();
             this.groupControl2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -320,5 +342,7 @@
         private DevExpress.XtraEditors.LookUpEdit luPrevious;
         private System.Windows.Forms.BindingSource bsMeasure;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem4;
+        private Winform.Core.UploadTool upTool;
+        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem5;
     }
 }

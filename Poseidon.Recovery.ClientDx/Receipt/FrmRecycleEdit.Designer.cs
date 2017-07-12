@@ -29,6 +29,8 @@
         private void InitializeComponent()
         {
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.groupControl2 = new DevExpress.XtraEditors.GroupControl();
+            this.recycleRecordGrid = new Poseidon.Recovery.ClientDx.RecycleRecordGrid();
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
             this.btnCalc = new DevExpress.XtraEditors.SimpleButton();
@@ -43,13 +45,15 @@
             this.layoutControlItem4 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem5 = new DevExpress.XtraLayout.LayoutControlItem();
             this.emptySpaceItem1 = new DevExpress.XtraLayout.EmptySpaceItem();
-            this.groupControl2 = new DevExpress.XtraEditors.GroupControl();
-            this.recycleRecordGrid = new Poseidon.Recovery.ClientDx.RecycleRecordGrid();
+            this.upTool = new Poseidon.Winform.Core.UploadTool();
+            this.layoutControlItem6 = new DevExpress.XtraLayout.LayoutControlItem();
             ((System.ComponentModel.ISupportInitialize)(this.plFill)).BeginInit();
             this.plFill.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.plBottom)).BeginInit();
             this.plBottom.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).BeginInit();
+            this.groupControl2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
             this.groupControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
@@ -66,8 +70,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).BeginInit();
-            this.groupControl2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).BeginInit();
             this.SuspendLayout();
             // 
             // btnCancel
@@ -109,159 +112,6 @@
             this.tableLayoutPanel1.Size = new System.Drawing.Size(684, 451);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
-            // groupControl1
-            // 
-            this.groupControl1.Controls.Add(this.layoutControl1);
-            this.groupControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupControl1.Location = new System.Drawing.Point(3, 3);
-            this.groupControl1.Name = "groupControl1";
-            this.groupControl1.Size = new System.Drawing.Size(678, 194);
-            this.groupControl1.TabIndex = 1;
-            this.groupControl1.Text = "回收信息";
-            // 
-            // layoutControl1
-            // 
-            this.layoutControl1.Controls.Add(this.btnCalc);
-            this.layoutControl1.Controls.Add(this.txtRemark);
-            this.layoutControl1.Controls.Add(this.spTotalAmount);
-            this.layoutControl1.Controls.Add(this.dpRecycleDate);
-            this.layoutControl1.Controls.Add(this.txtAccountName);
-            this.layoutControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.layoutControl1.Location = new System.Drawing.Point(2, 21);
-            this.layoutControl1.Name = "layoutControl1";
-            this.layoutControl1.Root = this.layoutControlGroup1;
-            this.layoutControl1.Size = new System.Drawing.Size(674, 171);
-            this.layoutControl1.TabIndex = 0;
-            this.layoutControl1.Text = "layoutControl1";
-            // 
-            // btnCalc
-            // 
-            this.btnCalc.Location = new System.Drawing.Point(12, 137);
-            this.btnCalc.Name = "btnCalc";
-            this.btnCalc.Size = new System.Drawing.Size(322, 22);
-            this.btnCalc.StyleController = this.layoutControl1;
-            this.btnCalc.TabIndex = 8;
-            this.btnCalc.Text = "计算金额";
-            this.btnCalc.Click += new System.EventHandler(this.btnCalc_Click);
-            // 
-            // txtRemark
-            // 
-            this.txtRemark.Location = new System.Drawing.Point(63, 60);
-            this.txtRemark.Name = "txtRemark";
-            this.txtRemark.Size = new System.Drawing.Size(599, 73);
-            this.txtRemark.StyleController = this.layoutControl1;
-            this.txtRemark.TabIndex = 7;
-            // 
-            // spTotalAmount
-            // 
-            this.spTotalAmount.EditValue = new decimal(new int[] {
-            0,
-            0,
-            0,
-            0});
-            this.spTotalAmount.Location = new System.Drawing.Point(63, 36);
-            this.spTotalAmount.Name = "spTotalAmount";
-            this.spTotalAmount.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.spTotalAmount.Size = new System.Drawing.Size(271, 20);
-            this.spTotalAmount.StyleController = this.layoutControl1;
-            this.spTotalAmount.TabIndex = 6;
-            // 
-            // dpRecycleDate
-            // 
-            this.dpRecycleDate.EditValue = null;
-            this.dpRecycleDate.Location = new System.Drawing.Point(389, 12);
-            this.dpRecycleDate.Name = "dpRecycleDate";
-            this.dpRecycleDate.Properties.AllowNullInput = DevExpress.Utils.DefaultBoolean.False;
-            this.dpRecycleDate.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.dpRecycleDate.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.dpRecycleDate.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
-            this.dpRecycleDate.Size = new System.Drawing.Size(273, 20);
-            this.dpRecycleDate.StyleController = this.layoutControl1;
-            this.dpRecycleDate.TabIndex = 5;
-            // 
-            // txtAccountName
-            // 
-            this.txtAccountName.Location = new System.Drawing.Point(63, 12);
-            this.txtAccountName.Name = "txtAccountName";
-            this.txtAccountName.Properties.Appearance.BackColor = System.Drawing.Color.Lavender;
-            this.txtAccountName.Properties.Appearance.Options.UseBackColor = true;
-            this.txtAccountName.Properties.ReadOnly = true;
-            this.txtAccountName.Size = new System.Drawing.Size(271, 20);
-            this.txtAccountName.StyleController = this.layoutControl1;
-            this.txtAccountName.TabIndex = 4;
-            // 
-            // layoutControlGroup1
-            // 
-            this.layoutControlGroup1.EnableIndentsWithoutBorders = DevExpress.Utils.DefaultBoolean.True;
-            this.layoutControlGroup1.GroupBordersVisible = false;
-            this.layoutControlGroup1.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
-            this.layoutControlItem1,
-            this.layoutControlItem2,
-            this.layoutControlItem3,
-            this.layoutControlItem4,
-            this.layoutControlItem5,
-            this.emptySpaceItem1});
-            this.layoutControlGroup1.Location = new System.Drawing.Point(0, 0);
-            this.layoutControlGroup1.Name = "layoutControlGroup1";
-            this.layoutControlGroup1.Size = new System.Drawing.Size(674, 171);
-            this.layoutControlGroup1.TextVisible = false;
-            // 
-            // layoutControlItem1
-            // 
-            this.layoutControlItem1.Control = this.txtAccountName;
-            this.layoutControlItem1.Location = new System.Drawing.Point(0, 0);
-            this.layoutControlItem1.Name = "layoutControlItem1";
-            this.layoutControlItem1.Size = new System.Drawing.Size(326, 24);
-            this.layoutControlItem1.Text = "账户名称";
-            this.layoutControlItem1.TextSize = new System.Drawing.Size(48, 14);
-            // 
-            // layoutControlItem2
-            // 
-            this.layoutControlItem2.Control = this.dpRecycleDate;
-            this.layoutControlItem2.Location = new System.Drawing.Point(326, 0);
-            this.layoutControlItem2.Name = "layoutControlItem2";
-            this.layoutControlItem2.Size = new System.Drawing.Size(328, 48);
-            this.layoutControlItem2.Text = "回收日期";
-            this.layoutControlItem2.TextSize = new System.Drawing.Size(48, 14);
-            // 
-            // layoutControlItem3
-            // 
-            this.layoutControlItem3.Control = this.spTotalAmount;
-            this.layoutControlItem3.Location = new System.Drawing.Point(0, 24);
-            this.layoutControlItem3.Name = "layoutControlItem3";
-            this.layoutControlItem3.Size = new System.Drawing.Size(326, 24);
-            this.layoutControlItem3.Text = "回收金额";
-            this.layoutControlItem3.TextSize = new System.Drawing.Size(48, 14);
-            // 
-            // layoutControlItem4
-            // 
-            this.layoutControlItem4.Control = this.txtRemark;
-            this.layoutControlItem4.Location = new System.Drawing.Point(0, 48);
-            this.layoutControlItem4.Name = "layoutControlItem4";
-            this.layoutControlItem4.Size = new System.Drawing.Size(654, 77);
-            this.layoutControlItem4.Text = "备注";
-            this.layoutControlItem4.TextSize = new System.Drawing.Size(48, 14);
-            // 
-            // layoutControlItem5
-            // 
-            this.layoutControlItem5.Control = this.btnCalc;
-            this.layoutControlItem5.Location = new System.Drawing.Point(0, 125);
-            this.layoutControlItem5.Name = "layoutControlItem5";
-            this.layoutControlItem5.Size = new System.Drawing.Size(326, 26);
-            this.layoutControlItem5.TextSize = new System.Drawing.Size(0, 0);
-            this.layoutControlItem5.TextVisible = false;
-            // 
-            // emptySpaceItem1
-            // 
-            this.emptySpaceItem1.AllowHotTrack = false;
-            this.emptySpaceItem1.Location = new System.Drawing.Point(326, 125);
-            this.emptySpaceItem1.Name = "emptySpaceItem1";
-            this.emptySpaceItem1.Size = new System.Drawing.Size(328, 26);
-            this.emptySpaceItem1.TextSize = new System.Drawing.Size(0, 0);
-            // 
             // groupControl2
             // 
             this.groupControl2.Controls.Add(this.recycleRecordGrid);
@@ -281,6 +131,7 @@
             this.recycleRecordGrid.Dock = System.Windows.Forms.DockStyle.Fill;
             this.recycleRecordGrid.Editable = true;
             this.recycleRecordGrid.EnableMasterView = false;
+            this.recycleRecordGrid.EnableMultiSelect = false;
             this.recycleRecordGrid.Location = new System.Drawing.Point(2, 21);
             this.recycleRecordGrid.Name = "recycleRecordGrid";
             this.recycleRecordGrid.ShowAddMenu = false;
@@ -290,6 +141,177 @@
             this.recycleRecordGrid.ShowNavigator = true;
             this.recycleRecordGrid.Size = new System.Drawing.Size(674, 222);
             this.recycleRecordGrid.TabIndex = 0;
+            // 
+            // groupControl1
+            // 
+            this.groupControl1.Controls.Add(this.layoutControl1);
+            this.groupControl1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.groupControl1.Location = new System.Drawing.Point(3, 3);
+            this.groupControl1.Name = "groupControl1";
+            this.groupControl1.Size = new System.Drawing.Size(678, 194);
+            this.groupControl1.TabIndex = 1;
+            this.groupControl1.Text = "回收信息";
+            // 
+            // layoutControl1
+            // 
+            this.layoutControl1.Controls.Add(this.upTool);
+            this.layoutControl1.Controls.Add(this.btnCalc);
+            this.layoutControl1.Controls.Add(this.txtRemark);
+            this.layoutControl1.Controls.Add(this.spTotalAmount);
+            this.layoutControl1.Controls.Add(this.dpRecycleDate);
+            this.layoutControl1.Controls.Add(this.txtAccountName);
+            this.layoutControl1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.layoutControl1.Location = new System.Drawing.Point(2, 21);
+            this.layoutControl1.Name = "layoutControl1";
+            this.layoutControl1.Root = this.layoutControlGroup1;
+            this.layoutControl1.Size = new System.Drawing.Size(674, 171);
+            this.layoutControl1.TabIndex = 0;
+            this.layoutControl1.Text = "layoutControl1";
+            // 
+            // btnCalc
+            // 
+            this.btnCalc.Location = new System.Drawing.Point(12, 137);
+            this.btnCalc.Name = "btnCalc";
+            this.btnCalc.Size = new System.Drawing.Size(256, 22);
+            this.btnCalc.StyleController = this.layoutControl1;
+            this.btnCalc.TabIndex = 8;
+            this.btnCalc.Text = "计算金额";
+            this.btnCalc.Click += new System.EventHandler(this.btnCalc_Click);
+            // 
+            // txtRemark
+            // 
+            this.txtRemark.Location = new System.Drawing.Point(63, 60);
+            this.txtRemark.Name = "txtRemark";
+            this.txtRemark.Size = new System.Drawing.Size(443, 73);
+            this.txtRemark.StyleController = this.layoutControl1;
+            this.txtRemark.TabIndex = 7;
+            // 
+            // spTotalAmount
+            // 
+            this.spTotalAmount.EditValue = new decimal(new int[] {
+            0,
+            0,
+            0,
+            0});
+            this.spTotalAmount.Location = new System.Drawing.Point(63, 36);
+            this.spTotalAmount.Name = "spTotalAmount";
+            this.spTotalAmount.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.spTotalAmount.Size = new System.Drawing.Size(205, 20);
+            this.spTotalAmount.StyleController = this.layoutControl1;
+            this.spTotalAmount.TabIndex = 6;
+            // 
+            // dpRecycleDate
+            // 
+            this.dpRecycleDate.EditValue = null;
+            this.dpRecycleDate.Location = new System.Drawing.Point(323, 12);
+            this.dpRecycleDate.Name = "dpRecycleDate";
+            this.dpRecycleDate.Properties.AllowNullInput = DevExpress.Utils.DefaultBoolean.False;
+            this.dpRecycleDate.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.dpRecycleDate.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.dpRecycleDate.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
+            this.dpRecycleDate.Size = new System.Drawing.Size(183, 20);
+            this.dpRecycleDate.StyleController = this.layoutControl1;
+            this.dpRecycleDate.TabIndex = 5;
+            // 
+            // txtAccountName
+            // 
+            this.txtAccountName.Location = new System.Drawing.Point(63, 12);
+            this.txtAccountName.Name = "txtAccountName";
+            this.txtAccountName.Properties.Appearance.BackColor = System.Drawing.Color.Lavender;
+            this.txtAccountName.Properties.Appearance.Options.UseBackColor = true;
+            this.txtAccountName.Properties.ReadOnly = true;
+            this.txtAccountName.Size = new System.Drawing.Size(205, 20);
+            this.txtAccountName.StyleController = this.layoutControl1;
+            this.txtAccountName.TabIndex = 4;
+            // 
+            // layoutControlGroup1
+            // 
+            this.layoutControlGroup1.EnableIndentsWithoutBorders = DevExpress.Utils.DefaultBoolean.True;
+            this.layoutControlGroup1.GroupBordersVisible = false;
+            this.layoutControlGroup1.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
+            this.layoutControlItem1,
+            this.layoutControlItem2,
+            this.layoutControlItem3,
+            this.layoutControlItem4,
+            this.layoutControlItem5,
+            this.emptySpaceItem1,
+            this.layoutControlItem6});
+            this.layoutControlGroup1.Location = new System.Drawing.Point(0, 0);
+            this.layoutControlGroup1.Name = "layoutControlGroup1";
+            this.layoutControlGroup1.Size = new System.Drawing.Size(674, 171);
+            this.layoutControlGroup1.TextVisible = false;
+            // 
+            // layoutControlItem1
+            // 
+            this.layoutControlItem1.Control = this.txtAccountName;
+            this.layoutControlItem1.Location = new System.Drawing.Point(0, 0);
+            this.layoutControlItem1.Name = "layoutControlItem1";
+            this.layoutControlItem1.Size = new System.Drawing.Size(260, 24);
+            this.layoutControlItem1.Text = "账户名称";
+            this.layoutControlItem1.TextSize = new System.Drawing.Size(48, 14);
+            // 
+            // layoutControlItem2
+            // 
+            this.layoutControlItem2.Control = this.dpRecycleDate;
+            this.layoutControlItem2.Location = new System.Drawing.Point(260, 0);
+            this.layoutControlItem2.Name = "layoutControlItem2";
+            this.layoutControlItem2.Size = new System.Drawing.Size(238, 48);
+            this.layoutControlItem2.Text = "回收日期";
+            this.layoutControlItem2.TextSize = new System.Drawing.Size(48, 14);
+            // 
+            // layoutControlItem3
+            // 
+            this.layoutControlItem3.Control = this.spTotalAmount;
+            this.layoutControlItem3.Location = new System.Drawing.Point(0, 24);
+            this.layoutControlItem3.Name = "layoutControlItem3";
+            this.layoutControlItem3.Size = new System.Drawing.Size(260, 24);
+            this.layoutControlItem3.Text = "回收金额";
+            this.layoutControlItem3.TextSize = new System.Drawing.Size(48, 14);
+            // 
+            // layoutControlItem4
+            // 
+            this.layoutControlItem4.Control = this.txtRemark;
+            this.layoutControlItem4.Location = new System.Drawing.Point(0, 48);
+            this.layoutControlItem4.Name = "layoutControlItem4";
+            this.layoutControlItem4.Size = new System.Drawing.Size(498, 77);
+            this.layoutControlItem4.Text = "备注";
+            this.layoutControlItem4.TextSize = new System.Drawing.Size(48, 14);
+            // 
+            // layoutControlItem5
+            // 
+            this.layoutControlItem5.Control = this.btnCalc;
+            this.layoutControlItem5.Location = new System.Drawing.Point(0, 125);
+            this.layoutControlItem5.Name = "layoutControlItem5";
+            this.layoutControlItem5.Size = new System.Drawing.Size(260, 26);
+            this.layoutControlItem5.TextSize = new System.Drawing.Size(0, 0);
+            this.layoutControlItem5.TextVisible = false;
+            // 
+            // emptySpaceItem1
+            // 
+            this.emptySpaceItem1.AllowHotTrack = false;
+            this.emptySpaceItem1.Location = new System.Drawing.Point(260, 125);
+            this.emptySpaceItem1.Name = "emptySpaceItem1";
+            this.emptySpaceItem1.Size = new System.Drawing.Size(238, 26);
+            this.emptySpaceItem1.TextSize = new System.Drawing.Size(0, 0);
+            // 
+            // upTool
+            // 
+            this.upTool.Location = new System.Drawing.Point(510, 12);
+            this.upTool.Name = "upTool";
+            this.upTool.Size = new System.Drawing.Size(152, 147);
+            this.upTool.TabIndex = 9;
+            // 
+            // layoutControlItem6
+            // 
+            this.layoutControlItem6.Control = this.upTool;
+            this.layoutControlItem6.Location = new System.Drawing.Point(498, 0);
+            this.layoutControlItem6.Name = "layoutControlItem6";
+            this.layoutControlItem6.Size = new System.Drawing.Size(156, 151);
+            this.layoutControlItem6.TextSize = new System.Drawing.Size(0, 0);
+            this.layoutControlItem6.TextVisible = false;
             // 
             // FrmRecycleEdit
             // 
@@ -303,6 +325,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.plBottom)).EndInit();
             this.plBottom.ResumeLayout(false);
             this.tableLayoutPanel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).EndInit();
+            this.groupControl2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).EndInit();
             this.groupControl1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).EndInit();
@@ -319,8 +343,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).EndInit();
-            this.groupControl2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -344,5 +367,7 @@
         private DevExpress.XtraLayout.EmptySpaceItem emptySpaceItem1;
         private DevExpress.XtraEditors.GroupControl groupControl2;
         private RecycleRecordGrid recycleRecordGrid;
+        private Winform.Core.UploadTool upTool;
+        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem6;
     }
 }

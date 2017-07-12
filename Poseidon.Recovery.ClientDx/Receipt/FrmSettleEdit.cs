@@ -65,6 +65,7 @@ namespace Poseidon.Recovery.ClientDx
             this.txtRemark.Text = this.currentSettle.Remark;
 
             this.settleRecordGrid.DataSource = this.currentSettle.Records;
+            this.upTool.Init(this.currentSettle.AttachmentIds);
 
             base.InitForm();
         }
@@ -165,6 +166,8 @@ namespace Poseidon.Recovery.ClientDx
                 item.MeterName = item.MeterName ?? "";
                 item.Remark = item.Remark ?? "";
             }
+
+            entity.AttachmentIds = this.upTool.AttachmentIds;
         }
         #endregion //Function
 
