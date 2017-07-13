@@ -76,6 +76,15 @@ namespace Poseidon.Recovery.ClientDx
         }
 
         /// <summary>
+        /// 显示附件信息
+        /// </summary>
+        /// <param name="account"></param>
+        private void DisplayAttachment(Account account)
+        {
+            this.attachmentTool.Init(account.AttachmentIds);
+        }
+
+        /// <summary>
         /// 显示汇总信息
         /// </summary>
         /// <param name="account"></param>
@@ -161,6 +170,7 @@ namespace Poseidon.Recovery.ClientDx
 
             this.accountSummaryMod.SetAccount(currentAccount);
             DisplayMeter(currentAccount);
+            DisplayAttachment(currentAccount);
             DisplaySummary(currentAccount);
             DisplayReceipt(currentAccount);
             DisplayYear(currentAccount);

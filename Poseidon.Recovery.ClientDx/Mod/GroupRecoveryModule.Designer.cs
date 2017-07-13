@@ -291,6 +291,7 @@
             this.settleGrid.Dock = System.Windows.Forms.DockStyle.Fill;
             this.settleGrid.Editable = false;
             this.settleGrid.EnableMasterView = false;
+            this.settleGrid.EnableMultiSelect = false;
             this.settleGrid.Location = new System.Drawing.Point(0, 0);
             this.settleGrid.Name = "settleGrid";
             this.settleGrid.ShowAccount = true;
@@ -319,6 +320,7 @@
             this.recycleGrid.Dock = System.Windows.Forms.DockStyle.Fill;
             this.recycleGrid.Editable = false;
             this.recycleGrid.EnableMasterView = false;
+            this.recycleGrid.EnableMultiSelect = false;
             this.recycleGrid.Location = new System.Drawing.Point(0, 0);
             this.recycleGrid.Name = "recycleGrid";
             this.recycleGrid.ShowAccount = true;

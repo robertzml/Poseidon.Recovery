@@ -97,6 +97,8 @@
             this.settleInspectMod = new Poseidon.Recovery.ClientDx.SettleInspectModule();
             this.tabPageRecycleInspect = new DevExpress.XtraTab.XtraTabPage();
             this.recycleInspectMod = new Poseidon.Recovery.ClientDx.RecycleInspectModule();
+            this.tabPageAttachment = new DevExpress.XtraTab.XtraTabPage();
+            this.attachmentTool = new Poseidon.Winform.Core.AttachmentTool();
             ((System.ComponentModel.ISupportInitialize)(this.tabInfo)).BeginInit();
             this.tabInfo.SuspendLayout();
             this.tabPageBaseInfo.SuspendLayout();
@@ -159,6 +161,7 @@
             this.tabInspect.SuspendLayout();
             this.tabPageSettleInspect.SuspendLayout();
             this.tabPageRecycleInspect.SuspendLayout();
+            this.tabPageAttachment.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabInfo
@@ -171,7 +174,8 @@
             this.tabInfo.TabIndex = 5;
             this.tabInfo.TabPages.AddRange(new DevExpress.XtraTab.XtraTabPage[] {
             this.tabPageBaseInfo,
-            this.tabPageMeters});
+            this.tabPageMeters,
+            this.tabPageAttachment});
             // 
             // tabPageBaseInfo
             // 
@@ -243,6 +247,7 @@
             this.meterGrid.Dock = System.Windows.Forms.DockStyle.Fill;
             this.meterGrid.Editable = false;
             this.meterGrid.EnableMasterView = false;
+            this.meterGrid.EnableMultiSelect = false;
             this.meterGrid.Location = new System.Drawing.Point(0, 0);
             this.meterGrid.Name = "meterGrid";
             this.meterGrid.ShowAddMenu = false;
@@ -335,6 +340,7 @@
             this.settleGrid.Dock = System.Windows.Forms.DockStyle.Fill;
             this.settleGrid.Editable = false;
             this.settleGrid.EnableMasterView = false;
+            this.settleGrid.EnableMultiSelect = false;
             this.settleGrid.Location = new System.Drawing.Point(0, 0);
             this.settleGrid.Name = "settleGrid";
             this.settleGrid.ShowAccount = false;
@@ -363,6 +369,7 @@
             this.recycleGrid.Dock = System.Windows.Forms.DockStyle.Fill;
             this.recycleGrid.Editable = false;
             this.recycleGrid.EnableMasterView = false;
+            this.recycleGrid.EnableMultiSelect = false;
             this.recycleGrid.Location = new System.Drawing.Point(0, 0);
             this.recycleGrid.Name = "recycleGrid";
             this.recycleGrid.ShowAccount = false;
@@ -390,6 +397,7 @@
             this.reconcileGrid.Dock = System.Windows.Forms.DockStyle.Fill;
             this.reconcileGrid.Editable = false;
             this.reconcileGrid.EnableMasterView = false;
+            this.reconcileGrid.EnableMultiSelect = false;
             this.reconcileGrid.Location = new System.Drawing.Point(0, 0);
             this.reconcileGrid.Name = "reconcileGrid";
             this.reconcileGrid.ShowAccount = false;
@@ -848,6 +856,21 @@
             this.recycleInspectMod.Size = new System.Drawing.Size(888, 742);
             this.recycleInspectMod.TabIndex = 0;
             // 
+            // tabPageAttachment
+            // 
+            this.tabPageAttachment.Controls.Add(this.attachmentTool);
+            this.tabPageAttachment.Name = "tabPageAttachment";
+            this.tabPageAttachment.Size = new System.Drawing.Size(882, 185);
+            this.tabPageAttachment.Text = "相关附件";
+            // 
+            // attachmentTool
+            // 
+            this.attachmentTool.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.attachmentTool.Location = new System.Drawing.Point(0, 0);
+            this.attachmentTool.Name = "attachmentTool";
+            this.attachmentTool.Size = new System.Drawing.Size(882, 185);
+            this.attachmentTool.TabIndex = 0;
+            // 
             // AccountRecoveryModule
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
@@ -917,6 +940,7 @@
             this.tabInspect.ResumeLayout(false);
             this.tabPageSettleInspect.ResumeLayout(false);
             this.tabPageRecycleInspect.ResumeLayout(false);
+            this.tabPageAttachment.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -991,5 +1015,7 @@
         private DevExpress.XtraTab.XtraTabPage tabPageRecycleInspect;
         private SettleInspectModule settleInspectMod;
         private RecycleInspectModule recycleInspectMod;
+        private DevExpress.XtraTab.XtraTabPage tabPageAttachment;
+        private Winform.Core.AttachmentTool attachmentTool;
     }
 }

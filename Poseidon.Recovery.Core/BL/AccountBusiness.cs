@@ -46,6 +46,17 @@ namespace Poseidon.Recovery.Core.BL
             var dal = this.baseDal as IAccountRepository;
             dal.SetMeters(id, meters);
         }
+
+        /// <summary>
+        /// 设置账户附件
+        /// </summary>
+        /// <param name="id">账户ID</param>
+        /// <param name="attachmentIds">附件列表</param>
+        public void SetAttachments(string id, List<string> attachmentIds)
+        {
+            var dal = this.baseDal as IAccountRepository;
+            dal.SetAttachments(id, attachmentIds);
+        }
         #endregion //Method
     }
 }

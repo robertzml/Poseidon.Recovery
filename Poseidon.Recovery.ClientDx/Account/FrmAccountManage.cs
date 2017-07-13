@@ -119,6 +119,33 @@ namespace Poseidon.Recovery.ClientDx
 
             LoadData();
         }
+
+        /// <summary>
+        /// 设置附件
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btnSetAttachment_Click(object sender, EventArgs e)
+        {
+            if (tabAccount.SelectedTabPage == tabPageCommerce)
+            {
+                var select = this.commerceAccountGrid.GetCurrentSelect();
+                if (select == null)
+                    return;
+
+                ChildFormManage.ShowDialogForm(typeof(FrmAccountAttachmentSet), new object[] { select.Id });
+            }
+            else if (tabAccount.SelectedTabPage == tabPageConstruction)
+            {
+                var select = this.constructionAccountGrid.GetCurrentSelect();
+                if (select == null)
+                    return;
+
+                ChildFormManage.ShowDialogForm(typeof(FrmAccountAttachmentSet), new object[] { select.Id });
+            }
+
+            LoadData();
+        }
         #endregion //Event
     }
 }

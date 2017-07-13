@@ -98,6 +98,12 @@
     <Compile Include="Account\FrmConstructionAccountEdit.Designer.cs">
       <DependentUpon>FrmConstructionAccountEdit.cs</DependentUpon>
     </Compile>
+    <Compile Include="Account\FrmAccountAttachmentSet.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Account\FrmAccountAttachmentSet.Designer.cs">
+      <DependentUpon>FrmAccountAttachmentSet.cs</DependentUpon>
+    </Compile>
     <Compile Include="Mod\ConstructionAccountInfo.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -424,6 +430,9 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Account\FrmAccountAttachmentSet.resx">
+      <DependentUpon>FrmAccountAttachmentSet.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Account\FrmConstructionAccountAdd.resx">
       <DependentUpon>FrmConstructionAccountAdd.cs</DependentUpon>
     </EmbeddedResource>

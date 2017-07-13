@@ -86,6 +86,16 @@ namespace Poseidon.Recovery.Core.DAL.Mongo
                 }
             }
 
+            entity.AttachmentIds = new List<string>();
+            if (doc.Contains("attachmentIds"))
+            {
+                BsonArray array = doc["attachmentIds"].AsBsonArray;
+                foreach (string item in array)
+                {
+                    entity.AttachmentIds.Add(item);
+                }
+            }
+
             return entity;
         }
 
@@ -96,7 +106,70 @@ namespace Poseidon.Recovery.Core.DAL.Mongo
         /// <returns></returns>
         protected override BsonDocument EntityToDoc(Account entity)
         {
-            throw new NotImplementedException();
+            BsonDocument doc = new BsonDocument
+            {
+                { "name", entity.Name },
+                { "shortName", entity.ShortName },
+                { "ticketName", entity.TicketName },
+                { "modelType", entity.ModelType },
+                { "openYear", entity.OpenYear },
+                { "contact", entity.Contact },
+                { "remark", entity.Remark },
+                { "status", entity.Status }
+            };
+
+            if (!string.IsNullOrEmpty(entity.ParentId))
+                doc.Add("parentId", entity.ParentId);
+
+            if (entity.CloseYear != null)
+                doc.Add("closeYear", entity.CloseYear.Value);
+
+            if (entity.EnergyType != null && entity.EnergyType.Count > 0)
+            {
+                BsonArray array = new BsonArray();
+                foreach (var item in entity.EnergyType)
+                {
+                    array.Add(item);
+                }
+
+                doc.Add("energyType", array);
+            }
+
+            if (entity.Meters != null && entity.Meters.Count > 0)
+            {
+                BsonArray array = new BsonArray();
+                foreach (var item in entity.Meters)
+                {
+                    BsonDocument sub = new BsonDocument
+                    {
+                        { "id", item.Id },
+                        { "name", item.Name },
+                        { "number", item.Number },
+                        { "energyType", item.EnergyType },
+                        { "chargeType", item.ChargeType },
+                        { "address", item.Address },
+                        { "multiple", item.Multiple },
+                        { "remark", item.Remark },
+                        { "status", item.Status }
+                    };
+                    array.Add(sub);
+                }
+
+                doc.Add("meters", array);
+            }
+
+            if (entity.AttachmentIds != null && entity.AttachmentIds.Count > 0)
+            {
+                BsonArray array = new BsonArray();
+                foreach (var item in entity.AttachmentIds)
+                {
+                    array.Add(item);
+                }
+
+                doc.Add("attachmentIds", array);
+            }
+
+            return doc;
         }
         #endregion //Function
 
@@ -131,6 +204,25 @@ namespace Poseidon.Recovery.Core.DAL.Mongo
 
             var filter = Builders<BsonDocument>.Filter.Eq("_id", new ObjectId(id));
             var update = Builders<BsonDocument>.Update.Set("meters", array);
+
+            base.Update(filter, update);
+        }
+
+        /// <summary>
+        /// 设置账户附件
+        /// </summary>
+        /// <param name="id">账户ID</param>
+        /// <param name="attachmentIds">附件列表</param>
+        public void SetAttachments(string id, List<string> attachmentIds)
+        {
+            BsonArray array = new BsonArray();
+            foreach (var item in attachmentIds)
+            {
+                array.Add(item);
+            }
+
+            var filter = Builders<BsonDocument>.Filter.Eq("_id", new ObjectId(id));
+            var update = Builders<BsonDocument>.Update.Set("attachmentIds", array);
 
             base.Update(filter, update);
         }

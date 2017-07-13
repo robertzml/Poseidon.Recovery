@@ -20,5 +20,12 @@ namespace Poseidon.Recovery.Core.IDAL
         /// <param name="id">账户ID</param>
         /// <param name="meters">表具列表</param>
         void SetMeters(string id, List<Meter> meters);
+
+        /// <summary>
+        /// 设置账户附件
+        /// </summary>
+        /// <param name="id">账户ID</param>
+        /// <param name="attachmentIds">附件列表</param>
+        void SetAttachments(string id, List<string> attachmentIds);
     }
 }

@@ -9,11 +9,12 @@ namespace Poseidon.Recovery.Core.DL
 {
     using Poseidon.Base.Framework;
     using Poseidon.Core.DL;
+    using Poseidon.Attachment.Core.Utility;
 
     /// <summary>
     /// 回收账户类
     /// </summary>
-    public class Account : Organization
+    public class Account : Organization, IAttachmentEntity
     {
         #region Property
         /// <summary>
@@ -57,6 +58,12 @@ namespace Poseidon.Recovery.Core.DL
         /// </summary>
         [Display(Name = "包含表具")]
         public List<Meter> Meters { get; set; }
+
+        /// <summary>
+        /// 附件ID
+        /// </summary>
+        [Display(Name = "附件ID")]
+        public List<string> AttachmentIds { get; set; }
         #endregion //Property
     }
 }

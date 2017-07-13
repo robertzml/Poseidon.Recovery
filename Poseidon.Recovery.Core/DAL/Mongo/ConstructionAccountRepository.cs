@@ -94,6 +94,16 @@ namespace Poseidon.Recovery.Core.DAL.Mongo
                 }
             }
 
+            entity.AttachmentIds = new List<string>();
+            if (doc.Contains("attachmentIds"))
+            {
+                BsonArray array = doc["attachmentIds"].AsBsonArray;
+                foreach (string item in array)
+                {
+                    entity.AttachmentIds.Add(item);
+                }
+            }
+
             return entity;
         }
 
@@ -157,6 +167,17 @@ namespace Poseidon.Recovery.Core.DAL.Mongo
                 }
 
                 doc.Add("meters", array);
+            }
+
+            if (entity.AttachmentIds != null && entity.AttachmentIds.Count > 0)
+            {
+                BsonArray array = new BsonArray();
+                foreach (var item in entity.AttachmentIds)
+                {
+                    array.Add(item);
+                }
+
+                doc.Add("attachmentIds", array);
             }
 
             return doc;

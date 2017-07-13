@@ -44,6 +44,8 @@
             this.commerceAccountGrid = new Poseidon.Recovery.ClientDx.CommerceAccountGrid();
             this.tabPageConstruction = new DevExpress.XtraTab.XtraTabPage();
             this.constructionAccountGrid = new Poseidon.Recovery.ClientDx.ConstructionAccountGrid();
+            this.btnSetAttachment = new DevExpress.XtraEditors.SimpleButton();
+            this.layoutControlItem4 = new DevExpress.XtraLayout.LayoutControlItem();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).BeginInit();
             this.groupControl2.SuspendLayout();
@@ -59,6 +61,7 @@
             this.tabAccount.SuspendLayout();
             this.tabPageCommerce.SuspendLayout();
             this.tabPageConstruction.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).BeginInit();
             this.SuspendLayout();
             // 
             // tableLayoutPanel1
@@ -89,6 +92,7 @@
             // 
             // layoutControl1
             // 
+            this.layoutControl1.Controls.Add(this.btnSetAttachment);
             this.layoutControl1.Controls.Add(this.btnSetMeter);
             this.layoutControl1.Controls.Add(this.btnEdit);
             this.layoutControl1.Controls.Add(this.btnAdd);
@@ -137,7 +141,8 @@
             this.layoutControlGroup1.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
             this.layoutControlItem1,
             this.layoutControlItem2,
-            this.layoutControlItem3});
+            this.layoutControlItem3,
+            this.layoutControlItem4});
             this.layoutControlGroup1.Location = new System.Drawing.Point(0, 0);
             this.layoutControlGroup1.Name = "layoutControlGroup1";
             this.layoutControlGroup1.Size = new System.Drawing.Size(850, 111);
@@ -148,7 +153,7 @@
             this.layoutControlItem1.Control = this.btnAdd;
             this.layoutControlItem1.Location = new System.Drawing.Point(0, 0);
             this.layoutControlItem1.Name = "layoutControlItem1";
-            this.layoutControlItem1.Size = new System.Drawing.Size(291, 91);
+            this.layoutControlItem1.Size = new System.Drawing.Size(291, 26);
             this.layoutControlItem1.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem1.TextVisible = false;
             // 
@@ -208,6 +213,7 @@
             this.commerceAccountGrid.Dock = System.Windows.Forms.DockStyle.Fill;
             this.commerceAccountGrid.Editable = false;
             this.commerceAccountGrid.EnableMasterView = false;
+            this.commerceAccountGrid.EnableMultiSelect = false;
             this.commerceAccountGrid.Location = new System.Drawing.Point(0, 0);
             this.commerceAccountGrid.Name = "commerceAccountGrid";
             this.commerceAccountGrid.ShowAddMenu = false;
@@ -234,6 +240,7 @@
             this.constructionAccountGrid.Dock = System.Windows.Forms.DockStyle.Fill;
             this.constructionAccountGrid.Editable = false;
             this.constructionAccountGrid.EnableMasterView = false;
+            this.constructionAccountGrid.EnableMultiSelect = false;
             this.constructionAccountGrid.Location = new System.Drawing.Point(0, 0);
             this.constructionAccountGrid.Name = "constructionAccountGrid";
             this.constructionAccountGrid.ShowAddMenu = false;
@@ -243,6 +250,25 @@
             this.constructionAccountGrid.ShowNavigator = false;
             this.constructionAccountGrid.Size = new System.Drawing.Size(844, 331);
             this.constructionAccountGrid.TabIndex = 0;
+            // 
+            // btnSetAttachment
+            // 
+            this.btnSetAttachment.Location = new System.Drawing.Point(12, 38);
+            this.btnSetAttachment.Name = "btnSetAttachment";
+            this.btnSetAttachment.Size = new System.Drawing.Size(287, 22);
+            this.btnSetAttachment.StyleController = this.layoutControl1;
+            this.btnSetAttachment.TabIndex = 8;
+            this.btnSetAttachment.Text = "设置附件";
+            this.btnSetAttachment.Click += new System.EventHandler(this.btnSetAttachment_Click);
+            // 
+            // layoutControlItem4
+            // 
+            this.layoutControlItem4.Control = this.btnSetAttachment;
+            this.layoutControlItem4.Location = new System.Drawing.Point(0, 26);
+            this.layoutControlItem4.Name = "layoutControlItem4";
+            this.layoutControlItem4.Size = new System.Drawing.Size(291, 65);
+            this.layoutControlItem4.TextSize = new System.Drawing.Size(0, 0);
+            this.layoutControlItem4.TextVisible = false;
             // 
             // FrmAccountManage
             // 
@@ -267,6 +293,7 @@
             this.tabAccount.ResumeLayout(false);
             this.tabPageCommerce.ResumeLayout(false);
             this.tabPageConstruction.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -289,5 +316,7 @@
         private CommerceAccountGrid commerceAccountGrid;
         private DevExpress.XtraTab.XtraTabPage tabPageConstruction;
         private ConstructionAccountGrid constructionAccountGrid;
+        private DevExpress.XtraEditors.SimpleButton btnSetAttachment;
+        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem4;
     }
 }
