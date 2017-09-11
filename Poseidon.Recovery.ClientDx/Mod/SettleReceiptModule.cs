@@ -133,13 +133,14 @@ namespace Poseidon.Recovery.ClientDx
         /// <param name="e"></param>
         private void lbSettles_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (this.lbSettles.SelectedValue == null)
+            var settle = this.lbSettles.SelectedItem as Settle;
+            if (settle == null)
             {
                 Clear();
                 return;
             }
 
-            ShowSettleInfo(this.lbSettles.SelectedItem as Settle);
+            ShowSettleInfo(settle);
         }
 
         /// <summary>
