@@ -30,17 +30,17 @@
         {
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
-            this.layoutControlGroup1 = new DevExpress.XtraLayout.LayoutControlGroup();
-            this.cmbYear = new DevExpress.XtraEditors.ComboBoxEdit();
-            this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
             this.settleGrid = new Poseidon.Recovery.ClientDx.SettleGrid();
+            this.cmbYear = new DevExpress.XtraEditors.ComboBoxEdit();
+            this.layoutControlGroup1 = new DevExpress.XtraLayout.LayoutControlGroup();
+            this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem2 = new DevExpress.XtraLayout.LayoutControlItem();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cmbYear.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).BeginInit();
             this.SuspendLayout();
@@ -66,6 +66,39 @@
             this.layoutControl1.TabIndex = 0;
             this.layoutControl1.Text = "layoutControl1";
             // 
+            // settleGrid
+            // 
+            this.settleGrid.AllowFilter = true;
+            this.settleGrid.AllowGroup = false;
+            this.settleGrid.AllowSort = true;
+            this.settleGrid.DataSource = null;
+            this.settleGrid.Editable = false;
+            this.settleGrid.EnableMasterView = false;
+            this.settleGrid.EnableMultiSelect = true;
+            this.settleGrid.Location = new System.Drawing.Point(12, 36);
+            this.settleGrid.Name = "settleGrid";
+            this.settleGrid.ShowAccount = false;
+            this.settleGrid.ShowAddMenu = false;
+            this.settleGrid.ShowBeginEnd = true;
+            this.settleGrid.ShowFooter = true;
+            this.settleGrid.ShowLineNumber = true;
+            this.settleGrid.ShowMenu = false;
+            this.settleGrid.ShowNavigator = false;
+            this.settleGrid.Size = new System.Drawing.Size(545, 352);
+            this.settleGrid.TabIndex = 5;
+            // 
+            // cmbYear
+            // 
+            this.cmbYear.Location = new System.Drawing.Point(39, 12);
+            this.cmbYear.Name = "cmbYear";
+            this.cmbYear.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.cmbYear.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
+            this.cmbYear.Size = new System.Drawing.Size(518, 20);
+            this.cmbYear.StyleController = this.layoutControl1;
+            this.cmbYear.TabIndex = 4;
+            this.cmbYear.SelectedIndexChanged += new System.EventHandler(this.cmbYear_SelectedIndexChanged);
+            // 
             // layoutControlGroup1
             // 
             this.layoutControlGroup1.EnableIndentsWithoutBorders = DevExpress.Utils.DefaultBoolean.True;
@@ -78,18 +111,6 @@
             this.layoutControlGroup1.Size = new System.Drawing.Size(569, 400);
             this.layoutControlGroup1.TextVisible = false;
             // 
-            // cmbYear
-            // 
-            this.cmbYear.Location = new System.Drawing.Point(40, 12);
-            this.cmbYear.Name = "cmbYear";
-            this.cmbYear.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.cmbYear.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
-            this.cmbYear.Size = new System.Drawing.Size(517, 20);
-            this.cmbYear.StyleController = this.layoutControl1;
-            this.cmbYear.TabIndex = 4;
-            this.cmbYear.SelectedIndexChanged += new System.EventHandler(this.cmbYear_SelectedIndexChanged);
-            // 
             // layoutControlItem1
             // 
             this.layoutControlItem1.Control = this.cmbYear;
@@ -98,25 +119,6 @@
             this.layoutControlItem1.Size = new System.Drawing.Size(549, 24);
             this.layoutControlItem1.Text = "年度";
             this.layoutControlItem1.TextSize = new System.Drawing.Size(24, 14);
-            // 
-            // settleGrid
-            // 
-            this.settleGrid.AllowFilter = true;
-            this.settleGrid.AllowGroup = false;
-            this.settleGrid.AllowSort = true;
-            this.settleGrid.DataSource = null;
-            this.settleGrid.Editable = false;
-            this.settleGrid.EnableMasterView = false;
-            this.settleGrid.Location = new System.Drawing.Point(12, 36);
-            this.settleGrid.Name = "settleGrid";
-            this.settleGrid.ShowAddMenu = false;
-            this.settleGrid.ShowBeginEnd = true;
-            this.settleGrid.ShowFooter = true;
-            this.settleGrid.ShowLineNumber = true;
-            this.settleGrid.ShowMenu = false;
-            this.settleGrid.ShowNavigator = false;
-            this.settleGrid.Size = new System.Drawing.Size(545, 352);
-            this.settleGrid.TabIndex = 5;
             // 
             // layoutControlItem2
             // 
@@ -138,8 +140,8 @@
             this.panelControl1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).EndInit();
             this.layoutControl1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cmbYear.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).EndInit();
             this.ResumeLayout(false);

@@ -74,6 +74,7 @@
             this.recycleGrid.DataSource = null;
             this.recycleGrid.Editable = false;
             this.recycleGrid.EnableMasterView = false;
+            this.recycleGrid.EnableMultiSelect = true;
             this.recycleGrid.Location = new System.Drawing.Point(12, 36);
             this.recycleGrid.Name = "recycleGrid";
             this.recycleGrid.ShowAccount = false;

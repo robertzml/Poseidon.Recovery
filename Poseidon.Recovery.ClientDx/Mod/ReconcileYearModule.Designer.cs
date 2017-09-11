@@ -74,6 +74,7 @@
             this.reconcileGrid.DataSource = null;
             this.reconcileGrid.Editable = false;
             this.reconcileGrid.EnableMasterView = false;
+            this.reconcileGrid.EnableMultiSelect = true;
             this.reconcileGrid.Location = new System.Drawing.Point(12, 36);
             this.reconcileGrid.Name = "reconcileGrid";
             this.reconcileGrid.ShowAccount = false;

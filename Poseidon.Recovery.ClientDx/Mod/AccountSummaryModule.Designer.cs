@@ -636,6 +636,7 @@
             this.unoffSettleGrid.Dock = System.Windows.Forms.DockStyle.Fill;
             this.unoffSettleGrid.Editable = false;
             this.unoffSettleGrid.EnableMasterView = false;
+            this.unoffSettleGrid.EnableMultiSelect = true;
             this.unoffSettleGrid.Location = new System.Drawing.Point(2, 21);
             this.unoffSettleGrid.Name = "unoffSettleGrid";
             this.unoffSettleGrid.ShowAccount = false;
@@ -667,6 +668,7 @@
             this.unpostRecycleGrid.Dock = System.Windows.Forms.DockStyle.Fill;
             this.unpostRecycleGrid.Editable = false;
             this.unpostRecycleGrid.EnableMasterView = false;
+            this.unpostRecycleGrid.EnableMultiSelect = true;
             this.unpostRecycleGrid.Location = new System.Drawing.Point(2, 21);
             this.unpostRecycleGrid.Name = "unpostRecycleGrid";
             this.unpostRecycleGrid.ShowAccount = false;

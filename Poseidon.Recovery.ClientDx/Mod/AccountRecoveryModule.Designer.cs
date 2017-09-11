@@ -37,6 +37,8 @@
             this.constructionAccountMod = new Poseidon.Recovery.ClientDx.ConstructionAccountInfo();
             this.tabPageMeters = new DevExpress.XtraTab.XtraTabPage();
             this.meterGrid = new Poseidon.Recovery.ClientDx.MeterGrid();
+            this.tabPageAttachment = new DevExpress.XtraTab.XtraTabPage();
+            this.attachmentTool = new Poseidon.Winform.Core.AttachmentTool();
             this.tabMain = new DevExpress.XtraTab.XtraTabControl();
             this.tabPageSummary = new DevExpress.XtraTab.XtraTabPage();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
@@ -97,8 +99,6 @@
             this.settleInspectMod = new Poseidon.Recovery.ClientDx.SettleInspectModule();
             this.tabPageRecycleInspect = new DevExpress.XtraTab.XtraTabPage();
             this.recycleInspectMod = new Poseidon.Recovery.ClientDx.RecycleInspectModule();
-            this.tabPageAttachment = new DevExpress.XtraTab.XtraTabPage();
-            this.attachmentTool = new Poseidon.Winform.Core.AttachmentTool();
             ((System.ComponentModel.ISupportInitialize)(this.tabInfo)).BeginInit();
             this.tabInfo.SuspendLayout();
             this.tabPageBaseInfo.SuspendLayout();
@@ -106,6 +106,7 @@
             this.navigationPage1.SuspendLayout();
             this.navigationPage2.SuspendLayout();
             this.tabPageMeters.SuspendLayout();
+            this.tabPageAttachment.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tabMain)).BeginInit();
             this.tabMain.SuspendLayout();
             this.tabPageSummary.SuspendLayout();
@@ -161,7 +162,6 @@
             this.tabInspect.SuspendLayout();
             this.tabPageSettleInspect.SuspendLayout();
             this.tabPageRecycleInspect.SuspendLayout();
-            this.tabPageAttachment.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabInfo
@@ -258,6 +258,21 @@
             this.meterGrid.Size = new System.Drawing.Size(882, 185);
             this.meterGrid.TabIndex = 0;
             // 
+            // tabPageAttachment
+            // 
+            this.tabPageAttachment.Controls.Add(this.attachmentTool);
+            this.tabPageAttachment.Name = "tabPageAttachment";
+            this.tabPageAttachment.Size = new System.Drawing.Size(882, 185);
+            this.tabPageAttachment.Text = "相关附件";
+            // 
+            // attachmentTool
+            // 
+            this.attachmentTool.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.attachmentTool.Location = new System.Drawing.Point(0, 0);
+            this.attachmentTool.Name = "attachmentTool";
+            this.attachmentTool.Size = new System.Drawing.Size(882, 185);
+            this.attachmentTool.TabIndex = 0;
+            // 
             // tabMain
             // 
             this.tabMain.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -340,7 +355,7 @@
             this.settleGrid.Dock = System.Windows.Forms.DockStyle.Fill;
             this.settleGrid.Editable = false;
             this.settleGrid.EnableMasterView = false;
-            this.settleGrid.EnableMultiSelect = false;
+            this.settleGrid.EnableMultiSelect = true;
             this.settleGrid.Location = new System.Drawing.Point(0, 0);
             this.settleGrid.Name = "settleGrid";
             this.settleGrid.ShowAccount = false;
@@ -369,7 +384,7 @@
             this.recycleGrid.Dock = System.Windows.Forms.DockStyle.Fill;
             this.recycleGrid.Editable = false;
             this.recycleGrid.EnableMasterView = false;
-            this.recycleGrid.EnableMultiSelect = false;
+            this.recycleGrid.EnableMultiSelect = true;
             this.recycleGrid.Location = new System.Drawing.Point(0, 0);
             this.recycleGrid.Name = "recycleGrid";
             this.recycleGrid.ShowAccount = false;
@@ -397,7 +412,7 @@
             this.reconcileGrid.Dock = System.Windows.Forms.DockStyle.Fill;
             this.reconcileGrid.Editable = false;
             this.reconcileGrid.EnableMasterView = false;
-            this.reconcileGrid.EnableMultiSelect = false;
+            this.reconcileGrid.EnableMultiSelect = true;
             this.reconcileGrid.Location = new System.Drawing.Point(0, 0);
             this.reconcileGrid.Name = "reconcileGrid";
             this.reconcileGrid.ShowAccount = false;
@@ -856,21 +871,6 @@
             this.recycleInspectMod.Size = new System.Drawing.Size(888, 742);
             this.recycleInspectMod.TabIndex = 0;
             // 
-            // tabPageAttachment
-            // 
-            this.tabPageAttachment.Controls.Add(this.attachmentTool);
-            this.tabPageAttachment.Name = "tabPageAttachment";
-            this.tabPageAttachment.Size = new System.Drawing.Size(882, 185);
-            this.tabPageAttachment.Text = "相关附件";
-            // 
-            // attachmentTool
-            // 
-            this.attachmentTool.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.attachmentTool.Location = new System.Drawing.Point(0, 0);
-            this.attachmentTool.Name = "attachmentTool";
-            this.attachmentTool.Size = new System.Drawing.Size(882, 185);
-            this.attachmentTool.TabIndex = 0;
-            // 
             // AccountRecoveryModule
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
@@ -885,6 +885,7 @@
             this.navigationPage1.ResumeLayout(false);
             this.navigationPage2.ResumeLayout(false);
             this.tabPageMeters.ResumeLayout(false);
+            this.tabPageAttachment.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.tabMain)).EndInit();
             this.tabMain.ResumeLayout(false);
             this.tabPageSummary.ResumeLayout(false);
@@ -940,7 +941,6 @@
             this.tabInspect.ResumeLayout(false);
             this.tabPageSettleInspect.ResumeLayout(false);
             this.tabPageRecycleInspect.ResumeLayout(false);
-            this.tabPageAttachment.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
