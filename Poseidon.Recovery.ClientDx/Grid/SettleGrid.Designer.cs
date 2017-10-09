@@ -39,6 +39,8 @@
             this.colRemark = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colStatus = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colId = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colOffAmount = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colUnOffAmount = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.bsEntity)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgcEntity)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEntity)).BeginInit();
@@ -62,6 +64,8 @@
             this.colPreviousDate,
             this.colCurrentDate,
             this.colTotalAmount,
+            this.colOffAmount,
+            this.colUnOffAmount,
             this.colIsFree,
             this.colIsWriteOff,
             this.colRemark,
@@ -127,21 +131,21 @@
             this.colIsFree.FieldName = "IsFree";
             this.colIsFree.Name = "colIsFree";
             this.colIsFree.Visible = true;
-            this.colIsFree.VisibleIndex = 6;
+            this.colIsFree.VisibleIndex = 8;
             // 
             // colIsWriteOff
             // 
             this.colIsWriteOff.FieldName = "IsWriteOff";
             this.colIsWriteOff.Name = "colIsWriteOff";
             this.colIsWriteOff.Visible = true;
-            this.colIsWriteOff.VisibleIndex = 7;
+            this.colIsWriteOff.VisibleIndex = 9;
             // 
             // colRemark
             // 
             this.colRemark.FieldName = "Remark";
             this.colRemark.Name = "colRemark";
             this.colRemark.Visible = true;
-            this.colRemark.VisibleIndex = 8;
+            this.colRemark.VisibleIndex = 10;
             // 
             // colStatus
             // 
@@ -152,6 +156,28 @@
             // 
             this.colId.FieldName = "Id";
             this.colId.Name = "colId";
+            // 
+            // colOffAmount
+            // 
+            this.colOffAmount.Caption = "已核销金额";
+            this.colOffAmount.FieldName = "OffAmount";
+            this.colOffAmount.Name = "colOffAmount";
+            this.colOffAmount.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
+            new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "OffAmount", "合计={0:0.##}")});
+            this.colOffAmount.Visible = true;
+            this.colOffAmount.VisibleIndex = 6;
+            // 
+            // colUnOffAmount
+            // 
+            this.colUnOffAmount.Caption = "未核销金额";
+            this.colUnOffAmount.FieldName = "colUnOffAmount";
+            this.colUnOffAmount.Name = "colUnOffAmount";
+            this.colUnOffAmount.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
+            new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "colUnOffAmount", "合计={0:0.##}")});
+            this.colUnOffAmount.UnboundExpression = "[TotalAmount] - [OffAmount]";
+            this.colUnOffAmount.UnboundType = DevExpress.Data.UnboundColumnType.Decimal;
+            this.colUnOffAmount.Visible = true;
+            this.colUnOffAmount.VisibleIndex = 7;
             // 
             // SettleGrid
             // 
@@ -179,5 +205,7 @@
         private DevExpress.XtraGrid.Columns.GridColumn colRemark;
         private DevExpress.XtraGrid.Columns.GridColumn colStatus;
         private DevExpress.XtraGrid.Columns.GridColumn colId;
+        private DevExpress.XtraGrid.Columns.GridColumn colOffAmount;
+        private DevExpress.XtraGrid.Columns.GridColumn colUnOffAmount;
     }
 }

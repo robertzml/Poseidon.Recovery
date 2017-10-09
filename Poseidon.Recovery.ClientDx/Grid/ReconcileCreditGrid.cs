@@ -103,6 +103,19 @@ namespace Poseidon.Recovery.ClientDx
                     e.Value = recycle.TotalAmount;
                 }
             }
+            if (e.Column.FieldName == "colUnpostAmount" && e.IsGetData)
+            {
+                var recycle = this.recycles.SingleOrDefault(r => r.Id == record.RecycleId);
+                if (recycle != null)
+                {
+                    e.Value = recycle.TotalAmount - recycle.PostAmount;
+                }
+                else
+                {
+                    recycle = BusinessFactory<RecycleBusiness>.Instance.FindById(record.RecycleId);
+                    e.Value = recycle.TotalAmount - recycle.PostAmount;
+                }
+            }
         }
         #endregion //Event
     }

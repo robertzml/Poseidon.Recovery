@@ -35,6 +35,7 @@
             this.colSettleAmount = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colFeeType = new DevExpress.XtraGrid.Columns.GridColumn();
             this.cmbFeeType = new DevExpress.XtraEditors.Repository.RepositoryItemImageComboBox();
+            this.colUnoffAmount = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.bsEntity)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgcEntity)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEntity)).BeginInit();
@@ -57,6 +58,7 @@
             this.colAccountId,
             this.colSettleId,
             this.colSettleAmount,
+            this.colUnoffAmount,
             this.colFeeType,
             this.colAmount,
             this.colRemark});
@@ -88,14 +90,14 @@
             this.colAmount.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
             new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "Amount", "合计={0:0.##}")});
             this.colAmount.Visible = true;
-            this.colAmount.VisibleIndex = 3;
+            this.colAmount.VisibleIndex = 4;
             // 
             // colRemark
             // 
             this.colRemark.FieldName = "Remark";
             this.colRemark.Name = "colRemark";
             this.colRemark.Visible = true;
-            this.colRemark.VisibleIndex = 4;
+            this.colRemark.VisibleIndex = 5;
             // 
             // colAccountId
             // 
@@ -132,6 +134,16 @@
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.cmbFeeType.Name = "cmbFeeType";
             // 
+            // colUnoffAmount
+            // 
+            this.colUnoffAmount.Caption = "未核销金额";
+            this.colUnoffAmount.FieldName = "colUnoffAmount";
+            this.colUnoffAmount.Name = "colUnoffAmount";
+            this.colUnoffAmount.OptionsColumn.AllowEdit = false;
+            this.colUnoffAmount.UnboundType = DevExpress.Data.UnboundColumnType.Decimal;
+            this.colUnoffAmount.Visible = true;
+            this.colUnoffAmount.VisibleIndex = 3;
+            // 
             // ReconcileDebitGrid
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
@@ -155,5 +167,6 @@
         private DevExpress.XtraGrid.Columns.GridColumn colSettleAmount;
         private DevExpress.XtraGrid.Columns.GridColumn colFeeType;
         private DevExpress.XtraEditors.Repository.RepositoryItemImageComboBox cmbFeeType;
+        private DevExpress.XtraGrid.Columns.GridColumn colUnoffAmount;
     }
 }

@@ -34,6 +34,8 @@
             this.colIsPost = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colRemark = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colId = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colPostAmount = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colUnPostAmount = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.bsEntity)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgcEntity)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEntity)).BeginInit();
@@ -54,6 +56,8 @@
             this.colAccountId,
             this.colRecycleDate,
             this.colTotalAmount,
+            this.colPostAmount,
+            this.colUnPostAmount,
             this.colIsPost,
             this.colRemark});
             this.dgvEntity.IndicatorWidth = 40;
@@ -96,19 +100,41 @@
             this.colIsPost.FieldName = "IsPost";
             this.colIsPost.Name = "colIsPost";
             this.colIsPost.Visible = true;
-            this.colIsPost.VisibleIndex = 3;
+            this.colIsPost.VisibleIndex = 5;
             // 
             // colRemark
             // 
             this.colRemark.FieldName = "Remark";
             this.colRemark.Name = "colRemark";
             this.colRemark.Visible = true;
-            this.colRemark.VisibleIndex = 4;
+            this.colRemark.VisibleIndex = 6;
             // 
             // colId
             // 
             this.colId.FieldName = "Id";
             this.colId.Name = "colId";
+            // 
+            // colPostAmount
+            // 
+            this.colPostAmount.Caption = "已入账金额";
+            this.colPostAmount.FieldName = "PostAmount";
+            this.colPostAmount.Name = "colPostAmount";
+            this.colPostAmount.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
+            new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "PostAmount", "合计={0:0.##}")});
+            this.colPostAmount.Visible = true;
+            this.colPostAmount.VisibleIndex = 3;
+            // 
+            // colUnPostAmount
+            // 
+            this.colUnPostAmount.Caption = "未入账金额";
+            this.colUnPostAmount.FieldName = "colUnPostAmount";
+            this.colUnPostAmount.Name = "colUnPostAmount";
+            this.colUnPostAmount.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
+            new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "colUnPostAmount", "合计={0:0.##}")});
+            this.colUnPostAmount.UnboundExpression = "[TotalAmount] - [PostAmount]";
+            this.colUnPostAmount.UnboundType = DevExpress.Data.UnboundColumnType.Decimal;
+            this.colUnPostAmount.Visible = true;
+            this.colUnPostAmount.VisibleIndex = 4;
             // 
             // RecycleGrid
             // 
@@ -131,5 +157,7 @@
         private DevExpress.XtraGrid.Columns.GridColumn colIsPost;
         private DevExpress.XtraGrid.Columns.GridColumn colRemark;
         private DevExpress.XtraGrid.Columns.GridColumn colId;
+        private DevExpress.XtraGrid.Columns.GridColumn colPostAmount;
+        private DevExpress.XtraGrid.Columns.GridColumn colUnPostAmount;
     }
 }

@@ -47,6 +47,11 @@ namespace Poseidon.Recovery.Core.DAL.Mongo
             entity.IsFree = doc["isFree"].ToBoolean();
             entity.IsWriteOff = doc["isWriteOff"].ToBoolean();
 
+            if (doc.Contains("offAmount"))
+                entity.OffAmount = doc["offAmount"].ToDecimal();
+            else
+                entity.OffAmount = 0;
+
             entity.Records = new List<SettleRecord>();
             if (doc.Contains("records"))
             {
@@ -116,6 +121,7 @@ namespace Poseidon.Recovery.Core.DAL.Mongo
                 { "previousDate", entity.PreviousDate },
                 { "currentDate", entity.CurrentDate },
                 { "totalAmount", entity.TotalAmount },
+                { "offAmount", entity.OffAmount },
                 { "isFree", entity.IsFree },
                 { "isWriteOff", entity.IsWriteOff },
                 { "createBy", new BsonDocument {

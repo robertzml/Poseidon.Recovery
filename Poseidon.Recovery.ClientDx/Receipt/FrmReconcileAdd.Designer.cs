@@ -347,6 +347,7 @@
             this.debitGrid.DataSource = null;
             this.debitGrid.Editable = true;
             this.debitGrid.EnableMasterView = false;
+            this.debitGrid.EnableMultiSelect = false;
             this.debitGrid.IsSettle = true;
             this.debitGrid.Location = new System.Drawing.Point(7, 31);
             this.debitGrid.Name = "debitGrid";
@@ -438,6 +439,7 @@
             this.creditGrid.DataSource = null;
             this.creditGrid.Editable = true;
             this.creditGrid.EnableMasterView = false;
+            this.creditGrid.EnableMultiSelect = false;
             this.creditGrid.Location = new System.Drawing.Point(7, 31);
             this.creditGrid.Name = "creditGrid";
             this.creditGrid.ShowAddMenu = false;
@@ -524,6 +526,7 @@
             this.debitOtherGrid.Dock = System.Windows.Forms.DockStyle.Fill;
             this.debitOtherGrid.Editable = true;
             this.debitOtherGrid.EnableMasterView = false;
+            this.debitOtherGrid.EnableMultiSelect = false;
             this.debitOtherGrid.IsSettle = false;
             this.debitOtherGrid.Location = new System.Drawing.Point(2, 21);
             this.debitOtherGrid.Name = "debitOtherGrid";
@@ -554,6 +557,7 @@
             this.recycleRecordGrid.Dock = System.Windows.Forms.DockStyle.Fill;
             this.recycleRecordGrid.Editable = false;
             this.recycleRecordGrid.EnableMasterView = false;
+            this.recycleRecordGrid.EnableMultiSelect = false;
             this.recycleRecordGrid.Location = new System.Drawing.Point(2, 21);
             this.recycleRecordGrid.Name = "recycleRecordGrid";
             this.recycleRecordGrid.ShowAddMenu = false;

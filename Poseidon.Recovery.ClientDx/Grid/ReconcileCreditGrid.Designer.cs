@@ -33,6 +33,7 @@
             this.colAmount = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colRemark = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colRecycleAmount = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colUnpostAmount = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.bsEntity)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgcEntity)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEntity)).BeginInit();
@@ -52,6 +53,7 @@
             this.colAccountId,
             this.colRecycleId,
             this.colRecycleAmount,
+            this.colUnpostAmount,
             this.colAmount,
             this.colRemark});
             this.dgvEntity.IndicatorWidth = 40;
@@ -88,14 +90,14 @@
             this.colAmount.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
             new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "Amount", "合计={0:0.##}")});
             this.colAmount.Visible = true;
-            this.colAmount.VisibleIndex = 2;
+            this.colAmount.VisibleIndex = 3;
             // 
             // colRemark
             // 
             this.colRemark.FieldName = "Remark";
             this.colRemark.Name = "colRemark";
             this.colRemark.Visible = true;
-            this.colRemark.VisibleIndex = 3;
+            this.colRemark.VisibleIndex = 4;
             // 
             // colRecycleAmount
             // 
@@ -108,6 +110,16 @@
             this.colRecycleAmount.UnboundType = DevExpress.Data.UnboundColumnType.Decimal;
             this.colRecycleAmount.Visible = true;
             this.colRecycleAmount.VisibleIndex = 1;
+            // 
+            // colUnpostAmount
+            // 
+            this.colUnpostAmount.Caption = "未入账金额";
+            this.colUnpostAmount.FieldName = "colUnpostAmount";
+            this.colUnpostAmount.Name = "colUnpostAmount";
+            this.colUnpostAmount.OptionsColumn.AllowEdit = false;
+            this.colUnpostAmount.UnboundType = DevExpress.Data.UnboundColumnType.Decimal;
+            this.colUnpostAmount.Visible = true;
+            this.colUnpostAmount.VisibleIndex = 2;
             // 
             // ReconcileCreditGrid
             // 
@@ -128,5 +140,6 @@
         private DevExpress.XtraGrid.Columns.GridColumn colRecycleAmount;
         private DevExpress.XtraGrid.Columns.GridColumn colAmount;
         private DevExpress.XtraGrid.Columns.GridColumn colRemark;
+        private DevExpress.XtraGrid.Columns.GridColumn colUnpostAmount;
     }
 }

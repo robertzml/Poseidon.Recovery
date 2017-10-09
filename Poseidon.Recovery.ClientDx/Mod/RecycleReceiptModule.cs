@@ -67,6 +67,9 @@ namespace Poseidon.Recovery.ClientDx
 
             this.recycleRecordGrid.DataSource = recycle.Records;
             this.attachmentTool.Init(recycle.AttachmentIds);
+
+            this.txtPostAmount.Text = recycle.PostAmount.ToString();
+            this.txtUnPostAmount.Text = (recycle.TotalAmount - recycle.PostAmount).ToString();
         }
         #endregion //Function
 

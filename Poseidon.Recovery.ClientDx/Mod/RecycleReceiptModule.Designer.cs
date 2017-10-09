@@ -28,10 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
             this.lbRecycles = new DevExpress.XtraEditors.ListBoxControl();
-            this.bsRecycle = new System.Windows.Forms.BindingSource();
+            this.bsRecycle = new System.Windows.Forms.BindingSource(this.components);
             this.groupControl2 = new DevExpress.XtraEditors.GroupControl();
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
             this.btnRefresh = new DevExpress.XtraEditors.SimpleButton();
@@ -63,6 +64,10 @@
             this.recycleRecordGrid = new Poseidon.Recovery.ClientDx.RecycleRecordGrid();
             this.groupControl4 = new DevExpress.XtraEditors.GroupControl();
             this.attachmentTool = new Poseidon.Winform.Core.AttachmentTool();
+            this.txtPostAmount = new DevExpress.XtraEditors.TextEdit();
+            this.layoutControlItem12 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.txtUnPostAmount = new DevExpress.XtraEditors.TextEdit();
+            this.layoutControlItem13 = new DevExpress.XtraLayout.LayoutControlItem();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
             this.groupControl1.SuspendLayout();
@@ -98,6 +103,10 @@
             this.groupControl3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl4)).BeginInit();
             this.groupControl4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.txtPostAmount.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem12)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtUnPostAmount.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem13)).BeginInit();
             this.SuspendLayout();
             // 
             // tableLayoutPanel1
@@ -158,6 +167,8 @@
             // 
             // layoutControl1
             // 
+            this.layoutControl1.Controls.Add(this.txtUnPostAmount);
+            this.layoutControl1.Controls.Add(this.txtPostAmount);
             this.layoutControl1.Controls.Add(this.btnRefresh);
             this.layoutControl1.Controls.Add(this.chkIsPost);
             this.layoutControl1.Controls.Add(this.btnEdit);
@@ -219,18 +230,18 @@
             // 
             // txtRemark
             // 
-            this.txtRemark.Location = new System.Drawing.Point(85, 84);
+            this.txtRemark.Location = new System.Drawing.Point(85, 108);
             this.txtRemark.Name = "txtRemark";
             this.txtRemark.Properties.Appearance.BackColor = System.Drawing.Color.Lavender;
             this.txtRemark.Properties.Appearance.Options.UseBackColor = true;
             this.txtRemark.Properties.ReadOnly = true;
-            this.txtRemark.Size = new System.Drawing.Size(576, 46);
+            this.txtRemark.Size = new System.Drawing.Size(576, 22);
             this.txtRemark.StyleController = this.layoutControl1;
             this.txtRemark.TabIndex = 10;
             // 
             // txtEditTime
             // 
-            this.txtEditTime.Location = new System.Drawing.Point(411, 60);
+            this.txtEditTime.Location = new System.Drawing.Point(411, 84);
             this.txtEditTime.Name = "txtEditTime";
             this.txtEditTime.Properties.Appearance.BackColor = System.Drawing.Color.Lavender;
             this.txtEditTime.Properties.Appearance.Options.UseBackColor = true;
@@ -241,7 +252,7 @@
             // 
             // txtEditUser
             // 
-            this.txtEditUser.Location = new System.Drawing.Point(85, 60);
+            this.txtEditUser.Location = new System.Drawing.Point(85, 84);
             this.txtEditUser.Name = "txtEditUser";
             this.txtEditUser.Properties.Appearance.BackColor = System.Drawing.Color.Lavender;
             this.txtEditUser.Properties.Appearance.Options.UseBackColor = true;
@@ -252,7 +263,7 @@
             // 
             // txtCreateTime
             // 
-            this.txtCreateTime.Location = new System.Drawing.Point(411, 36);
+            this.txtCreateTime.Location = new System.Drawing.Point(411, 60);
             this.txtCreateTime.Name = "txtCreateTime";
             this.txtCreateTime.Properties.Appearance.BackColor = System.Drawing.Color.Lavender;
             this.txtCreateTime.Properties.Appearance.Options.UseBackColor = true;
@@ -263,7 +274,7 @@
             // 
             // txtCreateUser
             // 
-            this.txtCreateUser.Location = new System.Drawing.Point(85, 36);
+            this.txtCreateUser.Location = new System.Drawing.Point(85, 60);
             this.txtCreateUser.Name = "txtCreateUser";
             this.txtCreateUser.Properties.Appearance.BackColor = System.Drawing.Color.Lavender;
             this.txtCreateUser.Properties.Appearance.Options.UseBackColor = true;
@@ -308,7 +319,9 @@
             this.layoutControlItem7,
             this.lcgAction,
             this.layoutControlItem10,
-            this.lcgFunction});
+            this.lcgFunction,
+            this.layoutControlItem12,
+            this.layoutControlItem13});
             this.layoutControlGroup1.Location = new System.Drawing.Point(0, 0);
             this.layoutControlGroup1.Name = "layoutControlGroup1";
             this.layoutControlGroup1.Size = new System.Drawing.Size(673, 211);
@@ -335,7 +348,7 @@
             // layoutControlItem3
             // 
             this.layoutControlItem3.Control = this.txtCreateUser;
-            this.layoutControlItem3.Location = new System.Drawing.Point(0, 24);
+            this.layoutControlItem3.Location = new System.Drawing.Point(0, 48);
             this.layoutControlItem3.Name = "layoutControlItem3";
             this.layoutControlItem3.Size = new System.Drawing.Size(326, 24);
             this.layoutControlItem3.Text = "登记人";
@@ -344,7 +357,7 @@
             // layoutControlItem4
             // 
             this.layoutControlItem4.Control = this.txtCreateTime;
-            this.layoutControlItem4.Location = new System.Drawing.Point(326, 24);
+            this.layoutControlItem4.Location = new System.Drawing.Point(326, 48);
             this.layoutControlItem4.Name = "layoutControlItem4";
             this.layoutControlItem4.Size = new System.Drawing.Size(327, 24);
             this.layoutControlItem4.Text = "登记时间";
@@ -353,7 +366,7 @@
             // layoutControlItem5
             // 
             this.layoutControlItem5.Control = this.txtEditUser;
-            this.layoutControlItem5.Location = new System.Drawing.Point(0, 48);
+            this.layoutControlItem5.Location = new System.Drawing.Point(0, 72);
             this.layoutControlItem5.Name = "layoutControlItem5";
             this.layoutControlItem5.Size = new System.Drawing.Size(326, 24);
             this.layoutControlItem5.Text = "编辑人";
@@ -362,7 +375,7 @@
             // layoutControlItem6
             // 
             this.layoutControlItem6.Control = this.txtEditTime;
-            this.layoutControlItem6.Location = new System.Drawing.Point(326, 48);
+            this.layoutControlItem6.Location = new System.Drawing.Point(326, 72);
             this.layoutControlItem6.Name = "layoutControlItem6";
             this.layoutControlItem6.Size = new System.Drawing.Size(327, 24);
             this.layoutControlItem6.Text = "编辑时间";
@@ -371,9 +384,9 @@
             // layoutControlItem7
             // 
             this.layoutControlItem7.Control = this.txtRemark;
-            this.layoutControlItem7.Location = new System.Drawing.Point(0, 72);
+            this.layoutControlItem7.Location = new System.Drawing.Point(0, 96);
             this.layoutControlItem7.Name = "layoutControlItem7";
-            this.layoutControlItem7.Size = new System.Drawing.Size(653, 50);
+            this.layoutControlItem7.Size = new System.Drawing.Size(653, 26);
             this.layoutControlItem7.Text = "备注";
             this.layoutControlItem7.TextSize = new System.Drawing.Size(70, 14);
             // 
@@ -480,6 +493,46 @@
             this.attachmentTool.Size = new System.Drawing.Size(673, 89);
             this.attachmentTool.TabIndex = 0;
             // 
+            // txtPostAmount
+            // 
+            this.txtPostAmount.Location = new System.Drawing.Point(85, 36);
+            this.txtPostAmount.Name = "txtPostAmount";
+            this.txtPostAmount.Properties.Appearance.BackColor = System.Drawing.Color.Lavender;
+            this.txtPostAmount.Properties.Appearance.Options.UseBackColor = true;
+            this.txtPostAmount.Properties.ReadOnly = true;
+            this.txtPostAmount.Size = new System.Drawing.Size(249, 20);
+            this.txtPostAmount.StyleController = this.layoutControl1;
+            this.txtPostAmount.TabIndex = 15;
+            // 
+            // layoutControlItem12
+            // 
+            this.layoutControlItem12.Control = this.txtPostAmount;
+            this.layoutControlItem12.Location = new System.Drawing.Point(0, 24);
+            this.layoutControlItem12.Name = "layoutControlItem12";
+            this.layoutControlItem12.Size = new System.Drawing.Size(326, 24);
+            this.layoutControlItem12.Text = "已入账金额";
+            this.layoutControlItem12.TextSize = new System.Drawing.Size(70, 14);
+            // 
+            // txtUnPostAmount
+            // 
+            this.txtUnPostAmount.Location = new System.Drawing.Point(411, 36);
+            this.txtUnPostAmount.Name = "txtUnPostAmount";
+            this.txtUnPostAmount.Properties.Appearance.BackColor = System.Drawing.Color.Lavender;
+            this.txtUnPostAmount.Properties.Appearance.Options.UseBackColor = true;
+            this.txtUnPostAmount.Properties.ReadOnly = true;
+            this.txtUnPostAmount.Size = new System.Drawing.Size(250, 20);
+            this.txtUnPostAmount.StyleController = this.layoutControl1;
+            this.txtUnPostAmount.TabIndex = 16;
+            // 
+            // layoutControlItem13
+            // 
+            this.layoutControlItem13.Control = this.txtUnPostAmount;
+            this.layoutControlItem13.Location = new System.Drawing.Point(326, 24);
+            this.layoutControlItem13.Name = "layoutControlItem13";
+            this.layoutControlItem13.Size = new System.Drawing.Size(327, 24);
+            this.layoutControlItem13.Text = "未入账金额";
+            this.layoutControlItem13.TextSize = new System.Drawing.Size(70, 14);
+            // 
             // RecycleReceiptModule
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
@@ -523,6 +576,10 @@
             this.groupControl3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.groupControl4)).EndInit();
             this.groupControl4.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.txtPostAmount.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem12)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtUnPostAmount.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem13)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -564,5 +621,9 @@
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem11;
         private DevExpress.XtraEditors.GroupControl groupControl4;
         private Winform.Core.AttachmentTool attachmentTool;
+        private DevExpress.XtraEditors.TextEdit txtUnPostAmount;
+        private DevExpress.XtraEditors.TextEdit txtPostAmount;
+        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem12;
+        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem13;
     }
 }

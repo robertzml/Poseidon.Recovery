@@ -134,7 +134,7 @@ namespace Poseidon.Recovery.Core.BL
             // recycle post
             RecycleBusiness recycleBusiness = new RecycleBusiness();
             var credit = entity.Credits.First();
-            recycleBusiness.Post(credit.RecycleId, true);
+            recycleBusiness.Post(credit.RecycleId, credit.Amount);
 
             // settle write-off
             SettleBusiness settleBusiness = new SettleBusiness();
@@ -143,8 +143,8 @@ namespace Poseidon.Recovery.Core.BL
                 if (string.IsNullOrEmpty(item.SettleId))
                     continue;
 
-                bool isOff = CheckSettle(item.SettleId);
-                settleBusiness.WriteOff(item.SettleId, isOff);
+                //bool isOff = CheckSettle(item.SettleId);
+                settleBusiness.WriteOff(item.SettleId, item.Amount);
             }
         }
 
@@ -178,7 +178,7 @@ namespace Poseidon.Recovery.Core.BL
 
             // recycle post
             RecycleBusiness recycleBusiness = new RecycleBusiness();
-            recycleBusiness.Post(credit.RecycleId, false);
+            recycleBusiness.Post(credit.RecycleId, -credit.Amount);
 
             // settle write-off
             SettleBusiness settleBusiness = new SettleBusiness();
@@ -187,8 +187,8 @@ namespace Poseidon.Recovery.Core.BL
                 if (string.IsNullOrEmpty(item.SettleId))
                     continue;
 
-                bool isOff = CheckSettle(item.SettleId);
-                settleBusiness.WriteOff(item.SettleId, isOff);
+                //bool isOff = CheckSettle(item.SettleId);
+                settleBusiness.WriteOff(item.SettleId, -item.Amount);
             }
         }
         #endregion //Method

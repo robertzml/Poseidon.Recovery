@@ -53,6 +53,12 @@ namespace Poseidon.Recovery.Core.DL
         public decimal TotalAmount { get; set; }
 
         /// <summary>
+        /// 已核销金额
+        /// </summary>
+        [Display(Name = "已核销金额")]
+        public decimal OffAmount { get; set; }
+
+        /// <summary>
         /// 是否免费
         /// </summary>
         [Display(Name = "是否免费")]

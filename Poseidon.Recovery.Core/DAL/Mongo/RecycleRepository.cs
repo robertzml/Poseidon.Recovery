@@ -43,6 +43,9 @@ namespace Poseidon.Recovery.Core.DAL.Mongo
             entity.TotalAmount = doc["totalAmount"].ToDecimal();
             entity.IsPost = doc["isPost"].ToBoolean();
 
+            if (doc.Contains("postAmount"))
+                entity.PostAmount = doc["postAmount"].ToDecimal();
+
             entity.Records = new List<RecycleRecord>();
             if (doc.Contains("records"))
             {
@@ -103,6 +106,7 @@ namespace Poseidon.Recovery.Core.DAL.Mongo
                 { "accountId", entity.AccountId },
                 { "recycleDate", entity.RecycleDate },
                 { "totalAmount", entity.TotalAmount },
+                { "postAmount", entity.PostAmount },
                 { "isPost", entity.IsPost },
                 { "createBy", new BsonDocument {
                     { "userId", entity.CreateBy.UserId },

@@ -73,9 +73,12 @@ namespace Poseidon.Recovery.ClientDx
 
             this.txtElectricQuantum.Text = settle.Records.Where(r => r.MeterType == (int)MeterEnergyType.Electric).Sum(r => r.Quantum).ToString();
             this.txtWaterQuantum.Text = settle.Records.Where(r => r.MeterType == (int)MeterEnergyType.Water).Sum(r => r.Quantum).ToString();
-
+            
             this.settleRecordGrid.DataSource = settle.Records;
             this.attachmentTool.Init(settle.AttachmentIds);
+
+            this.txtOffAmount.Text = settle.OffAmount.ToString();
+            this.txtUnoffAmount.Text = (settle.TotalAmount - settle.OffAmount).ToString();
         }
         #endregion //Function
 

@@ -62,6 +62,7 @@ namespace Poseidon.Recovery.ClientDx
         {
             this.colSettleId.Visible = this.isSettle;
             this.colSettleAmount.Visible = this.isSettle;
+            this.colUnoffAmount.Visible = this.isSettle;
         }
 
         /// <summary>
@@ -119,6 +120,21 @@ namespace Poseidon.Recovery.ClientDx
                 {
                     settle = BusinessFactory<SettleBusiness>.Instance.FindById(record.SettleId);
                     e.Value = settle.TotalAmount;
+                }
+            }
+            if (e.Column.FieldName == "colUnoffAmount" && e.IsGetData)
+            {
+                if (string.IsNullOrEmpty(record.SettleId))
+                    return;
+                var settle = this.settles.SingleOrDefault(r => r.Id == record.SettleId);
+                if (settle != null)
+                {
+                    e.Value = settle.TotalAmount - settle.OffAmount;
+                }
+                else
+                {
+                    settle = BusinessFactory<SettleBusiness>.Instance.FindById(record.SettleId);
+                    e.Value = settle.TotalAmount - settle.OffAmount;
                 }
             }
         }
