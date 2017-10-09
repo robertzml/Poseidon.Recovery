@@ -35,6 +35,8 @@
             this.bsRecycle = new System.Windows.Forms.BindingSource(this.components);
             this.groupControl2 = new DevExpress.XtraEditors.GroupControl();
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
+            this.txtUnPostAmount = new DevExpress.XtraEditors.TextEdit();
+            this.txtPostAmount = new DevExpress.XtraEditors.TextEdit();
             this.btnRefresh = new DevExpress.XtraEditors.SimpleButton();
             this.chkIsPost = new DevExpress.XtraEditors.CheckEdit();
             this.btnEdit = new DevExpress.XtraEditors.SimpleButton();
@@ -60,14 +62,14 @@
             this.layoutControlItem10 = new DevExpress.XtraLayout.LayoutControlItem();
             this.lcgFunction = new DevExpress.XtraLayout.LayoutControlGroup();
             this.layoutControlItem11 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlItem12 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlItem13 = new DevExpress.XtraLayout.LayoutControlItem();
             this.groupControl3 = new DevExpress.XtraEditors.GroupControl();
             this.recycleRecordGrid = new Poseidon.Recovery.ClientDx.RecycleRecordGrid();
             this.groupControl4 = new DevExpress.XtraEditors.GroupControl();
             this.attachmentTool = new Poseidon.Winform.Core.AttachmentTool();
-            this.txtPostAmount = new DevExpress.XtraEditors.TextEdit();
-            this.layoutControlItem12 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.txtUnPostAmount = new DevExpress.XtraEditors.TextEdit();
-            this.layoutControlItem13 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.btnCheck = new DevExpress.XtraEditors.SimpleButton();
+            this.layoutControlItem14 = new DevExpress.XtraLayout.LayoutControlItem();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
             this.groupControl1.SuspendLayout();
@@ -77,6 +79,8 @@
             this.groupControl2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.txtUnPostAmount.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtPostAmount.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.chkIsPost.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtRemark.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtEditTime.Properties)).BeginInit();
@@ -99,14 +103,13 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem10)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lcgFunction)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem11)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem12)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem13)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl3)).BeginInit();
             this.groupControl3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl4)).BeginInit();
             this.groupControl4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.txtPostAmount.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem12)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtUnPostAmount.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem13)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem14)).BeginInit();
             this.SuspendLayout();
             // 
             // tableLayoutPanel1
@@ -167,6 +170,7 @@
             // 
             // layoutControl1
             // 
+            this.layoutControl1.Controls.Add(this.btnCheck);
             this.layoutControl1.Controls.Add(this.txtUnPostAmount);
             this.layoutControl1.Controls.Add(this.txtPostAmount);
             this.layoutControl1.Controls.Add(this.btnRefresh);
@@ -187,6 +191,28 @@
             this.layoutControl1.Size = new System.Drawing.Size(673, 211);
             this.layoutControl1.TabIndex = 0;
             this.layoutControl1.Text = "layoutControl1";
+            // 
+            // txtUnPostAmount
+            // 
+            this.txtUnPostAmount.Location = new System.Drawing.Point(411, 36);
+            this.txtUnPostAmount.Name = "txtUnPostAmount";
+            this.txtUnPostAmount.Properties.Appearance.BackColor = System.Drawing.Color.Lavender;
+            this.txtUnPostAmount.Properties.Appearance.Options.UseBackColor = true;
+            this.txtUnPostAmount.Properties.ReadOnly = true;
+            this.txtUnPostAmount.Size = new System.Drawing.Size(250, 20);
+            this.txtUnPostAmount.StyleController = this.layoutControl1;
+            this.txtUnPostAmount.TabIndex = 16;
+            // 
+            // txtPostAmount
+            // 
+            this.txtPostAmount.Location = new System.Drawing.Point(85, 36);
+            this.txtPostAmount.Name = "txtPostAmount";
+            this.txtPostAmount.Properties.Appearance.BackColor = System.Drawing.Color.Lavender;
+            this.txtPostAmount.Properties.Appearance.Options.UseBackColor = true;
+            this.txtPostAmount.Properties.ReadOnly = true;
+            this.txtPostAmount.Size = new System.Drawing.Size(249, 20);
+            this.txtPostAmount.StyleController = this.layoutControl1;
+            this.txtPostAmount.TabIndex = 15;
             // 
             // btnRefresh
             // 
@@ -210,9 +236,9 @@
             // 
             // btnEdit
             // 
-            this.btnEdit.Location = new System.Drawing.Point(225, 165);
+            this.btnEdit.Location = new System.Drawing.Point(178, 165);
             this.btnEdit.Name = "btnEdit";
-            this.btnEdit.Size = new System.Drawing.Size(217, 22);
+            this.btnEdit.Size = new System.Drawing.Size(140, 22);
             this.btnEdit.StyleController = this.layoutControl1;
             this.btnEdit.TabIndex = 12;
             this.btnEdit.Text = "编辑回收";
@@ -222,7 +248,7 @@
             // 
             this.btnAdd.Location = new System.Drawing.Point(24, 165);
             this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(197, 22);
+            this.btnAdd.Size = new System.Drawing.Size(150, 22);
             this.btnAdd.StyleController = this.layoutControl1;
             this.btnAdd.TabIndex = 11;
             this.btnAdd.Text = "回收登记";
@@ -394,7 +420,8 @@
             // 
             this.lcgAction.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
             this.layoutControlItem8,
-            this.layoutControlItem9});
+            this.layoutControlItem9,
+            this.layoutControlItem14});
             this.lcgAction.Location = new System.Drawing.Point(0, 122);
             this.lcgAction.Name = "lcgAction";
             this.lcgAction.Size = new System.Drawing.Size(446, 69);
@@ -405,16 +432,16 @@
             this.layoutControlItem8.Control = this.btnAdd;
             this.layoutControlItem8.Location = new System.Drawing.Point(0, 0);
             this.layoutControlItem8.Name = "layoutControlItem8";
-            this.layoutControlItem8.Size = new System.Drawing.Size(201, 26);
+            this.layoutControlItem8.Size = new System.Drawing.Size(154, 26);
             this.layoutControlItem8.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem8.TextVisible = false;
             // 
             // layoutControlItem9
             // 
             this.layoutControlItem9.Control = this.btnEdit;
-            this.layoutControlItem9.Location = new System.Drawing.Point(201, 0);
+            this.layoutControlItem9.Location = new System.Drawing.Point(154, 0);
             this.layoutControlItem9.Name = "layoutControlItem9";
-            this.layoutControlItem9.Size = new System.Drawing.Size(221, 26);
+            this.layoutControlItem9.Size = new System.Drawing.Size(144, 26);
             this.layoutControlItem9.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem9.TextVisible = false;
             // 
@@ -444,6 +471,24 @@
             this.layoutControlItem11.Size = new System.Drawing.Size(183, 26);
             this.layoutControlItem11.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem11.TextVisible = false;
+            // 
+            // layoutControlItem12
+            // 
+            this.layoutControlItem12.Control = this.txtPostAmount;
+            this.layoutControlItem12.Location = new System.Drawing.Point(0, 24);
+            this.layoutControlItem12.Name = "layoutControlItem12";
+            this.layoutControlItem12.Size = new System.Drawing.Size(326, 24);
+            this.layoutControlItem12.Text = "已入账金额";
+            this.layoutControlItem12.TextSize = new System.Drawing.Size(70, 14);
+            // 
+            // layoutControlItem13
+            // 
+            this.layoutControlItem13.Control = this.txtUnPostAmount;
+            this.layoutControlItem13.Location = new System.Drawing.Point(326, 24);
+            this.layoutControlItem13.Name = "layoutControlItem13";
+            this.layoutControlItem13.Size = new System.Drawing.Size(327, 24);
+            this.layoutControlItem13.Text = "未入账金额";
+            this.layoutControlItem13.TextSize = new System.Drawing.Size(70, 14);
             // 
             // groupControl3
             // 
@@ -493,45 +538,24 @@
             this.attachmentTool.Size = new System.Drawing.Size(673, 89);
             this.attachmentTool.TabIndex = 0;
             // 
-            // txtPostAmount
+            // btnCheck
             // 
-            this.txtPostAmount.Location = new System.Drawing.Point(85, 36);
-            this.txtPostAmount.Name = "txtPostAmount";
-            this.txtPostAmount.Properties.Appearance.BackColor = System.Drawing.Color.Lavender;
-            this.txtPostAmount.Properties.Appearance.Options.UseBackColor = true;
-            this.txtPostAmount.Properties.ReadOnly = true;
-            this.txtPostAmount.Size = new System.Drawing.Size(249, 20);
-            this.txtPostAmount.StyleController = this.layoutControl1;
-            this.txtPostAmount.TabIndex = 15;
+            this.btnCheck.Location = new System.Drawing.Point(322, 165);
+            this.btnCheck.Name = "btnCheck";
+            this.btnCheck.Size = new System.Drawing.Size(120, 22);
+            this.btnCheck.StyleController = this.layoutControl1;
+            this.btnCheck.TabIndex = 17;
+            this.btnCheck.Text = "检查入账";
+            this.btnCheck.Click += new System.EventHandler(this.btnCheck_Click);
             // 
-            // layoutControlItem12
+            // layoutControlItem14
             // 
-            this.layoutControlItem12.Control = this.txtPostAmount;
-            this.layoutControlItem12.Location = new System.Drawing.Point(0, 24);
-            this.layoutControlItem12.Name = "layoutControlItem12";
-            this.layoutControlItem12.Size = new System.Drawing.Size(326, 24);
-            this.layoutControlItem12.Text = "已入账金额";
-            this.layoutControlItem12.TextSize = new System.Drawing.Size(70, 14);
-            // 
-            // txtUnPostAmount
-            // 
-            this.txtUnPostAmount.Location = new System.Drawing.Point(411, 36);
-            this.txtUnPostAmount.Name = "txtUnPostAmount";
-            this.txtUnPostAmount.Properties.Appearance.BackColor = System.Drawing.Color.Lavender;
-            this.txtUnPostAmount.Properties.Appearance.Options.UseBackColor = true;
-            this.txtUnPostAmount.Properties.ReadOnly = true;
-            this.txtUnPostAmount.Size = new System.Drawing.Size(250, 20);
-            this.txtUnPostAmount.StyleController = this.layoutControl1;
-            this.txtUnPostAmount.TabIndex = 16;
-            // 
-            // layoutControlItem13
-            // 
-            this.layoutControlItem13.Control = this.txtUnPostAmount;
-            this.layoutControlItem13.Location = new System.Drawing.Point(326, 24);
-            this.layoutControlItem13.Name = "layoutControlItem13";
-            this.layoutControlItem13.Size = new System.Drawing.Size(327, 24);
-            this.layoutControlItem13.Text = "未入账金额";
-            this.layoutControlItem13.TextSize = new System.Drawing.Size(70, 14);
+            this.layoutControlItem14.Control = this.btnCheck;
+            this.layoutControlItem14.Location = new System.Drawing.Point(298, 0);
+            this.layoutControlItem14.Name = "layoutControlItem14";
+            this.layoutControlItem14.Size = new System.Drawing.Size(124, 26);
+            this.layoutControlItem14.TextSize = new System.Drawing.Size(0, 0);
+            this.layoutControlItem14.TextVisible = false;
             // 
             // RecycleReceiptModule
             // 
@@ -550,6 +574,8 @@
             this.groupControl2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).EndInit();
             this.layoutControl1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.txtUnPostAmount.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtPostAmount.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.chkIsPost.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtRemark.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtEditTime.Properties)).EndInit();
@@ -572,14 +598,13 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem10)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.lcgFunction)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem11)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem12)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem13)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl3)).EndInit();
             this.groupControl3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.groupControl4)).EndInit();
             this.groupControl4.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.txtPostAmount.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem12)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtUnPostAmount.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem13)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem14)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -625,5 +650,7 @@
         private DevExpress.XtraEditors.TextEdit txtPostAmount;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem12;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem13;
+        private DevExpress.XtraEditors.SimpleButton btnCheck;
+        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem14;
     }
 }

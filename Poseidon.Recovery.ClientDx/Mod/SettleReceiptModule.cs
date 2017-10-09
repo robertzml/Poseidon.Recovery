@@ -73,7 +73,7 @@ namespace Poseidon.Recovery.ClientDx
 
             this.txtElectricQuantum.Text = settle.Records.Where(r => r.MeterType == (int)MeterEnergyType.Electric).Sum(r => r.Quantum).ToString();
             this.txtWaterQuantum.Text = settle.Records.Where(r => r.MeterType == (int)MeterEnergyType.Water).Sum(r => r.Quantum).ToString();
-            
+
             this.settleRecordGrid.DataSource = settle.Records;
             this.attachmentTool.Init(settle.AttachmentIds);
 
@@ -178,6 +178,22 @@ namespace Poseidon.Recovery.ClientDx
             }
 
             ChildFormManage.ShowDialogForm(typeof(FrmSettleEdit), new object[] { settle.Id, this.currentAccount.Id });
+            LoadData(this.currentAccount);
+        }
+
+        /// <summary>
+        /// 检查核销
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btnCheck_Click(object sender, EventArgs e)
+        {
+            if (this.currentAccount == null || this.lbSettles.SelectedValue == null)
+                return;
+
+            var settle = this.lbSettles.SelectedItem as Settle;
+
+            BusinessFactory<SettleBusiness>.Instance.UpdateOffAmount(settle.Id);
             LoadData(this.currentAccount);
         }
 

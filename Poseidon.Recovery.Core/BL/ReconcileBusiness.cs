@@ -93,6 +93,27 @@ namespace Poseidon.Recovery.Core.BL
         }
 
         /// <summary>
+        /// 查找贷方数据
+        /// </summary>
+        /// <param name="recycleId">回收ID</param>
+        /// <returns></returns>
+        public List<ReconcileCredit> GetCredits(string recycleId)
+        {
+            var dal = this.baseDal as IReconcileRepository;
+            var reconciles = dal.FindByRecycle(recycleId);
+
+            List<ReconcileCredit> data = new List<ReconcileCredit>();
+            foreach (var item in reconciles)
+            {
+                var credits = item.Credits.Where(r => r.RecycleId == recycleId);
+
+                data.AddRange(credits);
+            }
+
+            return data;
+        }
+
+        /// <summary>
         /// 检查结算是否付清
         /// </summary>
         /// <param name="settleId">结算ID</param>
@@ -143,7 +164,6 @@ namespace Poseidon.Recovery.Core.BL
                 if (string.IsNullOrEmpty(item.SettleId))
                     continue;
 
-                //bool isOff = CheckSettle(item.SettleId);
                 settleBusiness.WriteOff(item.SettleId, item.Amount);
             }
         }
@@ -187,7 +207,6 @@ namespace Poseidon.Recovery.Core.BL
                 if (string.IsNullOrEmpty(item.SettleId))
                     continue;
 
-                //bool isOff = CheckSettle(item.SettleId);
                 settleBusiness.WriteOff(item.SettleId, -item.Amount);
             }
         }

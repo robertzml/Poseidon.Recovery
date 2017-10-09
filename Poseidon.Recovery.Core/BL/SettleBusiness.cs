@@ -66,19 +66,6 @@ namespace Poseidon.Recovery.Core.BL
         /// 结算核销
         /// </summary>
         /// <param name="id">结算ID</param>
-        /// <param name="isWriteOff">是否核销</param>
-        public void WriteOff(string id, bool isWriteOff)
-        {
-            var entity = this.baseDal.FindById(id);
-            entity.IsWriteOff = isWriteOff;
-
-            base.Update(entity);
-        }
-
-        /// <summary>
-        /// 结算核销
-        /// </summary>
-        /// <param name="id">结算ID</param>
         /// <param name="offAmount">核销金额</param>
         public void WriteOff(string id, decimal offAmount)
         {
@@ -89,6 +76,28 @@ namespace Poseidon.Recovery.Core.BL
                 entity.IsWriteOff = true;
 
             entity.OffAmount += offAmount;
+
+            base.Update(entity);
+        }
+
+        /// <summary>
+        /// 检查更新核销金额
+        /// </summary>
+        /// <param name="id">结算ID</param>
+        public void UpdateOffAmount(string id)
+        {
+            var entity = this.baseDal.FindById(id);
+
+            ReconcileBusiness reconcileBusiness = new ReconcileBusiness();
+            var debits = reconcileBusiness.GetDebits(id);
+
+            var offAmount = debits.Sum(r => r.Amount);
+
+            entity.OffAmount = offAmount;
+            if (entity.TotalAmount - entity.OffAmount > 0)
+                entity.IsWriteOff = false;
+            else
+                entity.IsWriteOff = true;
 
             base.Update(entity);
         }

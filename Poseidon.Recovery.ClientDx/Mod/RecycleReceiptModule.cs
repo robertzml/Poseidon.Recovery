@@ -167,6 +167,23 @@ namespace Poseidon.Recovery.ClientDx
         }
 
         /// <summary>
+        /// 检查入账
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btnCheck_Click(object sender, EventArgs e)
+        {
+            if (this.currentAccount == null || this.lbRecycles.SelectedValue == null)
+                return;
+
+            var recycle = this.lbRecycles.SelectedItem as Recycle;
+
+            BusinessFactory<RecycleBusiness>.Instance.UpdatePostAmount(recycle.Id);
+
+            LoadData(this.currentAccount);
+        }
+
+        /// <summary>
         /// 刷新
         /// </summary>
         /// <param name="sender"></param>

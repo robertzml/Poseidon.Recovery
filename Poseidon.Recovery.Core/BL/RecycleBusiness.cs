@@ -65,19 +65,6 @@ namespace Poseidon.Recovery.Core.BL
         /// 回收入账
         /// </summary>
         /// <param name="id">回收ID</param>
-        /// <param name="isPost">是否入账</param>
-        public void Post(string id, bool isPost)
-        {
-            var entity = this.baseDal.FindById(id);
-            entity.IsPost = isPost;
-
-            base.Update(entity);
-        }
-
-        /// <summary>
-        /// 回收入账
-        /// </summary>
-        /// <param name="id">回收ID</param>
         /// <param name="postAmount">入账金额</param>
         public void Post(string id, decimal postAmount)
         {
@@ -89,6 +76,28 @@ namespace Poseidon.Recovery.Core.BL
                 entity.IsPost = true;
 
             entity.PostAmount += postAmount;
+
+            base.Update(entity);
+        }
+
+        /// <summary>
+        /// 检查更新入账金额
+        /// </summary>
+        /// <param name="id">回收ID</param>
+        public void UpdatePostAmount(string id)
+        {
+            var entity = this.baseDal.FindById(id);
+
+            ReconcileBusiness reconcileBusiness = new ReconcileBusiness();
+            var credits = reconcileBusiness.GetCredits(id);
+
+            var postAmount = credits.Sum(r => r.Amount);
+
+            entity.PostAmount = postAmount;
+            if (entity.TotalAmount - entity.PostAmount > 0)
+                entity.IsPost = false;
+            else
+                entity.IsPost = true;
 
             base.Update(entity);
         }
