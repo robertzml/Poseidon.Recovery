@@ -176,6 +176,11 @@ namespace Poseidon.Recovery.ClientDx
                 MessageUtil.ShowWarning("该结算已经核销，无法编辑");
                 return;
             }
+            if (settle.IsFree == false && settle.OffAmount > 0)
+            {
+                MessageUtil.ShowWarning("该结算已有核销款，无法编辑");
+                return;
+            }
 
             ChildFormManage.ShowDialogForm(typeof(FrmSettleEdit), new object[] { settle.Id, this.currentAccount.Id });
             LoadData(this.currentAccount);

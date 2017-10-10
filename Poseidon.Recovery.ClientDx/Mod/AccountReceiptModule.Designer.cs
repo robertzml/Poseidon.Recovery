@@ -38,6 +38,7 @@
             this.constructionAccountMod = new Poseidon.Recovery.ClientDx.ConstructionAccountInfo();
             this.tabPageMeters = new DevExpress.XtraTab.XtraTabPage();
             this.meterGrid = new Poseidon.Recovery.ClientDx.MeterGrid();
+            this.tabPageAdvance = new DevExpress.XtraTab.XtraTabPage();
             this.tabBusiness = new DevExpress.XtraTab.XtraTabControl();
             this.tabPageSettlement = new DevExpress.XtraTab.XtraTabPage();
             this.settleMod = new Poseidon.Recovery.ClientDx.SettleReceiptModule();
@@ -47,6 +48,8 @@
             this.measureMod = new Poseidon.Recovery.ClientDx.MeasureReceiptModule();
             this.tabPageReconcile = new DevExpress.XtraTab.XtraTabPage();
             this.reconcileMod = new Poseidon.Recovery.ClientDx.ReconcileReceiptModule();
+            this.btnCheckWriteOff = new DevExpress.XtraEditors.SimpleButton();
+            this.btnCheckPost = new DevExpress.XtraEditors.SimpleButton();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tabInfo)).BeginInit();
             this.tabInfo.SuspendLayout();
@@ -55,6 +58,7 @@
             this.navigationPage1.SuspendLayout();
             this.navigationPage2.SuspendLayout();
             this.tabPageMeters.SuspendLayout();
+            this.tabPageAdvance.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tabBusiness)).BeginInit();
             this.tabBusiness.SuspendLayout();
             this.tabPageSettlement.SuspendLayout();
@@ -88,7 +92,8 @@
             this.tabInfo.TabIndex = 4;
             this.tabInfo.TabPages.AddRange(new DevExpress.XtraTab.XtraTabPage[] {
             this.tabPageBaseInfo,
-            this.tabPageMeters});
+            this.tabPageMeters,
+            this.tabPageAdvance});
             // 
             // tabPageBaseInfo
             // 
@@ -148,7 +153,7 @@
             // 
             this.tabPageMeters.Controls.Add(this.meterGrid);
             this.tabPageMeters.Name = "tabPageMeters";
-            this.tabPageMeters.Size = new System.Drawing.Size(907, 165);
+            this.tabPageMeters.Size = new System.Drawing.Size(907, 155);
             this.tabPageMeters.Text = "包含表具";
             // 
             // meterGrid
@@ -160,6 +165,7 @@
             this.meterGrid.Dock = System.Windows.Forms.DockStyle.Fill;
             this.meterGrid.Editable = false;
             this.meterGrid.EnableMasterView = false;
+            this.meterGrid.EnableMultiSelect = false;
             this.meterGrid.Location = new System.Drawing.Point(0, 0);
             this.meterGrid.Name = "meterGrid";
             this.meterGrid.ShowAddMenu = false;
@@ -167,8 +173,16 @@
             this.meterGrid.ShowLineNumber = true;
             this.meterGrid.ShowMenu = false;
             this.meterGrid.ShowNavigator = false;
-            this.meterGrid.Size = new System.Drawing.Size(907, 165);
+            this.meterGrid.Size = new System.Drawing.Size(907, 155);
             this.meterGrid.TabIndex = 0;
+            // 
+            // tabPageAdvance
+            // 
+            this.tabPageAdvance.Controls.Add(this.btnCheckPost);
+            this.tabPageAdvance.Controls.Add(this.btnCheckWriteOff);
+            this.tabPageAdvance.Name = "tabPageAdvance";
+            this.tabPageAdvance.Size = new System.Drawing.Size(907, 155);
+            this.tabPageAdvance.Text = "高级操作";
             // 
             // tabBusiness
             // 
@@ -204,7 +218,7 @@
             // 
             this.tabPageRecycle.Controls.Add(this.recycleMod);
             this.tabPageRecycle.Name = "tabPageRecycle";
-            this.tabPageRecycle.Size = new System.Drawing.Size(907, 410);
+            this.tabPageRecycle.Size = new System.Drawing.Size(907, 420);
             this.tabPageRecycle.Text = "费用回收";
             // 
             // recycleMod
@@ -213,14 +227,14 @@
             this.recycleMod.Editable = true;
             this.recycleMod.Location = new System.Drawing.Point(0, 0);
             this.recycleMod.Name = "recycleMod";
-            this.recycleMod.Size = new System.Drawing.Size(907, 410);
+            this.recycleMod.Size = new System.Drawing.Size(907, 420);
             this.recycleMod.TabIndex = 0;
             // 
             // tabPageMeasure
             // 
             this.tabPageMeasure.Controls.Add(this.measureMod);
             this.tabPageMeasure.Name = "tabPageMeasure";
-            this.tabPageMeasure.Size = new System.Drawing.Size(907, 410);
+            this.tabPageMeasure.Size = new System.Drawing.Size(907, 420);
             this.tabPageMeasure.Text = "抄表记录";
             // 
             // measureMod
@@ -229,14 +243,14 @@
             this.measureMod.Editable = true;
             this.measureMod.Location = new System.Drawing.Point(0, 0);
             this.measureMod.Name = "measureMod";
-            this.measureMod.Size = new System.Drawing.Size(907, 410);
+            this.measureMod.Size = new System.Drawing.Size(907, 420);
             this.measureMod.TabIndex = 0;
             // 
             // tabPageReconcile
             // 
             this.tabPageReconcile.Controls.Add(this.reconcileMod);
             this.tabPageReconcile.Name = "tabPageReconcile";
-            this.tabPageReconcile.Size = new System.Drawing.Size(907, 410);
+            this.tabPageReconcile.Size = new System.Drawing.Size(907, 420);
             this.tabPageReconcile.Text = "财务对账";
             // 
             // reconcileMod
@@ -245,8 +259,26 @@
             this.reconcileMod.Editable = true;
             this.reconcileMod.Location = new System.Drawing.Point(0, 0);
             this.reconcileMod.Name = "reconcileMod";
-            this.reconcileMod.Size = new System.Drawing.Size(907, 410);
+            this.reconcileMod.Size = new System.Drawing.Size(907, 420);
             this.reconcileMod.TabIndex = 0;
+            // 
+            // btnCheckWriteOff
+            // 
+            this.btnCheckWriteOff.Location = new System.Drawing.Point(22, 22);
+            this.btnCheckWriteOff.Name = "btnCheckWriteOff";
+            this.btnCheckWriteOff.Size = new System.Drawing.Size(93, 23);
+            this.btnCheckWriteOff.TabIndex = 0;
+            this.btnCheckWriteOff.Text = "批量检查核销";
+            this.btnCheckWriteOff.Click += new System.EventHandler(this.btnCheckWriteOff_Click);
+            // 
+            // btnCheckPost
+            // 
+            this.btnCheckPost.Location = new System.Drawing.Point(139, 22);
+            this.btnCheckPost.Name = "btnCheckPost";
+            this.btnCheckPost.Size = new System.Drawing.Size(93, 23);
+            this.btnCheckPost.TabIndex = 1;
+            this.btnCheckPost.Text = "批量检查入账";
+            this.btnCheckPost.Click += new System.EventHandler(this.btnCheckPost_Click);
             // 
             // AccountReceiptModule
             // 
@@ -263,6 +295,7 @@
             this.navigationPage1.ResumeLayout(false);
             this.navigationPage2.ResumeLayout(false);
             this.tabPageMeters.ResumeLayout(false);
+            this.tabPageAdvance.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.tabBusiness)).EndInit();
             this.tabBusiness.ResumeLayout(false);
             this.tabPageSettlement.ResumeLayout(false);
@@ -294,5 +327,8 @@
         private DevExpress.XtraTab.XtraTabPage tabPageReconcile;
         private ReconcileReceiptModule reconcileMod;
         private ConstructionAccountInfo constructionAccountMod;
+        private DevExpress.XtraTab.XtraTabPage tabPageAdvance;
+        private DevExpress.XtraEditors.SimpleButton btnCheckPost;
+        private DevExpress.XtraEditors.SimpleButton btnCheckWriteOff;
     }
 }

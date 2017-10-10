@@ -161,6 +161,11 @@ namespace Poseidon.Recovery.ClientDx
                 MessageUtil.ShowWarning("该回收已经入账，无法编辑");
                 return;
             }
+            if (recycle.PostAmount > 0)
+            {
+                MessageUtil.ShowWarning("该回收已有入账款，无法编辑");
+                return;
+            }
 
             ChildFormManage.ShowDialogForm(typeof(FrmRecycleEdit), new object[] { recycle.Id, this.currentAccount.Id });
             LoadData(this.currentAccount);

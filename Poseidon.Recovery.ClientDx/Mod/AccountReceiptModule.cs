@@ -11,6 +11,7 @@ namespace Poseidon.Recovery.ClientDx
 {
     using Poseidon.Base.Framework;
     using Poseidon.Common;
+    using Poseidon.Winform.Base;
     using Poseidon.Recovery.Core.BL;
     using Poseidon.Recovery.Core.DL;
     using Poseidon.Recovery.Core.Utility;
@@ -94,5 +95,55 @@ namespace Poseidon.Recovery.ClientDx
             this.constructionAccountMod.Clear();
         }
         #endregion //Method
+
+        #region Event
+        /// <summary>
+        /// 批量检查核销
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btnCheckWriteOff_Click(object sender, EventArgs e)
+        {
+            if (MessageUtil.ConfirmYesNo("是否批量检查结算核销") == DialogResult.Yes)
+            {
+                this.Cursor = Cursors.WaitCursor;
+
+                var settles = BusinessFactory<SettleBusiness>.Instance.FindByAccount(this.currentAccount.Id);
+
+                foreach (var item in settles)
+                {
+                    BusinessFactory<SettleBusiness>.Instance.UpdateOffAmount(item.Id);
+                }
+
+                this.Cursor = Cursors.Default;
+
+                MessageUtil.ShowInfo("检查完成");
+            }
+        }
+
+        /// <summary>
+        /// 批量检查入账
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btnCheckPost_Click(object sender, EventArgs e)
+        {
+            if (MessageUtil.ConfirmYesNo("是否批量检查回收入账") == DialogResult.Yes)
+            {
+                this.Cursor = Cursors.WaitCursor;
+
+                var recycles = BusinessFactory<RecycleBusiness>.Instance.FindByAccount(this.currentAccount.Id);
+
+                foreach (var item in recycles)
+                {
+                    BusinessFactory<RecycleBusiness>.Instance.UpdatePostAmount(item.Id);
+                }
+
+                this.Cursor = Cursors.Default;
+
+                MessageUtil.ShowInfo("检查完成");
+            }
+        }
+        #endregion //Event
     }
 }
