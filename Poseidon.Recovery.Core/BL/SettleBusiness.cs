@@ -70,12 +70,18 @@ namespace Poseidon.Recovery.Core.BL
         public void WriteOff(string id, decimal offAmount)
         {
             var entity = this.baseDal.FindById(id);
-            if (entity.TotalAmount - entity.OffAmount - offAmount > 0)
-                entity.IsWriteOff = false;
-            else
-                entity.IsWriteOff = true;
 
-            entity.OffAmount += offAmount;
+            if (entity.IsFree)
+                entity.IsWriteOff = true;
+            else
+            {
+                if (entity.TotalAmount - entity.OffAmount - offAmount > 0)
+                    entity.IsWriteOff = false;
+                else
+                    entity.IsWriteOff = true;
+
+                entity.OffAmount += offAmount;
+            }
 
             base.Update(entity);
         }
@@ -93,11 +99,18 @@ namespace Poseidon.Recovery.Core.BL
 
             var offAmount = debits.Sum(r => r.Amount);
 
-            entity.OffAmount = offAmount;
-            if (entity.TotalAmount - entity.OffAmount > 0)
-                entity.IsWriteOff = false;
-            else
+            if (entity.IsFree)
+            {
                 entity.IsWriteOff = true;
+            }
+            else
+            {
+                entity.OffAmount = offAmount;
+                if (entity.TotalAmount - entity.OffAmount > 0)
+                    entity.IsWriteOff = false;
+                else
+                    entity.IsWriteOff = true;
+            }
 
             base.Update(entity);
         }

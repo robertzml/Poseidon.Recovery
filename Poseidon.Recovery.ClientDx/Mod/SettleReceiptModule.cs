@@ -112,6 +112,8 @@ namespace Poseidon.Recovery.ClientDx
             this.txtCreateTime.Text = "";
             this.txtEditUser.Text = "";
             this.txtEditTime.Text = "";
+            this.txtOffAmount.Text = "";
+            this.txtUnoffAmount.Text = "";
 
             this.settleRecordGrid.Clear();
         }

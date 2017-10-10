@@ -98,6 +98,8 @@ namespace Poseidon.Recovery.ClientDx
             this.txtCreateTime.Text = "";
             this.txtEditUser.Text = "";
             this.txtEditTime.Text = "";
+            this.txtPostAmount.Text = "";
+            this.txtUnPostAmount.Text = "";
 
             this.recycleRecordGrid.Clear();
         }
