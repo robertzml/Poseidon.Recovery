@@ -26,7 +26,7 @@ namespace Poseidon.Recovery.Core.Utility
     }
 
     /// <summary>
-    /// 电表类型
+    /// 表具类型
     /// </summary>
     public enum MeterEnergyType
     {
