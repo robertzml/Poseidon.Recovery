@@ -35,6 +35,7 @@
             this.bsRecycle = new System.Windows.Forms.BindingSource(this.components);
             this.groupControl2 = new DevExpress.XtraEditors.GroupControl();
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
+            this.btnCheck = new DevExpress.XtraEditors.SimpleButton();
             this.txtUnPostAmount = new DevExpress.XtraEditors.TextEdit();
             this.txtPostAmount = new DevExpress.XtraEditors.TextEdit();
             this.btnRefresh = new DevExpress.XtraEditors.SimpleButton();
@@ -59,6 +60,7 @@
             this.lcgAction = new DevExpress.XtraLayout.LayoutControlGroup();
             this.layoutControlItem8 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem9 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlItem14 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem10 = new DevExpress.XtraLayout.LayoutControlItem();
             this.lcgFunction = new DevExpress.XtraLayout.LayoutControlGroup();
             this.layoutControlItem11 = new DevExpress.XtraLayout.LayoutControlItem();
@@ -67,9 +69,7 @@
             this.groupControl3 = new DevExpress.XtraEditors.GroupControl();
             this.recycleRecordGrid = new Poseidon.Recovery.ClientDx.RecycleRecordGrid();
             this.groupControl4 = new DevExpress.XtraEditors.GroupControl();
-            this.attachmentTool = new Poseidon.Winform.Core.AttachmentTool();
-            this.btnCheck = new DevExpress.XtraEditors.SimpleButton();
-            this.layoutControlItem14 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.attachmentGrid = new Poseidon.Archives.Utility.AttachmentGrid();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
             this.groupControl1.SuspendLayout();
@@ -100,6 +100,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.lcgAction)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem8)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem9)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem14)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem10)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lcgFunction)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem11)).BeginInit();
@@ -109,7 +110,6 @@
             this.groupControl3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl4)).BeginInit();
             this.groupControl4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem14)).BeginInit();
             this.SuspendLayout();
             // 
             // tableLayoutPanel1
@@ -191,6 +191,16 @@
             this.layoutControl1.Size = new System.Drawing.Size(673, 211);
             this.layoutControl1.TabIndex = 0;
             this.layoutControl1.Text = "layoutControl1";
+            // 
+            // btnCheck
+            // 
+            this.btnCheck.Location = new System.Drawing.Point(322, 165);
+            this.btnCheck.Name = "btnCheck";
+            this.btnCheck.Size = new System.Drawing.Size(120, 22);
+            this.btnCheck.StyleController = this.layoutControl1;
+            this.btnCheck.TabIndex = 17;
+            this.btnCheck.Text = "检查入账";
+            this.btnCheck.Click += new System.EventHandler(this.btnCheck_Click);
             // 
             // txtUnPostAmount
             // 
@@ -445,6 +455,15 @@
             this.layoutControlItem9.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem9.TextVisible = false;
             // 
+            // layoutControlItem14
+            // 
+            this.layoutControlItem14.Control = this.btnCheck;
+            this.layoutControlItem14.Location = new System.Drawing.Point(298, 0);
+            this.layoutControlItem14.Name = "layoutControlItem14";
+            this.layoutControlItem14.Size = new System.Drawing.Size(124, 26);
+            this.layoutControlItem14.TextSize = new System.Drawing.Size(0, 0);
+            this.layoutControlItem14.TextVisible = false;
+            // 
             // layoutControlItem10
             // 
             this.layoutControlItem10.Control = this.chkIsPost;
@@ -522,7 +541,7 @@
             // 
             // groupControl4
             // 
-            this.groupControl4.Controls.Add(this.attachmentTool);
+            this.groupControl4.Controls.Add(this.attachmentGrid);
             this.groupControl4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupControl4.Location = new System.Drawing.Point(143, 420);
             this.groupControl4.Name = "groupControl4";
@@ -530,32 +549,14 @@
             this.groupControl4.TabIndex = 3;
             this.groupControl4.Text = "附件";
             // 
-            // attachmentTool
+            // attachmentGrid
             // 
-            this.attachmentTool.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.attachmentTool.Location = new System.Drawing.Point(2, 21);
-            this.attachmentTool.Name = "attachmentTool";
-            this.attachmentTool.Size = new System.Drawing.Size(673, 89);
-            this.attachmentTool.TabIndex = 0;
-            // 
-            // btnCheck
-            // 
-            this.btnCheck.Location = new System.Drawing.Point(322, 165);
-            this.btnCheck.Name = "btnCheck";
-            this.btnCheck.Size = new System.Drawing.Size(120, 22);
-            this.btnCheck.StyleController = this.layoutControl1;
-            this.btnCheck.TabIndex = 17;
-            this.btnCheck.Text = "检查入账";
-            this.btnCheck.Click += new System.EventHandler(this.btnCheck_Click);
-            // 
-            // layoutControlItem14
-            // 
-            this.layoutControlItem14.Control = this.btnCheck;
-            this.layoutControlItem14.Location = new System.Drawing.Point(298, 0);
-            this.layoutControlItem14.Name = "layoutControlItem14";
-            this.layoutControlItem14.Size = new System.Drawing.Size(124, 26);
-            this.layoutControlItem14.TextSize = new System.Drawing.Size(0, 0);
-            this.layoutControlItem14.TextVisible = false;
+            this.attachmentGrid.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.attachmentGrid.Location = new System.Drawing.Point(2, 21);
+            this.attachmentGrid.Name = "attachmentGrid";
+            this.attachmentGrid.ShowContextMenu = false;
+            this.attachmentGrid.Size = new System.Drawing.Size(673, 89);
+            this.attachmentGrid.TabIndex = 0;
             // 
             // RecycleReceiptModule
             // 
@@ -595,6 +596,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.lcgAction)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem8)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem9)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem14)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem10)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.lcgFunction)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem11)).EndInit();
@@ -604,7 +606,6 @@
             this.groupControl3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.groupControl4)).EndInit();
             this.groupControl4.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem14)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -645,12 +646,12 @@
         private DevExpress.XtraLayout.LayoutControlGroup lcgFunction;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem11;
         private DevExpress.XtraEditors.GroupControl groupControl4;
-        private Winform.Core.AttachmentTool attachmentTool;
         private DevExpress.XtraEditors.TextEdit txtUnPostAmount;
         private DevExpress.XtraEditors.TextEdit txtPostAmount;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem12;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem13;
         private DevExpress.XtraEditors.SimpleButton btnCheck;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem14;
+        private Archives.Utility.AttachmentGrid attachmentGrid;
     }
 }

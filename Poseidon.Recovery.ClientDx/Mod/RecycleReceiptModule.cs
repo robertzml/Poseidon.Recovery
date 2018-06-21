@@ -66,7 +66,7 @@ namespace Poseidon.Recovery.ClientDx
             this.txtEditTime.Text = recycle.UpdateBy.Time.ToDateTimeString();
 
             this.recycleRecordGrid.DataSource = recycle.Records;
-            this.attachmentTool.Init(recycle.AttachmentIds);
+            this.attachmentGrid.Init(recycle.AttachmentIds);
 
             this.txtPostAmount.Text = recycle.PostAmount.ToString();
             this.txtUnPostAmount.Text = (recycle.TotalAmount - recycle.PostAmount).ToString();

@@ -50,7 +50,7 @@ namespace Poseidon.Recovery.ClientDx
             this.recycleRecordGrid.Init();
             this.recycleRecordGrid.DataSource = new List<RecycleRecord>();
 
-            this.upTool.Init();
+            this.uploadTool.Init();
 
             base.InitForm();
         }
@@ -104,7 +104,7 @@ namespace Poseidon.Recovery.ClientDx
                 item.Remark = item.Remark ?? "";
             }
 
-            entity.AttachmentIds = this.upTool.AttachmentIds;
+            entity.AttachmentIds = this.uploadTool.AttachmentIds;
         }
         #endregion //Function
 

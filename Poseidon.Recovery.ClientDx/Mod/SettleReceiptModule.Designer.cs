@@ -83,7 +83,7 @@
             this.groupControl3 = new DevExpress.XtraEditors.GroupControl();
             this.settleRecordGrid = new Poseidon.Recovery.ClientDx.SettleRecordGrid();
             this.groupControl4 = new DevExpress.XtraEditors.GroupControl();
-            this.attachmentTool = new Poseidon.Winform.Core.AttachmentTool();
+            this.attachmentGrid = new Poseidon.Archives.Utility.AttachmentGrid();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
             this.groupControl1.SuspendLayout();
@@ -721,7 +721,7 @@
             // 
             // groupControl4
             // 
-            this.groupControl4.Controls.Add(this.attachmentTool);
+            this.groupControl4.Controls.Add(this.attachmentGrid);
             this.groupControl4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupControl4.Location = new System.Drawing.Point(143, 444);
             this.groupControl4.Name = "groupControl4";
@@ -729,13 +729,14 @@
             this.groupControl4.TabIndex = 3;
             this.groupControl4.Text = "附件";
             // 
-            // attachmentTool
+            // attachmentGrid
             // 
-            this.attachmentTool.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.attachmentTool.Location = new System.Drawing.Point(2, 21);
-            this.attachmentTool.Name = "attachmentTool";
-            this.attachmentTool.Size = new System.Drawing.Size(640, 53);
-            this.attachmentTool.TabIndex = 0;
+            this.attachmentGrid.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.attachmentGrid.Location = new System.Drawing.Point(2, 21);
+            this.attachmentGrid.Name = "attachmentGrid";
+            this.attachmentGrid.ShowContextMenu = false;
+            this.attachmentGrid.Size = new System.Drawing.Size(640, 53);
+            this.attachmentGrid.TabIndex = 0;
             // 
             // SettleReceiptModule
             // 
@@ -852,12 +853,12 @@
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem17;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem18;
         private DevExpress.XtraEditors.GroupControl groupControl4;
-        private Winform.Core.AttachmentTool attachmentTool;
         private DevExpress.XtraEditors.TextEdit txtUnoffAmount;
         private DevExpress.XtraEditors.TextEdit txtOffAmount;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem19;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem20;
         private DevExpress.XtraEditors.SimpleButton btnCheck;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem21;
+        private Archives.Utility.AttachmentGrid attachmentGrid;
     }
 }

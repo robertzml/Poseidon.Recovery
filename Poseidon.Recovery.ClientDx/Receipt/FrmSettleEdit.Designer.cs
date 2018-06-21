@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.groupControl2 = new DevExpress.XtraEditors.GroupControl();
             this.settleRecordGrid = new Poseidon.Recovery.ClientDx.SettleRecordGrid();
@@ -35,7 +36,7 @@
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
             this.chkIsFree = new DevExpress.XtraEditors.CheckEdit();
             this.luCurrentMeasure = new DevExpress.XtraEditors.LookUpEdit();
-            this.bsMeasure = new System.Windows.Forms.BindingSource();
+            this.bsMeasure = new System.Windows.Forms.BindingSource(this.components);
             this.luPreviousMeasure = new DevExpress.XtraEditors.LookUpEdit();
             this.txtPeriod = new DevExpress.XtraEditors.TextEdit();
             this.btnCalc = new DevExpress.XtraEditors.SimpleButton();
@@ -58,7 +59,7 @@
             this.layoutControlItem10 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem11 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem7 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.upTool = new Poseidon.Winform.Core.UploadTool();
+            this.uploadTool = new Poseidon.Archives.Utility.AttachmentUploadTool();
             this.layoutControlItem12 = new DevExpress.XtraLayout.LayoutControlItem();
             ((System.ComponentModel.ISupportInitialize)(this.plFill)).BeginInit();
             this.plFill.SuspendLayout();
@@ -183,7 +184,7 @@
             // 
             // layoutControl1
             // 
-            this.layoutControl1.Controls.Add(this.upTool);
+            this.layoutControl1.Controls.Add(this.uploadTool);
             this.layoutControl1.Controls.Add(this.chkIsFree);
             this.layoutControl1.Controls.Add(this.luCurrentMeasure);
             this.layoutControl1.Controls.Add(this.luPreviousMeasure);
@@ -205,16 +206,16 @@
             // 
             // chkIsFree
             // 
-            this.chkIsFree.Location = new System.Drawing.Point(513, 60);
+            this.chkIsFree.Location = new System.Drawing.Point(435, 60);
             this.chkIsFree.Name = "chkIsFree";
             this.chkIsFree.Properties.Caption = "是否免费";
-            this.chkIsFree.Size = new System.Drawing.Size(204, 19);
+            this.chkIsFree.Size = new System.Drawing.Size(293, 19);
             this.chkIsFree.StyleController = this.layoutControl1;
             this.chkIsFree.TabIndex = 16;
             // 
             // luCurrentMeasure
             // 
-            this.luCurrentMeasure.Location = new System.Drawing.Point(313, 60);
+            this.luCurrentMeasure.Location = new System.Drawing.Point(274, 60);
             this.luCurrentMeasure.Name = "luCurrentMeasure";
             this.luCurrentMeasure.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
@@ -228,7 +229,7 @@
             this.luCurrentMeasure.Properties.DisplayMember = "MeasureDate";
             this.luCurrentMeasure.Properties.NullText = "请选择";
             this.luCurrentMeasure.Properties.ValueMember = "Id";
-            this.luCurrentMeasure.Size = new System.Drawing.Size(196, 20);
+            this.luCurrentMeasure.Size = new System.Drawing.Size(157, 20);
             this.luCurrentMeasure.StyleController = this.layoutControl1;
             this.luCurrentMeasure.TabIndex = 15;
             this.luCurrentMeasure.EditValueChanged += new System.EventHandler(this.luCurrentMeasure_EditValueChanged);
@@ -253,16 +254,16 @@
             this.luPreviousMeasure.Properties.DisplayMember = "MeasureDate";
             this.luPreviousMeasure.Properties.NullText = "请选择";
             this.luPreviousMeasure.Properties.ValueMember = "Id";
-            this.luPreviousMeasure.Size = new System.Drawing.Size(195, 20);
+            this.luPreviousMeasure.Size = new System.Drawing.Size(156, 20);
             this.luPreviousMeasure.StyleController = this.layoutControl1;
             this.luPreviousMeasure.TabIndex = 14;
             this.luPreviousMeasure.EditValueChanged += new System.EventHandler(this.luPreviousMeasure_EditValueChanged);
             // 
             // txtPeriod
             // 
-            this.txtPeriod.Location = new System.Drawing.Point(313, 12);
+            this.txtPeriod.Location = new System.Drawing.Point(274, 12);
             this.txtPeriod.Name = "txtPeriod";
-            this.txtPeriod.Size = new System.Drawing.Size(196, 20);
+            this.txtPeriod.Size = new System.Drawing.Size(157, 20);
             this.txtPeriod.StyleController = this.layoutControl1;
             this.txtPeriod.TabIndex = 13;
             // 
@@ -270,7 +271,7 @@
             // 
             this.btnCalc.Location = new System.Drawing.Point(12, 137);
             this.btnCalc.Name = "btnCalc";
-            this.btnCalc.Size = new System.Drawing.Size(246, 22);
+            this.btnCalc.Size = new System.Drawing.Size(207, 22);
             this.btnCalc.StyleController = this.layoutControl1;
             this.btnCalc.TabIndex = 12;
             this.btnCalc.Text = "计算金额";
@@ -280,7 +281,7 @@
             // 
             this.txtRemark.Location = new System.Drawing.Point(63, 84);
             this.txtRemark.Name = "txtRemark";
-            this.txtRemark.Size = new System.Drawing.Size(654, 49);
+            this.txtRemark.Size = new System.Drawing.Size(665, 49);
             this.txtRemark.StyleController = this.layoutControl1;
             this.txtRemark.TabIndex = 11;
             // 
@@ -291,18 +292,18 @@
             0,
             0,
             0});
-            this.spTotalAmount.Location = new System.Drawing.Point(564, 36);
+            this.spTotalAmount.Location = new System.Drawing.Point(486, 36);
             this.spTotalAmount.Name = "spTotalAmount";
             this.spTotalAmount.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.spTotalAmount.Size = new System.Drawing.Size(153, 20);
+            this.spTotalAmount.Size = new System.Drawing.Size(242, 20);
             this.spTotalAmount.StyleController = this.layoutControl1;
             this.spTotalAmount.TabIndex = 8;
             // 
             // dpCurrentDate
             // 
             this.dpCurrentDate.EditValue = null;
-            this.dpCurrentDate.Location = new System.Drawing.Point(313, 36);
+            this.dpCurrentDate.Location = new System.Drawing.Point(274, 36);
             this.dpCurrentDate.Name = "dpCurrentDate";
             this.dpCurrentDate.Properties.AllowNullInput = DevExpress.Utils.DefaultBoolean.False;
             this.dpCurrentDate.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
@@ -310,7 +311,7 @@
             this.dpCurrentDate.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.dpCurrentDate.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
-            this.dpCurrentDate.Size = new System.Drawing.Size(196, 20);
+            this.dpCurrentDate.Size = new System.Drawing.Size(157, 20);
             this.dpCurrentDate.StyleController = this.layoutControl1;
             this.dpCurrentDate.TabIndex = 7;
             // 
@@ -325,14 +326,14 @@
             this.dpPreviousDate.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.dpPreviousDate.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
-            this.dpPreviousDate.Size = new System.Drawing.Size(195, 20);
+            this.dpPreviousDate.Size = new System.Drawing.Size(156, 20);
             this.dpPreviousDate.StyleController = this.layoutControl1;
             this.dpPreviousDate.TabIndex = 6;
             // 
             // dpSettleDate
             // 
             this.dpSettleDate.EditValue = null;
-            this.dpSettleDate.Location = new System.Drawing.Point(564, 12);
+            this.dpSettleDate.Location = new System.Drawing.Point(486, 12);
             this.dpSettleDate.Name = "dpSettleDate";
             this.dpSettleDate.Properties.AllowNullInput = DevExpress.Utils.DefaultBoolean.False;
             this.dpSettleDate.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
@@ -340,7 +341,7 @@
             this.dpSettleDate.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.dpSettleDate.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
-            this.dpSettleDate.Size = new System.Drawing.Size(153, 20);
+            this.dpSettleDate.Size = new System.Drawing.Size(242, 20);
             this.dpSettleDate.StyleController = this.layoutControl1;
             this.dpSettleDate.TabIndex = 5;
             // 
@@ -351,7 +352,7 @@
             this.txtAccountName.Properties.Appearance.BackColor = System.Drawing.Color.Lavender;
             this.txtAccountName.Properties.Appearance.Options.UseBackColor = true;
             this.txtAccountName.Properties.ReadOnly = true;
-            this.txtAccountName.Size = new System.Drawing.Size(195, 20);
+            this.txtAccountName.Size = new System.Drawing.Size(156, 20);
             this.txtAccountName.StyleController = this.layoutControl1;
             this.txtAccountName.TabIndex = 4;
             // 
@@ -383,16 +384,16 @@
             this.layoutControlItem1.Control = this.txtAccountName;
             this.layoutControlItem1.Location = new System.Drawing.Point(0, 0);
             this.layoutControlItem1.Name = "layoutControlItem1";
-            this.layoutControlItem1.Size = new System.Drawing.Size(250, 24);
+            this.layoutControlItem1.Size = new System.Drawing.Size(211, 24);
             this.layoutControlItem1.Text = "账户名称";
             this.layoutControlItem1.TextSize = new System.Drawing.Size(48, 14);
             // 
             // layoutControlItem2
             // 
             this.layoutControlItem2.Control = this.dpSettleDate;
-            this.layoutControlItem2.Location = new System.Drawing.Point(501, 0);
+            this.layoutControlItem2.Location = new System.Drawing.Point(423, 0);
             this.layoutControlItem2.Name = "layoutControlItem2";
-            this.layoutControlItem2.Size = new System.Drawing.Size(208, 24);
+            this.layoutControlItem2.Size = new System.Drawing.Size(297, 24);
             this.layoutControlItem2.Text = "结算日期";
             this.layoutControlItem2.TextSize = new System.Drawing.Size(48, 14);
             // 
@@ -401,16 +402,16 @@
             this.layoutControlItem3.Control = this.dpPreviousDate;
             this.layoutControlItem3.Location = new System.Drawing.Point(0, 24);
             this.layoutControlItem3.Name = "layoutControlItem3";
-            this.layoutControlItem3.Size = new System.Drawing.Size(250, 24);
+            this.layoutControlItem3.Size = new System.Drawing.Size(211, 24);
             this.layoutControlItem3.Text = "上期日期";
             this.layoutControlItem3.TextSize = new System.Drawing.Size(48, 14);
             // 
             // layoutControlItem4
             // 
             this.layoutControlItem4.Control = this.dpCurrentDate;
-            this.layoutControlItem4.Location = new System.Drawing.Point(250, 24);
+            this.layoutControlItem4.Location = new System.Drawing.Point(211, 24);
             this.layoutControlItem4.Name = "layoutControlItem4";
-            this.layoutControlItem4.Size = new System.Drawing.Size(251, 24);
+            this.layoutControlItem4.Size = new System.Drawing.Size(212, 24);
             this.layoutControlItem4.Text = "本期日期";
             this.layoutControlItem4.TextSize = new System.Drawing.Size(48, 14);
             // 
@@ -419,7 +420,7 @@
             this.layoutControlItem6.Control = this.txtRemark;
             this.layoutControlItem6.Location = new System.Drawing.Point(0, 72);
             this.layoutControlItem6.Name = "layoutControlItem6";
-            this.layoutControlItem6.Size = new System.Drawing.Size(709, 53);
+            this.layoutControlItem6.Size = new System.Drawing.Size(720, 53);
             this.layoutControlItem6.Text = "备注";
             this.layoutControlItem6.TextSize = new System.Drawing.Size(48, 14);
             // 
@@ -428,33 +429,33 @@
             this.layoutControlItem8.Control = this.btnCalc;
             this.layoutControlItem8.Location = new System.Drawing.Point(0, 125);
             this.layoutControlItem8.Name = "layoutControlItem8";
-            this.layoutControlItem8.Size = new System.Drawing.Size(250, 26);
+            this.layoutControlItem8.Size = new System.Drawing.Size(211, 26);
             this.layoutControlItem8.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem8.TextVisible = false;
             // 
             // emptySpaceItem1
             // 
             this.emptySpaceItem1.AllowHotTrack = false;
-            this.emptySpaceItem1.Location = new System.Drawing.Point(250, 125);
+            this.emptySpaceItem1.Location = new System.Drawing.Point(211, 125);
             this.emptySpaceItem1.Name = "emptySpaceItem1";
-            this.emptySpaceItem1.Size = new System.Drawing.Size(459, 26);
+            this.emptySpaceItem1.Size = new System.Drawing.Size(509, 26);
             this.emptySpaceItem1.TextSize = new System.Drawing.Size(0, 0);
             // 
             // layoutControlItem9
             // 
             this.layoutControlItem9.Control = this.txtPeriod;
-            this.layoutControlItem9.Location = new System.Drawing.Point(250, 0);
+            this.layoutControlItem9.Location = new System.Drawing.Point(211, 0);
             this.layoutControlItem9.Name = "layoutControlItem9";
-            this.layoutControlItem9.Size = new System.Drawing.Size(251, 24);
+            this.layoutControlItem9.Size = new System.Drawing.Size(212, 24);
             this.layoutControlItem9.Text = "用能周期";
             this.layoutControlItem9.TextSize = new System.Drawing.Size(48, 14);
             // 
             // layoutControlItem5
             // 
             this.layoutControlItem5.Control = this.spTotalAmount;
-            this.layoutControlItem5.Location = new System.Drawing.Point(501, 24);
+            this.layoutControlItem5.Location = new System.Drawing.Point(423, 24);
             this.layoutControlItem5.Name = "layoutControlItem5";
-            this.layoutControlItem5.Size = new System.Drawing.Size(208, 24);
+            this.layoutControlItem5.Size = new System.Drawing.Size(297, 24);
             this.layoutControlItem5.Text = "总金额";
             this.layoutControlItem5.TextSize = new System.Drawing.Size(48, 14);
             // 
@@ -463,41 +464,41 @@
             this.layoutControlItem10.Control = this.luPreviousMeasure;
             this.layoutControlItem10.Location = new System.Drawing.Point(0, 48);
             this.layoutControlItem10.Name = "layoutControlItem10";
-            this.layoutControlItem10.Size = new System.Drawing.Size(250, 24);
+            this.layoutControlItem10.Size = new System.Drawing.Size(211, 24);
             this.layoutControlItem10.Text = "上期抄表";
             this.layoutControlItem10.TextSize = new System.Drawing.Size(48, 14);
             // 
             // layoutControlItem11
             // 
             this.layoutControlItem11.Control = this.luCurrentMeasure;
-            this.layoutControlItem11.Location = new System.Drawing.Point(250, 48);
+            this.layoutControlItem11.Location = new System.Drawing.Point(211, 48);
             this.layoutControlItem11.Name = "layoutControlItem11";
-            this.layoutControlItem11.Size = new System.Drawing.Size(251, 24);
+            this.layoutControlItem11.Size = new System.Drawing.Size(212, 24);
             this.layoutControlItem11.Text = "本期抄表";
             this.layoutControlItem11.TextSize = new System.Drawing.Size(48, 14);
             // 
             // layoutControlItem7
             // 
             this.layoutControlItem7.Control = this.chkIsFree;
-            this.layoutControlItem7.Location = new System.Drawing.Point(501, 48);
+            this.layoutControlItem7.Location = new System.Drawing.Point(423, 48);
             this.layoutControlItem7.Name = "layoutControlItem7";
-            this.layoutControlItem7.Size = new System.Drawing.Size(208, 24);
+            this.layoutControlItem7.Size = new System.Drawing.Size(297, 24);
             this.layoutControlItem7.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem7.TextVisible = false;
             // 
-            // upTool
+            // uploadTool
             // 
-            this.upTool.Location = new System.Drawing.Point(721, 12);
-            this.upTool.Name = "upTool";
-            this.upTool.Size = new System.Drawing.Size(141, 147);
-            this.upTool.TabIndex = 17;
+            this.uploadTool.Location = new System.Drawing.Point(732, 12);
+            this.uploadTool.Name = "uploadTool";
+            this.uploadTool.Size = new System.Drawing.Size(130, 147);
+            this.uploadTool.TabIndex = 17;
             // 
             // layoutControlItem12
             // 
-            this.layoutControlItem12.Control = this.upTool;
-            this.layoutControlItem12.Location = new System.Drawing.Point(709, 0);
+            this.layoutControlItem12.Control = this.uploadTool;
+            this.layoutControlItem12.Location = new System.Drawing.Point(720, 0);
             this.layoutControlItem12.Name = "layoutControlItem12";
-            this.layoutControlItem12.Size = new System.Drawing.Size(145, 151);
+            this.layoutControlItem12.Size = new System.Drawing.Size(134, 151);
             this.layoutControlItem12.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem12.TextVisible = false;
             // 
@@ -583,7 +584,7 @@
         private System.Windows.Forms.BindingSource bsMeasure;
         private DevExpress.XtraEditors.CheckEdit chkIsFree;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem7;
-        private Winform.Core.UploadTool upTool;
+        private Archives.Utility.AttachmentUploadTool uploadTool;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem12;
     }
 }

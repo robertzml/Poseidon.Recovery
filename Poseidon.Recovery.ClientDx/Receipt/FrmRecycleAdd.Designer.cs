@@ -45,7 +45,7 @@
             this.emptySpaceItem1 = new DevExpress.XtraLayout.EmptySpaceItem();
             this.groupControl2 = new DevExpress.XtraEditors.GroupControl();
             this.recycleRecordGrid = new Poseidon.Recovery.ClientDx.RecycleRecordGrid();
-            this.upTool = new Poseidon.Winform.Core.UploadTool();
+            this.uploadTool = new Poseidon.Archives.Utility.AttachmentUploadTool();
             this.layoutControlItem6 = new DevExpress.XtraLayout.LayoutControlItem();
             ((System.ComponentModel.ISupportInitialize)(this.plFill)).BeginInit();
             this.plFill.SuspendLayout();
@@ -123,7 +123,7 @@
             // 
             // layoutControl1
             // 
-            this.layoutControl1.Controls.Add(this.upTool);
+            this.layoutControl1.Controls.Add(this.uploadTool);
             this.layoutControl1.Controls.Add(this.btnCalc);
             this.layoutControl1.Controls.Add(this.txtRemark);
             this.layoutControl1.Controls.Add(this.spTotalAmount);
@@ -141,7 +141,7 @@
             // 
             this.btnCalc.Location = new System.Drawing.Point(12, 137);
             this.btnCalc.Name = "btnCalc";
-            this.btnCalc.Size = new System.Drawing.Size(256, 22);
+            this.btnCalc.Size = new System.Drawing.Size(203, 22);
             this.btnCalc.StyleController = this.layoutControl1;
             this.btnCalc.TabIndex = 8;
             this.btnCalc.Text = "计算金额";
@@ -151,7 +151,7 @@
             // 
             this.txtRemark.Location = new System.Drawing.Point(63, 60);
             this.txtRemark.Name = "txtRemark";
-            this.txtRemark.Size = new System.Drawing.Size(454, 73);
+            this.txtRemark.Size = new System.Drawing.Size(465, 73);
             this.txtRemark.StyleController = this.layoutControl1;
             this.txtRemark.TabIndex = 7;
             // 
@@ -166,14 +166,14 @@
             this.spTotalAmount.Name = "spTotalAmount";
             this.spTotalAmount.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.spTotalAmount.Size = new System.Drawing.Size(205, 20);
+            this.spTotalAmount.Size = new System.Drawing.Size(152, 20);
             this.spTotalAmount.StyleController = this.layoutControl1;
             this.spTotalAmount.TabIndex = 6;
             // 
             // dpRecycleDate
             // 
             this.dpRecycleDate.EditValue = null;
-            this.dpRecycleDate.Location = new System.Drawing.Point(323, 12);
+            this.dpRecycleDate.Location = new System.Drawing.Point(270, 12);
             this.dpRecycleDate.Name = "dpRecycleDate";
             this.dpRecycleDate.Properties.AllowNullInput = DevExpress.Utils.DefaultBoolean.False;
             this.dpRecycleDate.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
@@ -181,7 +181,7 @@
             this.dpRecycleDate.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.dpRecycleDate.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
-            this.dpRecycleDate.Size = new System.Drawing.Size(194, 20);
+            this.dpRecycleDate.Size = new System.Drawing.Size(258, 20);
             this.dpRecycleDate.StyleController = this.layoutControl1;
             this.dpRecycleDate.TabIndex = 5;
             // 
@@ -192,7 +192,7 @@
             this.txtAccountName.Properties.Appearance.BackColor = System.Drawing.Color.Lavender;
             this.txtAccountName.Properties.Appearance.Options.UseBackColor = true;
             this.txtAccountName.Properties.ReadOnly = true;
-            this.txtAccountName.Size = new System.Drawing.Size(205, 20);
+            this.txtAccountName.Size = new System.Drawing.Size(152, 20);
             this.txtAccountName.StyleController = this.layoutControl1;
             this.txtAccountName.TabIndex = 4;
             // 
@@ -218,16 +218,16 @@
             this.layoutControlItem1.Control = this.txtAccountName;
             this.layoutControlItem1.Location = new System.Drawing.Point(0, 0);
             this.layoutControlItem1.Name = "layoutControlItem1";
-            this.layoutControlItem1.Size = new System.Drawing.Size(260, 24);
+            this.layoutControlItem1.Size = new System.Drawing.Size(207, 24);
             this.layoutControlItem1.Text = "账户名称";
             this.layoutControlItem1.TextSize = new System.Drawing.Size(48, 14);
             // 
             // layoutControlItem2
             // 
             this.layoutControlItem2.Control = this.dpRecycleDate;
-            this.layoutControlItem2.Location = new System.Drawing.Point(260, 0);
+            this.layoutControlItem2.Location = new System.Drawing.Point(207, 0);
             this.layoutControlItem2.Name = "layoutControlItem2";
-            this.layoutControlItem2.Size = new System.Drawing.Size(249, 48);
+            this.layoutControlItem2.Size = new System.Drawing.Size(313, 48);
             this.layoutControlItem2.Text = "回收日期";
             this.layoutControlItem2.TextSize = new System.Drawing.Size(48, 14);
             // 
@@ -236,7 +236,7 @@
             this.layoutControlItem3.Control = this.spTotalAmount;
             this.layoutControlItem3.Location = new System.Drawing.Point(0, 24);
             this.layoutControlItem3.Name = "layoutControlItem3";
-            this.layoutControlItem3.Size = new System.Drawing.Size(260, 24);
+            this.layoutControlItem3.Size = new System.Drawing.Size(207, 24);
             this.layoutControlItem3.Text = "回收金额";
             this.layoutControlItem3.TextSize = new System.Drawing.Size(48, 14);
             // 
@@ -245,7 +245,7 @@
             this.layoutControlItem4.Control = this.txtRemark;
             this.layoutControlItem4.Location = new System.Drawing.Point(0, 48);
             this.layoutControlItem4.Name = "layoutControlItem4";
-            this.layoutControlItem4.Size = new System.Drawing.Size(509, 77);
+            this.layoutControlItem4.Size = new System.Drawing.Size(520, 77);
             this.layoutControlItem4.Text = "备注";
             this.layoutControlItem4.TextSize = new System.Drawing.Size(48, 14);
             // 
@@ -254,16 +254,16 @@
             this.layoutControlItem5.Control = this.btnCalc;
             this.layoutControlItem5.Location = new System.Drawing.Point(0, 125);
             this.layoutControlItem5.Name = "layoutControlItem5";
-            this.layoutControlItem5.Size = new System.Drawing.Size(260, 26);
+            this.layoutControlItem5.Size = new System.Drawing.Size(207, 26);
             this.layoutControlItem5.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem5.TextVisible = false;
             // 
             // emptySpaceItem1
             // 
             this.emptySpaceItem1.AllowHotTrack = false;
-            this.emptySpaceItem1.Location = new System.Drawing.Point(260, 125);
+            this.emptySpaceItem1.Location = new System.Drawing.Point(207, 125);
             this.emptySpaceItem1.Name = "emptySpaceItem1";
-            this.emptySpaceItem1.Size = new System.Drawing.Size(249, 26);
+            this.emptySpaceItem1.Size = new System.Drawing.Size(313, 26);
             this.emptySpaceItem1.TextSize = new System.Drawing.Size(0, 0);
             // 
             // groupControl2
@@ -296,19 +296,19 @@
             this.recycleRecordGrid.Size = new System.Drawing.Size(674, 222);
             this.recycleRecordGrid.TabIndex = 0;
             // 
-            // upTool
+            // uploadTool
             // 
-            this.upTool.Location = new System.Drawing.Point(521, 12);
-            this.upTool.Name = "upTool";
-            this.upTool.Size = new System.Drawing.Size(141, 147);
-            this.upTool.TabIndex = 9;
+            this.uploadTool.Location = new System.Drawing.Point(532, 12);
+            this.uploadTool.Name = "uploadTool";
+            this.uploadTool.Size = new System.Drawing.Size(130, 147);
+            this.uploadTool.TabIndex = 9;
             // 
             // layoutControlItem6
             // 
-            this.layoutControlItem6.Control = this.upTool;
-            this.layoutControlItem6.Location = new System.Drawing.Point(509, 0);
+            this.layoutControlItem6.Control = this.uploadTool;
+            this.layoutControlItem6.Location = new System.Drawing.Point(520, 0);
             this.layoutControlItem6.Name = "layoutControlItem6";
-            this.layoutControlItem6.Size = new System.Drawing.Size(145, 151);
+            this.layoutControlItem6.Size = new System.Drawing.Size(134, 151);
             this.layoutControlItem6.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem6.TextVisible = false;
             // 
@@ -366,7 +366,7 @@
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem5;
         private DevExpress.XtraLayout.EmptySpaceItem emptySpaceItem1;
         private RecycleRecordGrid recycleRecordGrid;
-        private Winform.Core.UploadTool upTool;
+        private Archives.Utility.AttachmentUploadTool uploadTool;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem6;
     }
 }

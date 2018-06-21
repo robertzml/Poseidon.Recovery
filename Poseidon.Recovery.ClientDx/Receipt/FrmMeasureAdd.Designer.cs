@@ -28,11 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
             this.luPrevious = new DevExpress.XtraEditors.LookUpEdit();
-            this.bsMeasure = new System.Windows.Forms.BindingSource();
+            this.bsMeasure = new System.Windows.Forms.BindingSource(this.components);
             this.txtRemark = new DevExpress.XtraEditors.MemoEdit();
             this.dpMeasureDate = new DevExpress.XtraEditors.DateEdit();
             this.txtAccountName = new DevExpress.XtraEditors.TextEdit();
@@ -43,8 +44,8 @@
             this.layoutControlItem4 = new DevExpress.XtraLayout.LayoutControlItem();
             this.groupControl2 = new DevExpress.XtraEditors.GroupControl();
             this.measureRecordGrid = new Poseidon.Recovery.ClientDx.MeasureRecordGrid();
-            this.upTool = new Poseidon.Winform.Core.UploadTool();
-            this.layoutControlItem5 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.uploadTool = new Poseidon.Archives.Utility.AttachmentUploadTool();
+            this.layoutControlItem6 = new DevExpress.XtraLayout.LayoutControlItem();
             ((System.ComponentModel.ISupportInitialize)(this.plFill)).BeginInit();
             this.plFill.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.plBottom)).BeginInit();
@@ -67,7 +68,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).BeginInit();
             this.groupControl2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).BeginInit();
             this.SuspendLayout();
             // 
             // btnCancel
@@ -121,7 +122,7 @@
             // 
             // layoutControl1
             // 
-            this.layoutControl1.Controls.Add(this.upTool);
+            this.layoutControl1.Controls.Add(this.uploadTool);
             this.layoutControl1.Controls.Add(this.luPrevious);
             this.layoutControl1.Controls.Add(this.txtRemark);
             this.layoutControl1.Controls.Add(this.dpMeasureDate);
@@ -150,7 +151,7 @@
             this.luPrevious.Properties.DisplayMember = "MeasureDate";
             this.luPrevious.Properties.NullText = "请选择";
             this.luPrevious.Properties.ValueMember = "Id";
-            this.luPrevious.Size = new System.Drawing.Size(537, 20);
+            this.luPrevious.Size = new System.Drawing.Size(543, 20);
             this.luPrevious.StyleController = this.layoutControl1;
             this.luPrevious.TabIndex = 7;
             this.luPrevious.EditValueChanged += new System.EventHandler(this.luPrevious_EditValueChanged);
@@ -163,14 +164,14 @@
             // 
             this.txtRemark.Location = new System.Drawing.Point(63, 36);
             this.txtRemark.Name = "txtRemark";
-            this.txtRemark.Size = new System.Drawing.Size(537, 59);
+            this.txtRemark.Size = new System.Drawing.Size(543, 59);
             this.txtRemark.StyleController = this.layoutControl1;
             this.txtRemark.TabIndex = 6;
             // 
             // dpMeasureDate
             // 
             this.dpMeasureDate.EditValue = null;
-            this.dpMeasureDate.Location = new System.Drawing.Point(373, 12);
+            this.dpMeasureDate.Location = new System.Drawing.Point(317, 12);
             this.dpMeasureDate.Name = "dpMeasureDate";
             this.dpMeasureDate.Properties.AllowNullInput = DevExpress.Utils.DefaultBoolean.False;
             this.dpMeasureDate.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
@@ -178,7 +179,7 @@
             this.dpMeasureDate.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.dpMeasureDate.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
-            this.dpMeasureDate.Size = new System.Drawing.Size(227, 20);
+            this.dpMeasureDate.Size = new System.Drawing.Size(289, 20);
             this.dpMeasureDate.StyleController = this.layoutControl1;
             this.dpMeasureDate.TabIndex = 5;
             // 
@@ -189,7 +190,7 @@
             this.txtAccountName.Properties.Appearance.BackColor = System.Drawing.Color.Lavender;
             this.txtAccountName.Properties.Appearance.Options.UseBackColor = true;
             this.txtAccountName.Properties.ReadOnly = true;
-            this.txtAccountName.Size = new System.Drawing.Size(255, 20);
+            this.txtAccountName.Size = new System.Drawing.Size(199, 20);
             this.txtAccountName.StyleController = this.layoutControl1;
             this.txtAccountName.TabIndex = 4;
             // 
@@ -202,7 +203,7 @@
             this.layoutControlItem2,
             this.layoutControlItem3,
             this.layoutControlItem4,
-            this.layoutControlItem5});
+            this.layoutControlItem6});
             this.layoutControlGroup1.Location = new System.Drawing.Point(0, 0);
             this.layoutControlGroup1.Name = "layoutControlGroup1";
             this.layoutControlGroup1.Size = new System.Drawing.Size(774, 131);
@@ -213,16 +214,16 @@
             this.layoutControlItem1.Control = this.txtAccountName;
             this.layoutControlItem1.Location = new System.Drawing.Point(0, 0);
             this.layoutControlItem1.Name = "layoutControlItem1";
-            this.layoutControlItem1.Size = new System.Drawing.Size(310, 24);
+            this.layoutControlItem1.Size = new System.Drawing.Size(254, 24);
             this.layoutControlItem1.Text = "账户名称";
             this.layoutControlItem1.TextSize = new System.Drawing.Size(48, 14);
             // 
             // layoutControlItem2
             // 
             this.layoutControlItem2.Control = this.dpMeasureDate;
-            this.layoutControlItem2.Location = new System.Drawing.Point(310, 0);
+            this.layoutControlItem2.Location = new System.Drawing.Point(254, 0);
             this.layoutControlItem2.Name = "layoutControlItem2";
-            this.layoutControlItem2.Size = new System.Drawing.Size(282, 24);
+            this.layoutControlItem2.Size = new System.Drawing.Size(344, 24);
             this.layoutControlItem2.Text = "抄表日期";
             this.layoutControlItem2.TextSize = new System.Drawing.Size(48, 14);
             // 
@@ -231,7 +232,7 @@
             this.layoutControlItem3.Control = this.txtRemark;
             this.layoutControlItem3.Location = new System.Drawing.Point(0, 24);
             this.layoutControlItem3.Name = "layoutControlItem3";
-            this.layoutControlItem3.Size = new System.Drawing.Size(592, 63);
+            this.layoutControlItem3.Size = new System.Drawing.Size(598, 63);
             this.layoutControlItem3.Text = "备注";
             this.layoutControlItem3.TextSize = new System.Drawing.Size(48, 14);
             // 
@@ -240,7 +241,7 @@
             this.layoutControlItem4.Control = this.luPrevious;
             this.layoutControlItem4.Location = new System.Drawing.Point(0, 87);
             this.layoutControlItem4.Name = "layoutControlItem4";
-            this.layoutControlItem4.Size = new System.Drawing.Size(592, 24);
+            this.layoutControlItem4.Size = new System.Drawing.Size(598, 24);
             this.layoutControlItem4.Text = "上期记录";
             this.layoutControlItem4.TextSize = new System.Drawing.Size(48, 14);
             // 
@@ -275,21 +276,21 @@
             this.measureRecordGrid.Size = new System.Drawing.Size(774, 292);
             this.measureRecordGrid.TabIndex = 0;
             // 
-            // upTool
+            // uploadTool
             // 
-            this.upTool.Location = new System.Drawing.Point(604, 12);
-            this.upTool.Name = "upTool";
-            this.upTool.Size = new System.Drawing.Size(158, 107);
-            this.upTool.TabIndex = 8;
+            this.uploadTool.Location = new System.Drawing.Point(610, 12);
+            this.uploadTool.Name = "uploadTool";
+            this.uploadTool.Size = new System.Drawing.Size(152, 107);
+            this.uploadTool.TabIndex = 9;
             // 
-            // layoutControlItem5
+            // layoutControlItem6
             // 
-            this.layoutControlItem5.Control = this.upTool;
-            this.layoutControlItem5.Location = new System.Drawing.Point(592, 0);
-            this.layoutControlItem5.Name = "layoutControlItem5";
-            this.layoutControlItem5.Size = new System.Drawing.Size(162, 111);
-            this.layoutControlItem5.TextSize = new System.Drawing.Size(0, 0);
-            this.layoutControlItem5.TextVisible = false;
+            this.layoutControlItem6.Control = this.uploadTool;
+            this.layoutControlItem6.Location = new System.Drawing.Point(598, 0);
+            this.layoutControlItem6.Name = "layoutControlItem6";
+            this.layoutControlItem6.Size = new System.Drawing.Size(156, 111);
+            this.layoutControlItem6.TextSize = new System.Drawing.Size(0, 0);
+            this.layoutControlItem6.TextVisible = false;
             // 
             // FrmMeasureAdd
             // 
@@ -320,7 +321,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).EndInit();
             this.groupControl2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -342,7 +343,7 @@
         private DevExpress.XtraEditors.LookUpEdit luPrevious;
         private System.Windows.Forms.BindingSource bsMeasure;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem4;
-        private Winform.Core.UploadTool upTool;
-        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem5;
+        private Archives.Utility.AttachmentUploadTool uploadTool;
+        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem6;
     }
 }

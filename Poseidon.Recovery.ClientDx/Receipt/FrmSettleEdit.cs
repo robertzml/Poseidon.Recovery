@@ -65,7 +65,7 @@ namespace Poseidon.Recovery.ClientDx
             this.txtRemark.Text = this.currentSettle.Remark;
 
             this.settleRecordGrid.DataSource = this.currentSettle.Records;
-            this.upTool.Init(this.currentSettle.AttachmentIds);
+            this.uploadTool.Init(this.currentSettle.AttachmentIds);
 
             base.InitForm();
         }
@@ -167,7 +167,7 @@ namespace Poseidon.Recovery.ClientDx
                 item.Remark = item.Remark ?? "";
             }
 
-            entity.AttachmentIds = this.upTool.AttachmentIds;
+            entity.AttachmentIds = this.uploadTool.AttachmentIds;
         }
         #endregion //Function
 

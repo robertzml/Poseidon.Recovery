@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             this.splitContainerControl1 = new DevExpress.XtraEditors.SplitContainerControl();
+            this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
             this.accountTree = new Poseidon.Winform.Core.GroupChildrenTree();
             this.accountReceiptMod = new Poseidon.Recovery.ClientDx.AccountReceiptModule();
-            this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainerControl1)).BeginInit();
             this.splitContainerControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
@@ -52,6 +52,16 @@
             this.splitContainerControl1.TabIndex = 0;
             this.splitContainerControl1.Text = "splitContainerControl1";
             // 
+            // groupControl1
+            // 
+            this.groupControl1.Controls.Add(this.accountTree);
+            this.groupControl1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.groupControl1.Location = new System.Drawing.Point(0, 0);
+            this.groupControl1.Name = "groupControl1";
+            this.groupControl1.Size = new System.Drawing.Size(190, 526);
+            this.groupControl1.TabIndex = 1;
+            this.groupControl1.Text = "账户列表";
+            // 
             // accountTree
             // 
             this.accountTree.CascadeEntity = false;
@@ -70,16 +80,6 @@
             this.accountReceiptMod.Name = "accountReceiptMod";
             this.accountReceiptMod.Size = new System.Drawing.Size(674, 526);
             this.accountReceiptMod.TabIndex = 0;
-            // 
-            // groupControl1
-            // 
-            this.groupControl1.Controls.Add(this.accountTree);
-            this.groupControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupControl1.Location = new System.Drawing.Point(0, 0);
-            this.groupControl1.Name = "groupControl1";
-            this.groupControl1.Size = new System.Drawing.Size(190, 526);
-            this.groupControl1.TabIndex = 1;
-            this.groupControl1.Text = "账户列表";
             // 
             // FrmRecoveryReceipt
             // 
