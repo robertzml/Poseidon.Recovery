@@ -45,7 +45,7 @@ namespace Poseidon.Recovery.ClientDx
         protected override void InitForm()
         {
             this.txtName.Text = this.currentAccount.Name;
-            this.upTool.Init(this.currentAccount.AttachmentIds);
+            this.uploadTool.Init(this.currentAccount.AttachmentIds);
 
             base.InitForm();
         }
@@ -61,7 +61,7 @@ namespace Poseidon.Recovery.ClientDx
         {
             try
             {
-                BusinessFactory<AccountBusiness>.Instance.SetAttachments(this.currentAccount.Id, this.upTool.AttachmentIds);
+                BusinessFactory<AccountBusiness>.Instance.SetAttachments(this.currentAccount.Id, this.uploadTool.AttachmentIds);
 
                 MessageUtil.ShowInfo("保存成功");
                 this.Close();

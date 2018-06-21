@@ -81,7 +81,7 @@ namespace Poseidon.Recovery.ClientDx
         /// <param name="account"></param>
         private void DisplayAttachment(Account account)
         {
-            this.attachmentTool.Init(account.AttachmentIds);
+            this.attachmentGrid.Init(account.AttachmentIds);
         }
 
         /// <summary>

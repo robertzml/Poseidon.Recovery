@@ -38,7 +38,6 @@
             this.tabPageMeters = new DevExpress.XtraTab.XtraTabPage();
             this.meterGrid = new Poseidon.Recovery.ClientDx.MeterGrid();
             this.tabPageAttachment = new DevExpress.XtraTab.XtraTabPage();
-            this.attachmentTool = new Poseidon.Winform.Core.AttachmentTool();
             this.tabMain = new DevExpress.XtraTab.XtraTabControl();
             this.tabPageSummary = new DevExpress.XtraTab.XtraTabPage();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
@@ -99,6 +98,7 @@
             this.settleInspectMod = new Poseidon.Recovery.ClientDx.SettleInspectModule();
             this.tabPageRecycleInspect = new DevExpress.XtraTab.XtraTabPage();
             this.recycleInspectMod = new Poseidon.Recovery.ClientDx.RecycleInspectModule();
+            this.attachmentGrid = new Poseidon.Archives.Utility.AttachmentGrid();
             ((System.ComponentModel.ISupportInitialize)(this.tabInfo)).BeginInit();
             this.tabInfo.SuspendLayout();
             this.tabPageBaseInfo.SuspendLayout();
@@ -260,18 +260,10 @@
             // 
             // tabPageAttachment
             // 
-            this.tabPageAttachment.Controls.Add(this.attachmentTool);
+            this.tabPageAttachment.Controls.Add(this.attachmentGrid);
             this.tabPageAttachment.Name = "tabPageAttachment";
             this.tabPageAttachment.Size = new System.Drawing.Size(882, 185);
             this.tabPageAttachment.Text = "相关附件";
-            // 
-            // attachmentTool
-            // 
-            this.attachmentTool.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.attachmentTool.Location = new System.Drawing.Point(0, 0);
-            this.attachmentTool.Name = "attachmentTool";
-            this.attachmentTool.Size = new System.Drawing.Size(882, 185);
-            this.attachmentTool.TabIndex = 0;
             // 
             // tabMain
             // 
@@ -871,6 +863,15 @@
             this.recycleInspectMod.Size = new System.Drawing.Size(888, 742);
             this.recycleInspectMod.TabIndex = 0;
             // 
+            // attachmentGrid
+            // 
+            this.attachmentGrid.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.attachmentGrid.Location = new System.Drawing.Point(0, 0);
+            this.attachmentGrid.Name = "attachmentGrid";
+            this.attachmentGrid.ShowContextMenu = false;
+            this.attachmentGrid.Size = new System.Drawing.Size(882, 185);
+            this.attachmentGrid.TabIndex = 0;
+            // 
             // AccountRecoveryModule
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
@@ -1016,6 +1017,6 @@
         private SettleInspectModule settleInspectMod;
         private RecycleInspectModule recycleInspectMod;
         private DevExpress.XtraTab.XtraTabPage tabPageAttachment;
-        private Winform.Core.AttachmentTool attachmentTool;
+        private Archives.Utility.AttachmentGrid attachmentGrid;
     }
 }

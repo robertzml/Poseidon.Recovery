@@ -30,10 +30,10 @@
         {
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
-            this.layoutControlGroup1 = new DevExpress.XtraLayout.LayoutControlGroup();
             this.txtName = new DevExpress.XtraEditors.TextEdit();
+            this.layoutControlGroup1 = new DevExpress.XtraLayout.LayoutControlGroup();
             this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.upTool = new Poseidon.Winform.Core.UploadTool();
+            this.uploadTool = new Poseidon.Archives.Utility.AttachmentUploadTool();
             this.layoutControlItem2 = new DevExpress.XtraLayout.LayoutControlItem();
             ((System.ComponentModel.ISupportInitialize)(this.plFill)).BeginInit();
             this.plFill.SuspendLayout();
@@ -43,8 +43,8 @@
             this.groupControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtName.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).BeginInit();
             this.SuspendLayout();
@@ -84,7 +84,7 @@
             // 
             // layoutControl1
             // 
-            this.layoutControl1.Controls.Add(this.upTool);
+            this.layoutControl1.Controls.Add(this.uploadTool);
             this.layoutControl1.Controls.Add(this.txtName);
             this.layoutControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.layoutControl1.Location = new System.Drawing.Point(2, 21);
@@ -93,6 +93,17 @@
             this.layoutControl1.Size = new System.Drawing.Size(380, 229);
             this.layoutControl1.TabIndex = 0;
             this.layoutControl1.Text = "layoutControl1";
+            // 
+            // txtName
+            // 
+            this.txtName.Location = new System.Drawing.Point(63, 12);
+            this.txtName.Name = "txtName";
+            this.txtName.Properties.Appearance.BackColor = System.Drawing.Color.Lavender;
+            this.txtName.Properties.Appearance.Options.UseBackColor = true;
+            this.txtName.Properties.ReadOnly = true;
+            this.txtName.Size = new System.Drawing.Size(305, 20);
+            this.txtName.StyleController = this.layoutControl1;
+            this.txtName.TabIndex = 4;
             // 
             // layoutControlGroup1
             // 
@@ -106,17 +117,6 @@
             this.layoutControlGroup1.Size = new System.Drawing.Size(380, 229);
             this.layoutControlGroup1.TextVisible = false;
             // 
-            // txtName
-            // 
-            this.txtName.Location = new System.Drawing.Point(64, 12);
-            this.txtName.Name = "txtName";
-            this.txtName.Properties.Appearance.BackColor = System.Drawing.Color.Lavender;
-            this.txtName.Properties.Appearance.Options.UseBackColor = true;
-            this.txtName.Properties.ReadOnly = true;
-            this.txtName.Size = new System.Drawing.Size(304, 20);
-            this.txtName.StyleController = this.layoutControl1;
-            this.txtName.TabIndex = 4;
-            // 
             // layoutControlItem1
             // 
             this.layoutControlItem1.Control = this.txtName;
@@ -126,16 +126,16 @@
             this.layoutControlItem1.Text = "账户名称";
             this.layoutControlItem1.TextSize = new System.Drawing.Size(48, 14);
             // 
-            // upTool
+            // uploadTool
             // 
-            this.upTool.Location = new System.Drawing.Point(12, 36);
-            this.upTool.Name = "upTool";
-            this.upTool.Size = new System.Drawing.Size(356, 181);
-            this.upTool.TabIndex = 5;
+            this.uploadTool.Location = new System.Drawing.Point(12, 36);
+            this.uploadTool.Name = "uploadTool";
+            this.uploadTool.Size = new System.Drawing.Size(356, 181);
+            this.uploadTool.TabIndex = 5;
             // 
             // layoutControlItem2
             // 
-            this.layoutControlItem2.Control = this.upTool;
+            this.layoutControlItem2.Control = this.uploadTool;
             this.layoutControlItem2.Location = new System.Drawing.Point(0, 24);
             this.layoutControlItem2.Name = "layoutControlItem2";
             this.layoutControlItem2.Size = new System.Drawing.Size(360, 185);
@@ -157,8 +157,8 @@
             this.groupControl1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).EndInit();
             this.layoutControl1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtName.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).EndInit();
             this.ResumeLayout(false);
@@ -169,10 +169,10 @@
 
         private DevExpress.XtraEditors.GroupControl groupControl1;
         private DevExpress.XtraLayout.LayoutControl layoutControl1;
-        private Winform.Core.UploadTool upTool;
         private DevExpress.XtraEditors.TextEdit txtName;
         private DevExpress.XtraLayout.LayoutControlGroup layoutControlGroup1;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem1;
+        private Archives.Utility.AttachmentUploadTool uploadTool;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem2;
     }
 }
