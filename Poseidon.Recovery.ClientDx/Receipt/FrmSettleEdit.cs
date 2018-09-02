@@ -65,7 +65,7 @@ namespace Poseidon.Recovery.ClientDx
             this.txtRemark.Text = this.currentSettle.Remark;
 
             this.settleRecordGrid.DataSource = this.currentSettle.Records;
-            this.uploadTool.Init(this.currentSettle.AttachmentIds);
+            this.uploadTool.Init(this.currentSettle.AttachmentIds, RecoveryConstant.ModuleName);
 
             base.InitForm();
         }

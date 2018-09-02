@@ -59,7 +59,7 @@ namespace Poseidon.Recovery.ClientDx
             this.txtRemark.Text = this.currentMeasure.Remark;
             this.measureRecordGrid.DataSource = this.currentMeasure.Records;
 
-            this.uploadTool.Init(this.currentMeasure.AttachmentIds);
+            this.uploadTool.Init(this.currentMeasure.AttachmentIds, RecoveryConstant.ModuleName);
 
             base.InitForm();
         }

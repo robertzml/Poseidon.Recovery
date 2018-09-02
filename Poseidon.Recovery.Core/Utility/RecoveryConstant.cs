@@ -13,6 +13,11 @@ namespace Poseidon.Recovery.Core.Utility
     {
         #region Field
         /// <summary>
+        /// 模块名称
+        /// </summary>
+        public static readonly string ModuleName = "Recovery";
+
+        /// <summary>
         /// 全校回收账户分组代码
         /// </summary>
         public static readonly string RecoveryAccountGroupCode = "RecoveryAccount";

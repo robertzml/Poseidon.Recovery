@@ -589,6 +589,7 @@
     <EmbeddedResource Include="Report\RepSettle.resx">
       <DependentUpon>RepSettle.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="app.config" />
     <None Include="Properties\DataSources\Poseidon.Recovery.Core.DL.CommerceAccount.datasource" />
     <None Include="Properties\DataSources\Poseidon.Recovery.Core.DL.ConstructionAccount.datasource" />
     <None Include="Properties\DataSources\Poseidon.Recovery.Core.DL.Measure.datasource" />

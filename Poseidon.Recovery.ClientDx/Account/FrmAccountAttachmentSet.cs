@@ -14,6 +14,7 @@ namespace Poseidon.Recovery.ClientDx
     using Poseidon.Winform.Base;
     using Poseidon.Recovery.Core.BL;
     using Poseidon.Recovery.Core.DL;
+    using Poseidon.Recovery.Core.Utility;
 
     /// <summary>
     /// 账户附件设置
@@ -45,7 +46,7 @@ namespace Poseidon.Recovery.ClientDx
         protected override void InitForm()
         {
             this.txtName.Text = this.currentAccount.Name;
-            this.uploadTool.Init(this.currentAccount.AttachmentIds);
+            this.uploadTool.Init(this.currentAccount.AttachmentIds, RecoveryConstant.ModuleName);
 
             base.InitForm();
         }

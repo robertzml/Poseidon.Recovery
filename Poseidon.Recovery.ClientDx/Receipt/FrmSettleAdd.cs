@@ -50,7 +50,7 @@ namespace Poseidon.Recovery.ClientDx
             this.bsMeasure.DataSource = BusinessFactory<MeasureBusiness>.Instance.FindByAccount(this.currentAccount.Id);
 
             this.settleRecordGrid.Init();
-            this.uploadTool.Init();
+            this.uploadTool.Init(RecoveryConstant.ModuleName);
 
             InitRecords();
 

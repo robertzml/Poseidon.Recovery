@@ -120,7 +120,7 @@ namespace Poseidon.Recovery.Core.BL
         /// </summary>
         /// <param name="entity">实体对象</param>
         /// <param name="user">操作用户</param>
-        public void Create(Settle entity, LoginUser user)
+        public void Create(Settle entity, ILoginUser user)
         {
             entity.CreateBy = new UpdateStamp
             {
@@ -149,7 +149,7 @@ namespace Poseidon.Recovery.Core.BL
         /// <param name="entity">实体对象</param>
         /// <param name="user">操作用户</param>
         /// <returns></returns>
-        public bool Update(Settle entity, LoginUser user)
+        public bool Update(Settle entity, ILoginUser user)
         {
             entity.UpdateBy = new UpdateStamp
             {

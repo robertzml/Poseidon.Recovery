@@ -50,7 +50,7 @@ namespace Poseidon.Recovery.ClientDx
             this.recycleRecordGrid.Init();
             this.recycleRecordGrid.DataSource = new List<RecycleRecord>();
 
-            this.uploadTool.Init();
+            this.uploadTool.Init(RecoveryConstant.ModuleName);
 
             base.InitForm();
         }
