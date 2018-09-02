@@ -190,6 +190,9 @@
             this.settleRecordGrid.Name = "settleRecordGrid";
             this.settleRecordGrid.ShowAddMenu = false;
             this.settleRecordGrid.ShowCalculate = false;
+            this.settleRecordGrid.ShowDeleteMenu = false;
+            this.settleRecordGrid.ShowEditMenu = false;
+            this.settleRecordGrid.ShowFindPanel = false;
             this.settleRecordGrid.ShowFooter = true;
             this.settleRecordGrid.ShowLineNumber = true;
             this.settleRecordGrid.ShowMenu = false;
@@ -537,6 +540,9 @@
             this.reconcileGrid.Name = "reconcileGrid";
             this.reconcileGrid.ShowAccount = false;
             this.reconcileGrid.ShowAddMenu = false;
+            this.reconcileGrid.ShowDeleteMenu = false;
+            this.reconcileGrid.ShowEditMenu = false;
+            this.reconcileGrid.ShowFindPanel = false;
             this.reconcileGrid.ShowFooter = true;
             this.reconcileGrid.ShowLineNumber = true;
             this.reconcileGrid.ShowMenu = false;
@@ -569,6 +575,9 @@
             this.debitGrid.Location = new System.Drawing.Point(2, 21);
             this.debitGrid.Name = "debitGrid";
             this.debitGrid.ShowAddMenu = false;
+            this.debitGrid.ShowDeleteMenu = false;
+            this.debitGrid.ShowEditMenu = false;
+            this.debitGrid.ShowFindPanel = false;
             this.debitGrid.ShowFooter = false;
             this.debitGrid.ShowLineNumber = true;
             this.debitGrid.ShowMenu = false;
@@ -599,6 +608,9 @@
             this.creditGrid.Location = new System.Drawing.Point(2, 21);
             this.creditGrid.Name = "creditGrid";
             this.creditGrid.ShowAddMenu = false;
+            this.creditGrid.ShowDeleteMenu = false;
+            this.creditGrid.ShowEditMenu = false;
+            this.creditGrid.ShowFindPanel = false;
             this.creditGrid.ShowFooter = false;
             this.creditGrid.ShowLineNumber = true;
             this.creditGrid.ShowMenu = false;
@@ -629,6 +641,9 @@
             this.recycleRecordGrid.Location = new System.Drawing.Point(2, 21);
             this.recycleRecordGrid.Name = "recycleRecordGrid";
             this.recycleRecordGrid.ShowAddMenu = false;
+            this.recycleRecordGrid.ShowDeleteMenu = false;
+            this.recycleRecordGrid.ShowEditMenu = false;
+            this.recycleRecordGrid.ShowFindPanel = false;
             this.recycleRecordGrid.ShowFooter = false;
             this.recycleRecordGrid.ShowLineNumber = true;
             this.recycleRecordGrid.ShowMenu = false;
@@ -660,6 +675,9 @@
             this.debitOtherGrid.Location = new System.Drawing.Point(2, 21);
             this.debitOtherGrid.Name = "debitOtherGrid";
             this.debitOtherGrid.ShowAddMenu = false;
+            this.debitOtherGrid.ShowDeleteMenu = false;
+            this.debitOtherGrid.ShowEditMenu = false;
+            this.debitOtherGrid.ShowFindPanel = false;
             this.debitOtherGrid.ShowFooter = false;
             this.debitOtherGrid.ShowLineNumber = true;
             this.debitOtherGrid.ShowMenu = false;

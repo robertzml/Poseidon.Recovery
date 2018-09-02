@@ -192,6 +192,9 @@
             this.reconcileGrid.Name = "reconcileGrid";
             this.reconcileGrid.ShowAccount = false;
             this.reconcileGrid.ShowAddMenu = false;
+            this.reconcileGrid.ShowDeleteMenu = false;
+            this.reconcileGrid.ShowEditMenu = false;
+            this.reconcileGrid.ShowFindPanel = false;
             this.reconcileGrid.ShowFooter = false;
             this.reconcileGrid.ShowLineNumber = true;
             this.reconcileGrid.ShowMenu = false;
@@ -334,6 +337,9 @@
             this.debitOtherGrid.Location = new System.Drawing.Point(4, 145);
             this.debitOtherGrid.Name = "debitOtherGrid";
             this.debitOtherGrid.ShowAddMenu = false;
+            this.debitOtherGrid.ShowDeleteMenu = false;
+            this.debitOtherGrid.ShowEditMenu = false;
+            this.debitOtherGrid.ShowFindPanel = false;
             this.debitOtherGrid.ShowFooter = true;
             this.debitOtherGrid.ShowLineNumber = true;
             this.debitOtherGrid.ShowMenu = false;
@@ -354,6 +360,9 @@
             this.debitGrid.Location = new System.Drawing.Point(4, 4);
             this.debitGrid.Name = "debitGrid";
             this.debitGrid.ShowAddMenu = false;
+            this.debitGrid.ShowDeleteMenu = false;
+            this.debitGrid.ShowEditMenu = false;
+            this.debitGrid.ShowFindPanel = false;
             this.debitGrid.ShowFooter = true;
             this.debitGrid.ShowLineNumber = true;
             this.debitGrid.ShowMenu = false;
@@ -426,6 +435,9 @@
             this.recycleRecordGrid.Location = new System.Drawing.Point(4, 145);
             this.recycleRecordGrid.Name = "recycleRecordGrid";
             this.recycleRecordGrid.ShowAddMenu = false;
+            this.recycleRecordGrid.ShowDeleteMenu = false;
+            this.recycleRecordGrid.ShowEditMenu = false;
+            this.recycleRecordGrid.ShowFindPanel = false;
             this.recycleRecordGrid.ShowFooter = true;
             this.recycleRecordGrid.ShowLineNumber = true;
             this.recycleRecordGrid.ShowMenu = false;
@@ -445,6 +457,9 @@
             this.creditGrid.Location = new System.Drawing.Point(4, 4);
             this.creditGrid.Name = "creditGrid";
             this.creditGrid.ShowAddMenu = false;
+            this.creditGrid.ShowDeleteMenu = false;
+            this.creditGrid.ShowEditMenu = false;
+            this.creditGrid.ShowFindPanel = false;
             this.creditGrid.ShowFooter = true;
             this.creditGrid.ShowLineNumber = true;
             this.creditGrid.ShowMenu = false;

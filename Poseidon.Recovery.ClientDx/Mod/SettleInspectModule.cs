@@ -87,7 +87,7 @@ namespace Poseidon.Recovery.ClientDx
         private void DisplayReconcileDetails(Reconcile reconcile, Settle settle)
         {
             this.debitGrid.DataSource = reconcile.Debits.Where(r => r.SettleId == settle.Id).ToList();
-            this.debitOtherGrid.DataSource = reconcile.Debits.Where(r => r.SettleId == settle.Id).ToList();
+            this.debitOtherGrid.DataSource = reconcile.Debits.Where(r => string.IsNullOrEmpty(r.SettleId)).ToList();
 
             this.creditGrid.DataSource = reconcile.Credits.ToList();
 
