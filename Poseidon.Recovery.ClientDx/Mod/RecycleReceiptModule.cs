@@ -10,6 +10,7 @@ using System.Windows.Forms;
 namespace Poseidon.Recovery.ClientDx
 {
     using Poseidon.Base.Framework;
+    using Poseidon.Base.System;
     using Poseidon.Common;
     using Poseidon.Recovery.Core.BL;
     using Poseidon.Recovery.Core.DL;
@@ -171,6 +172,41 @@ namespace Poseidon.Recovery.ClientDx
 
             ChildFormManage.ShowDialogForm(typeof(FrmRecycleEdit), new object[] { recycle.Id, this.currentAccount.Id });
             LoadData(this.currentAccount);
+        }
+
+        /// <summary>
+        /// 删除费用回收
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            if (this.currentAccount == null || this.lbRecycles.SelectedValue == null)
+                return;
+
+            var recycle = this.lbRecycles.SelectedItem as Recycle;
+
+            if (MessageUtil.ConfirmYesNo("是否确认删除选中费用回收") == DialogResult.Yes)
+            {
+                try
+                {
+                    bool check = BusinessFactory<RecycleBusiness>.Instance.CheckDelete(recycle);
+                    if (!check)
+                    {
+                        MessageUtil.ShowInfo("该费用回收不能删除");
+                        return;
+                    }
+
+                    BusinessFactory<RecycleBusiness>.Instance.Delete(recycle);
+
+                    LoadData(this.currentAccount);
+                    MessageUtil.ShowInfo("删除成功");
+                }
+                catch (PoseidonException pe)
+                {
+                    MessageUtil.ShowError(string.Format("删除失败，错误消息:{0}", pe.Message));
+                }
+            }
         }
 
         /// <summary>

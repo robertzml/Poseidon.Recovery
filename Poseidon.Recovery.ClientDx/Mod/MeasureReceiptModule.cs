@@ -165,20 +165,20 @@ namespace Poseidon.Recovery.ClientDx
             if (this.currentAccount == null || this.lbMeasures.SelectedValue == null)
                 return;
 
-            var expense = this.lbMeasures.SelectedItem as Measure;
+            var measure = this.lbMeasures.SelectedItem as Measure;
 
             if (MessageUtil.ConfirmYesNo("是否确认删除选中抄表计量") == DialogResult.Yes)
             {
                 try
                 {
-                    BusinessFactory<MeasureBusiness>.Instance.Delete(expense);
+                    BusinessFactory<MeasureBusiness>.Instance.Delete(measure);
 
                     LoadData(this.currentAccount);
                     MessageUtil.ShowInfo("删除成功");
                 }
                 catch (PoseidonException pe)
                 {
-                    MessageUtil.ShowError(string.Format("保存失败，错误消息:{0}", pe.Message));
+                    MessageUtil.ShowError(string.Format("删除失败，错误消息:{0}", pe.Message));
                 }
             }
         }

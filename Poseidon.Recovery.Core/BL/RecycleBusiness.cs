@@ -103,6 +103,27 @@ namespace Poseidon.Recovery.Core.BL
         }
 
         /// <summary>
+        /// 检查费用回收能否删除
+        /// </summary>
+        /// <param name="entity">实体对象</param>
+        /// <returns></returns>
+        public bool CheckDelete(Recycle entity)
+        {
+            if (entity.PostAmount > 0 || entity.IsPost)
+                return false;
+
+            if (entity.AttachmentIds != null && entity.AttachmentIds.Count > 0)
+                return false;
+
+            ReconcileBusiness reconcileBusiness = new ReconcileBusiness();
+            var reconcile = reconcileBusiness.FindByRecycle(entity.Id).ToList();
+            if (reconcile.Count > 0)
+                return false;
+
+            return true;
+        }
+
+        /// <summary>
         /// 添加费用回收
         /// </summary>
         /// <param name="entity">实体对象</param>

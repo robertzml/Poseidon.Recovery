@@ -11,6 +11,7 @@ namespace Poseidon.Recovery.ClientDx
 {
     using DevExpress.XtraReports.UI;
     using Poseidon.Base.Framework;
+    using Poseidon.Base.System;
     using Poseidon.Common;
     using Poseidon.Recovery.ClientDx.Report;
     using Poseidon.Recovery.Core.BL;
@@ -186,6 +187,41 @@ namespace Poseidon.Recovery.ClientDx
 
             ChildFormManage.ShowDialogForm(typeof(FrmSettleEdit), new object[] { settle.Id, this.currentAccount.Id });
             LoadData(this.currentAccount);
+        }
+
+        /// <summary>
+        /// 删除结算
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            if (this.currentAccount == null || this.lbSettles.SelectedValue == null)
+                return;
+
+            var settle = this.lbSettles.SelectedItem as Settle;
+
+            if (MessageUtil.ConfirmYesNo("是否确认删除选中结算单") == DialogResult.Yes)
+            {
+                try
+                {
+                    bool check = BusinessFactory<SettleBusiness>.Instance.CheckDelete(settle);
+                    if (!check)
+                    {
+                        MessageUtil.ShowInfo("该费用结算不能删除");
+                        return;
+                    }
+
+                    BusinessFactory<SettleBusiness>.Instance.Delete(settle);
+
+                    LoadData(this.currentAccount);
+                    MessageUtil.ShowInfo("删除成功");
+                }
+                catch (PoseidonException pe)
+                {
+                    MessageUtil.ShowError(string.Format("删除失败，错误消息:{0}", pe.Message));
+                }
+            }
         }
 
         /// <summary>

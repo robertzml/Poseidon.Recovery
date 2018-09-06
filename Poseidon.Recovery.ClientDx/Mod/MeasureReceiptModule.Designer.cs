@@ -394,6 +394,9 @@
             this.measureRecordGrid.Location = new System.Drawing.Point(2, 21);
             this.measureRecordGrid.Name = "measureRecordGrid";
             this.measureRecordGrid.ShowAddMenu = false;
+            this.measureRecordGrid.ShowDeleteMenu = false;
+            this.measureRecordGrid.ShowEditMenu = false;
+            this.measureRecordGrid.ShowFindPanel = false;
             this.measureRecordGrid.ShowFooter = false;
             this.measureRecordGrid.ShowLineNumber = true;
             this.measureRecordGrid.ShowMenu = false;

@@ -116,6 +116,27 @@ namespace Poseidon.Recovery.Core.BL
         }
 
         /// <summary>
+        /// 检查费用结算能否删除
+        /// </summary>
+        /// <param name="entity">实体对象</param>
+        /// <returns></returns>
+        public bool CheckDelete(Settle entity)
+        {
+            if (entity.OffAmount > 0 || entity.IsWriteOff)
+                return false;
+
+            if (entity.AttachmentIds != null && entity.AttachmentIds.Count > 0)
+                return false;
+
+            ReconcileBusiness reconcileBusiness = new ReconcileBusiness();
+            var reconcile = reconcileBusiness.FindBySettle(entity.Id).ToList();
+            if (reconcile.Count > 0)
+                return false;
+
+            return true;
+        }
+
+        /// <summary>
         /// 添加费用结算
         /// </summary>
         /// <param name="entity">实体对象</param>
