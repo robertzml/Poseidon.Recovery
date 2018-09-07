@@ -79,6 +79,9 @@
             this.reconcileGrid.Name = "reconcileGrid";
             this.reconcileGrid.ShowAccount = false;
             this.reconcileGrid.ShowAddMenu = false;
+            this.reconcileGrid.ShowDeleteMenu = false;
+            this.reconcileGrid.ShowEditMenu = false;
+            this.reconcileGrid.ShowFindPanel = false;
             this.reconcileGrid.ShowFooter = true;
             this.reconcileGrid.ShowLineNumber = true;
             this.reconcileGrid.ShowMenu = false;
