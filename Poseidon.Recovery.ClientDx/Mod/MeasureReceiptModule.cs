@@ -171,10 +171,17 @@ namespace Poseidon.Recovery.ClientDx
             {
                 try
                 {
-                    BusinessFactory<MeasureBusiness>.Instance.Delete(measure);
+                    var result = BusinessFactory<MeasureBusiness>.Instance.Delete(measure);
 
-                    LoadData(this.currentAccount);
-                    MessageUtil.ShowInfo("删除成功");
+                    if (result.success)
+                    {
+                        LoadData(this.currentAccount);
+                        MessageUtil.ShowInfo("删除成功");
+                    }
+                    else
+                    {
+                        MessageUtil.ShowClaim("删除失败: " + result.errorMessage);
+                    }
                 }
                 catch (PoseidonException pe)
                 {

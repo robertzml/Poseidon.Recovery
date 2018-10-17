@@ -145,10 +145,17 @@ namespace Poseidon.Recovery.ClientDx
                 ConstructionAccount entity = BusinessFactory<ConstructionAccountBusiness>.Instance.FindById(this.currentAccount.Id);
                 SetEntity(entity);
 
-                BusinessFactory<ConstructionAccountBusiness>.Instance.Update(entity);
+                var result = BusinessFactory<ConstructionAccountBusiness>.Instance.Update(entity);
 
-                MessageUtil.ShowInfo("保存成功");
-                this.Close();
+                if (result.success)
+                {
+                    MessageUtil.ShowInfo("保存成功");
+                    this.Close();
+                }
+                else
+                {
+                    MessageUtil.ShowClaim("保存失败: " + result.errorMessage);
+                }
             }
             catch (PoseidonException pe)
             {

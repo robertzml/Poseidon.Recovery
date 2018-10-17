@@ -197,10 +197,17 @@ namespace Poseidon.Recovery.ClientDx
                         return;
                     }
 
-                    BusinessFactory<RecycleBusiness>.Instance.Delete(recycle);
+                    var result = BusinessFactory<RecycleBusiness>.Instance.Delete(recycle);
 
-                    LoadData(this.currentAccount);
-                    MessageUtil.ShowInfo("删除成功");
+                    if (result.success)
+                    {
+                        LoadData(this.currentAccount);
+                        MessageUtil.ShowInfo("删除成功");
+                    }
+                    else
+                    {
+                        MessageUtil.ShowClaim("删除失败: " + result.errorMessage);
+                    }
                 }
                 catch (PoseidonException pe)
                 {

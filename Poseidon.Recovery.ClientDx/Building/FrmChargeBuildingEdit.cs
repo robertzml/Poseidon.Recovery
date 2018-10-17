@@ -108,10 +108,17 @@ namespace Poseidon.Recovery.ClientDx
                 ChargeBuilding entity = BusinessFactory<ChargeBuildingBusiness>.Instance.FindById(this.currentBuilding.Id);
                 SetEntity(entity);
 
-                BusinessFactory<ChargeBuildingBusiness>.Instance.Update(entity);
+                var result = BusinessFactory<ChargeBuildingBusiness>.Instance.Update(entity);
 
-                MessageUtil.ShowInfo("保存成功");
-                this.Close();
+                if (result.success)
+                {
+                    MessageUtil.ShowInfo("保存成功");
+                    this.Close();
+                }
+                else
+                {
+                    MessageUtil.ShowClaim("保存失败: " + result.errorMessage);
+                }
             }
             catch (PoseidonException pe)
             {

@@ -241,10 +241,17 @@ namespace Poseidon.Recovery.ClientDx
                 Settle entity = BusinessFactory<SettleBusiness>.Instance.FindById(this.currentSettle.Id);
                 SetEntity(entity);
 
-                BusinessFactory<SettleBusiness>.Instance.Update(entity, this.currentUser);
+                var result = BusinessFactory<SettleBusiness>.Instance.Update(entity, this.currentUser);
 
-                MessageUtil.ShowInfo("保存成功");
-                this.Close();
+                if (result.success)
+                {
+                    MessageUtil.ShowInfo("保存成功");
+                    this.Close();
+                }
+                else
+                {
+                    MessageUtil.ShowClaim("保存失败: " + result.errorMessage);
+                }
             }
             catch (PoseidonException pe)
             {

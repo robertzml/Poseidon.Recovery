@@ -140,10 +140,17 @@ namespace Poseidon.Recovery.ClientDx
                 var entity = BusinessFactory<CommerceAccountBusiness>.Instance.FindById(this.currentAccount.Id);
                 SetEntity(entity);
 
-                BusinessFactory<CommerceAccountBusiness>.Instance.Update(entity);
+                var result = BusinessFactory<CommerceAccountBusiness>.Instance.Update(entity);
 
-                MessageUtil.ShowInfo("保存成功");
-                this.Close();
+                if (result.success)
+                {
+                    MessageUtil.ShowInfo("保存成功");
+                    this.Close();
+                }
+                else
+                {
+                    MessageUtil.ShowClaim("保存失败: " + result.errorMessage);
+                }
             }
             catch (PoseidonException pe)
             {
