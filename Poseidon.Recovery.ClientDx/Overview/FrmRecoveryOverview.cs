@@ -45,9 +45,13 @@ namespace Poseidon.Recovery.ClientDx
         /// <param name="e"></param>
         private void accountTree_GroupSelected(object sender, EventArgs e)
         {
+            this.SuspendLayout();
+
             this.navFrame.SelectedPageIndex = 0;
             var id = this.accountTree.GetCurrentSelectId();
             this.groupMod.SetGroup(id);
+
+            this.ResumeLayout();
         }
 
         /// <summary>
@@ -57,8 +61,9 @@ namespace Poseidon.Recovery.ClientDx
         /// <param name="e"></param>
         private void accountTree_EntitySelected(object sender, EventArgs e)
         {
-            this.navFrame.SelectedPageIndex = 1;
+            this.SuspendLayout();
 
+            this.navFrame.SelectedPageIndex = 1;
             var accountId = this.accountTree.GetCurrentSelectId();
             var account = BusinessFactory<AccountBusiness>.Instance.FindById(accountId);
 
@@ -66,6 +71,8 @@ namespace Poseidon.Recovery.ClientDx
                 this.accountMod.SetAccount(accountId, 1);
             else if (account.ModelType == ModelTypeCode.ConstructionAccount)
                 this.accountMod.SetAccount(accountId, 2);
+
+            this.ResumeLayout();
         }
         #endregion //Event
     }

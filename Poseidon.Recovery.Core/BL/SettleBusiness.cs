@@ -170,7 +170,7 @@ namespace Poseidon.Recovery.Core.BL
         /// <param name="entity">实体对象</param>
         /// <param name="user">操作用户</param>
         /// <returns></returns>
-        public bool Update(Settle entity, ILoginUser user)
+        public (bool success, string errorMessage) Update(Settle entity, ILoginUser user)
         {
             entity.UpdateBy = new UpdateStamp
             {
